@@ -1,8 +1,7 @@
 package org.webscada.dao;
 
-import javax.persistence.Entity;
 import java.util.List;
 
-public abstract class AbstractDao<T extends Entity> {
+public abstract class AbstractDao<T> {
     public abstract List<T> getAll();
 }
