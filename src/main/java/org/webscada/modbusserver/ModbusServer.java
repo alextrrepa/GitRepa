@@ -20,7 +20,6 @@ public class ModbusServer implements ServletContextListener {
 
     public ModbusServer() {
         CommonQueue.setQueue(queue);
-
     }
 
     @Override
