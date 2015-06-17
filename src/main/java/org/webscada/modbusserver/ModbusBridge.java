@@ -12,7 +12,6 @@ import java.util.concurrent.TransferQueue;
 
 public class ModbusBridge {
     private final static Logger log = Logger.getLogger(ModbusBridge.class);
-//    private NodeFactory factory = new NodeFactory();
     private ConfigDaoFactory factory = new ConfigDaoFactory();
 
     public ModbusBridge(Set<String> typeSet, List<ModbusTask> taskList,
@@ -22,19 +21,17 @@ public class ModbusBridge {
 
     private void getTypeConfig(Set<String> typeSet, List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
+
         for (String type : typeSet) {
             AbstractDao<NodeEntity> entity = factory.getDao(type);
-            /*Node node = factory.node(type);
-
-            String nt = node.type();
-            if (nt.equalsIgnoreCase("rtu")) {
-                ModbusType rtuType = new ModbusRtu(node);
+            if (type.equalsIgnoreCase("rtu")) {
+                ModbusType rtuType = new ModbusRtu(entity);
                 rtuType.getTypes(taskList, queue);
-            }*/
-            /*if (nt.equalsIgnoreCase("tcp")) {
-                ModbusType tcpType = new ModbusTcp(node);
+            }
+            if (type.equalsIgnoreCase("tcp")) {
+                ModbusType tcpType = new ModbusTcp(entity);
                 tcpType.getTypes(taskList, queue);
-            }*/
+            }
         }
     }
 }

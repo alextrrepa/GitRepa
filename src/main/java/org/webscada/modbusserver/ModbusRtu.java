@@ -3,6 +3,7 @@ package org.webscada.modbusserver;
 import com.serotonin.io.serial.SerialParameters;
 import com.serotonin.modbus4j.ModbusMaster;
 import org.apache.log4j.Logger;
+import org.webscada.dao.AbstractDao;
 import org.webscada.entities.DeviceEntity;
 import org.webscada.entities.NodeEntity;
 
@@ -13,13 +14,13 @@ import java.util.concurrent.TransferQueue;
 public class ModbusRtu extends ModbusType {
     private final static Logger log = Logger.getLogger(ModbusRtu.class);
 
-    public ModbusRtu(Node node) {
-        super(node);
+    public ModbusRtu(AbstractDao<NodeEntity> dao) {
+        super(dao);
     }
 
     @Override
     public void getTypes(List<ModbusTask> taskList, TransferQueue<Map<String, Map<String, Float>>> queue) {
-        List<NodeEntity> rtuNodes = node.getNodes();
+        List<NodeEntity> rtuNodes = dao.getAll();
         for (NodeEntity node : rtuNodes) {
             SerialParameters serialParameters = new SerialParameters();
             String name = node.getRtuEntity().getPort();

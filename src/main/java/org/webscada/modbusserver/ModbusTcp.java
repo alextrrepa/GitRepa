@@ -3,6 +3,7 @@ package org.webscada.modbusserver;
 import com.serotonin.modbus4j.ModbusMaster;
 import com.serotonin.modbus4j.ip.IpParameters;
 import org.apache.log4j.Logger;
+import org.webscada.dao.AbstractDao;
 import org.webscada.entities.NodeEntity;
 
 import java.util.List;
@@ -12,13 +13,13 @@ import java.util.concurrent.TransferQueue;
 public class ModbusTcp extends ModbusType {
     private final static Logger log = Logger.getLogger(ModbusTcp.class);
 
-    public ModbusTcp(Node node) {
-        super(node);
+    public ModbusTcp(AbstractDao<NodeEntity> dao) {
+        super(dao);
     }
 
     @Override
     public void getTypes(List<ModbusTask> taskList, TransferQueue<Map<String, Map<String, Float>>> queue) {
-        List<NodeEntity> tcpNodes = node.getNodes();
+        List<NodeEntity> tcpNodes = dao.getAll();
         for (NodeEntity entity : tcpNodes) {
             String name = entity.getName();
             log.info(name);
