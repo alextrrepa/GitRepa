@@ -1,0 +1,123 @@
+html, body {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    background: #F8F8F8;
+    font-size: 12px;
+}
+
+header {
+    height: 55px;
+    width: 100%;
+    background: #222222 url("../images/header_bg.png") repeat-x;
+}
+
+header hgroup h1 a:hover {
+    color: #77BACE;
+}
+
+header h1.site_title, header h2.section_title {
+    float: left;
+    margin: 0;
+    font-size: 22px;
+    display: block;
+    width: 23%;
+    height: 55px;
+    font-weight: normal;
+    text-align: left;
+    text-indent: 1.8%;
+    line-height: 55px;
+    color: #fff;
+    text-shadow: 0 -1px 0 #000;
+}
+
+header h1.site_title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header h2.section_title {
+    text-align: center;
+    text-indent: 4.5%;
+    width: 68%;
+}
+
+section.head_bar {
+    height: 38px;
+    width: 100%;
+    background: #F1F1F4 url("../images/secondary_bar.png") repeat-x;
+}
+
+section.head_bar .user {
+    float: left;
+    width: 23%;
+    height: 38px;
+}
+
+.user p {
+    float: left;
+    width: 85%;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 25px;
+    text-shadow: 0 1px 0 #fff;
+    background: url("../images/icn_user.png") no-repeat center left;
+    margin-left: 6%;
+}
+
+.user a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #666666;
+
+}
+
+.user a:hover {
+    color: #77BACE;
+}
+
+/*
+section.head_bar .breadcrumbs_container {
+    float: left;
+    width: 77%;
+    background: url("../images/secondary_bar_shadow.png") no-repeat left top;
+    height: 38%;
+}
+*/
+
+aside.sidebar {
+    width: 23%;
+    background: url("../images/sidebar.png") repeat;
+    float: left;
+    min-height: 500px;
+    margin-top: -4px;
+}
+
+aside h3 {
+    color: #1F1F20;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 13px;
+    margin: 10px 0 10px 6%;
+    display: block;
+    float: left;
+    width: 90%;
+}
+
+section.content {
+    width: 77%;
+    min-height: 500px;
+    background: url("../images/sidebar_shadow.png") repeat-y left top;
+    float: left;
+    margin-top: -2px;
+}
+
+section.content h4.alert_info {
+    width: 95%;
+    margin: 20px 3% 0px;
+    border-radius: 5px;
+    background: #B5E5EF url("../images/icn_alert_info.png") no-repeat scroll 10px 10px;
+    border: 1px solid #77BACE;
+    color: #082B33;
+    padding: 10px 0px;
+    text-indent: 40px;
+    font-size: 14px;
+}
