@@ -2,6 +2,7 @@ html, body {
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
     background: #F8F8F8;
     font-size: 12px;
+    height: 100%;
 }
 
 header {
@@ -85,9 +86,10 @@ section.head_bar .breadcrumbs_container {
 
 aside.sidebar {
     width: 23%;
-    background: url("../images/sidebar.png") repeat;
+    height: 90.5%;
+    background: #E0E0E3 url("../images/sidebar.png") repeat scroll 0% 0%;
     float: left;
-    min-height: 500px;
+    /*min-height: 500px;*/
     margin-top: -4px;
 }
 
@@ -102,10 +104,40 @@ aside h3 {
     width: 90%;
 }
 
+.sidebar ul {
+    clear: both;
+}
+
+.sidebar li {
+    list-style: outside none none;
+    margin: 0px 0px 0px 12%;
+}
+
+.sidebar li a {
+    color: #666;
+    padding-left: 25px;
+    text-decoration: none;
+    display: inline-block;
+    height: 17px;
+    line-height: 17px;
+    text-shadow: 0px 1px 0px #FFF;
+    margin: 2px 0px;
+}
+
+.sidebar li a:hover {
+    color: #444444;
+    text-decoration: underline;
+}
+
+.sidebar li.icn_settings {
+    background: transparent url("../images/icn_settings.png") no-repeat scroll left center;
+}
+
 section.content {
     width: 77%;
-    min-height: 500px;
-    background: url("../images/sidebar_shadow.png") repeat-y left top;
+    height: 90.5%;
+    /*min-height: 500px;*/
+    background: transparent url("../images/sidebar_shadow.png") repeat-y scroll left top;
     float: left;
     margin-top: -2px;
 }
