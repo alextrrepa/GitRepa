@@ -4,7 +4,7 @@ html, body {
     font-size: 12px;
     height: 100%;
 }
-
+/* Header */
 header {
     height: 55px;
     width: 100%;
@@ -41,6 +41,7 @@ header h2.section_title {
     width: 68%;
 }
 
+/* Secondary Header Bar*/
 section.head_bar {
     height: 38px;
     width: 100%;
@@ -84,7 +85,8 @@ section.head_bar .breadcrumbs_container {
 }
 */
 
-aside.sidebar {
+/* Navigation Bar */
+nav.sidebar {
     width: 23%;
     height: 90.5%;
     background: #E0E0E3 url("../images/sidebar.png") repeat scroll 0% 0%;
@@ -93,7 +95,7 @@ aside.sidebar {
     margin-top: -4px;
 }
 
-aside h3 {
+nav h3 {
     color: #1F1F20;
     text-transform: uppercase;
     text-shadow: 0 1px 0 #fff;
@@ -129,9 +131,13 @@ aside h3 {
     text-decoration: underline;
 }
 
+/* Navigation Bar Icons */
+
 .sidebar li.icn_settings {
     background: transparent url("../images/icn_settings.png") no-repeat scroll left center;
 }
+
+/* Main Content */
 
 section.content {
     width: 77%;
@@ -152,4 +158,60 @@ section.content h4.alert_info {
     padding: 10px 0px;
     text-indent: 40px;
     font-size: 14px;
+}
+
+section.content h3 {
+    color: #1F1F20;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 0px #FFF;
+    font-size: 13px;
+    margin: 8px 20px;
+}
+
+/* Modbus Tree Module*/
+
+.module {
+    border: 1px solid #9BA0AF;
+    width: 100%;
+    margin: 20px 3% 0 3%;
+    /*margin-top: 20px;*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #FFFFFF;
+}
+
+.module header {
+    height: 38px;
+    width: 100%;
+    background: #F1F1F4 url("../images/secondary_bar.png") repeat-x;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.module header h3 {
+    display: block;
+    width: 90%;
+    float: left;
+}
+
+.module header h3.tabs_involved {
+    display: block;
+    width: 60%;
+    float: left;
+}
+
+
+.modbus_tree {
+    width: 66%;
+    margin-right: 0px;
+    float: left;
+}
+
+.modbus_param {
+
 }
