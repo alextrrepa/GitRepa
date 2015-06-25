@@ -6,7 +6,6 @@ import org.webscada.dao.ConfigDaoFactory;
 import org.webscada.entities.NodeEntity;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,19 +15,21 @@ import java.util.List;
 
 public class ModbusEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusEditController.class);
+    AbstractDao<NodeEntity> getType = null;
+    ConfigDaoFactory configFactory = new ConfigDaoFactory();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AbstractDao<NodeEntity> getType = null;
-        ConfigDaoFactory configFactory = new ConfigDaoFactory();
-        getType = configFactory.getDao("rtu");
-        List<NodeEntity> rtuEntities = getType.getAll();
-        ServletContext sc = getServletContext();
-        RequestDispatcher rd = sc.getRequestDispatcher("/modbus_page.jsp");
-        request.setAttribute("rtuEntities", rtuEntities);
+        String action = request.getParameter("action");
+        if (action.equalsIgnoreCase("getAll")) {
+            getType = configFactory.getDao("rtu");
+            List<NodeEntity> rtuEntities = getType.getAll();
+            request.setAttribute("rtuEntities", rtuEntities);
+        }
+        RequestDispatcher rd = request.getRequestDispatcher("/modbus_page.jsp");
         rd.forward(request, response);
     }
 }

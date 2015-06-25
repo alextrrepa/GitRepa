@@ -1,20 +1,14 @@
-<%@ page import="org.webscada.entities.NodeEntity" %>
-<%@ page import="java.util.List" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri = "http://java.sun.com/jstl/core" prefix = "c" %>
+<%@page contentType="text/html;charset=utf-8" pageEncoding="utf-8" language="java" %>
+<!DOCTYPE>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Modbus Настройки</title>
   <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/admin_style.css" rel="stylesheet">
 </head>
 <body>
-
-<%
- List<NodeEntity> rtuList = (List<NodeEntity>) request.getAttribute("rtuEntities");
- System.out.println(rtuList.size());
-%>
 
 <header>
   <hgroup>
@@ -34,7 +28,7 @@
 <nav class="sidebar" <%--style="height: 1728px"--%>>
   <h3>Опрос</h3>
   <ul>
-    <li class="icn_settings"><a href="modbus_page.jsp">Modbus настройки</a></li>
+    <li class="icn_settings"><a href="ModbusEdit.do?action=getAll">Modbus настройки</a></li>
   </ul>
 </nav>
 
@@ -44,13 +38,44 @@
     <header>
       <h3 class="tabs_involved">Структура Modbus</h3>
     </header>
-    <ul>
-      <li>Сервер</li>
-      <%--<c:import url = "/Modbusedit"/>--%>
-      <%--<c:set var="rtuList" value="${requestScope.rtuEntities}" />--%>
-      <%--<c:forEach items="${rtuList}" var="rtu">
-      </c:forEach>--%>
-    </ul>
+    <div class="tree">
+      <ul class="container">
+        <li class="node root expandOpen">
+          <div class="expand"></div>
+          <div class="nodecontent">Сервер</div>
+          </li>
+           <c:forEach items="${rtuEntities}" var="node">
+          <li class="node expandOpen">
+            <div class="expand"></div>
+            <div class="nodeContent">
+               <c:out value="${node.name}"/>
+            </div>
+          </li>
+          <ul class="container">
+            <c:set var="device" value="${node.deviceEntity}"/>
+            <c:forEach items="${device}" var="device">
+              <li class="node expandOpen">
+                 <div class="expand"></div>
+                 <div class="nodeContent">
+                    <c:out value="${device.name}"/>
+                 </div>
+                </li>
+              <ul>
+                <c:set var="tag" value="${device.tagEntities}"/>
+                <c:forEach items="${tag}" var="tag">
+                  <li class="node last">
+                    <div class="expand"></div>
+                    <div class="nodeContent">
+                      <c:out value="${tag.name}"/>
+                    </div>
+                  </li>
+                </c:forEach>
+              </ul>
+            </c:forEach>
+          </ul>
+        </c:forEach>
+      </ul>
+    </div>
   </article>
   <article class="modbus_param"></article>
 </section>
