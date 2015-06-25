@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html" charset="utf-8">
     <title>Панель админа</title>
     <link href="css/reset.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/admin_style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 <nav class="sidebar" <%--style="height: 1728px"--%>>
     <h3>Опрос</h3>
     <ul>
-        <li class="icn_settings"><a href="modbus_page.jsp">Modbus настройки</a></li>
+        <li class="icn_settings"><a href="ModbusEdit.do?action=getAll">Modbus настройки</a></li>
     </ul>
 </nav>
 
