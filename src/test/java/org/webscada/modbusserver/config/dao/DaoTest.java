@@ -1,16 +1,11 @@
 package org.webscada.modbusserver.config.dao;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 import org.junit.Test;
 import org.webscada.dao.AbstractDao;
-import org.webscada.dao.ConfigDaoFactory;
-import org.webscada.util.SessionUtil;
-import org.webscada.modbusserver.NodeRtu;
-import org.webscada.entities.NodeEntity;
+import org.webscada.dao.DaoTreeParams;
+import org.webscada.model.tree.DeviceParams;
+import org.webscada.model.tree.NodeParams;
 
 import java.util.List;
 
@@ -19,17 +14,20 @@ public class DaoTest {
 
     @Test
     public void testAbstractDao() {
-        ConfigDaoFactory factory = new ConfigDaoFactory();
-        AbstractDao<NodeEntity> rtu = factory.getDao("rtu");
-        List<NodeEntity> rtuList = rtu.getAll();
-        for (NodeEntity entity : rtuList) {
-            log.trace(entity.getName());
-        }
+        AbstractDao treeDao = new DaoTreeParams();
+        List<NodeParams> treeParams = treeDao.getTreeParams();
+        for (NodeParams tree : treeParams) {
+            log.trace(tree.getId());
+            log.trace(tree.getTagType());
+            log.trace(tree.getType());
+            log.trace(tree.getName());
 
-        AbstractDao<NodeEntity> tcp = factory.getDao("tcp");
-        List<NodeEntity> tcpList = tcp.getAll();
-        for (NodeEntity entity : tcpList) {
-            log.trace(entity.getName());
+            List<DeviceParams> device = tree.getDeviceList();
+            for (DeviceParams dev : device) {
+                log.trace(dev.getId());
+                log.trace(dev.getTagType());
+                log.trace(dev.getName());
+            }
         }
     }
 }

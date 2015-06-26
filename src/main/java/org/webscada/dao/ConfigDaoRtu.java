@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.webscada.model.tree.NodeParams;
 import org.webscada.util.SessionUtil;
 
 import java.util.ArrayList;
@@ -36,5 +37,10 @@ public class ConfigDaoRtu<T> extends AbstractDao<T> {
             session.close();
         }
         return rtuEntities;
+    }
+
+    @Override
+    public List<NodeParams> getTreeParams() {
+        throw new UnsupportedOperationException();
     }
 }

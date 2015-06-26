@@ -3,7 +3,7 @@ package org.webscada.modbusserver;
 import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.ConfigDaoFactory;
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.NodeEntity;
 
 import java.util.List;
 import java.util.Map;

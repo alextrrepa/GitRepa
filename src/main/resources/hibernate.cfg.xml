@@ -30,14 +30,14 @@
         <!--Hibernate Properties-->
 
         <!--Hibernate Mapping-->
-        <mapping class="org.webscada.entities.NodeEntity"/>
-        <mapping class="org.webscada.entities.RtuEntity"/>
-        <mapping class="org.webscada.entities.DeviceEntity"/>
-        <mapping class="org.webscada.entities.DatatypeEntity"/>
-        <mapping class="org.webscada.entities.RegisterEntity"/>
-        <mapping class="org.webscada.entities.TagEntity"/>
-        <mapping class="org.webscada.entities.TcpEntity"/>
-        <mapping class="org.webscada.entities.CurrentEntity"/>
+        <mapping class="org.webscada.model.NodeEntity"/>
+        <mapping class="org.webscada.model.RtuEntity"/>
+        <mapping class="org.webscada.model.DeviceEntity"/>
+        <mapping class="org.webscada.model.DatatypeEntity"/>
+        <mapping class="org.webscada.model.RegisterEntity"/>
+        <mapping class="org.webscada.model.TagEntity"/>
+        <mapping class="org.webscada.model.TcpEntity"/>
+        <mapping class="org.webscada.model.CurrentEntity"/>
         <!--Hibernate Mapping-->
 
     </session-factory>

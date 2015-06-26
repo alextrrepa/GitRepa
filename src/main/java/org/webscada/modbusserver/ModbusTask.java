@@ -6,8 +6,8 @@ import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersRequest;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersResponse;
 import org.apache.log4j.Logger;
-import org.webscada.entities.DeviceEntity;
-import org.webscada.entities.TagEntity;
+import org.webscada.model.DeviceEntity;
+import org.webscada.model.TagEntity;
 
 import java.util.LinkedHashMap;
 import java.util.List;

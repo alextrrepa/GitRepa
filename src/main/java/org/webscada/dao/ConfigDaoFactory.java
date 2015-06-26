@@ -1,6 +1,6 @@
 package org.webscada.dao;
 
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.NodeEntity;
 
 public class ConfigDaoFactory {
     public AbstractDao<NodeEntity> getDao(String type){

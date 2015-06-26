@@ -4,7 +4,7 @@ import com.serotonin.modbus4j.ModbusMaster;
 import com.serotonin.modbus4j.ip.IpParameters;
 import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.NodeEntity;
 
 import java.util.List;
 import java.util.Map;

@@ -5,7 +5,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.webscada.util.SessionUtil;
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.NodeEntity;
 
 import java.util.ArrayList;
 import java.util.List;
