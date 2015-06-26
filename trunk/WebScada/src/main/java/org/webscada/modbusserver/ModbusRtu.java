@@ -4,8 +4,8 @@ import com.serotonin.io.serial.SerialParameters;
 import com.serotonin.modbus4j.ModbusMaster;
 import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
-import org.webscada.entities.DeviceEntity;
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.DeviceEntity;
+import org.webscada.model.NodeEntity;
 
 import java.util.List;
 import java.util.Map;

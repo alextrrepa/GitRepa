@@ -44,15 +44,18 @@
           <div class="expand"></div>
           <div class="nodecontent">Сервер</div>
           </li>
-           <c:forEach items="${rtuEntities}" var="node">
-          <li class="node expandOpen">
+           <c:forEach items="${treeParams}" var="node">
+          <li class="node expandOpen" mtype=<c:out value="${node.type}"/>
+              nodeid= <c:out value="${node.id}"/>
+              nodeType = <c:out value="${node.tagType}"/>
+                  >
             <div class="expand"></div>
             <div class="nodeContent">
                <c:out value="${node.name}"/>
             </div>
           </li>
           <ul class="container">
-            <c:set var="device" value="${node.deviceEntity}"/>
+            <c:set var="device" value="${node.deviceList}"/>
             <c:forEach items="${device}" var="device">
               <li class="node expandOpen">
                  <div class="expand"></div>
@@ -61,7 +64,7 @@
                  </div>
                 </li>
               <ul>
-                <c:set var="tag" value="${device.tagEntities}"/>
+                <c:set var="tag" value="${device.tagList}"/>
                 <c:forEach items="${tag}" var="tag">
                   <li class="node last">
                     <div class="expand"></div>

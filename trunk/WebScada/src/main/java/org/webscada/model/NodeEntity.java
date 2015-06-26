@@ -1,4 +1,4 @@
-package org.webscada.entities;
+package org.webscada.model;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;

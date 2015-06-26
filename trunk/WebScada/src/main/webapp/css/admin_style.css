@@ -4,6 +4,7 @@ html, body {
     font-size: 12px;
     height: 100%;
 }
+
 /* Header */
 header {
     height: 55px;
@@ -132,13 +133,11 @@ nav h3 {
 }
 
 /* Navigation Bar Icons */
-
 .sidebar li.icn_settings {
     background: transparent url("../images/icn_settings.png") no-repeat scroll left center;
 }
 
 /* Main Content */
-
 section.content {
     width: 77%;
     height: 90.5%;
@@ -169,7 +168,6 @@ section.content h3 {
 }
 
 /* Modbus Tree Module*/
-
 .module {
     border: 1px solid #9BA0AF;
     width: 100%;

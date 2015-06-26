@@ -2,7 +2,7 @@ package org.webscada.modbusserver;
 
 import com.serotonin.modbus4j.ModbusFactory;
 import org.webscada.dao.AbstractDao;
-import org.webscada.entities.NodeEntity;
+import org.webscada.model.NodeEntity;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package org.webscada.entities;
+package org.webscada.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
