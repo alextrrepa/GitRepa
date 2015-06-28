@@ -1,4 +1,3 @@
-<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -33,7 +32,6 @@
 
 <section class="content"<%-- style="height: 1728px"--%>>
     <h4 class="alert_info">Добро пожаловать в панель администрирования.</h4>
-
 </section>
 
 </body>

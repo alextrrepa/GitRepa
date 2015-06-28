@@ -1,12 +1,14 @@
 <%@taglib uri = "http://java.sun.com/jstl/core" prefix = "c" %>
 <%@page contentType="text/html;charset=utf-8" pageEncoding="utf-8" language="java" %>
 <!DOCTYPE>
-<html>
+<html test = "Test">
 <head>
   <meta charset="utf-8">
   <title>Modbus Настройки</title>
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/admin_style.css" rel="stylesheet">
+  <script type="text/javascript" src = "js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src = "js/admin_module.js"></script>
 </head>
 <body>
 
@@ -43,8 +45,8 @@
         <li class="node root expandOpen">
           <div class="expand"></div>
           <div class="nodecontent">Сервер</div>
-          </li>
-           <c:forEach items="${treeParams}" var="node">
+        </li>
+          <c:forEach items="${treeParams}" var="node">
           <li class="node expandOpen" mtype=<c:out value="${node.type}"/>
               nodeid= <c:out value="${node.id}"/>
               nodeType = <c:out value="${node.tagType}"/>
@@ -57,7 +59,9 @@
           <ul class="container">
             <c:set var="device" value="${node.deviceList}"/>
             <c:forEach items="${device}" var="device">
-              <li class="node expandOpen">
+              <li class="node expandOpen" nodeid= <c:out value="${device.id}"/>
+                  nodeType= <c:out value="${device.tagType}"/>
+                  >
                  <div class="expand"></div>
                  <div class="nodeContent">
                     <c:out value="${device.name}"/>
@@ -66,7 +70,9 @@
               <ul>
                 <c:set var="tag" value="${device.tagList}"/>
                 <c:forEach items="${tag}" var="tag">
-                  <li class="node last">
+                  <li class="node last" nodeid= <c:out value="${tag.id}"/>
+                     nodeType= <c:out value="${tag.tagType}"/>
+                     >
                     <div class="expand"></div>
                     <div class="nodeContent">
                       <c:out value="${tag.name}"/>
