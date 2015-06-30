@@ -1,6 +1,7 @@
 $(function() {
-    $(".tree ul").hide();
 
+    /* Create expandable tree */
+    $(".tree ul").hide();
     $(".tree li").each(function () {
         var handleSpan = $("<span></span>");
         handleSpan.addClass("spanExpand");
@@ -16,9 +17,13 @@ $(function() {
         }
     });
 
+    /* Tree element  on click */
     var treeLi = $(".tree li div");
     treeLi.click(function() {
         $(this).toggleClass("fill_state_pressed");
         treeLi.not(this).removeClass("fill_state_pressed");
+        var type = $(this).parent()[0];
+        var nodetype = $(type).data();
+        console.log(nodetype);
     });
 });

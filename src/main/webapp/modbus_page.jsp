@@ -28,14 +28,14 @@
     </div>
 </section>
 
-<nav class="sidebar" <%--style="height: 1728px"--%>>
+<nav class="sidebar">
     <h3>Опрос</h3>
     <ul>
         <li class="icn_settings"><a href="ModbusEdit.do?action=getAll">Modbus настройки</a></li>
     </ul>
 </nav>
 
-<section class="content" <%--style="height: 1728px"--%>>
+<section class="content">
     <h4 class="alert_info">Настройка Modbus опроса.</h4>
     <article class="module modbus_tree">
         <header>
@@ -49,10 +49,10 @@
                 </div>
                 <ul>
                     <c:forEach items="${treeParams}" var="node">
-                        <li class="tree_item-li" mtype=
+                        <li class="tree_item-li" data-mtype=
                             <c:out value="${node.type}"/>
-                                nodeid=<c:out value="${node.id}"/>
-                            nodetype=
+                                data-nodeid=<c:out value="${node.id}"/>
+                            data-nodetype=
                                 <c:out value="${node.tagType}"/>
                                 >
                             <div class="tree_item fill_state_hover" style="display: inline-block">
@@ -62,9 +62,9 @@
                                 <c:set var="device" value="${node.deviceList}"/>
                                 <c:forEach items="${device}" var="device">
                                     <li class="tree_item-li"
-                                        nodeid=
+                                        data-id=
                                             <c:out value="${device.id}"/>
-                                                nodetype=<c:out value="${device.tagType}"/>
+                                                data-nodetype=<c:out value="${device.tagType}"/>
                                             >
                                         <div class="tree_item fill_state_hover" style="display: inline-block">
                                             <c:out value="${device.name}"/>
@@ -73,9 +73,9 @@
                                             <c:set var="tag" value="${device.tagList}"/>
                                             <c:forEach items="${tag}" var="tag">
                                                 <li class="tree_item-li"
-                                                    nodeid=
+                                                    data-nodeid=
                                                         <c:out value="${tag.id}"/>
-                                                            nodetype=<c:out value="${tag.tagType}"/>
+                                                            data-nodetype=<c:out value="${tag.tagType}"/>
                                                         >
                                                     <div class="tree_item fill_state_hover"
                                                          style="display: inline-block">
@@ -92,54 +92,6 @@
                 </ul>
             </li>
         </ul>
-        <%--
-              <ul class="container">
-                <li class="node root expandOpen">
-                  <div class="expand"></div>
-                  <div class="nodeContent">
-                    Сервер
-                  </div>
-                  <ul class="container">
-                    <c:forEach items="${treeParams}" var="node">
-                       <li class="node expandOpen" mtype=<c:out value="${node.type}"/>
-                            nodeid= <c:out value="${node.id}"/>
-                        nodeType = <c:out value="${node.tagType}"/>
-                        >
-                      <div class="expand"></div>
-                      <div class="nodeContent">
-                        <c:out value="${node.name}"/>
-                      </div>
-                      <ul class="container">
-                        <c:set var="device" value="${node.deviceList}"/>
-                        <c:forEach items="${device}" var="device">
-                          <li class="node expandOpen" nodeid= <c:out value="${device.id}"/>
-                                  nodeType= <c:out value="${device.tagType}"/>
-                                  >
-                            <div class="expand"></div>
-                            <div class="nodeContent">
-                              <c:out value="${device.name}"/>
-                            </div>
-                            <ul>
-                              <c:set var="tag" value="${device.tagList}"/>
-                              <c:forEach items="${tag}" var="tag">
-                                <li class="node last" nodeid= <c:out value="${tag.id}"/>
-                                        nodeType= <c:out value="${tag.tagType}"/>
-                                >
-                                  <div class="expand"></div>
-                                  <div class="nodeContent">
-                                    <c:out value="${tag.name}"/>
-                                  </div>
-                               </li>
-                              </c:forEach>
-                            </ul>
-                          </li>
-                        </c:forEach>
-                      </ul>
-                    </li>
-                    </c:forEach>
-                </li>
-                  </ul>
-              </ul>--%>
     </article>
     <article class="modbus_param"></article>
 </section>
