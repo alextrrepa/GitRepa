@@ -203,13 +203,76 @@ section.content h3 {
     float: left;
 }
 
-/* Modbus Tree */
 .modbus_tree {
     width: 50%;
     margin-right: 0px;
     float: left;
 }
 
+
+/* Modbus Tree */
+.tree_item-li {
+    text-indent: 0;
+    background-color: transparent;
+    border: 0px solid transparent;
+    list-style: none;
+    left: 100%;
+    right: 0;
+    text-align: left;
+    outline: none;
+    margin: 1px 0px 0px;
+    padding: 0px;
+}
+
+.tree_item {
+    border: 1px solid transparent;
+    text-indent: 0;
+    list-style: none;
+    padding: 3px;
+    margin: 0px;
+    float: none;
+    overflow: hidden;
+    left: 100%;
+    right: 0;
+    text-align: left;
+    cursor: default;
+    text-decoration: none;
+}
+
+.fill_state_hover:hover {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border-color: #999;
+    background: #E8E8E8;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.fill_state_pressed {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border-color: #999;
+    background: #D1D1D1;
+    border-radius: 3px;
+}
+
+.spanExpand {
+    width: 18px;
+    height: 18px;
+    float: left;
+}
+
+.collapsed {
+    background: transparent url("../images/icon-right.png") no-repeat center bottom;
+    cursor: pointer;
+}
+
+.expanded {
+    background: transparent url("../images/icon-down.png") no-repeat center bottom;
+    cursor: pointer;
+}
+
+/*
 .tree {
     padding: 0 0 0 20px;
     width: 50%;
@@ -253,9 +316,9 @@ section.content h3 {
 }
 
 .last {
-    background-repeat: no-repeat;
+    /!*background-repeat: no-repeat;*!/
 }
 
 .modbus_param {
 
-}
+}*/
