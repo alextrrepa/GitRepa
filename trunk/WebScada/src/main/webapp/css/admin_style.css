@@ -209,7 +209,6 @@ section.content h3 {
     float: left;
 }
 
-
 /* Modbus Tree */
 .tree_item-li {
     text-indent: 0;
@@ -271,54 +270,3 @@ section.content h3 {
     background: transparent url("../images/icon-down.png") no-repeat center bottom;
     cursor: pointer;
 }
-
-/*
-.tree {
-    padding: 0 0 0 20px;
-    width: 50%;
-    float: left;
-}
-
-.container {
-
-}
-
-.container li {
-    list-style-type: none;
-}
-
-.node {
-    margin-left: 18px;
-    zoom: 1;
-}
-
-.root {
-    margin-left: 0;
-}
-
-.expand {
-    width: 18px;
-    height: 18px;
-    float: left;
-}
-
-.nodeContent {
-    margin-left: 18px;
-    min-height: 18px;
-}
-
-.expandOpen .expand {
-    background-image: url("../images/icon-down.png");
-}
-
-.expandClose .expand {
-    background-image: url("../images/icon-right.png");
-}
-
-.last {
-    /!*background-repeat: no-repeat;*!/
-}
-
-.modbus_param {
-
-}*/

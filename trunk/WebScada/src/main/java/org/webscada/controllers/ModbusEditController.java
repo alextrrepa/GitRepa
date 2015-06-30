@@ -15,9 +15,7 @@ import java.util.List;
 
 public class ModbusEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusEditController.class);
-    /*AbstractDao<NodeEntity> getType = null;
-    ConfigDaoFactory configFactory = new ConfigDaoFactory();
-*/
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
