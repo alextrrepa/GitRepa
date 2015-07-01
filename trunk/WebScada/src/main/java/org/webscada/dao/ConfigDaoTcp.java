@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.webscada.model.NodeEntity;
 import org.webscada.model.tree.NodeParams;
 import org.webscada.util.SessionUtil;
 
@@ -14,8 +15,8 @@ public class ConfigDaoTcp<T> extends AbstractDao<T> {
     private final static Logger log = Logger.getLogger(ConfigDaoTcp.class);
 
     @Override
-    public List<T> getAll() {
-        List<T> tcpEntities = new ArrayList<>();
+    public List<NodeEntity> getAll() {
+        List<NodeEntity> tcpEntities = new ArrayList<>();
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         try {

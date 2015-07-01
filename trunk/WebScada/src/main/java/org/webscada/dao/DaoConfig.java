@@ -11,33 +11,44 @@ import org.webscada.util.SessionUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConfigDaoRtu extends AbstractDao {
-    private final static Logger log = Logger.getLogger(ConfigDaoRtu.class);
+public class DaoConfig extends AbstractDao {
+    private final static Logger log = Logger.getLogger(DaoConfig.class);
 
     @Override
     public List<NodeEntity> getAll() {
-        List<NodeEntity> rtuEntities = new ArrayList<>();
         Session session = SessionUtil.getSession();
+        List<NodeEntity> typeList = new ArrayList<>();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from NodeEntity as node where node.type = 'rtu' ");
-            rtuEntities = query.list();
+
+            Query rtuQuery = session.createQuery("from NodeEntity as node where node.type = 'rtu' ");
+            List<NodeEntity> rtuList = rtuQuery.list();
+            for (NodeEntity entity : rtuList) {
+                typeList.add(entity);
+            }
+
+            Query tcpQuery = session.createQuery("from NodeEntity as node where node.type = 'tcp' ");
+            List<NodeEntity> tcpList = tcpQuery.list();
+            for (NodeEntity entity : tcpList) {
+                typeList.add(entity);
+            }
+
             transaction.commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             try {
                 transaction.rollback();
-            }catch (Exception ex) {
+            } catch (Exception ex) {
                 log.error("Rollback transaction error", ex);
-            }finally {
-                if (session !=null) {
+            } finally {
+                if (session != null) {
                     session.close();
                 }
             }
-        }finally {
+        } finally {
             session.close();
         }
-        return rtuEntities;
+        return typeList;
     }
 
     @Override
