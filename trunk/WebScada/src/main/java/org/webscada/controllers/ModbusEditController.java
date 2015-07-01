@@ -24,8 +24,8 @@ public class ModbusEditController extends HttpServlet {
         String action = request.getParameter("action");
         if (action.equalsIgnoreCase("getAll")) {
             AbstractDao treeDao = new DaoTreeParams();
-            List<NodeParams> treeParams = treeDao.getTreeParams();
-            request.setAttribute("treeParams", treeParams);
+//            List<NodeParams> treeParams = treeDao.getTreeParams();
+//            request.setAttribute("treeParams", treeParams);
         }
         RequestDispatcher rd = request.getRequestDispatcher("/modbus_page.jsp");
         rd.forward(request, response);
