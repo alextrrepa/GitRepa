@@ -16,7 +16,6 @@ public class ModbusServer implements ServletContextListener {
     private List<ModbusTask> taskList = new ArrayList<>();
     private TransferQueue<Map<String, Map<String, Float>>> queue = new LinkedTransferQueue<>();
     private ScheduledExecutorService executor;
-    private Set<String> typeList;
 
     public ModbusServer() {
         CommonQueue.setQueue(queue);
@@ -26,8 +25,7 @@ public class ModbusServer implements ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         log.trace("Starting Server....");
 
-        this.typeList = CheckConfigUtil.checkConfig();
-        new ModbusBridge(typeList, taskList, queue);
+        new ModbusBridge(taskList, queue);
         log.info("TaskList size :" + taskList.size());
         int count = taskList.size();
         executor = Executors.newScheduledThreadPool(count);

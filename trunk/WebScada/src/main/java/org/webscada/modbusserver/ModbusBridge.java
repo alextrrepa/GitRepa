@@ -13,12 +13,12 @@ import java.util.concurrent.TransferQueue;
 public class ModbusBridge {
     private final static Logger log = Logger.getLogger(ModbusBridge.class);
 
-    public ModbusBridge(Set<String> typeSet, List<ModbusTask> taskList,
+    public ModbusBridge(List<ModbusTask> taskList,
                         TransferQueue<Map<String, Map<String, Float>>> queue) {
-        getTypeConfig(typeSet, taskList, queue);
+        getTypeConfig(taskList, queue);
     }
 
-    private void getTypeConfig(Set<String> typeSet, List<ModbusTask> taskList,
+    private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
         ModbusType modbusType;
         AbstractDao<NodeEntity> config = new DaoConfig();
