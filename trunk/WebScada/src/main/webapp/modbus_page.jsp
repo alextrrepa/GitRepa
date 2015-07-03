@@ -52,30 +52,27 @@
                         <li class="tree_item-li" data-mtype=
                             <c:out value="${node.type}"/>
                                 data-nodeid=<c:out value="${node.id}"/>
-                            data-nodetype=
-                                <c:out value="${node.tagType}"/>
+                                data-nodetype="node"
                                 >
                             <div class="tree_item fill_state_hover" style="display: inline-block">
                                 <c:out value="${node.name}"/>
                             </div>
                             <ul>
-                                <c:set var="device" value="${node.deviceList}"/>
+                                <c:set var="device" value="${node.deviceEntity}"/>
                                 <c:forEach items="${device}" var="device">
                                     <li class="tree_item-li"
-                                        data-id=
-                                            <c:out value="${device.id}"/>
-                                                data-nodetype=<c:out value="${device.tagType}"/>
+                                            data-nodeid=<c:out value="${device.id}"/>
+                                            data-nodetype="device"
                                             >
                                         <div class="tree_item fill_state_hover" style="display: inline-block">
                                             <c:out value="${device.name}"/>
                                         </div>
                                         <ul>
-                                            <c:set var="tag" value="${device.tagList}"/>
+                                            <c:set var="tag" value="${device.tagEntities}"/>
                                             <c:forEach items="${tag}" var="tag">
                                                 <li class="tree_item-li"
-                                                    data-nodeid=
-                                                        <c:out value="${tag.id}"/>
-                                                            data-nodetype=<c:out value="${tag.tagType}"/>
+                                                         data-nodeid=<c:out value="${tag.id}"/>
+                                                         data-nodetype="tag"
                                                         >
                                                     <div class="tree_item fill_state_hover"
                                                          style="display: inline-block">
@@ -95,6 +92,5 @@
     </article>
     <article class="modbus_param"></article>
 </section>
-
 </body>
 </html>

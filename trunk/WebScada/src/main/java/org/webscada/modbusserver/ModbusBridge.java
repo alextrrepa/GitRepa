@@ -20,8 +20,8 @@ public class ModbusBridge {
     private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
         ModbusType modbusType;
-        AbstractDao<NodeEntity> config = new DaoConfig();
-        List<NodeEntity> listConfig = config.getAll();
+        AbstractDao config = new DaoConfig(NodeEntity.class);
+        List<NodeEntity> listConfig = config.getAllConfig();
         for (NodeEntity entity : listConfig) {
             if (entity.getType().equalsIgnoreCase("rtu")) {
                 modbusType = new ModbusRtu(entity);
