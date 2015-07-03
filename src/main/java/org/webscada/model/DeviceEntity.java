@@ -76,7 +76,8 @@ public class DeviceEntity {
     }
 
     @OneToMany(mappedBy = "deviceEntity", fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @Fetch(value = FetchMode.SELECT)
+    @OrderBy("name")
     public List<TagEntity> getTagEntities() {
         return tagEntities;
     }

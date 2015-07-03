@@ -1,8 +1,19 @@
 package org.webscada.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class AbstractDao<T> {
-    public abstract List<T> getAll();
-    public abstract List<T> getTreeNodesParams();
+public abstract class AbstractDao<T, ID extends Serializable> {
+    private Class<T> persistanceClass;
+
+    public AbstractDao(Class<T> persistanceClass) {
+        this.persistanceClass = persistanceClass;
+    }
+
+    public Class<T> getPersistanceClass() {
+        return persistanceClass;
+    }
+
+    public abstract List<T> getAllConfig();
+    public abstract T getById(ID id);
 }

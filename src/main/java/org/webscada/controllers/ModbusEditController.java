@@ -2,8 +2,8 @@ package org.webscada.controllers;
 
 import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
-import org.webscada.dao.DaoTreeParams;
-import org.webscada.model.tree.NodeParams;
+import org.webscada.dao.DaoConfig;
+import org.webscada.model.NodeEntity;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,9 +23,9 @@ public class ModbusEditController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action.equalsIgnoreCase("getAll")) {
-            AbstractDao treeDao = new DaoTreeParams();
-//            List<NodeParams> treeParams = treeDao.getTreeParams();
-//            request.setAttribute("treeParams", treeParams);
+            AbstractDao daoConfig = new DaoConfig(NodeEntity.class);
+            List<NodeEntity> treeParams = daoConfig.getAllConfig();
+            request.setAttribute("treeParams", treeParams);
         }
         RequestDispatcher rd = request.getRequestDispatcher("/modbus_page.jsp");
         rd.forward(request, response);
