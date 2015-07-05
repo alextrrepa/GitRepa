@@ -270,3 +270,10 @@ section.content h3 {
     background: transparent url("../images/icon-down.png") no-repeat center bottom;
     cursor: pointer;
 }
+
+/* Modbus params */
+.modbus_params {
+    width: 42%;
+    margin-right: 0;
+    float: left;
+}
