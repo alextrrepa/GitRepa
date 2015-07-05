@@ -41,7 +41,6 @@
         <header>
             <h3 class="tabs_involved">Структура Modbus</h3>
         </header>
-
         <ul class="tree">
             <li class="tree_item-li">
                 <div class="tree_item fill_state_hover" style="display: inline-block">
@@ -90,7 +89,11 @@
             </li>
         </ul>
     </article>
-    <article class="modbus_param"></article>
+    <article class="module modbus_params">
+        <header>
+            <h3>Параметры</h3>
+        </header>
+    </article>
 </section>
 </body>
 </html>

@@ -25,22 +25,36 @@ $(function() {
         var parent = $(this).parent()[0];
         var node = $(parent).data();
 
+
+
         if (node.nodetype === "node") {
-            ajaxRequest(node.nodeid, node.nodetype);
+            nodeRequest(node.nodeid, node.nodetype, node.mtype);
         }
 
         if (node.nodetype === "device") {
-            ajaxRequest(node.nodeid, node.nodetype);
+            otherNodeRequest(node.nodeid, node.nodetype);
         }
 
         if (node.nodetype === "tag") {
-            ajaxRequest(node.nodeid, node.nodetype);
+            otherNodeRequest(node.nodeid, node.nodetype);
         }
     });
 
-    function ajaxRequest(id,type) {
+    function otherNodeRequest(id,type) {
         $.ajax({
-            url: "ModbusTreeEdit.do?type="+type + "&" + "id=" +id
+            url: "ModbusTreeEdit.do?type="+type + "&" + "id=" +id,
+            success: function(result) {
+                console.log(result);
+            }
+        });
+    }
+
+    function nodeRequest(id, type, mtype) {
+        $.ajax({
+            url: "ModbusTreeEdit.do?type="+type + "&" + "mtype=" + mtype + "&" + "id=" +id,
+            success: function(result) {
+                console.log(result);
+            }
         });
     }
 });
