@@ -1,3 +1,7 @@
+html, div, map, dt, isindex, form, header, aside, section, section, article, footer {
+    display: block;
+}
+
 html, body {
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
     background: #F8F8F8;
@@ -11,6 +15,7 @@ header {
     width: 100%;
     background: #222222 url("../images/header_bg.png") repeat-x;
 }
+
 
 header hgroup h1 a:hover {
     color: #77BACE;
@@ -209,6 +214,7 @@ section.content h3 {
     float: left;
 }
 
+
 /* Modbus Tree */
 .tree_item-li {
     text-indent: 0;
@@ -276,4 +282,80 @@ section.content h3 {
     width: 42%;
     margin-right: 0;
     float: left;
+}
+
+.form_style{
+    max-width: 500px;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+.form_style label{
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+
+.form_style label > span {
+    width: 105px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.form_style span.required{
+    color:red;
+}
+
+.form_style input.input-field{
+    width: 48%;
+}
+
+.form_style input.input-field,
+.form_style .textarea-field,
+.form_style .select-field{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+
+.form_style .input-field:focus,
+.form_style .textarea-field:focus,
+.form_style .select-field:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+
+.form_style .textarea-field{
+    height:100px;
+    width: 55%;
+}
+
+.form_style input[type=submit],
+.form_style input[type=button]{
+    background: #D0D1D4 url("../images/btn_submit.png") repeat-x scroll 0% 0%;
+    border: 1px solid #A8A9A8;
+    box-shadow: 0px 1px 0px #FFF;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 15px 8px 15px;
+    color: #666;
+    text-shadow: 0px 1px 0px #FFF;
+    cursor: pointer;
+}
+
+.form_style input[type=submit]:hover,
+.form_style input[type=button]:hover{
+    color: #333;
 }
