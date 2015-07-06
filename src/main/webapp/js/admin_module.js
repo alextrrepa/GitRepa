@@ -17,6 +17,7 @@ $(function() {
         }
     });
 
+
     /* Tree element  on click */
     var treeLi = $(".tree li div");
     treeLi.click(function() {
@@ -24,8 +25,6 @@ $(function() {
         treeLi.not(this).removeClass("fill_state_pressed");
         var parent = $(this).parent()[0];
         var node = $(parent).data();
-
-
 
         if (node.nodetype === "node") {
             nodeRequest(node.nodeid, node.nodetype, node.mtype);
@@ -54,6 +53,12 @@ $(function() {
             url: "ModbusTreeEdit.do?type="+type + "&" + "mtype=" + mtype + "&" + "id=" +id,
             success: function(result) {
                 console.log(result);
+                var mparams = $('.module_content');
+                if (mparams.children().length > 0) {
+                    mparams.remove("form");
+                } else {
+                    mparams.append('<form action="test"></form>');
+                }
             }
         });
     }
