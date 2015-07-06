@@ -28,6 +28,7 @@ $(function() {
 
         if (node.nodetype === "node") {
             nodeRequest(node.nodeid, node.nodetype, node.mtype);
+            $(".form_style").load("rtuform.html");
         }
 
         if (node.nodetype === "device") {
