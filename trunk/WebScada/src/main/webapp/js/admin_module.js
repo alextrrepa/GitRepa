@@ -1,5 +1,4 @@
 $(function() {
-
     /* Create expandable tree */
     $(".tree ul").hide();
     $(".tree li").each(function () {
@@ -35,6 +34,60 @@ $(function() {
 
         if (node.nodetype === "tag") {
             tagRequest(node.nodeid, node.nodetype);
+        }
+    });
+
+    /* Context Menu Tree */
+    $(".tree").contextmenu({
+        loadTheme: "Smoothness",
+        delegate: "li",
+        menu: [
+            {title: "Добавить хрень", cmd: "add", uiIcon: "ui-icon-plusthick"},
+            {title: "Удалить узел", cmd: "delete", uiIcon: "ui-icon-trash"}
+        ],
+        beforeOpen: function(event, ui) {
+            var parent = ui.target.parent()[0];
+            var node = $(parent).data();
+            if (node.nodetype == "tag") {
+                $(".tree").contextmenu("showEntry", "add", false);
+            } else {
+                $(".tree").contextmenu("showEntry", "delete", true);
+                $(".tree").contextmenu("showEntry", "add", true);
+            }
+            switch (node.nodetype) {
+                case "root":
+                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить коммуникационный узел",
+                        uiIcon: "ui-icon-plusthick"});
+                    break;
+                case "node":
+                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить устройство",
+                        uiIcon: "ui-icon-plusthick"});
+                    break;
+                case "device":
+                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить тэг",
+                        uiIcon: "ui-icon-plusthick"});
+                    break;
+            }
+        },
+        select: function(event, ui) {
+            //var parent = ui.target.parent()[0];
+            //var node = $(parent).data();
+            var target = $(ui.target).parents("li:first")[0];
+            console.log($(target).data());
+            if (ui.cmd === "add") {
+                if (target.nodetype === "root") {
+                    var html =
+                    "<li class='tree_item-li'><span class='spanExpand collapsed'></span>" +
+                    "<div class='tree_item fill_state_hover' style='display: inline-block'>NodeTest</div></li>";
+                    $(".tree li:first").append(html);
+                }
+                if (target.nodetype === "node") {
+                    var html =
+                        "<li class='tree_item-li'><span class='spanExpand collapsed'></span>" +
+                        "<div class='tree_item fill_state_hover' style='display: inline-block'>DeviceTest</div></li>";
+                    $(".tree li > ul").append(html);
+                }
+            }
         }
     });
 
@@ -280,3 +333,5 @@ $(function() {
         mparams.append(html);
     };
 });
+
+

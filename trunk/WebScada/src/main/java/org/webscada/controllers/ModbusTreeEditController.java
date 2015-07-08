@@ -20,7 +20,9 @@ public class ModbusTreeEditController extends HttpServlet {
     private Map<String, Object> objectList;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        Long id =  Long.parseLong(request.getParameter("id"));
+        String mtype = request.getParameter("mtype");
+        log.trace(id + " " + mtype);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

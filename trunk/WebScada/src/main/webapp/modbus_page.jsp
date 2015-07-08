@@ -7,8 +7,12 @@
     <title>Modbus Настройки</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/admin_style.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery-ui.theme.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/admin_module.js"></script>
+    <script type="text/javascript" src="js/jquery.ui-contextmenu.min.js"></script>
 </head>
 <body>
 
@@ -41,7 +45,7 @@
             <h3 class="tabs_involved">Структура Modbus</h3>
         </header>
         <ul class="tree">
-            <li class="tree_item-li">
+            <li class="tree_item-li" data-nodetype="root">
                 <div class="tree_item fill_state_hover" style="display: inline-block">
                     Сервер
                 </div>
