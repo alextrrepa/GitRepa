@@ -1,7 +1,7 @@
 <%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@page contentType="text/html;charset=utf-8" pageEncoding="utf-8" language="java" %>
 <!DOCTYPE>
-<html test="Test">
+<html>
 <head>
     <meta charset="utf-8">
     <title>Modbus Настройки</title>
