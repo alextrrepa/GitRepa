@@ -16,15 +16,12 @@ $(function() {
         }
     });
 
-
     /* Tree element  on click */
-    var treeElementClick = function() {
-        $(".tree li div").bind('click', 'div', function() {
+        $(".tree").on('click', 'li div', function() {
             $(this).toggleClass("fill_state_pressed");
             $(".tree li div").not(this).removeClass("fill_state_pressed");
             var parent = $(this).parent()[0];
             var node = $(parent).data();
-
             /*      if (node.nodetype === "node") {
              nodeRequest(node.nodeid, node.nodetype, node.mtype);
              }
@@ -37,9 +34,6 @@ $(function() {
              tagRequest(node.nodeid, node.nodetype);
              }*/
         });
-    };
-
-
 
     /* Context Menu Tree */
     $(".tree").contextmenu({
@@ -76,8 +70,6 @@ $(function() {
         select: function(event, ui) {
             var target = ui.target.parent()[0];
             var node = $(target).data().nodetype;
-            //console.log(target);
-            //console.log($(target).data().nodetype);
             if (ui.cmd === "add") {
                 if (node === "root") {
                     treeElement.addRoot();
@@ -112,11 +104,8 @@ $(function() {
             var ulsize = $("li[data-nodetype=root]").has("ul").size();
             if (ulsize === 1) {
                 var html =   "<li class='tree_item-li' data-nodetype='device'>" +
-                    "<div class='tree_item fill_state_hover' style='display: inline-block'>DeviceTest</div></li>";
+                    "<div class='tree_item fill_state_hover' style='display: inline-block'>NodeTest</div></li>";
                 $("li[data-nodetype=root] > ul").append(html);
-                treeElementClick();
-                /*$(".tree li div").toggleClass("fill_state_pressed");
-                 $(".tree li div").not(".tree li div").removeClass("fill_state_pressed");*/
             }
         }
     };
@@ -357,8 +346,8 @@ $(function() {
             '</form>';
     };
 
-    var mparams = $('.form_style');
     var addDeleteForm = function(html) {
+        var mparams = $('.form_style');
         mparams.empty();
         mparams.append(html);
     };
