@@ -313,7 +313,7 @@ section.content h3 {
 
 .form_style input.input-field,
 .form_style .textarea-field,
-.form_style .select-field{
+.form_style .select-field {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
