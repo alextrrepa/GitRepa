@@ -18,24 +18,28 @@ $(function() {
 
 
     /* Tree element  on click */
-    $(".tree li div").click(function() {
-        $(this).toggleClass("fill_state_pressed");
-        $(".tree li div").not(this).removeClass("fill_state_pressed");
-        var parent = $(this).parent()[0];
-        var node = $(parent).data();
+    var treeElementClick = function() {
+        $(".tree li div").bind('click', 'div', function() {
+            $(this).toggleClass("fill_state_pressed");
+            $(".tree li div").not(this).removeClass("fill_state_pressed");
+            var parent = $(this).parent()[0];
+            var node = $(parent).data();
 
-        if (node.nodetype === "node") {
-            nodeRequest(node.nodeid, node.nodetype, node.mtype);
-        }
+            /*      if (node.nodetype === "node") {
+             nodeRequest(node.nodeid, node.nodetype, node.mtype);
+             }
 
-        if (node.nodetype === "device") {
-            deviceRequest(node.nodeid, node.nodetype);
-        }
+             if (node.nodetype === "device") {
+             deviceRequest(node.nodeid, node.nodetype);
+             }
 
-        if (node.nodetype === "tag") {
-            tagRequest(node.nodeid, node.nodetype);
-        }
-    });
+             if (node.nodetype === "tag") {
+             tagRequest(node.nodeid, node.nodetype);
+             }*/
+        });
+    };
+
+
 
     /* Context Menu Tree */
     $(".tree").contextmenu({
@@ -70,26 +74,52 @@ $(function() {
             }
         },
         select: function(event, ui) {
-            //var parent = ui.target.parent()[0];
-            //var node = $(parent).data();
-            var target = $(ui.target).parents("li:first")[0];
-            console.log($(target).data());
+            var target = ui.target.parent()[0];
+            var node = $(target).data().nodetype;
+            //console.log(target);
+            //console.log($(target).data().nodetype);
             if (ui.cmd === "add") {
-                if (target.nodetype === "root") {
+                if (node === "root") {
+                    treeElement.addRoot();
+                }
+                /*if ($(target).data().nodetype === "root") {
+                    console.log($("li[data-nodetype=root] > ul").has("ul"));
                     var html =
-                    "<li class='tree_item-li'><span class='spanExpand collapsed'></span>" +
+                    "<li class='tree_item-li' data-nodetype='node'><span class='spanExpand collapsed'></span>" +
                     "<div class='tree_item fill_state_hover' style='display: inline-block'>NodeTest</div></li>";
-                    $(".tree li:first").append(html);
-                }
-                if (target.nodetype === "node") {
+                    $("li[data-nodetype=root] > ul").append(html);
+                } else
+                if ($(target).data().nodetype === "node") {
+                    var id = $(target).data().nodeid;
                     var html =
-                        "<li class='tree_item-li'><span class='spanExpand collapsed'></span>" +
+                        "<li class='tree_item-li' data-nodetype='device'><span class='spanExpand collapsed'></span>" +
                         "<div class='tree_item fill_state_hover' style='display: inline-block'>DeviceTest</div></li>";
-                    $(".tree li > ul").append(html);
+                    $("li[data-nodetype=node][data-nodeid=" + id + "] > ul:first").append(html);
                 }
+                if ($(target).data().nodetype === "device") {
+                    var id = $(target).data().nodeid;
+                    var html =
+                        "<li class='tree_item-li' data-nodetype='tag'><span class='spanExpand collapsed'></span>" +
+                        "<div class='tree_item fill_state_hover' style='display: inline-block'>TagTest</div></li>";
+                    $("li[data-nodetype=device][data-nodeid=" + id + "] > ul:first").append(html);
+                }*/
             }
         }
     });
+
+    var treeElement = {
+        addRoot: function() {
+            var ulsize = $("li[data-nodetype=root]").has("ul").size();
+            if (ulsize === 1) {
+                var html =   "<li class='tree_item-li' data-nodetype='device'>" +
+                    "<div class='tree_item fill_state_hover' style='display: inline-block'>DeviceTest</div></li>";
+                $("li[data-nodetype=root] > ul").append(html);
+                treeElementClick();
+                /*$(".tree li div").toggleClass("fill_state_pressed");
+                 $(".tree li div").not(".tree li div").removeClass("fill_state_pressed");*/
+            }
+        }
+    };
 
     function nodeRequest(id, type, mtype) {
         $.ajax({

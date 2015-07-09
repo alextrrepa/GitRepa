@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_100_f6f6f6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_100_fdf5ce_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_228ef1_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_ef8c08_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_ffd27a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/jqueryui_images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/jquery-ui.theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.ui-contextmenu.min.js" />
-      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\rtuform.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScada.iws" />
@@ -73,6 +41,24 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - scada@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="scada.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="node" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -83,8 +69,8 @@
       <file leaf-file-name="ModbusTreeEditController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40706956">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.5153934">
+              <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
               <folding>
                 <element signature="method#jsonTcpNodeParams#0;class#ModbusTreeEditController#0" expanded="false" />
                 <element signature="method#device#0;class#ModbusTreeEditController#0" expanded="false" />
@@ -94,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modbus_page.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
+      <file leaf-file-name="admin_style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.192307">
-              <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -108,21 +94,32 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+              <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
               <folding>
-                <element signature="e#3619#3812#0" expanded="false" />
-                <element signature="e#4022#4156#0" expanded="false" />
-                <element signature="e#4194#5330#0" expanded="false" />
-                <element signature="e#5371#5688#0" expanded="false" />
-                <element signature="e#5727#5933#0" expanded="false" />
-                <element signature="e#5965#8761#0" expanded="false" />
-                <element signature="e#8793#10270#0" expanded="false" />
-                <element signature="e#10305#11623#0" expanded="false" />
-                <element signature="e#11656#13920#0" expanded="false" />
-                <element signature="e#13998#14060#0" expanded="false" />
-                <marker date="1436350517314" expanded="true" signature="3060:3081" placeholder="..." />
-                <marker date="1436350517314" expanded="true" signature="3426:3447" placeholder="..." />
+                <element signature="e#5243#5436#0" expanded="false" />
+                <element signature="e#5646#5780#0" expanded="false" />
+                <element signature="e#5818#6954#0" expanded="false" />
+                <element signature="e#6995#7312#0" expanded="false" />
+                <element signature="e#7589#10385#0" expanded="false" />
+                <element signature="e#10417#11894#0" expanded="false" />
+                <element signature="e#11929#13247#0" expanded="false" />
+                <element signature="e#13280#15544#0" expanded="false" />
+                <element signature="e#15622#15684#0" expanded="false" />
+                <marker date="1436435632095" expanded="true" signature="3389:3410" placeholder="..." />
+                <marker date="1436435632095" expanded="true" signature="3860:3881" placeholder="..." />
+                <marker date="1436435632095" expanded="true" signature="4357:4378" placeholder="..." />
+                <marker date="1436435632095" expanded="true" signature="4860:4881" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modbus_page.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.730769">
+              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,7 +148,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/config/dao/entities/CurrentEntity.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/config/dao/entities/TcpEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/config/dao/entities/RtuEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusTask.java" />
@@ -191,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/dao/AbstractDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/webscada/modbusserver/config/dao/DaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/dao/DaoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/rtuform.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/tcpform.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/rtuform.jsp" />
@@ -199,6 +194,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/jquery-ui.theme.css" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" />
+        <option value="dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
       </list>
     </option>
@@ -281,6 +278,43 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,10 +438,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -436,40 +466,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webscada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webscada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="endpointserver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,43 +535,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1102,7 +1061,10 @@
       <workItem from="1436146616814" duration="28965000" />
       <workItem from="1436180846790" duration="4932000" />
       <workItem from="1436234391559" duration="24796000" />
-      <workItem from="1436318031413" duration="30276000" />
+      <workItem from="1436318031413" duration="30526000" />
+      <workItem from="1436406021121" duration="8677000" />
+      <workItem from="1436420657048" duration="2294000" />
+      <workItem from="1436429627359" duration="6819000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1200,11 +1162,17 @@
       <option name="project" value="LOCAL" />
       <updated>1436264544898</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Добавление контекстного меню для дерева modbus.">
+      <created>1436351297610</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1436351297610</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564355000" />
+    <option name="totallyTimeSpent" value="582395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1228,7 +1196,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18532526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3922652" sideWeight="0.49755502" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39116022" sideWeight="0.49755502" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1280,7 +1248,8 @@
     <MESSAGE value="Конверт POJO в Json в сервлете ModbusTreeEditController." />
     <MESSAGE value="Добавил форму rtuform.html при клике по узлу дерева." />
     <MESSAGE value="По клику на любом узле дерева создается форма с данными." />
-    <option name="LAST_COMMIT_MESSAGE" value="По клику на любом узле дерева создается форма с данными." />
+    <MESSAGE value="Добавление контекстного меню для дерева modbus." />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
@@ -1308,13 +1277,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ConfigException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03876853">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/util/CheckConfigUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3876853">
@@ -1376,26 +1338,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.rtuconfig">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tcpconfig">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1403,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23971798">
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1453,18 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.309795">
           <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1585,7 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13568985">
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,23 +1544,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0287356">
-          <caret line="346" column="30" selection-start-line="346" selection-start-column="30" selection-end-line="346" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.device">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1654,38 +1594,38 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tag">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.datatype">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.registertype">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1722,7 +1662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65108323">
           <caret line="1213" column="29" selection-start-line="1213" selection-start-column="29" selection-end-line="1213" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1730,14 +1669,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34891677">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041564792">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery-1.11.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8717647">
+          <caret line="4" column="31746" selection-start-line="4" selection-start-column="31746" selection-end-line="4" selection-end-column="31746" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.192307">
-          <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
+        <state vertical-scroll-proportion="-15.730769">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1745,28 +1711,29 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
           <folding>
-            <element signature="e#3619#3812#0" expanded="false" />
-            <element signature="e#4022#4156#0" expanded="false" />
-            <element signature="e#4194#5330#0" expanded="false" />
-            <element signature="e#5371#5688#0" expanded="false" />
-            <element signature="e#5727#5933#0" expanded="false" />
-            <element signature="e#5965#8761#0" expanded="false" />
-            <element signature="e#8793#10270#0" expanded="false" />
-            <element signature="e#10305#11623#0" expanded="false" />
-            <element signature="e#11656#13920#0" expanded="false" />
-            <element signature="e#13998#14060#0" expanded="false" />
-            <marker date="1436350517314" expanded="true" signature="3060:3081" placeholder="..." />
-            <marker date="1436350517314" expanded="true" signature="3426:3447" placeholder="..." />
+            <element signature="e#5243#5436#0" expanded="false" />
+            <element signature="e#5646#5780#0" expanded="false" />
+            <element signature="e#5818#6954#0" expanded="false" />
+            <element signature="e#6995#7312#0" expanded="false" />
+            <element signature="e#7589#10385#0" expanded="false" />
+            <element signature="e#10417#11894#0" expanded="false" />
+            <element signature="e#11929#13247#0" expanded="false" />
+            <element signature="e#13280#15544#0" expanded="false" />
+            <element signature="e#15622#15684#0" expanded="false" />
+            <marker date="1436435632095" expanded="true" signature="3389:3410" placeholder="..." />
+            <marker date="1436435632095" expanded="true" signature="3860:3881" placeholder="..." />
+            <marker date="1436435632095" expanded="true" signature="4357:4378" placeholder="..." />
+            <marker date="1436435632095" expanded="true" signature="4860:4881" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40706956">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.5153934">
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
           <folding>
             <element signature="method#jsonTcpNodeParams#0;class#ModbusTreeEditController#0" expanded="false" />
             <element signature="method#device#0;class#ModbusTreeEditController#0" expanded="false" />
