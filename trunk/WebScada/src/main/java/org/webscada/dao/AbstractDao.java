@@ -16,4 +16,5 @@ public abstract class AbstractDao<T, ID extends Serializable> {
 
     public abstract List<T> getAllConfig();
     public abstract T getById(ID id);
+    public abstract void create(T entity);
 }

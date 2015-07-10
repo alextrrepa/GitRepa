@@ -20,9 +20,13 @@ public class ModbusTreeEditController extends HttpServlet {
     private Map<String, Object> objectList;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id =  Long.parseLong(request.getParameter("id"));
-        String mtype = request.getParameter("mtype");
-        log.trace(id + " " + mtype);
+        String type = request.getParameter("type");
+        if (type.equalsIgnoreCase("root")) {
+            AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+            NodeEntity nodeEntity = new NodeEntity();
+            nodeEntity.setName("TestNode");
+            nodeDao.create(nodeEntity);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
