@@ -19,20 +19,22 @@ $(function() {
     /* Tree element  on click */
         $(".tree").on('click', 'li div', function() {
             $(this).toggleClass("fill_state_pressed");
-            $(".tree li div").not(this).removeClass("fill_state_pressed");
+            //$(".tree li div").not(this).removeClass("fill_state_pressed");
+            $("li div").not(this).removeClass("fill_state_pressed");
             var parent = $(this).parent()[0];
             var node = $(parent).data();
-            /*      if (node.nodetype === "node") {
-             nodeRequest(node.nodeid, node.nodetype, node.mtype);
-             }
 
-             if (node.nodetype === "device") {
-             deviceRequest(node.nodeid, node.nodetype);
-             }
-
-             if (node.nodetype === "tag") {
-             tagRequest(node.nodeid, node.nodetype);
-             }*/
+            switch (node.nodetype) {
+                case "node":
+                    nodeRequest(node.nodeid, node.nodetype, node.mtype);
+                    break;
+                case "device":
+                    deviceRequest(node.nodeid, node.nodetype);
+                    break;
+                case "tag":
+                    tagRequest(node.nodeid, node.nodetype);
+                    break;
+            }
         });
 
     /* Context Menu Tree */
@@ -40,7 +42,7 @@ $(function() {
         loadTheme: "Smoothness",
         delegate: "li",
         menu: [
-            {title: "Добавить хрень", cmd: "add", uiIcon: "ui-icon-plusthick"},
+            {title: "Добавить", cmd: "add", uiIcon: "ui-icon-plusthick"},
             {title: "Удалить узел", cmd: "delete", uiIcon: "ui-icon-trash"}
         ],
         beforeOpen: function(event, ui) {
@@ -71,42 +73,62 @@ $(function() {
             var target = ui.target.parent()[0];
             var node = $(target).data().nodetype;
             if (ui.cmd === "add") {
-                if (node === "root") {
-                    treeElement.addRoot();
-                }
-                /*if ($(target).data().nodetype === "root") {
-                    console.log($("li[data-nodetype=root] > ul").has("ul"));
-                    var html =
-                    "<li class='tree_item-li' data-nodetype='node'><span class='spanExpand collapsed'></span>" +
-                    "<div class='tree_item fill_state_hover' style='display: inline-block'>NodeTest</div></li>";
-                    $("li[data-nodetype=root] > ul").append(html);
-                } else
-                if ($(target).data().nodetype === "node") {
-                    var id = $(target).data().nodeid;
-                    var html =
-                        "<li class='tree_item-li' data-nodetype='device'><span class='spanExpand collapsed'></span>" +
-                        "<div class='tree_item fill_state_hover' style='display: inline-block'>DeviceTest</div></li>";
-                    $("li[data-nodetype=node][data-nodeid=" + id + "] > ul:first").append(html);
-                }
-                if ($(target).data().nodetype === "device") {
-                    var id = $(target).data().nodeid;
-                    var html =
-                        "<li class='tree_item-li' data-nodetype='tag'><span class='spanExpand collapsed'></span>" +
-                        "<div class='tree_item fill_state_hover' style='display: inline-block'>TagTest</div></li>";
-                    $("li[data-nodetype=device][data-nodeid=" + id + "] > ul:first").append(html);
-                }*/
+                treeElement.addNode(target);
             }
         }
     });
 
     var treeElement = {
-        addRoot: function() {
-            var ulsize = $("li[data-nodetype=root]").has("ul").size();
-            if (ulsize === 1) {
-                var html =   "<li class='tree_item-li' data-nodetype='device'>" +
-                    "<div class='tree_item fill_state_hover' style='display: inline-block'>NodeTest</div></li>";
-                $("li[data-nodetype=root] > ul").append(html);
-            }
+        addNode: function(target) {
+            var liAttrib = $(target).attr("data-nodetype");
+            //var ulcount = $(target).has("ul").size();
+            $.ajax({
+                url: "ModbusTreeEdit.do",
+                type: "POST",
+                data: {type: liAttrib},
+                dataType: "json",
+                success: function(data, status) {
+                    if (data.success) {
+                        console.log("Success !!!!")
+                    }
+                }
+            });
+
+/*            if (ulcount === 1) {
+                if (liAttrib === "root") {
+                    var html =   "<li class='tree_item-li' data-nodetype='node'>" + "<span class='spanExpand'></span>"
+                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
+                    var tt = $("> ul", target).append(html);
+                    //console.log(tt);
+                }
+                if (liAttrib === "node") {
+                    var html =   "<li class='tree_item-li' data-nodetype='device'>" + "<span class='spanExpand'></span>"
+                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
+                    $("> ul", target).append(html);
+                }
+                if (liAttrib === "device") {
+                    var html =   "<li class='tree_item-li' data-nodetype='tag'>" + "<span class='spanExpand'></span>"
+                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
+                    $("> ul", target).append(html);
+                }
+            }*/
+/*            if (ulcount === 0) {
+                if (liAttrib === "root") {
+                    var html =   "<ul style='display: block'><li class='tree_item-li' data-nodetype='node'>" + "<span class='spanExpand'></span>"
+                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li></ul>";
+                    $(target).append(html);
+                }
+                if (liAttrib === "node") {
+                    var html =   "<ul style='display: block'><li class='tree_item-li' data-nodetype='device'>" + "<span class='spanExpand'></span>"
+                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li></ul>";
+                    $(target).append(html);
+                }
+                if (liAttrib === "device") {
+                    var html =   "<li class='tree_item-li' data-nodetype='tag'>" + "<span class='spanExpand'></span>"
+                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
+                    $(target).append(html);
+                }
+            }*/
         }
     };
 

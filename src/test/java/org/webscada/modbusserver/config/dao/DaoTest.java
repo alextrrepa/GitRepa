@@ -11,9 +11,5 @@ public class DaoTest {
 
     @Test
     public void testAbstractDao() {
-        AbstractDao<NodeEntity, Long> testDao = new DaoConfig<>(NodeEntity.class);
-        NodeEntity node = testDao.getById(new Long(2));
-        log.trace(node.getName());
-        log.trace(node.getType());
     }
 }
