@@ -27,7 +27,7 @@ public class NodeEntity {
         this.id = id;
     }
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -36,7 +36,7 @@ public class NodeEntity {
         this.name = name;
     }
 
-    @Column(name = "type", nullable = true)
+    @Column(name = "type", nullable = false)
     public String getType() {
         return type;
     }
