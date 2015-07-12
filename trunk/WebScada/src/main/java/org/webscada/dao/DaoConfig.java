@@ -1,6 +1,7 @@
 package org.webscada.dao;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -26,6 +27,7 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
             transaction = session.beginTransaction();
 
             Query rtuQuery = session.createQuery("from NodeEntity as node where node.type = 'rtu' ");
+
             List<T> rtuList = rtuQuery.list();
             for (T entity : rtuList) {
                 typeList.add(entity);

@@ -39,53 +39,80 @@ $(function() {
 
     /* Context Menu Tree */
     $(".tree").contextmenu({
-        loadTheme: "Smoothness",
+        /*loadTheme: "Smoothness",
         delegate: "li",
         menu: [
-            {title: "Добавить", cmd: "add", uiIcon: "ui-icon-plusthick"},
+            {title: "Добавить узел", cmd: "add", uiIcon: "ui-icon-plusthick"},
             {title: "Удалить узел", cmd: "delete", uiIcon: "ui-icon-trash"}
-        ],
+        ],*/
         beforeOpen: function(event, ui) {
             var parent = ui.target.parent()[0];
             var node = $(parent).data();
-            if (node.nodetype == "tag") {
-                $(".tree").contextmenu("showEntry", "add", false);
-            } else {
-                $(".tree").contextmenu("showEntry", "delete", true);
-                $(".tree").contextmenu("showEntry", "add", true);
-            }
             switch (node.nodetype) {
                 case "root":
-                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить коммуникационный узел",
-                        uiIcon: "ui-icon-plusthick"});
+                    $(".tree").contextmenu({
+                        delegate: "li",
+                        menu: [
+                            {title: "Добавить узел", cmd: "add", uiIcon: "ui-icon-plusthick",
+                            children: [
+                                {title: "rtu", cmd: "subRtu"},
+                                {title: "tcp", cmd: "subTcp"}
+                            ]},
+                        ]
+                    });
                     break;
                 case "node":
-                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить устройство",
-                        uiIcon: "ui-icon-plusthick"});
+                    $(".tree").contextmenu({
+                        delegate: "li",
+                        menu: [
+                            {title: "Добавить устройство", cmd: "add", uiIcon: "ui-icon-plusthick"},
+                            {title: "Удалить устройство", cmd: "delete", uiIcon: "ui-icon-trash"}
+                        ]
+                    });
                     break;
                 case "device":
-                    $(".tree").contextmenu("setEntry", "add", {title: "Добавить тэг",
-                        uiIcon: "ui-icon-plusthick"});
+                    $(".tree").contextmenu({
+                        delegate: "li",
+                        menu: [
+                            {title: "Добавить тэг", cmd: "add", uiIcon: "ui-icon-plusthick"},
+                            {title: "Удалить тэг", cmd: "delete", uiIcon: "ui-icon-trash"}
+                        ]
+                    });
+                    break;
+                case "tag":
+                    $(".tree").contextmenu({
+                        delegate: "li",
+                        menu: [
+                            {title: "Удалить тэг", cmd: "delete", uiIcon: "ui-icon-trash"}
+                        ]
+                    });
                     break;
             }
         },
         select: function(event, ui) {
             var target = ui.target.parent()[0];
-            var node = $(target).data().nodetype;
             if (ui.cmd === "add") {
-                treeElement.addNode(target);
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype")});
             }
+            if (ui.cmd === "subRtu") {
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "rtu"});
+            }
+            if (ui.cmd === "subTcp") {
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "tcp"});
+            }
+            /*if (ui.cmd === "delete") {
+                treeElement.deleteNode(target);
+            }*/
         }
     });
 
     var treeElement = {
         addNode: function(target) {
-            var liAttrib = $(target).attr("data-nodetype");
-            //var ulcount = $(target).has("ul").size();
+            //var liAttrib = $(target).attr("data-nodetype");
             $.ajax({
                 url: "ModbusTreeEdit.do",
                 type: "POST",
-                data: {type: liAttrib},
+                data: target,
                 dataType: "json",
                 success: function(data, status) {
                     if (data.success) {
@@ -93,42 +120,22 @@ $(function() {
                     }
                 }
             });
+        },
 
-/*            if (ulcount === 1) {
-                if (liAttrib === "root") {
-                    var html =   "<li class='tree_item-li' data-nodetype='node'>" + "<span class='spanExpand'></span>"
-                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
-                    var tt = $("> ul", target).append(html);
-                    //console.log(tt);
+        deleteNode: function(target) {
+            var liAttrib = $(target).attr("data-nodetype");
+            var itemId = $(target).attr("data-nodeid");
+            $.ajax({
+                url: "ModbusTreeEdit.do",
+                type: "POST",
+                data: {type: liAttrib, id:itemId},
+                dataType: "json",
+                success: function(data, status) {
+                    if (data.success) {
+                        console.log("Succes !!!");
+                    }
                 }
-                if (liAttrib === "node") {
-                    var html =   "<li class='tree_item-li' data-nodetype='device'>" + "<span class='spanExpand'></span>"
-                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
-                    $("> ul", target).append(html);
-                }
-                if (liAttrib === "device") {
-                    var html =   "<li class='tree_item-li' data-nodetype='tag'>" + "<span class='spanExpand'></span>"
-                       + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
-                    $("> ul", target).append(html);
-                }
-            }*/
-/*            if (ulcount === 0) {
-                if (liAttrib === "root") {
-                    var html =   "<ul style='display: block'><li class='tree_item-li' data-nodetype='node'>" + "<span class='spanExpand'></span>"
-                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li></ul>";
-                    $(target).append(html);
-                }
-                if (liAttrib === "node") {
-                    var html =   "<ul style='display: block'><li class='tree_item-li' data-nodetype='device'>" + "<span class='spanExpand'></span>"
-                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li></ul>";
-                    $(target).append(html);
-                }
-                if (liAttrib === "device") {
-                    var html =   "<li class='tree_item-li' data-nodetype='tag'>" + "<span class='spanExpand'></span>"
-                        + "<div class='tree_item fill_state_hover' style='display: inline-block'>Node</div></li>";
-                    $(target).append(html);
-                }
-            }*/
+            })
         }
     };
 
