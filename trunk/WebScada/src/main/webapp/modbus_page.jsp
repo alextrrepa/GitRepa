@@ -11,6 +11,7 @@
     <link href="css/jquery-ui.theme.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui-tree.js"></script>
     <script type="text/javascript" src="js/admin_module.js"></script>
     <script type="text/javascript" src="js/jquery.ui-contextmenu.min.js"></script>
 </head>

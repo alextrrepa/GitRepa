@@ -20,24 +20,57 @@ public class ModbusTreeEditController extends HttpServlet {
     private Map<String, Object> objectList;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String type = request.getParameter("nodeType");
-        String id = request.getParameter("type");
-        log.trace(type + " " + id);
+        String nodeType = request.getParameter("nodeType");
+        String type = request.getParameter("type");
+        Long id = Long.parseLong(request.getParameter("id"));
 
-        if (type.equalsIgnoreCase("root")) {
-
+        if (nodeType.equalsIgnoreCase("root")) {
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-            NodeEntity nodeEntity = new NodeEntity();
-            nodeEntity.setName("Node");
-            nodeDao.create(nodeEntity);
+            if (type.equalsIgnoreCase("rtu")) {
+                NodeEntity nodeEntity = new NodeEntity();
+                nodeEntity.setName("Node");
+                nodeEntity.setType("rtu");
+                nodeDao.create(nodeEntity);
+            }
+            if (type.equalsIgnoreCase("tcp")) {
+                NodeEntity nodeEntity = new NodeEntity();
+                nodeEntity.setName("Node");
+                nodeEntity.setType("tcp");
+                nodeDao.create(nodeEntity);
+            }
         }
-        if (type.equalsIgnoreCase("node")) {
+
+        if (nodeType.equalsIgnoreCase("node")) {
             AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
             DeviceEntity deviceEntity = new DeviceEntity();
             deviceEntity.setName("Device");
+
+            NodeEntity nodeEntity = new NodeEntity();
+            nodeEntity.setId(id);
+
+            deviceEntity.setNodeEntity(nodeEntity);
             deviceDao.create(deviceEntity);
         }
 
+        if (nodeType.equalsIgnoreCase("device")) {
+            AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
+            TagEntity tagEntity = new TagEntity();
+            tagEntity.setName("Tag");
+
+            DeviceEntity deviceEntity = new DeviceEntity();
+            deviceEntity.setId(id);
+
+            tagEntity.setDeviceEntity(deviceEntity);
+            tagDao.create(tagEntity);
+        }
+
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> objectMap = new LinkedHashMap<>();
+        objectMap.put("status", "success");
+        mapper.writeValue(out, objectMap);
+        out.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,6 +91,7 @@ public class ModbusTreeEditController extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         mapper.writeValue(out, objectList);
+        out.close();
     }
 
     private void jsonNodeParams(Long id, String mtype) {
