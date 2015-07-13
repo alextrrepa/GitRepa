@@ -1,7 +1,9 @@
 $(function() {
     /* Create expandable tree */
-    $(".tree ul").hide();
-    $(".tree li").each(function () {
+    $(".tree").createTree();
+
+    //$(".tree ul").hide();
+    /*$(".tree li").each(function () {
         var handleSpan = $("<span></span>");
         handleSpan.addClass("spanExpand");
         handleSpan.prependTo(this);
@@ -14,12 +16,11 @@ $(function() {
                 clicked.siblings("ul").toggle();
             });
         }
-    });
+    });*/
 
     /* Tree element  on click */
         $(".tree").on('click', 'li div', function() {
             $(this).toggleClass("fill_state_pressed");
-            //$(".tree li div").not(this).removeClass("fill_state_pressed");
             $("li div").not(this).removeClass("fill_state_pressed");
             var parent = $(this).parent()[0];
             var node = $(parent).data();
@@ -39,12 +40,6 @@ $(function() {
 
     /* Context Menu Tree */
     $(".tree").contextmenu({
-        /*loadTheme: "Smoothness",
-        delegate: "li",
-        menu: [
-            {title: "Добавить узел", cmd: "add", uiIcon: "ui-icon-plusthick"},
-            {title: "Удалить узел", cmd: "delete", uiIcon: "ui-icon-trash"}
-        ],*/
         beforeOpen: function(event, ui) {
             var parent = ui.target.parent()[0];
             var node = $(parent).data();
@@ -92,13 +87,16 @@ $(function() {
         select: function(event, ui) {
             var target = ui.target.parent()[0];
             if (ui.cmd === "add") {
-                treeElement.addNode({"nodeType": $(target).attr("data-nodetype")});
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"),
+                    "id": $(target).attr("data-nodeid")});
             }
             if (ui.cmd === "subRtu") {
-                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "rtu"});
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "rtu",
+                    "id": $(target).attr("data-nodeid")});
             }
             if (ui.cmd === "subTcp") {
-                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "tcp"});
+                treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "tcp",
+                    "id": $(target).attr("data-nodeid")});
             }
             /*if (ui.cmd === "delete") {
                 treeElement.deleteNode(target);
@@ -108,34 +106,25 @@ $(function() {
 
     var treeElement = {
         addNode: function(target) {
-            //var liAttrib = $(target).attr("data-nodetype");
+            this.request(target);
+        },
+
+        deleteNode: function(target) {
+            this.request(target);
+        },
+
+        request: function(target) {
             $.ajax({
                 url: "ModbusTreeEdit.do",
                 type: "POST",
                 data: target,
                 dataType: "json",
-                success: function(data, status) {
-                    if (data.success) {
-                        console.log("Success !!!!")
+                success: function(data) {
+                    if (data.status === "success") {
+                        window.location.reload();
                     }
                 }
             });
-        },
-
-        deleteNode: function(target) {
-            var liAttrib = $(target).attr("data-nodetype");
-            var itemId = $(target).attr("data-nodeid");
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "POST",
-                data: {type: liAttrib, id:itemId},
-                dataType: "json",
-                success: function(data, status) {
-                    if (data.success) {
-                        console.log("Succes !!!");
-                    }
-                }
-            })
         }
     };
 

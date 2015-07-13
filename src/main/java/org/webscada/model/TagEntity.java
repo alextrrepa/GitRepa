@@ -24,7 +24,7 @@ public class TagEntity implements Serializable{
         this.id = id;
     }
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
