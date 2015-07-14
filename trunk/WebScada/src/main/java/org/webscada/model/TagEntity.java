@@ -1,5 +1,7 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,6 +9,7 @@ import java.io.Serializable;
 @Table(name = "tag")
 public class TagEntity implements Serializable{
     private long id;
+    @Expose
     private String name;
     private int realOffset;
     private DatatypeEntity datatypeEntity;

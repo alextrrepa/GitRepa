@@ -1,5 +1,6 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -10,9 +11,12 @@ import java.util.List;
 @Table(name = "node")
 public class NodeEntity {
     private long id;
+    @Expose
     private String name;
+    @Expose
     private String type;
     private RtuEntity rtuEntity;
+    @Expose
     private List<DeviceEntity> deviceEntity;
     private TcpEntity tcpEntity;
 
