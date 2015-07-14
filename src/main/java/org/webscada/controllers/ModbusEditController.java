@@ -28,7 +28,8 @@ public class ModbusEditController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
+                create();
 
         String json = null;
         if (action.equalsIgnoreCase("getAll")) {
@@ -38,9 +39,12 @@ public class ModbusEditController extends HttpServlet {
 //            System.out.println(json);
         }
 
+        System.out.println(json);
         response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write(json);
+        out.close();
 //        out.flush();
     }
 
@@ -53,7 +57,7 @@ public class ModbusEditController extends HttpServlet {
             request.setAttribute("treeParams", treeParams);
         }
         RequestDispatcher rd = request.getRequestDispatcher("/modbus_page.jsp");
-        rd.forward(request, response);
+         rd.forward(request, response);
 */
         response.sendRedirect("./modbus_page.jsp");
     }

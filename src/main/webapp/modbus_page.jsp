@@ -50,7 +50,7 @@
                 <div class="tree_item fill_state_hover" style="display: inline-block">
                     Сервер
                 </div>
-                <ul>
+               <%-- <ul>
                     <c:forEach items="${treeParams}" var="node">
                         <li class="tree_item-li" data-mtype=
                             <c:out value="${node.type}"/>
@@ -89,7 +89,7 @@
                             </ul>
                         </li>
                     </c:forEach>
-                </ul>
+                </ul>--%>
             </li>
         </ul>
     </article>
