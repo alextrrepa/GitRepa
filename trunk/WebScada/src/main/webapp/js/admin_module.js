@@ -1,9 +1,18 @@
 $(function() {
     /* Create expandable tree */
-    $(".tree").createTree();
+    $.ajax({
+        url: "ModbusEdit.do",
+        type: "POST",
+        data: {"action": "getAll"},
+        dataType: "json",
+        success: function(data) {
+            $(".tree").createTree(data);
+        }
+    });
 
-    //$(".tree ul").hide();
-    /*$(".tree li").each(function () {
+/*
+    $(".tree ul").hide();
+    $(".tree li").each(function () {
         var handleSpan = $("<span></span>");
         handleSpan.addClass("spanExpand");
         handleSpan.prependTo(this);
@@ -16,28 +25,8 @@ $(function() {
                 clicked.siblings("ul").toggle();
             });
         }
-    });*/
-
-    /* Tree element  on click */
-        $(".tree").on('click', 'li div', function() {
-            $(this).toggleClass("fill_state_pressed");
-            $("li div").not(this).removeClass("fill_state_pressed");
-            var parent = $(this).parent()[0];
-            var node = $(parent).data();
-
-            switch (node.nodetype) {
-                case "node":
-                    nodeRequest(node.nodeid, node.nodetype, node.mtype);
-                    break;
-                case "device":
-                    deviceRequest(node.nodeid, node.nodetype);
-                    break;
-                case "tag":
-                    tagRequest(node.nodeid, node.nodetype);
-                    break;
-            }
-        });
-
+    });
+*/
     /* Context Menu Tree */
     $(".tree").contextmenu({
         beforeOpen: function(event, ui) {
