@@ -1,4 +1,4 @@
-;(function($) {
+;(function($, undefined) {
     //var methods = {
        /* init: function(selector) {
            return $.ajax({
@@ -53,33 +53,56 @@
     };
 
     $.fn.createTree = function(options) {
-        var items = [];
+        var $this = $(this);
 
-        $(".tree li").append("<ul>");
-        $.each(options, function(key, value) {
-            items.push($('<li class="tree_item-li">'));
-            items.push($('<div class="tree_item fill_state_hover" style="display: inline-block"/>').text(value.name));
-            items.push($('</li>'));
+
+
+        function Tree(options) {
+            this.options = options;
+            this.init();
+        }
+
+        Tree.prototype.init = function() {
+            //var items = [];
+            $($this.selector + " " + "li").append("<ul id='nodelist'>");
+            $.each(options, function(key, value) {
+                $("#nodelist").append("<li>");
+                $("#nodelist > li").append("<div>");
+                //var divElement = $('<div class="tree_item fill_state_hover" style="display: inline-block"/>').
+                //    text(value.name);
+                //items.push($('<li class="tree_item-li">').attr({
+                //    "data-mtype" : value.type,
+                //    "data-nodeid" : value.id,
+                //    "data-nodetype" : "node"
+                //}).append(divElement));
+            });
+
+            $($this.selector + " " + "li").append("</ul>");
+
+            $($this.selector + " " + "ul").hide();
+            $(".tree li").each(function () {
+                var handleSpan = $("<span></span>");
+                handleSpan.addClass("spanExpand");
+                handleSpan.prependTo(this);
+
+                if($(this).has("ul").size() > 0) {
+                    handleSpan.addClass("collapsed");
+                    handleSpan.click(function() {
+                        var clicked = $(this);
+                        clicked.toggleClass("collapsed expanded");
+                        clicked.siblings("ul").toggle();
+                    });
+                }
+            });
+        };
+
+        return this.each(function(){
+           new Tree(options);
         });
-        $(".tree li").append("</ul>");
-        $(".tree li ul").append(items);
+       /*
 
 
-        $(".tree ul").hide();
-        $(".tree li").each(function () {
-            var handleSpan = $("<span></span>");
-            handleSpan.addClass("spanExpand");
-            handleSpan.prependTo(this);
 
-            if($(this).has("ul").size() > 0) {
-                handleSpan.addClass("collapsed");
-                handleSpan.click(function() {
-                    var clicked = $(this);
-                    clicked.toggleClass("collapsed expanded");
-                    clicked.siblings("ul").toggle();
-                });
-            }
-        });
 
         $(this.selector).on('click', 'li div', function() {
             $(this).toggleClass("fill_state_pressed");
@@ -98,7 +121,7 @@
                     //tagRequest(node.nodeid, node.nodetype);
                     break;
             }
-        });
+        });*/
     };
 
 
