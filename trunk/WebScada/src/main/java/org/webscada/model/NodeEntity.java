@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "node")
 public class NodeEntity {
+    @Expose
     private long id;
     @Expose
     private String name;
