@@ -1,15 +1,23 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tcpconfig")
 public class TcpEntity {
+    @Expose
     private int id;
+    @Expose
     private String ip;
+    @Expose
     private int port;
+    @Expose
     private int timeout;
+    @Expose
     private int retries;
+    @Expose
     private int period;
     private NodeEntity nodeEntity;
 

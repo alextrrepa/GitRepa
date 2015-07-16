@@ -16,9 +16,11 @@ public class NodeEntity {
     private String name;
     @Expose
     private String type;
+    @Expose
     private RtuEntity rtuEntity;
     @Expose
     private List<DeviceEntity> deviceEntity;
+    @Expose
     private TcpEntity tcpEntity;
 
     @Id

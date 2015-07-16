@@ -8,10 +8,13 @@ import java.io.Serializable;
 @Entity
 @Table(name = "tag")
 public class TagEntity implements Serializable{
+    @Expose
     private long id;
     @Expose
     private String name;
+    @Expose
     private int realOffset;
+    @Expose
     private DatatypeEntity datatypeEntity;
     private DeviceEntity deviceEntity;
 

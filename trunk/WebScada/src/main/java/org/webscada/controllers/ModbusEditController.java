@@ -38,14 +38,11 @@ public class ModbusEditController extends HttpServlet {
             json = gson.toJson(nodeList);
 //            System.out.println(json);
         }
-
-        System.out.println(json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write(json);
         out.close();
-//        out.flush();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -10,15 +10,20 @@ import java.util.List;
 @Entity
 @Table(name = "device")
 public class DeviceEntity {
+    @Expose
     private long id;
     @Expose
     private String name;
+    @Expose
     private int slaveid;
+    @Expose
     private int startOffset;
+    @Expose
     private int counts;
     private NodeEntity nodeEntity;
     @Expose
     private List<TagEntity> tagEntities;
+    @Expose
     private RegisterEntity registerEntity;
 
     @Id
