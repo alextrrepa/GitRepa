@@ -1,12 +1,17 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "registertype")
 public class RegisterEntity {
+    @Expose
     private int id;
+    @Expose
     private String name;
+    @Expose
     private int value;
 
     @Id
