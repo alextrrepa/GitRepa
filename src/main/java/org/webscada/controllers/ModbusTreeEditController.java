@@ -1,5 +1,7 @@
 package org.webscada.controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.webscada.dao.AbstractDao;
@@ -17,7 +19,6 @@ import java.util.Map;
 
 public class ModbusTreeEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusTreeEditController.class);
-    private Map<String, Object> objectList;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nodeType = request.getParameter("nodeType");
@@ -76,87 +77,38 @@ public class ModbusTreeEditController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
         Long id = Long.parseLong(request.getParameter("id"));
-        ObjectMapper mapper = new ObjectMapper();
-
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
+                create();
+        String json = null;
         if (type.equalsIgnoreCase("node")) {
             String mtype = request.getParameter("mtype");
-            jsonNodeParams(id, mtype);
+            AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+            if (mtype.equalsIgnoreCase("rtu")) {
+                NodeEntity rtuNode = nodeDao.getById(id);
+//                RtuEntity rtuEntity = rtuNode.getRtuEntity();
+                json = gson.toJson(rtuNode);
+            }
+            if (mtype.equalsIgnoreCase("tcp")) {
+                NodeEntity tcpNode = nodeDao.getById(id);
+//                TcpEntity tcpEntity = tcpNode.getTcpEntity();
+                json = gson.toJson(tcpNode);
+            }
         }
         if (type.equalsIgnoreCase("device")) {
-            objectList = device(id);
+            AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
+            DeviceEntity devEntity = deviceDao.getById(id);
+            json = gson.toJson(devEntity);
         }
         if (type.equalsIgnoreCase("tag")) {
-            objectList = tag(id);
+            AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
+            TagEntity tagEntity = tagDao.getById(id);
+            json = gson.toJson(tagEntity);
         }
+
+        log.trace(json);
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        mapper.writeValue(out, objectList);
+        out.write(json);
         out.close();
-    }
-
-    private void jsonNodeParams(Long id, String mtype) {
-        if (mtype.equalsIgnoreCase("rtu")) {
-            objectList = jsonRtuNodeParams(id);
-        }
-        if (mtype.equalsIgnoreCase("tcp")) {
-            objectList = jsonTcpNodeParams(id);
-        }
-    }
-
-    private Map<String, Object> jsonRtuNodeParams(Long id) {
-        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-        NodeEntity rtuNode = nodeDao.getById(id);
-        RtuEntity rtuEntity = rtuNode.getRtuEntity();
-        Map<String, Object> objectList = new LinkedHashMap<>();
-        objectList.put("nodename", rtuNode.getName());
-        objectList.put("modbustype", rtuNode.getType());
-        objectList.put("port", rtuEntity.getPort());
-        objectList.put("baudrate", rtuEntity.getBaudrate());
-        objectList.put("databits", rtuEntity.getDatabits());
-        objectList.put("parity", rtuEntity.getParity());
-        objectList.put("stopbits", rtuEntity.getStopbits());
-        objectList.put("retries", rtuEntity.getRetries());
-        objectList.put("timeout", rtuEntity.getTimeout());
-        objectList.put("period", rtuEntity.getPeriod());
-        return objectList;
-    }
-
-    private Map<String, Object> jsonTcpNodeParams(Long id) {
-        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-        NodeEntity tcpNode = nodeDao.getById(id);
-        TcpEntity tcpEntity = tcpNode.getTcpEntity();
-        Map<String, Object> objectList = new LinkedHashMap<>();
-        objectList.put("nodename", tcpNode.getName());
-        objectList.put("modbustype", tcpNode.getType());
-        objectList.put("ip", tcpEntity.getIp());
-        objectList.put("port", tcpEntity.getPort());
-        objectList.put("retries", tcpEntity.getRetries());
-        objectList.put("timeout", tcpEntity.getTimeout());
-        objectList.put("period", tcpEntity.getPeriod());
-        return objectList;
-    }
-
-    private Map<String, Object> device(Long id) {
-        AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
-        DeviceEntity device = deviceDao.getById(id);
-        Map<String, Object> objectList = new LinkedHashMap<>();
-        objectList.put("devicename", device.getName());
-        objectList.put("slaveid", device.getSlaveid());
-        objectList.put("startoffset", device.getStartOffset());
-        objectList.put("counts", device.getCounts());
-        RegisterEntity registerEntity = device.getRegisterEntity();
-        objectList.put("regtype", registerEntity.getName());
-        return objectList;
-    }
-
-    private Map<String, Object> tag(Long id) {
-        AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
-        TagEntity tagEntity = tagDao.getById(id);
-        Map<String, Object> objectList = new LinkedHashMap<>();
-        objectList.put("tagname", tagEntity.getName());
-        objectList.put("realoffset", tagEntity.getRealOffset());
-        DatatypeEntity dataType = tagEntity.getDatatypeEntity();
-        objectList.put("datatype", dataType.getName());
-        return objectList;
     }
 }

@@ -1,18 +1,29 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "rtuconfig")
 public class RtuEntity {
+    @Expose
     private long id;
+    @Expose
     private String port;
+    @Expose
     private int baudrate;
+    @Expose
     private int databits;
+    @Expose
     private int stopbits;
+    @Expose
     private int parity;
+    @Expose
     private int timeout;
+    @Expose
     private int retries;
+    @Expose
     private int period;
     private NodeEntity nodeEntity;
 
