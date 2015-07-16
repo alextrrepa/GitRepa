@@ -1,13 +1,18 @@
 package org.webscada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "datatype")
 public class DatatypeEntity {
+    @Expose
     private int id;
+    @Expose
     private String name;
+    @Expose
     private int value;
     private List<TagEntity> tagEntity;
 
