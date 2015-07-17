@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.webscada.controllers.TreeEditDelegation.TreeEditFactory;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.*;
@@ -14,26 +15,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ModbusTreeEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusTreeEditController.class);
+    Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
+            create();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nodeType = request.getParameter("nodeType");
-        String type = request.getParameter("type");
-        Long id = Long.parseLong(request.getParameter("id"));
+        TreeEditFactory editFactory = new TreeEditFactory();
+        editFactory.createContext(request, response);
 
-        if (nodeType.equalsIgnoreCase("root")) {
+        /*Enumeration parameterList = request.getParameterNames();
+        while (parameterList.hasMoreElements()) {
+            String name = (String) parameterList.nextElement();
+            log.trace(request.getParameter(name));
+        }*/
+//        String nodeType = request.getParameter("nodeType");
+//        String mtype = request.getParameter("mtype");
+//        Long id = Long.parseLong(request.getParameter("id"));
+//        log.trace(nodeType + mtype + id);
+
+
+/*        if (nodeType.equalsIgnoreCase("root")) {
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-            if (type.equalsIgnoreCase("rtu")) {
+            if (mtype.equalsIgnoreCase("rtu")) {
                 NodeEntity nodeEntity = new NodeEntity();
                 nodeEntity.setName("Node");
                 nodeEntity.setType("rtu");
                 nodeDao.create(nodeEntity);
             }
-            if (type.equalsIgnoreCase("tcp")) {
+            if (mtype.equalsIgnoreCase("tcp")) {
                 NodeEntity nodeEntity = new NodeEntity();
                 nodeEntity.setName("Node");
                 nodeEntity.setType("tcp");
@@ -63,34 +77,33 @@ public class ModbusTreeEditController extends HttpServlet {
 
             tagEntity.setDeviceEntity(deviceEntity);
             tagDao.create(tagEntity);
-        }
+        }*/
 
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> objectMap = new LinkedHashMap<>();
-        objectMap.put("status", "success");
-        mapper.writeValue(out, objectMap);
+
+//        ObjectMapper mapper = new ObjectMapper();
+//        Map<String, Object> objectMap = new LinkedHashMap<>();
+//        objectMap.put("status", "success");
+//        mapper.writeValue(out, objectMap);
+        out.write(gson.toJson("success"));
         out.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
         Long id = Long.parseLong(request.getParameter("id"));
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
-                create();
+
         String json = null;
         if (type.equalsIgnoreCase("node")) {
             String mtype = request.getParameter("mtype");
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
             if (mtype.equalsIgnoreCase("rtu")) {
                 NodeEntity rtuNode = nodeDao.getById(id);
-//                RtuEntity rtuEntity = rtuNode.getRtuEntity();
                 json = gson.toJson(rtuNode);
             }
             if (mtype.equalsIgnoreCase("tcp")) {
                 NodeEntity tcpNode = nodeDao.getById(id);
-//                TcpEntity tcpEntity = tcpNode.getTcpEntity();
                 json = gson.toJson(tcpNode);
             }
         }

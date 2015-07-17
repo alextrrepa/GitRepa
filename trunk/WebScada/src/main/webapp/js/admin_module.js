@@ -1,4 +1,5 @@
 $(function () {
+    var tree;
 
     /* Create expandable tree */
     $.ajax({
@@ -7,7 +8,7 @@ $(function () {
         data: {"action": "getAll"},
         dataType: "json",
         success: function (data) {
-            var tree = $(".tree").createTree(data);
+            tree = $(".tree").createTree(data);
             tree.init();
         }
     });
@@ -18,8 +19,6 @@ $(function () {
 
         var parent = $(this).parent()[0];
         var node = $(parent).data();
-
-        var tree = $(".tree").createTree();
         tree.onTagClick(node);
     });
 
@@ -74,23 +73,21 @@ $(function () {
         select: function (event, ui) {
             var target = ui.target.parent()[0];
             if (ui.cmd === "add") {
-                var tree = $(".tree").createTree();
-                tree.onTagAdd();
-
-                //treeElement.addNode({"nodeType": $(target).attr("data-nodetype"),
-                //    "id": $(target).attr("data-nodeid")});
+                tree.onTagAdd({
+                    "nodeType": $(target).attr("data-nodetype"),
+                    "id": $(target).attr("data-nodeid"),
+                    "action": ui.cmd
+                });
             }
             if (ui.cmd === "subRtu") {
-                //treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "rtu",
-                //    "id": $(target).attr("data-nodeid")});
+                tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "rtu", "action": ui.cmd});
             }
             if (ui.cmd === "subTcp") {
-                //treeElement.addNode({"nodeType": $(target).attr("data-nodetype"), "type": "tcp",
-                //    "id": $(target).attr("data-nodeid")});
+                tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "tcp", "action": ui.cmd});
             }
-            /*if (ui.cmd === "delete") {
-             treeElement.deleteNode(target);
-             }*/
+            if (ui.cmd === "delete") {
+                //treeElement.deleteNode(target);
+            }
         }
     });
 });
