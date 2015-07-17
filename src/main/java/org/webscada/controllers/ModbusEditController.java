@@ -36,7 +36,6 @@ public class ModbusEditController extends HttpServlet {
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
             List<NodeEntity> nodeList = nodeDao.getAllConfig();
             json = gson.toJson(nodeList);
-//            System.out.println(json);
         }
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
@@ -46,16 +45,6 @@ public class ModbusEditController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*
-        String action = request.getParameter("action");
-        if (action.equalsIgnoreCase("getAll")) {
-            AbstractDao daoConfig = new DaoConfig(NodeEntity.class);
-            List<NodeEntity> treeParams = daoConfig.getAllConfig();
-            request.setAttribute("treeParams", treeParams);
-        }
-        RequestDispatcher rd = request.getRequestDispatcher("/modbus_page.jsp");
-         rd.forward(request, response);
-*/
         response.sendRedirect("./modbus_page.jsp");
     }
 }
