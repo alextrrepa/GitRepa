@@ -5,11 +5,13 @@ import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.webscada.model.NodeEntity;
 import org.webscada.util.SessionUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
     private final static Logger log = Logger.getLogger(DaoConfig.class);
@@ -85,6 +87,29 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
             try {
                 transaction.rollback();
             } catch (Exception ex) {
+                log.error("Rollback transaction error", ex);
+            }
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public void delete(ID id) {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            Object object = session.get(getPersistanceClass(), id);
+            if ( object != null) {
+                session.delete(object);
+            }
+            transaction.commit();
+        }catch (Exception e) {
+            e.printStackTrace();
+            try {
+                transaction.rollback();
+            }catch (Exception ex) {
                 log.error("Rollback transaction error", ex);
             }
         } finally {
