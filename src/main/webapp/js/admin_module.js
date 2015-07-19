@@ -86,7 +86,8 @@ $(function () {
                 tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "tcp", "action": ui.cmd});
             }
             if (ui.cmd === "delete") {
-                //treeElement.deleteNode(target);
+                tree.onTagDelete({"nodeType": $(target).attr("data-nodetype"), "id":$(target).attr("data-nodeid"),
+                    "action": ui.cmd});
             }
         }
     });

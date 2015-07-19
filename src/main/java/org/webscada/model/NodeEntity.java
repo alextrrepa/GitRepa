@@ -62,7 +62,7 @@ public class NodeEntity {
         this.rtuEntity = rtuEntity;
     }
 
-    @OneToMany (fetch = FetchType.EAGER, mappedBy = "nodeEntity", cascade = CascadeType.ALL)
+    @OneToMany (fetch = FetchType.EAGER, mappedBy = "nodeEntity", cascade = CascadeType.DETACH)
     @Fetch(FetchMode.SELECT)
     public List<DeviceEntity> getDeviceEntity() {
         return deviceEntity;

@@ -341,6 +341,19 @@
             });
         },
 
+        onTagDelete: function(obj) {
+            console.log(obj);
+            $.ajax({
+                url: "ModbusTreeEdit.do",
+                type: "POST",
+                data: obj,
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        },
+
         onTagClick: function (node) {
             switch (node.nodetype) {
                 case "node":
