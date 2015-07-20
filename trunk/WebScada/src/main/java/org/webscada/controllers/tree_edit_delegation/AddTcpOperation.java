@@ -8,7 +8,7 @@ public class AddTcpOperation implements Command {
     }
 
     @Override
-    public void execute() {
-        operation.addTcp();
+    public String execute() {
+        return operation.addTcp();
     }
 }

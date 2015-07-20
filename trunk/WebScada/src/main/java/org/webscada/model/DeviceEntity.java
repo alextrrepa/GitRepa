@@ -83,7 +83,7 @@ public class DeviceEntity {
         this.nodeEntity = nodeEntity;
     }
 
-    @OneToMany(mappedBy = "deviceEntity", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "deviceEntity", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @Fetch(value = FetchMode.SELECT)
     @OrderBy("name")
     public List<TagEntity> getTagEntities() {
@@ -102,5 +102,16 @@ public class DeviceEntity {
 
     public void setRegisterEntity(RegisterEntity registerEntity) {
         this.registerEntity = registerEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "DeviceEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", slaveid=" + slaveid +
+                ", startOffset=" + startOffset +
+                ", counts=" + counts +
+                '}';
     }
 }

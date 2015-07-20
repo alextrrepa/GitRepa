@@ -8,7 +8,7 @@ public class DeleteOperation implements Command {
     }
 
     @Override
-    public void execute() {
-        operation.delete();
+    public String execute() {
+        return operation.delete();
     }
 }

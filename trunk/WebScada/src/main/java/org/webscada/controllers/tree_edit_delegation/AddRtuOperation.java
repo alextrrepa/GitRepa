@@ -8,7 +8,7 @@ public class AddRtuOperation implements Command {
     }
 
     @Override
-    public void execute() {
-        operation.addRtu();
+    public String execute() {
+        return operation.addRtu();
     }
 }

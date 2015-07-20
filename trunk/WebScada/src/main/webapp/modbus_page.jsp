@@ -45,7 +45,7 @@
         <header>
             <h3 class="tabs_involved">Структура Modbus</h3>
         </header>
-        <ul class="tree">
+        <ul id="rootList" class="tree">
             <li class="tree_item-li" data-nodetype="root">
                 <div class="tree_item fill_state_hover" style="display: inline-block">
                     Сервер
