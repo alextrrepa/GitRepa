@@ -217,7 +217,48 @@
                             break;
                         case "tag":
                             factory.createTagForm(data);
+                            break;
                     }
+                }
+            });
+        },
+        crudRequest: function(obj, ulTarget) {
+            console.log(obj);
+            console.log(ulTarget);
+            $.ajax({
+                url: "ModbusTreeEdit.do",
+                type: "POST",
+                data: obj,
+                dataType: "json",
+                success: function(data) {
+                    var returnedData = JSON.parse(data);
+                    var currentList = $(ulTarget);
+                    var div = $('<div>').addClass('tree_item fill_state_hover').css("display", "inline-block").text(returnedData.name);
+                    var li = $('<li>').addClass('tree_item-li').attr({"data-nodeid": returnedData.id,
+                    "data-nodetype": "device" });
+
+                    var span = $('<span>').addClass('spanExpand');
+                    $(li).append(span);
+
+                    /*$(this.element.selector + " " + "li").each(function () {
+                        var handleSpan = $("<span></span>");
+                        handleSpan.addClass("spanExpand");
+                        handleSpan.prependTo(this);
+                        if ($(this).has("ul").size() > 0) {
+                            handleSpan.addClass("collapsed");
+                            handleSpan.click(function () {
+                                var clicked = $(this);
+                                clicked.toggleClass("collapsed expanded");
+                                clicked.siblings("ul").toggle();
+                            });
+                        }
+                    });*/
+
+                    $(li).append(div);
+                    $(li).append('<ul id="tagList">');
+                    $(currentList).append(li);
+
+                    console.log(this);
                 }
             });
         },
@@ -273,7 +314,6 @@
         init: function () {
             var nodeList = $('<ul id="nodelist">');
             $(this.element.selector + " " + "li").append(nodeList);
-
             $.each(this.options, function (key, value) {
                 var nodeDivElement = $('<div class="tree_item fill_state_hover" style="display: inline-block"/>').
                     text(value.name);
@@ -328,30 +368,12 @@
             });
         },
 
-        onTagAdd: function (obj) {
-            console.log(obj);
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "POST",
-                data: obj,
-                dataType: "json",
-                success: function(data) {
-                    console.log(data);
-                }
-            });
+        onTagAdd: function (obj, ulTarget) {
+            treeMethods.crudRequest(obj, ulTarget);
         },
 
         onTagDelete: function(obj) {
-            console.log(obj);
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "POST",
-                data: obj,
-                dataType: "json",
-                success: function(data) {
-                    console.log(data);
-                }
-            });
+            treeMethods.crudRequest(obj);
         },
 
         onTagClick: function (node) {

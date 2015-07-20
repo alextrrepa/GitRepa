@@ -1,5 +1,6 @@
 package org.webscada.controllers.tree_edit_delegation;
 
+import com.google.gson.Gson;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.DeviceEntity;
@@ -10,22 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Operation {
     private HttpServletRequest request;
+    private Gson gson;
 
-    public Operation(HttpServletRequest request) {
+    public Operation(HttpServletRequest request, Gson gson) {
         this.request = request;
+        this.gson = gson;
     }
 
-    public void add() {
+    public String add() {
         String nodeType = request.getParameter("nodeType");
         if (nodeType.equalsIgnoreCase("node")) {
-            addDevice();
+           return addDevice();
         }
         if (nodeType.equalsIgnoreCase("device")) {
-            addTag();
+           return addTag();
         }
+        return null;
     }
 
-    private void addDevice() {
+    private String addDevice() {
         AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity deviceEntity = new DeviceEntity();
@@ -36,9 +40,11 @@ public class Operation {
 
         deviceEntity.setNodeEntity(nodeEntity);
         deviceDao.create(deviceEntity);
+
+        return gson.toJson(deviceEntity);
     }
 
-    private void addTag() {
+    private String addTag() {
         AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = new TagEntity();
@@ -49,40 +55,50 @@ public class Operation {
 
         tagEntity.setDeviceEntity(deviceEntity);
         tagDao.create(tagEntity);
+
+        Long tagId = tagEntity.getId();
+        return "tagList";
     }
 
-    public void delete() {
+    public String delete() {
         Long id = Long.valueOf(request.getParameter("id"));
         String nodeType = request.getParameter("nodeType");
         switch (nodeType) {
             case "node":
                 AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
                 nodeDao.delete(id);
-                break;
+                return "nodelist";
             case "device":
                 AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
                 deviceDao.delete(id);
-                break;
+                return "devicelist";
             case "tag":
                 AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
                 tagDao.delete(id);
-                break;
+                return "taglist";
         }
+        return null;
     }
 
-    public void addRtu() {
+    public String addRtu() {
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName("Node");
         nodeEntity.setType("rtu");
         nodeDao.create(nodeEntity);
+
+        Long nodeId = nodeEntity.getId();
+        return "nodelist";
     }
 
-    public void addTcp() {
+    public String addTcp() {
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName("Node");
         nodeEntity.setType("tcp");
         nodeDao.create(nodeEntity);
+
+        Long nodeId = nodeEntity.getId();
+        return "nodelist";
     }
 }

@@ -21,13 +21,16 @@ public class ModbusTreeEditController extends HttpServlet {
             create();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Operation operation = new Operation(request);
+        Operation operation = new Operation(request, gson);
         Command command = FactoryOperation.getCommand(request, operation);
         DoOperation doOperation = new DoOperation(command);
-        doOperation.makeCommand();
+        String commandResp = doOperation.makeCommand();
+
+        log.trace("Ul id" + " :" + commandResp);
 
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
+        out.write(gson.toJson(commandResp));
         out.close();
     }
 

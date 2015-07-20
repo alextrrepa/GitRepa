@@ -1,6 +1,5 @@
 $(function () {
     var tree;
-
     /* Create expandable tree */
     $.ajax({
         url: "ModbusEdit.do",
@@ -72,22 +71,23 @@ $(function () {
         },
         select: function (event, ui) {
             var target = ui.target.parent()[0];
+            var ulTarget = $(ui.target).next()[0];
             if (ui.cmd === "add") {
                 tree.onTagAdd({
                     "nodeType": $(target).attr("data-nodetype"),
                     "id": $(target).attr("data-nodeid"),
                     "action": ui.cmd
-                });
+                }, ulTarget);
             }
             if (ui.cmd === "subRtu") {
-                tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "rtu", "action": ui.cmd});
+                //tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "rtu", "action": ui.cmd});
             }
             if (ui.cmd === "subTcp") {
-                tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "tcp", "action": ui.cmd});
+                //tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "tcp", "action": ui.cmd});
             }
             if (ui.cmd === "delete") {
-                tree.onTagDelete({"nodeType": $(target).attr("data-nodetype"), "id":$(target).attr("data-nodeid"),
-                    "action": ui.cmd});
+                /*tree.onTagDelete({"nodeType": $(target).attr("data-nodetype"), "id":$(target).attr("data-nodeid"),
+                    "action": ui.cmd});*/
             }
         }
     });

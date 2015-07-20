@@ -8,7 +8,7 @@ public class AddOperation implements Command {
     }
 
     @Override
-    public void execute() {
-        operation.add();
+    public String execute() {
+        return operation.add();
     }
 }

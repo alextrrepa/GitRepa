@@ -7,7 +7,7 @@ public class DoOperation {
         this.command = command;
     }
 
-    public void makeCommand() {
-        command.execute();
+    public String makeCommand() {
+        return command.execute();
     }
 }
