@@ -27,7 +27,7 @@ public class ModbusEditController extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+        /*String action = request.getParameter("action");
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
                 create();
 
@@ -41,10 +41,36 @@ public class ModbusEditController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write(json);
-        out.close();
+        out.close();*/
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("./modbus_page.jsp");
+        List<TreeElement> treeElements = new ArrayList<>();
+        TreeElement root = new TreeElement("root", "#", "Сервер");
+        treeElements.add(root);
+
+        String json = null;
+        /*Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
+                create();*/
+        Gson gson = new GsonBuilder().setPrettyPrinting().
+                create();
+
+        String action = request.getParameter("action");
+        if (action.equalsIgnoreCase("getAll")) {
+            AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+            List<NodeEntity> nodeList = nodeDao.getAllConfig();
+            for (NodeEntity entity : nodeList) {
+                TreeElement node = new TreeElement(Long.toString(entity.getId()), "root", entity.getName());
+                treeElements.add(node);
+            }
+            json = gson.toJson(treeElements);
+        }
+        log.trace(json);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write(json);
+        out.close();
+//        response.sendRedirect("./modbus_page.jsp");
     }
 }

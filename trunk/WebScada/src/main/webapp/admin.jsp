@@ -26,7 +26,7 @@
 <nav class="sidebar" <%--style="height: 1728px"--%>>
     <h3>Опрос</h3>
     <ul>
-        <li class="icn_settings"><a href="ModbusEdit.do?action=getAll">Modbus настройки</a></li>
+        <li class="icn_settings"><a href="modbus_page.jsp">Modbus настройки</a></li>
     </ul>
 </nav>
 
