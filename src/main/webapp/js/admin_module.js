@@ -1,6 +1,21 @@
 $(function () {
-    var tree;
-    /* Create expandable tree */
+    /*$.ajax({
+        url: 'ModbusEdit.do?action=getAll',
+        type: 'GET',
+        dataType: 'JSON',
+        success: function(json) {
+            createTree(json);
+        }
+    });*/
+        $("#tree").jstree({
+            'core': {
+                'data': {
+                    'url': 'ModbusEdit.do?action=getAll'
+                }
+            }
+        });
+   /* var tree;
+    /!* Create expandable tree *!/
     $.ajax({
         url: "ModbusEdit.do",
         type: "POST",
@@ -21,7 +36,7 @@ $(function () {
         tree.onTagClick(node);
     });
 
-    /* Context Menu Tree */
+    /!* Context Menu Tree *!/
     $(".tree").contextmenu({
         beforeOpen: function (event, ui) {
             var parent = ui.target.parent()[0];
@@ -86,11 +101,11 @@ $(function () {
                 //tree.onTagAdd({"nodeType": $(target).attr("data-nodetype"), "mtype": "tcp", "action": ui.cmd});
             }
             if (ui.cmd === "delete") {
-                /*tree.onTagDelete({"nodeType": $(target).attr("data-nodetype"), "id":$(target).attr("data-nodeid"),
-                    "action": ui.cmd});*/
+                /!*tree.onTagDelete({"nodeType": $(target).attr("data-nodetype"), "id":$(target).attr("data-nodeid"),
+                    "action": ui.cmd});*!/
             }
         }
-    });
+    });*/
 });
 
 

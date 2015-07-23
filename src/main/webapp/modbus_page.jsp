@@ -7,13 +7,10 @@
     <title>Modbus Настройки</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/admin_style.css" rel="stylesheet">
-    <link href="css/jquery-ui.css" rel="stylesheet">
-    <link href="css/jquery-ui.theme.css" rel="stylesheet">
+    <link href="dist/themes/default/style.min.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.ui-tree.js"></script>
     <script type="text/javascript" src="js/admin_module.js"></script>
-    <script type="text/javascript" src="js/jquery.ui-contextmenu.min.js"></script>
+    <script type="text/javascript" src="dist/jstree.min.js"></script>
 </head>
 <body>
 
@@ -35,7 +32,7 @@
 <nav class="sidebar">
     <h3>Опрос</h3>
     <ul>
-        <li class="icn_settings"><a href="ModbusEdit.do?action=getAll">Modbus настройки</a></li>
+        <li class="icn_settings"><a href="modbus_page.jsp">Modbus настройки</a></li>
     </ul>
 </nav>
 
@@ -45,62 +42,15 @@
         <header>
             <h3 class="tabs_involved">Структура Modbus</h3>
         </header>
-        <ul id="rootList" class="tree">
-            <li class="tree_item-li" data-nodetype="root">
-                <div class="tree_item fill_state_hover" style="display: inline-block">
-                    Сервер
-                </div>
-               <%-- <ul>
-                    <c:forEach items="${treeParams}" var="node">
-                        <li class="tree_item-li" data-mtype=
-                            <c:out value="${node.type}"/>
-                                data-nodeid=<c:out value="${node.id}"/>
-                                data-nodetype="node"
-                                >
-                            <div class="tree_item fill_state_hover" style="display: inline-block">
-                                <c:out value="${node.name}"/>
-                            </div>
-                            <ul>
-                                <c:set var="device" value="${node.deviceEntity}"/>
-                                <c:forEach items="${device}" var="device">
-                                    <li class="tree_item-li"
-                                            data-nodeid=<c:out value="${device.id}"/>
-                                            data-nodetype="device"
-                                            >
-                                        <div class="tree_item fill_state_hover" style="display: inline-block">
-                                            <c:out value="${device.name}"/>
-                                        </div>
-                                        <ul>
-                                            <c:set var="tag" value="${device.tagEntities}"/>
-                                            <c:forEach items="${tag}" var="tag">
-                                                <li class="tree_item-li"
-                                                         data-nodeid=<c:out value="${tag.id}"/>
-                                                         data-nodetype="tag"
-                                                        >
-                                                    <div class="tree_item fill_state_hover"
-                                                         style="display: inline-block">
-                                                        <c:out value="${tag.name}"/>
-                                                    </div>
-                                                </li>
-                                            </c:forEach>
-                                        </ul>
-                                    </li>
-                                </c:forEach>
-                            </ul>
-                        </li>
-                    </c:forEach>
-                </ul>--%>
-            </li>
-        </ul>
+        <div id="tree"></div>
     </article>
     <article class="module modbus_params">
         <header>
             <h3>Параметры</h3>
         </header>
         <div class="modbus_params_content">
-            <div class="form_style">
+            <div class="form_style"></div>
 
-            </div>
         </div>
     </article>
 </section>
