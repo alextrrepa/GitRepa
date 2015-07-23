@@ -1,19 +1,22 @@
 $(function () {
-    /*$.ajax({
-        url: 'ModbusEdit.do?action=getAll',
-        type: 'GET',
-        dataType: 'JSON',
-        success: function(json) {
-            createTree(json);
-        }
-    });*/
-        $("#tree").jstree({
-            'core': {
-                'data': {
-                    'url': 'ModbusEdit.do?action=getAll'
+    $("#tree").jstree({
+        'plugins' : ['types'],
+        'core': {
+            'themes': {
+              "name": "default-dark"
+            },
+            'types': {
+                "rootElem": {
+                    "icon": {
+                        "image" : "/icn_settings.png"
+                    }
                 }
+            },
+            'data': {
+                'url': 'ModbusEdit.do?action=getAll'
             }
-        });
+        }
+    });
    /* var tree;
     /!* Create expandable tree *!/
     $.ajax({

@@ -7,7 +7,7 @@
     <title>Modbus Настройки</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/admin_style.css" rel="stylesheet">
-    <link href="dist/themes/default/style.min.css" rel="stylesheet">
+    <link href="dist/themes/default-dark/style.min.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/admin_module.js"></script>
     <script type="text/javascript" src="dist/jstree.min.js"></script>
@@ -50,7 +50,6 @@
         </header>
         <div class="modbus_params_content">
             <div class="form_style"></div>
-
         </div>
     </article>
 </section>
