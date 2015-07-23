@@ -1,6 +1,7 @@
 package org.webscada.controllers.tree_edit_delegation;
 
 import com.google.gson.Gson;
+import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.DeviceEntity;
@@ -10,6 +11,7 @@ import org.webscada.model.TagEntity;
 import javax.servlet.http.HttpServletRequest;
 
 public class Operation {
+    private final static Logger log = Logger.getLogger(Operation.class);
     private HttpServletRequest request;
     private Gson gson;
 
@@ -57,7 +59,7 @@ public class Operation {
         tagDao.create(tagEntity);
 
         Long tagId = tagEntity.getId();
-        return "tagList";
+        return gson.toJson(tagEntity);
     }
 
     public String delete() {
@@ -81,6 +83,7 @@ public class Operation {
     }
 
     public String addRtu() {
+        System.out.println("Add Rtu");
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName("Node");
@@ -88,7 +91,7 @@ public class Operation {
         nodeDao.create(nodeEntity);
 
         Long nodeId = nodeEntity.getId();
-        return "nodelist";
+        return gson.toJson(nodeEntity);
     }
 
     public String addTcp() {
@@ -99,6 +102,6 @@ public class Operation {
         nodeDao.create(nodeEntity);
 
         Long nodeId = nodeEntity.getId();
-        return "nodelist";
+        return gson.toJson(nodeEntity);
     }
 }
