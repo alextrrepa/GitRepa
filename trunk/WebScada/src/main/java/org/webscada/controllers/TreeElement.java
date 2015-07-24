@@ -4,12 +4,12 @@ public class TreeElement {
     private String id;
     private String parent;
     private String text;
-    private String rel;
+    private String icon;
 
-    public TreeElement(String id, String parent, String text, String rel) {
+    public TreeElement(String id, String parent, String text, String icon) {
         this.id = id;
         this.parent = parent;
         this.text = text;
-        this.rel = rel;
+        this.icon = icon;
     }
 }

@@ -26,7 +26,7 @@ public class ModbusEditController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<TreeElement> treeElements = new ArrayList<>();
-        TreeElement root = new TreeElement("root", "#", "Сервер", "rootElem");
+        TreeElement root = new TreeElement("root", "#", "Сервер", "images/icn_server.png");
         treeElements.add(root);
 
         String json = null;
