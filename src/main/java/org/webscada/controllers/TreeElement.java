@@ -6,6 +6,7 @@ public class TreeElement {
     private String text;
     private String icon;
 
+
     public TreeElement(String id, String parent, String text, String icon) {
         this.id = id;
         this.parent = parent;
