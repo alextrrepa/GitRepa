@@ -39,21 +39,21 @@ public class ModbusEditController extends HttpServlet {
             List<NodeEntity> nodeList = nodeDao.getAllConfig();
             for (NodeEntity node : nodeList) {
                 TreeElement nodeElem = new TreeElement("Node" + Long.toString(node.getId()),
-                        "root", node.getName(), "nodeElem");
+                        "root", node.getName(), "images/icn_node.png");
                 treeElements.add(nodeElem);
 
                 List<DeviceEntity> deviceList = node.getDeviceEntity();
                 for (DeviceEntity device : deviceList) {
                     TreeElement deviceElem = new TreeElement(
                             "Device" + Long.toString(device.getId()),
-                            "Node" + Long.toString(node.getId()), device.getName(), "deviceElem");
+                            "Node" + Long.toString(node.getId()), device.getName(), "images/icn_device.png");
                     treeElements.add(deviceElem);
 
                     List<TagEntity> tagList = device.getTagEntities();
                     for (TagEntity tag : tagList) {
                         TreeElement tagElem = new TreeElement(
                                 "Tag" + Long.toString(tag.getId()),
-                                "Device" + Long.toString(device.getId()), tag.getName(), "tagElem");
+                                "Device" + Long.toString(device.getId()), tag.getName(), "images/icn_tag.png");
                         treeElements.add(tagElem);
                     }
                 }
