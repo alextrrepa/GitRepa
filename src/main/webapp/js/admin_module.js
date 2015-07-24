@@ -1,16 +1,8 @@
 $(function () {
     $("#tree").jstree({
-        'plugins' : ['types'],
         'core': {
             'themes': {
               "name": "default-dark"
-            },
-            'types': {
-                "rootElem": {
-                    "icon": {
-                        "image" : "/icn_settings.png"
-                    }
-                }
             },
             'data': {
                 'url': 'ModbusEdit.do?action=getAll'
