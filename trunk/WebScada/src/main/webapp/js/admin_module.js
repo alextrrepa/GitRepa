@@ -2,6 +2,7 @@ $(function () {
     $("#tree").jstree({
         'plugins': ['contextmenu'],
         'contextmenu': {
+            'select_node': false,
             'items': function ($node) {
                 return {
                     "Add": {
