@@ -38,22 +38,24 @@ public class ModbusEditController extends HttpServlet {
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
             List<NodeEntity> nodeList = nodeDao.getAllConfig();
             for (NodeEntity node : nodeList) {
-                TreeElement nodeElem = new TreeElement("Node" + Long.toString(node.getId()),
-                        "root", node.getName(), "images/icn_node.png");
+                TreeElement nodeElem = new TreeElement("node" + Long.toString(node.getId()),
+                        "root", node.getName(), "images/icn_node.png", Long.toString(node.getId()));
                 treeElements.add(nodeElem);
 
                 List<DeviceEntity> deviceList = node.getDeviceEntity();
                 for (DeviceEntity device : deviceList) {
                     TreeElement deviceElem = new TreeElement(
-                            "Device" + Long.toString(device.getId()),
-                            "Node" + Long.toString(node.getId()), device.getName(), "images/icn_device.png");
+                            "device" + Long.toString(device.getId()),
+                            "node" + Long.toString(node.getId()), device.getName(),
+                            "images/icn_device.png", Long.toString(device.getId()));
                     treeElements.add(deviceElem);
 
                     List<TagEntity> tagList = device.getTagEntities();
                     for (TagEntity tag : tagList) {
                         TreeElement tagElem = new TreeElement(
-                                "Tag" + Long.toString(tag.getId()),
-                                "Device" + Long.toString(device.getId()), tag.getName(), "images/icn_tag.png");
+                                "tag" + Long.toString(tag.getId()),
+                                "device" + Long.toString(device.getId()), tag.getName(),
+                                "images/icn_tag.png", Long.toString(tag.getId()));
                         treeElements.add(tagElem);
                     }
                 }
