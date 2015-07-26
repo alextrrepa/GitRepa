@@ -37,25 +37,12 @@ public class ModbusTreeEditController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
         Long id = Long.parseLong(request.getParameter("id"));
-        log.trace(id);
-        log.trace(type);
 
         String json = null;
         if (type.equalsIgnoreCase("node")) {
-            log.trace("@@@@@Node@@@@@");
             AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
             NodeEntity entity = nodeDao.getById(id);
             json = gson.toJson(entity);
-            /*String mtype = request.getParameter("mtype");
-            AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-            if (mtype.equalsIgnoreCase("rtu")) {
-                NodeEntity rtuNode = nodeDao.getById(id);
-                json = gson.toJson(rtuNode);
-            }
-            if (mtype.equalsIgnoreCase("tcp")) {
-                NodeEntity tcpNode = nodeDao.getById(id);
-                json = gson.toJson(tcpNode);
-            }*/
         }
         if (type.equalsIgnoreCase("device")) {
             AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);

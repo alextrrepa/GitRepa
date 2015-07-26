@@ -32,12 +32,12 @@ $(function () {
     });
 
     var methods = {
-        node : function(id, type) {
+        node: function (id, type) {
             $.ajax({
-                url : "ModbusTreeEdit.do",
+                url: "ModbusTreeEdit.do",
                 type: "GET",
                 data: {"id": id, "type": type},
-                success: function(data) {
+                success: function (data) {
                     if (data.type === "rtu") {
                         var html = getForm.getRtu();
                         addDeleteForm(html);
@@ -66,12 +66,12 @@ $(function () {
                 }
             });
         },
-        device : function(id, type) {
+        device: function (id, type) {
             $.ajax({
                 url: "ModbusTreeEdit.do",
                 type: "GET",
                 data: {"id": id, "type": type},
-                success: function(data) {
+                success: function (data) {
                     var html = getForm.getDevice();
                     addDeleteForm(html);
                     $("input[name=devicename]").val(data.name);
@@ -82,12 +82,12 @@ $(function () {
                 }
             });
         },
-        tag : function(id, type) {
+        tag: function (id, type) {
             $.ajax({
                 url: "ModbusTreeEdit.do",
                 type: "GET",
                 data: {"id": id, "type": type},
-                success: function(data) {
+                success: function (data) {
                     var html = getForm.getTag();
                     addDeleteForm(html);
                     $("input[name=tagname]").val(data.name);
@@ -105,8 +105,8 @@ $(function () {
     }
 
     var getForm = {
-        getRtu: function() {
-                return '<form action="" method="post">' +
+        getRtu: function () {
+            return '<form action="" method="post">' +
                 '<label><span>Имя Узла<span class="required">*</span></span>' +
                 '<input type="text" name="nodename" class="input-field"/>' +
                 '</label>' +
@@ -172,8 +172,8 @@ $(function () {
                 '<input type="submit" value="Сохранить"/>' +
                 '</form>';
         },
-        getTcp: function() {
-              return '<form action="" method="post">' +
+        getTcp: function () {
+            return '<form action="" method="post">' +
                 '<label><span>Имя узла <span class="required">*</span></span>' +
                 '<input type="text" name="nodename" class="input-field"/>' +
                 '</label>' +
@@ -207,7 +207,7 @@ $(function () {
                 '<input type="submit" value="Сохранить"/>' +
                 '</form>';
         },
-        getDevice: function() {
+        getDevice: function () {
             return '<form action="" method="post"><label><span>Имя узла <span class="required">*</span></span>' +
                 '<input type="text" name="devicename" class="input-field"/>' +
                 '</label>' +
@@ -235,7 +235,7 @@ $(function () {
                 '<input type="submit" value="Сохранить"/>' +
                 '</form>';
         },
-        getTag: function() {
+        getTag: function () {
             return '<form><label><span>Имя узла<span class="required">*</span></span>' +
                 '<input type="text" name="tagname" class="input-field">' +
                 '</label>' +
