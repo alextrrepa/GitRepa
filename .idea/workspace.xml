@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/TreeElement.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/TreeElement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -54,8 +52,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-              <folding />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,11 +68,11 @@
               <folding>
                 <element signature="e#936#2763#0" expanded="false" />
                 <element signature="e#957#2751#0" expanded="false" />
-                <element signature="e#2801#3460#0" expanded="false" />
-                <element signature="e#3495#4021#0" expanded="false" />
-                <element signature="e#4213#7333#0" expanded="false" />
-                <element signature="e#7362#8953#0" expanded="false" />
-                <element signature="e#8985#10384#0" expanded="false" />
+                <element signature="e#2801#3461#0" expanded="false" />
+                <element signature="e#3496#4023#0" expanded="false" />
+                <element signature="e#4216#7332#0" expanded="false" />
+                <element signature="e#7362#8951#0" expanded="false" />
+                <element signature="e#8984#10383#0" expanded="false" />
                 <element signature="e#10413#12810#0" expanded="false" />
               </folding>
             </state>
@@ -82,8 +82,8 @@
       <file leaf-file-name="modbus_page.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-34.0">
+              <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -1045,7 +1045,7 @@
       <workItem from="1437709682535" duration="12414000" />
       <workItem from="1437732856333" duration="7175000" />
       <workItem from="1437808725697" duration="3538000" />
-      <workItem from="1437883929304" duration="14675000" />
+      <workItem from="1437883929304" duration="14830000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1197,11 +1197,17 @@
       <option name="project" value="LOCAL" />
       <updated>1437727392851</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Переделал события по клику на узле дерева.">
+      <created>1437930417187</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1437930417187</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="827360000" />
+    <option name="totallyTimeSpent" value="827515000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1262,7 +1268,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ConfigDaoTcp class." />
     <MESSAGE value="Create ConfigDaoFactory for AbstractDao." />
     <MESSAGE value="Переделал страницы html в jsp. Необходимо сверстать дерево." />
     <MESSAGE value="Добавил контроллер для настройки Modbus опроса. Добавил пару Section в основной контент на странице modbus_page.jsp" />
@@ -1287,7 +1292,8 @@
     <MESSAGE value="Поменял стандартные иконки узлов дерева на свои собственные" />
     <MESSAGE value="Добавил контекстное меню для дерева." />
     <MESSAGE value="При вызове контекстного меню узлы не выделяются." />
-    <option name="LAST_COMMIT_MESSAGE" value="При вызове контекстного меню узлы не выделяются." />
+    <MESSAGE value="Переделал события по клику на узле дерева." />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделал события по клику на узле дерева." />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
@@ -1322,11 +1328,11 @@
           <folding>
             <element signature="e#936#2763#0" expanded="false" />
             <element signature="e#957#2751#0" expanded="false" />
-            <element signature="e#2801#3460#0" expanded="false" />
-            <element signature="e#3495#4021#0" expanded="false" />
-            <element signature="e#4213#7333#0" expanded="false" />
-            <element signature="e#7362#8953#0" expanded="false" />
-            <element signature="e#8985#10384#0" expanded="false" />
+            <element signature="e#2801#3461#0" expanded="false" />
+            <element signature="e#3496#4023#0" expanded="false" />
+            <element signature="e#4216#7332#0" expanded="false" />
+            <element signature="e#7362#8951#0" expanded="false" />
+            <element signature="e#8984#10383#0" expanded="false" />
             <element signature="e#10413#12810#0" expanded="false" />
           </folding>
         </state>
@@ -1724,19 +1730,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        <state vertical-scroll-proportion="-34.0">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/modbus_page.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1747,11 +1755,11 @@
           <folding>
             <element signature="e#936#2763#0" expanded="false" />
             <element signature="e#957#2751#0" expanded="false" />
-            <element signature="e#2801#3460#0" expanded="false" />
-            <element signature="e#3495#4021#0" expanded="false" />
-            <element signature="e#4213#7333#0" expanded="false" />
-            <element signature="e#7362#8953#0" expanded="false" />
-            <element signature="e#8985#10384#0" expanded="false" />
+            <element signature="e#2801#3461#0" expanded="false" />
+            <element signature="e#3496#4023#0" expanded="false" />
+            <element signature="e#4216#7332#0" expanded="false" />
+            <element signature="e#7362#8951#0" expanded="false" />
+            <element signature="e#8984#10383#0" expanded="false" />
             <element signature="e#10413#12810#0" expanded="false" />
           </folding>
         </state>
