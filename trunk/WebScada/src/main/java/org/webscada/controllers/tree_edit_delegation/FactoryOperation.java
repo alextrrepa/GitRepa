@@ -8,10 +8,8 @@ public class FactoryOperation {
 
     public static Command getCommand(HttpServletRequest request, Operation operation) {
         String action = request.getParameter("action");
-        log.trace(action);
         switch (action) {
             case "rename_node":
-                log.trace("@@@@@@@@@@Add Operation@@@@@@@@@@@");
                 return new AddOperation(operation);
             case "delete_node":
                 return new DeleteOperation(operation);

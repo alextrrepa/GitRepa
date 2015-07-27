@@ -2,6 +2,7 @@ package org.webscada.controllers.tree_edit_delegation;
 
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
+import org.webscada.controllers.TreeElement;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.DeviceEntity;
@@ -28,8 +29,10 @@ public class Operation {
             return addNode(nodeName);
         }
         if (nodeType.equalsIgnoreCase("device")) {
-            log.trace("Add Device");
             return addDevice(nodeName);
+        }
+        if (nodeType.equalsIgnoreCase("tag")) {
+            return addTag(nodeName);
         }
         return null;
     }
@@ -39,15 +42,18 @@ public class Operation {
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(nodeName);
         nodeDao.create(nodeEntity);
-        return gson.toJson(nodeEntity);
+
+        log.trace(nodeEntity.getId());
+        log.trace(nodeEntity.getName());
+        TreeElement treeElement = new TreeElement("node"+ Long.toString(nodeEntity.getId()),
+                "root", nodeEntity.getName(),
+                "images/icn_node.png");
+        return gson.toJson(treeElement);
     }
 
     private String addDevice(String name) {
-        log.trace("Add Device Method");
         AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
-        log.trace("Id :@@@@" + request.getParameter("id"));
         Long id = Long.valueOf(request.getParameter("id"));
-        log.trace("Id:" + id);
         DeviceEntity deviceEntity = new DeviceEntity();
         deviceEntity.setName(name);
 
@@ -59,11 +65,11 @@ public class Operation {
         return gson.toJson(deviceEntity);
     }
 
-    private String addTag() {
+    private String addTag(String name) {
         AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = new TagEntity();
-        tagEntity.setName("Tag");
+        tagEntity.setName(name);
 
         DeviceEntity deviceEntity = new DeviceEntity();
         deviceEntity.setId(id);
@@ -94,27 +100,4 @@ public class Operation {
         }
         return null;
     }
-
-/*    public String addRtu() {
-        System.out.println("Add Rtu");
-        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-        NodeEntity nodeEntity = new NodeEntity();
-        nodeEntity.setName("Node");
-        nodeEntity.setType("rtu");
-        nodeDao.create(nodeEntity);
-
-        Long nodeId = nodeEntity.getId();
-        return gson.toJson(nodeEntity);
-    }
-
-    public String addTcp() {
-        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-        NodeEntity nodeEntity = new NodeEntity();
-        nodeEntity.setName("Node");
-        nodeEntity.setType("tcp");
-        nodeDao.create(nodeEntity);
-
-        Long nodeId = nodeEntity.getId();
-        return gson.toJson(nodeEntity);
-    }*/
 }

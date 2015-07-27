@@ -14,7 +14,7 @@ $(function () {
                             inst.create_node(obj, {/*icon: "images/icn_node.png"*/}, "last", function (new_node) {
                                 setTimeout(function () {
                                     inst.edit(new_node);
-                                }, 0);
+                                }, 2);
                             });
                         },
                     },
@@ -48,10 +48,9 @@ $(function () {
         var nodeId = data.node.id;
         var type = nodeId.replace(/[0-9]/g, '');
         methods[type](id, type);
-        console.log(id);
+        //console.log(id);
         //console.log(nodeId);
         //console.log(type);
-
     }).on('delete_node.jstree', function (event, data) {
         /*if (data.node.parent === "root") {
             methods.onAdd({'nodeType': 'node', 'action': event.type, 'id': data.node.data});
@@ -65,23 +64,19 @@ $(function () {
         data.instance.refresh();*/
 
     }).on('rename_node.jstree', function (event, data) {
-        var par = data.node.parent.replace(/[0-9]/g, '');
-
-        if (par === "root") {
-            methods.onAdd({'nodeType': 'node', 'action': event.type, 'nodeName': data.node.text});
+        var nodeType = data.node.parent.replace(/[0-9]/g, '');
+        if (nodeType === "root") {
+            methods.onAdd({'nodeType': 'node', 'action': event.type, 'nodeName': data.node.text}, data);
         }
-/*        console.log(event.type);
-        console.log(data.node.text);*/
-        console.log(data);
-        if (par === 'node') {
-            methods.onAdd({'nodeType': 'device', 'action': event.type, 'nodeName': data.node.text, 'id': data.node.data});
+        if (nodeType === 'node') {
+            var nodeId = data.node.parent.replace(/\D+/g, '');
+            methods.onAdd({'nodeType': 'device', 'action': event.type, 'nodeName': data.node.text, 'id': nodeId});
         }
-       /* if (data.node.parent === 'device') {
-            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': data.node.data});
-        }*/
-        data.instance.refresh();
-    }).on('create_node', function(event, data) {
-
+        if (nodeType === 'device') {
+            var devId = data.node.parent.replace(/\D+/g, '');
+            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': devId});
+        }
+        //data.instance.refresh();
     });
 
 
@@ -150,14 +145,14 @@ $(function () {
                 }
             });
         },
-        onAdd: function (obj) {
-            console.log(obj);
+        onAdd: function (obj, data) {
             $.ajax({
                 url: 'ModbusTreeEdit.do',
                 type: 'POST',
                 data: obj,
                 success: function (json) {
-                    console.log(json);
+                    console.log(json.id);
+                    //data.instance.set_id(data.node, json.id);
                 }
             });
         }
