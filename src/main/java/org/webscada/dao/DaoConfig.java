@@ -23,23 +23,22 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
     @Override
     public List<T> getAllConfig() {
         Session session = SessionUtil.getSession();
-        List<T> typeList = new ArrayList<>();
+        List<T> result = null;
+//        List<T> typeList = new ArrayList<>();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-
-            Query rtuQuery = session.createQuery("from NodeEntity as node where node.type = 'rtu' ");
-
-            List<T> rtuList = rtuQuery.list();
-            for (T entity : rtuList) {
+            Query query = session.createQuery("from NodeEntity as node");
+            result = query.list();
+            /*for (T entity : rtuList) {
                 typeList.add(entity);
-            }
+            }*/
 
-            Query tcpQuery = session.createQuery("from NodeEntity as node where node.type = 'tcp' ");
+/*            Query tcpQuery = session.createQuery("from NodeEntity as node where node.type = 'tcp' ");
             List<T> tcpList = tcpQuery.list();
             for (T entity : tcpList) {
                 typeList.add(entity);
-            }
+            }*/
             transaction.commit();
         } catch (Exception e) {
             try {
@@ -50,7 +49,7 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
         } finally {
             session.close();
         }
-        return typeList;
+        return result;
     }
 
     @Override

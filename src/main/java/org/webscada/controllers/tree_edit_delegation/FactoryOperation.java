@@ -9,16 +9,16 @@ public class FactoryOperation {
     public static Command getCommand(HttpServletRequest request, Operation operation) {
         String action = request.getParameter("action");
         log.trace(action);
-
         switch (action) {
-            case "add":
+            case "rename_node":
+                log.trace("@@@@@@@@@@Add Operation@@@@@@@@@@@");
                 return new AddOperation(operation);
-            case "delete":
+            case "delete_node":
                 return new DeleteOperation(operation);
-            case "subRtu":
+            /*case "subRtu":
                 return new AddRtuOperation(operation);
             case "subTcp":
-                return new AddTcpOperation(operation);
+                return new AddTcpOperation(operation);*/
         }
         return null;
     }

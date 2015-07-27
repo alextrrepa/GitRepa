@@ -22,27 +22,40 @@ public class Operation {
 
     public String add() {
         String nodeType = request.getParameter("nodeType");
+        String nodeName = request.getParameter("nodeName");
+        log.trace(nodeName + nodeType);
         if (nodeType.equalsIgnoreCase("node")) {
-           return addDevice();
+            return addNode(nodeName);
         }
         if (nodeType.equalsIgnoreCase("device")) {
-           return addTag();
+            log.trace("Add Device");
+            return addDevice(nodeName);
         }
         return null;
     }
 
-    private String addDevice() {
+    private String addNode(String nodeName) {
+        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+        NodeEntity nodeEntity = new NodeEntity();
+        nodeEntity.setName(nodeName);
+        nodeDao.create(nodeEntity);
+        return gson.toJson(nodeEntity);
+    }
+
+    private String addDevice(String name) {
+        log.trace("Add Device Method");
         AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
+        log.trace("Id :@@@@" + request.getParameter("id"));
         Long id = Long.valueOf(request.getParameter("id"));
+        log.trace("Id:" + id);
         DeviceEntity deviceEntity = new DeviceEntity();
-        deviceEntity.setName("Device");
+        deviceEntity.setName(name);
 
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setId(id);
 
         deviceEntity.setNodeEntity(nodeEntity);
         deviceDao.create(deviceEntity);
-
         return gson.toJson(deviceEntity);
     }
 
@@ -82,7 +95,7 @@ public class Operation {
         return null;
     }
 
-    public String addRtu() {
+/*    public String addRtu() {
         System.out.println("Add Rtu");
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
@@ -103,5 +116,5 @@ public class Operation {
 
         Long nodeId = nodeEntity.getId();
         return gson.toJson(nodeEntity);
-    }
+    }*/
 }
