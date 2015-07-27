@@ -62,7 +62,7 @@ public class ModbusEditController extends HttpServlet {
             }
             json = gson.toJson(treeElements);
         }
-        log.trace(json);
+//        log.trace(json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();

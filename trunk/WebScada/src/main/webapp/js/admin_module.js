@@ -1,35 +1,89 @@
 $(function () {
     $("#tree").jstree({
-        'plugins': ['contextmenu'],
+        'plugins': ['ccrm', 'contextmenu'],
         'contextmenu': {
             'select_node': false,
-            'items': function ($node) {
+            'items': function (node) {
                 return {
                     "Add": {
-                        'label': 'Добавить'
+                        'separator_after': true,
+                        'label': 'Добавить узел',
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(obj, {/*icon: "images/icn_node.png"*/}, "last", function (new_node) {
+                                setTimeout(function () {
+                                    inst.edit(new_node);
+                                }, 0);
+                            });
+                        },
                     },
                     "Delete": {
-                        'label': 'Удалить'
+                        'label': "Удалить узел",
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            if (inst.is_selected(obj)) {
+                                inst.delete_node(inst.get_selected());
+                            }
+                            else {
+                                inst.delete_node(obj);
+                            }
+                        }
                     }
                 }
             }
         },
         'core': {
+            'check_callback': true,
             'themes': {
                 "name": "default-dark"
             },
-
             'data': {
                 'url': 'ModbusEdit.do?action=getAll'
             }
         }
-    }).bind('select_node.jstree', function (event, data) {
+    }).on('select_node.jstree', function (event, data) {
         var id = data.node.data;
         var nodeId = data.node.id;
         var type = nodeId.replace(/[0-9]/g, '');
-        console.log(id + type);
         methods[type](id, type);
+        console.log(id);
+        //console.log(nodeId);
+        //console.log(type);
+
+    }).on('delete_node.jstree', function (event, data) {
+        /*if (data.node.parent === "root") {
+            methods.onAdd({'nodeType': 'node', 'action': event.type, 'id': data.node.data});
+        }
+        if (data.node.parent === 'node') {
+            methods.onAdd({'nodeType': 'device', 'action': event.type, 'id': data.node.data});
+        }
+        if (data.node.parent === 'device') {
+            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'id': data.node.data});
+        }
+        data.instance.refresh();*/
+
+    }).on('rename_node.jstree', function (event, data) {
+        var par = data.node.parent.replace(/[0-9]/g, '');
+
+        if (par === "root") {
+            methods.onAdd({'nodeType': 'node', 'action': event.type, 'nodeName': data.node.text});
+        }
+/*        console.log(event.type);
+        console.log(data.node.text);*/
+        console.log(data);
+        if (par === 'node') {
+            methods.onAdd({'nodeType': 'device', 'action': event.type, 'nodeName': data.node.text, 'id': data.node.data});
+        }
+       /* if (data.node.parent === 'device') {
+            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': data.node.data});
+        }*/
+        data.instance.refresh();
+    }).on('create_node', function(event, data) {
+
     });
+
 
     var methods = {
         node: function (id, type) {
@@ -93,6 +147,17 @@ $(function () {
                     $("input[name=tagname]").val(data.name);
                     $("input[name=realoffset]").val(data.realOffset);
                     $("select[name=datatype]").val(data.datatypeEntity.name);
+                }
+            });
+        },
+        onAdd: function (obj) {
+            console.log(obj);
+            $.ajax({
+                url: 'ModbusTreeEdit.do',
+                type: 'POST',
+                data: obj,
+                success: function (json) {
+                    console.log(json);
                 }
             });
         }

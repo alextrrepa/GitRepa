@@ -43,7 +43,7 @@ public class NodeEntity {
         this.name = name;
     }
 
-    @Column(name = "type", nullable = false)
+    @Column(name = "type", nullable = true)
     public String getType() {
         return type;
     }
