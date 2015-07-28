@@ -4,17 +4,91 @@ $(function () {
         'contextmenu': {
             'select_node': false,
             'items': function (node) {
-                return {
+                var items = {
+                    'Add_Node' : {
+                        'separator_after': true,
+                        'label': 'Добавить коммуникационный узел',
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(obj, {icon: "images/icn_node.png"}, "last", function (new_node) {
+                            setTimeout(function () {
+                                inst.edit(new_node);
+                            }, 0);
+                        });
+                        }
+                    },
+                    'Add_Device' : {
+                        'separator_after': true,
+                        'label': 'Добавить устройство',
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(obj, {icon: "images/icn_device.png"}, "last", function (new_node) {
+                                setTimeout(function () {
+                                    inst.edit(new_node);
+                                }, 0);
+                            });
+                        }
+                    },
+                    'Add_Tag' : {
+                        'separator_after': true,
+                        'label': 'Добавить тэг',
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(obj, {icon: "images/icn_tag.png"}, "last", function (new_node) {
+                                setTimeout(function () {
+                                    inst.edit(new_node);
+                                }, 0);
+                            });
+                        }
+                    },
+                    'Delete': {
+                        'label': "Удалить узел",
+                        'action': function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            if (inst.is_selected(obj)) {
+                                inst.delete_node(inst.get_selected());
+                            }
+                            else {
+                                inst.delete_node(obj);
+                            }
+                        }
+                    }
+                };
+                var nodeType = node.id.replace(/[0-9]/g, '');
+                if (nodeType === 'root') {
+                    delete items.Add_Device;
+                    delete items.Add_Tag;
+                }
+                if (nodeType === 'node') {
+                    delete  items.Add_Node;
+                    delete  items.Add_Tag;
+                }
+                if (nodeType === 'device') {
+                    delete items.Add_Device;
+                    delete items.Add_Node;
+                }
+                if (nodeType === 'tag') {
+                    delete items.Add_Device;
+                    delete items.Add_Node;
+                    delete items.Add_Tag;
+                }
+
+                return items;
+/*                return {
                     "Add": {
                         'separator_after': true,
                         'label': 'Добавить узел',
                         'action': function (data) {
                             var inst = $.jstree.reference(data.reference),
                                 obj = inst.get_node(data.reference);
-                            inst.create_node(obj, {/*icon: "images/icn_node.png"*/}, "last", function (new_node) {
+                            inst.create_node(obj, {/!*icon: "images/icn_node.png"*!/}, "last", function (new_node) {
                                 setTimeout(function () {
                                     inst.edit(new_node);
-                                }, 2);
+                                }, 0);
                             });
                         },
                     },
@@ -31,7 +105,7 @@ $(function () {
                             }
                         }
                     }
-                }
+                }*/
             }
         },
         'core': {
@@ -48,21 +122,13 @@ $(function () {
         var nodeId = data.node.id;
         var type = nodeId.replace(/[0-9]/g, '');
         methods[type](id, type);
-        //console.log(id);
-        //console.log(nodeId);
-        //console.log(type);
+        console.log(id);
+        console.log(nodeId);
+        console.log(type);
     }).on('delete_node.jstree', function (event, data) {
-        /*if (data.node.parent === "root") {
-            methods.onAdd({'nodeType': 'node', 'action': event.type, 'id': data.node.data});
-        }
-        if (data.node.parent === 'node') {
-            methods.onAdd({'nodeType': 'device', 'action': event.type, 'id': data.node.data});
-        }
-        if (data.node.parent === 'device') {
-            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'id': data.node.data});
-        }
-        data.instance.refresh();*/
-
+        var id = data.node.data;
+        var type = data.node.id.replace(/[0-9]/g, '');
+        methods.onDelete({'nodeType': type, 'action': event.type, 'id': id});
     }).on('rename_node.jstree', function (event, data) {
         var nodeType = data.node.parent.replace(/[0-9]/g, '');
         if (nodeType === "root") {
@@ -76,7 +142,7 @@ $(function () {
             var devId = data.node.parent.replace(/\D+/g, '');
             methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': devId});
         }
-        //data.instance.refresh();
+        data.instance.refresh();
     });
 
 
@@ -151,8 +217,19 @@ $(function () {
                 type: 'POST',
                 data: obj,
                 success: function (json) {
-                    console.log(json.id);
-                    //data.instance.set_id(data.node, json.id);
+                    var parse = JSON.parse(json);
+                    data.instance.set_id(data.node, parse.id);
+                    data.node.data = parse.data;
+                }
+            });
+        },
+        onDelete: function(obj) {
+            $.ajax({
+                url: 'ModbusTreeEdit.do',
+                type: 'POST',
+                data: obj,
+                error: function() {
+                    data.instance.refresh();
                 }
             });
         }

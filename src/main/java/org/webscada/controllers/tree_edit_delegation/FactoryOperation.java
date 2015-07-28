@@ -13,10 +13,6 @@ public class FactoryOperation {
                 return new AddOperation(operation);
             case "delete_node":
                 return new DeleteOperation(operation);
-            /*case "subRtu":
-                return new AddRtuOperation(operation);
-            case "subTcp":
-                return new AddTcpOperation(operation);*/
         }
         return null;
     }
