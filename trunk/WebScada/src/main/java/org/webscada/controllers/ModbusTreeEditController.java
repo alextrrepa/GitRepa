@@ -17,9 +17,7 @@ import java.io.PrintWriter;
 
 public class ModbusTreeEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusTreeEditController.class);
-    /*Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
-            create();*/
-    Gson gson = new GsonBuilder().setPrettyPrinting().
+    Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
             create();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,9 +25,7 @@ public class ModbusTreeEditController extends HttpServlet {
         Command command = FactoryOperation.getCommand(request, operation);
         DoOperation doOperation = new DoOperation(command);
         String commandResp = doOperation.makeCommand();
-
-        log.trace("Ul id" + " :" + commandResp);
-
+        log.trace("Responce" + " :" + commandResp);
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         out.write(gson.toJson(commandResp));

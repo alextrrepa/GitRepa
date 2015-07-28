@@ -47,7 +47,7 @@ public class Operation {
         log.trace(nodeEntity.getName());
         TreeElement treeElement = new TreeElement("node"+ Long.toString(nodeEntity.getId()),
                 "root", nodeEntity.getName(),
-                "images/icn_node.png");
+                "images/icn_node.png", Long.toString(nodeEntity.getId()));
         return gson.toJson(treeElement);
     }
 
