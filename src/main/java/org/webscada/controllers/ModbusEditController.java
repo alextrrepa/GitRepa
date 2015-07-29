@@ -3,6 +3,7 @@ package org.webscada.controllers;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
+import org.webscada.controllers.tree_edit_delegation.*;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.DeviceEntity;
@@ -16,53 +17,42 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ModbusEditController extends HttpServlet {
     private final static Logger log = Logger.getLogger(ModbusEditController.class);
+    private Map<String, Command> commandMap = new HashMap<>();
+    private Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
+            create();
+
+    public ModbusEditController() {
+        Operation operation = new Operation(gson);
+        commandMap.put("getAll", new GetAllOperation(operation));
+        commandMap.put("addNode", new AddNodeOperation(operation));
+        commandMap.put("addDevice", new AddDeviceOperation(operation));
+        commandMap.put("addTag", new AddTagOperation(operation));
+        commandMap.put("delete", new DeleteOperation(operation));
+        commandMap.put("getNode", new GetNodeOperation(operation));
+        commandMap.put("getDevice", new GetDeviceOperation(operation));
+        commandMap.put("getTag", new GetTagOperation(operation));
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        performTask(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<TreeElement> treeElements = new ArrayList<>();
-        TreeElement root = new TreeElement("root", "#", "Сервер", "images/icn_server.png");
-        treeElements.add(root);
+        performTask(request, response);
+    }
 
-        String json = null;
-        Gson gson = new GsonBuilder().setPrettyPrinting().
-                create();
-
+    private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action.equalsIgnoreCase("getAll")) {
-            AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-            List<NodeEntity> nodeList = nodeDao.getAllConfig();
-            for (NodeEntity node : nodeList) {
-                TreeElement nodeElem = new TreeElement("node" + Long.toString(node.getId()),
-                        "root", node.getName(), "images/icn_node.png", Long.toString(node.getId()));
-                treeElements.add(nodeElem);
-
-                List<DeviceEntity> deviceList = node.getDeviceEntity();
-                for (DeviceEntity device : deviceList) {
-                    TreeElement deviceElem = new TreeElement(
-                            "device" + Long.toString(device.getId()),
-                            "node" + Long.toString(node.getId()), device.getName(),
-                            "images/icn_device.png", Long.toString(device.getId()));
-                    treeElements.add(deviceElem);
-
-                    List<TagEntity> tagList = device.getTagEntities();
-                    for (TagEntity tag : tagList) {
-                        TreeElement tagElem = new TreeElement(
-                                "tag" + Long.toString(tag.getId()),
-                                "device" + Long.toString(device.getId()), tag.getName(),
-                                "images/icn_tag.png", Long.toString(tag.getId()));
-                        treeElements.add(tagElem);
-                    }
-                }
-            }
-            json = gson.toJson(treeElements);
-        }
-//        log.trace(json);
+        Command command = commandMap.get(action);
+        DoOperation operation = new DoOperation(command);
+        String json = operation.makeCommand(request, response);
+        log.trace(json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();

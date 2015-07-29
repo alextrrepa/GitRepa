@@ -119,18 +119,26 @@ $(function () {
         }
     }).on('select_node.jstree', function (event, data) {
         var id = data.node.data;
-        var nodeId = data.node.id;
-        var type = nodeId.replace(/[0-9]/g, '');
-        methods[type](id, type);
+        var type = data.node.id.replace(/[0-9]/g, '');
+        var select = new TreeOperations();
+        select.onClick(id, type);
+        /*methods[type](id, type);
         console.log(id);
-        console.log(nodeId);
-        console.log(type);
-    }).on('delete_node.jstree', function (event, data) {
+        console.log(type);*/
+    })/*.on('delete_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
         methods.onDelete({'nodeType': type, 'action': event.type, 'id': id});
-    }).on('rename_node.jstree', function (event, data) {
-        var nodeType = data.node.parent.replace(/[0-9]/g, '');
+
+    })*/.on('rename_node.jstree', function (event, data) {
+            var nodeType = data.node.parent.replace(/[0-9]/g, '');
+            var nodeId = data.node.parent.replace(/\D+/g, '');
+            var name = data.node.text;
+
+            console.log(name);
+            var add = new TreeOperations(name);
+            add.onAdd(nodeId, nodeType);
+/*
         if (nodeType === "root") {
             methods.onAdd({'nodeType': 'node', 'action': event.type, 'nodeName': data.node.text}, data);
         }
@@ -142,9 +150,59 @@ $(function () {
             var devId = data.node.parent.replace(/\D+/g, '');
             methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': devId});
         }
+*/
         data.instance.refresh();
     });
 
+    function TreeOperations(name) {
+        this.name = name;
+    }
+    
+    TreeOperations.prototype.onClick = function(id, type) {
+        var types = {
+            node: function() {
+                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id": id, "type": type, "action":"getNode"} });
+                resp.success(function(data) {
+                    console.log(data);
+                });
+            },
+            device: function() {
+                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id":id, "type": type, "action": "getDevice"}});
+                resp.success(function(data) {
+                    console.log(data);
+                });
+            },
+            tag: function() {
+                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id":id, "type": type, "action": "getTag"}});
+                resp.success(function(data) {
+                    console.log(data);
+                });
+            }
+        };
+        types[type]();
+    };
+
+    TreeOperations.prototype.onAdd = function(id, type) {
+        var types = {
+            root: function() {
+                treeCrudRequest({"url": "ModbusEdit.do", "data": {"action": "addNode", "nodeName": this.name}})
+            },
+            node: function() {
+
+            },
+            device: function() {
+
+            }
+        };
+        types[type]();
+    };
+
+    function treeCrudRequest(obj) {
+       return $.ajax({
+            url : obj.url,
+            data: obj.data
+        });
+    }
 
     var methods = {
         node: function (id, type) {
