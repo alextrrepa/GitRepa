@@ -10,52 +10,38 @@ import org.webscada.model.NodeEntity;
 import org.webscada.model.TagEntity;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Operation {
     private final static Logger log = Logger.getLogger(Operation.class);
-    private HttpServletRequest request;
     private Gson gson;
 
-    public Operation(HttpServletRequest request, Gson gson) {
-        this.request = request;
+    public Operation(Gson gson) {
         this.gson = gson;
     }
 
-    public String add() {
-        String nodeType = request.getParameter("nodeType");
-        String nodeName = request.getParameter("nodeName");
-        log.trace(nodeName + nodeType);
-        if (nodeType.equalsIgnoreCase("node")) {
-            return addNode(nodeName);
-        }
-        if (nodeType.equalsIgnoreCase("device")) {
-            return addDevice(nodeName);
-        }
-        if (nodeType.equalsIgnoreCase("tag")) {
-            return addTag(nodeName);
-        }
-        return null;
-    }
-
-    private String addNode(String nodeName) {
+    public String addNode(HttpServletRequest request, HttpServletResponse response) {
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
-        nodeEntity.setName(nodeName);
+        nodeEntity.setName(request.getParameter("nodeName"));
+        log.trace("NodeName@@@@@@" + request.getParameter("nodeName"));
         nodeDao.create(nodeEntity);
 
         log.trace(nodeEntity.getId());
         log.trace(nodeEntity.getName());
-        TreeElement treeElement = new TreeElement("node"+ Long.toString(nodeEntity.getId()),
+        TreeElement treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                 "root", nodeEntity.getName(),
                 "images/icn_node.png", Long.toString(nodeEntity.getId()));
         return gson.toJson(treeElement);
     }
 
-    private String addDevice(String name) {
+    public String addDevice(HttpServletRequest request, HttpServletResponse response) {
         AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity deviceEntity = new DeviceEntity();
-        deviceEntity.setName(name);
+//        deviceEntity.setName(name);
 
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setId(id);
@@ -65,11 +51,11 @@ public class Operation {
         return gson.toJson(deviceEntity);
     }
 
-    private String addTag(String name) {
+    public String addTag(HttpServletRequest request, HttpServletResponse response) {
         AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = new TagEntity();
-        tagEntity.setName(name);
+//        tagEntity.setName(name);
 
         DeviceEntity deviceEntity = new DeviceEntity();
         deviceEntity.setId(id);
@@ -81,7 +67,7 @@ public class Operation {
         return gson.toJson(tagEntity);
     }
 
-    public String delete() {
+    public String delete(HttpServletRequest request, HttpServletResponse response) {
         Long id = Long.valueOf(request.getParameter("id"));
         String nodeType = request.getParameter("nodeType");
         switch (nodeType) {
@@ -99,5 +85,59 @@ public class Operation {
                 return "taglist";
         }
         return null;
+    }
+
+    public String getAll(HttpServletRequest request, HttpServletResponse response) {
+        List<TreeElement> treeElements = new ArrayList<>();
+        TreeElement root = new TreeElement("root", "#", "Сервер", "images/icn_server.png");
+        treeElements.add(root);
+
+        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+        List<NodeEntity> nodeList = nodeDao.getAllConfig();
+        for (NodeEntity node : nodeList) {
+            TreeElement nodeElem = new TreeElement("node" + Long.toString(node.getId()),
+                    "root", node.getName(), "images/icn_node.png", Long.toString(node.getId()));
+            treeElements.add(nodeElem);
+
+            List<DeviceEntity> deviceList = node.getDeviceEntity();
+            for (DeviceEntity device : deviceList) {
+                TreeElement deviceElem = new TreeElement(
+                        "device" + Long.toString(device.getId()),
+                        "node" + Long.toString(node.getId()), device.getName(),
+                        "images/icn_device.png", Long.toString(device.getId()));
+                treeElements.add(deviceElem);
+
+                List<TagEntity> tagList = device.getTagEntities();
+                for (TagEntity tag : tagList) {
+                    TreeElement tagElem = new TreeElement(
+                            "tag" + Long.toString(tag.getId()),
+                            "device" + Long.toString(device.getId()), tag.getName(),
+                            "images/icn_tag.png", Long.toString(tag.getId()));
+                    treeElements.add(tagElem);
+                }
+            }
+        }
+        return gson.toJson(treeElements);
+    }
+
+    public String getNode(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
+        Long id = Long.valueOf(request.getParameter("id"));
+        NodeEntity nodeEntity = nodeDao.getById(id);
+        return gson.toJson(nodeEntity);
+    }
+
+    public String getDevice(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
+        Long id = Long.valueOf(request.getParameter("id"));
+        DeviceEntity devEntity = deviceDao.getById(id);
+        return gson.toJson(devEntity);
+    }
+
+    public String getTag(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
+        Long id = Long.valueOf(request.getParameter("id"));
+        TagEntity tagEntity = tagDao.getById(id);
+        return gson.toJson(tagEntity);
     }
 }
