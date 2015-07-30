@@ -26,11 +26,7 @@ public class Operation {
         AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(request.getParameter("nodeName"));
-        log.trace("NodeName@@@@@@" + request.getParameter("nodeName"));
         nodeDao.create(nodeEntity);
-
-        log.trace(nodeEntity.getId());
-        log.trace(nodeEntity.getName());
         TreeElement treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                 "root", nodeEntity.getName(),
                 "images/icn_node.png", Long.toString(nodeEntity.getId()));
@@ -41,11 +37,9 @@ public class Operation {
         AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity deviceEntity = new DeviceEntity();
-//        deviceEntity.setName(name);
-
+        deviceEntity.setName(request.getParameter("nodeName"));
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setId(id);
-
         deviceEntity.setNodeEntity(nodeEntity);
         deviceDao.create(deviceEntity);
         return gson.toJson(deviceEntity);
@@ -55,36 +49,33 @@ public class Operation {
         AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = new TagEntity();
-//        tagEntity.setName(name);
-
+        tagEntity.setName(request.getParameter("nodeName"));
         DeviceEntity deviceEntity = new DeviceEntity();
         deviceEntity.setId(id);
-
         tagEntity.setDeviceEntity(deviceEntity);
         tagDao.create(tagEntity);
-
-        Long tagId = tagEntity.getId();
         return gson.toJson(tagEntity);
     }
 
-    public String delete(HttpServletRequest request, HttpServletResponse response) {
+    public String deleteNode(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
-        String nodeType = request.getParameter("nodeType");
-        switch (nodeType) {
-            case "node":
-                AbstractDao<NodeEntity, Long> nodeDao = new DaoConfig<>(NodeEntity.class);
-                nodeDao.delete(id);
-                return "nodelist";
-            case "device":
-                AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
-                deviceDao.delete(id);
-                return "devicelist";
-            case "tag":
-                AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
-                tagDao.delete(id);
-                return "taglist";
-        }
-        return null;
+        nodeDao.delete(id);
+        return gson.toJson("success");
+    }
+
+    public String deleteDevice(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<DeviceEntity, Long> deviceDao = new DaoConfig<>(DeviceEntity.class);
+        Long id = Long.valueOf(request.getParameter("id"));
+        deviceDao.delete(id);
+        return gson.toJson("success");
+    }
+
+    public String deleteTag(HttpServletRequest request, HttpServletResponse response) {
+        AbstractDao<TagEntity, Long> tagDao = new DaoConfig<>(TagEntity.class);
+        Long id = Long.valueOf(request.getParameter("id"));
+        tagDao.delete(id);
+        return gson.toJson("success");
     }
 
     public String getAll(HttpServletRequest request, HttpServletResponse response) {

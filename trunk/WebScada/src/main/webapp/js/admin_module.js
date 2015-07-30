@@ -5,20 +5,20 @@ $(function () {
             'select_node': false,
             'items': function (node) {
                 var items = {
-                    'Add_Node' : {
+                    'Add_Node': {
                         'separator_after': true,
                         'label': 'Добавить коммуникационный узел',
                         'action': function (data) {
                             var inst = $.jstree.reference(data.reference),
                                 obj = inst.get_node(data.reference);
                             inst.create_node(obj, {icon: "images/icn_node.png"}, "last", function (new_node) {
-                            setTimeout(function () {
-                                inst.edit(new_node);
-                            }, 0);
-                        });
+                                setTimeout(function () {
+                                    inst.edit(new_node);
+                                }, 0);
+                            });
                         }
                     },
-                    'Add_Device' : {
+                    'Add_Device': {
                         'separator_after': true,
                         'label': 'Добавить устройство',
                         'action': function (data) {
@@ -31,7 +31,7 @@ $(function () {
                             });
                         }
                     },
-                    'Add_Tag' : {
+                    'Add_Tag': {
                         'separator_after': true,
                         'label': 'Добавить тэг',
                         'action': function (data) {
@@ -59,53 +59,27 @@ $(function () {
                     }
                 };
                 var nodeType = node.id.replace(/[0-9]/g, '');
-                if (nodeType === 'root') {
-                    delete items.Add_Device;
-                    delete items.Add_Tag;
-                }
-                if (nodeType === 'node') {
-                    delete  items.Add_Node;
-                    delete  items.Add_Tag;
-                }
-                if (nodeType === 'device') {
-                    delete items.Add_Device;
-                    delete items.Add_Node;
-                }
-                if (nodeType === 'tag') {
-                    delete items.Add_Device;
-                    delete items.Add_Node;
-                    delete items.Add_Tag;
-                }
-
-                return items;
-/*                return {
-                    "Add": {
-                        'separator_after': true,
-                        'label': 'Добавить узел',
-                        'action': function (data) {
-                            var inst = $.jstree.reference(data.reference),
-                                obj = inst.get_node(data.reference);
-                            inst.create_node(obj, {/!*icon: "images/icn_node.png"*!/}, "last", function (new_node) {
-                                setTimeout(function () {
-                                    inst.edit(new_node);
-                                }, 0);
-                            });
-                        },
+                var types = {
+                    root: function () {
+                        delete items.Add_Device;
+                        delete items.Add_Tag;
                     },
-                    "Delete": {
-                        'label': "Удалить узел",
-                        'action': function (data) {
-                            var inst = $.jstree.reference(data.reference),
-                                obj = inst.get_node(data.reference);
-                            if (inst.is_selected(obj)) {
-                                inst.delete_node(inst.get_selected());
-                            }
-                            else {
-                                inst.delete_node(obj);
-                            }
-                        }
+                    node: function () {
+                        delete  items.Add_Node;
+                        delete  items.Add_Tag;
+                    },
+                    device: function () {
+                        delete items.Add_Device;
+                        delete items.Add_Node;
+                    },
+                    tag: function () {
+                        delete items.Add_Device;
+                        delete items.Add_Node;
+                        delete items.Add_Tag;
                     }
-                }*/
+                };
+                types[nodeType]();
+                return items;
             }
         },
         'core': {
@@ -122,176 +96,173 @@ $(function () {
         var type = data.node.id.replace(/[0-9]/g, '');
         var select = new TreeOperations();
         select.onClick(id, type);
-        /*methods[type](id, type);
-        console.log(id);
-        console.log(type);*/
-    })/*.on('delete_node.jstree', function (event, data) {
+    }).on('delete_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
-        methods.onDelete({'nodeType': type, 'action': event.type, 'id': id});
+        var deleteNode = new TreeOperations();
+        deleteNode.onDelete(id, type, data);
+    }).on('rename_node.jstree', function (event, data) {
+        var nodeType = data.node.parent.replace(/[0-9]/g, '');
+        var nodeId = data.node.parent.replace(/\D+/g, '');
+        var name = data.node.text;
+        var addNode = new TreeOperations(name);
+        addNode.onAdd(nodeId, nodeType, data);
 
-    })*/.on('rename_node.jstree', function (event, data) {
-            var nodeType = data.node.parent.replace(/[0-9]/g, '');
-            var nodeId = data.node.parent.replace(/\D+/g, '');
-            var name = data.node.text;
-
-            console.log(name);
-            var add = new TreeOperations(name);
-            add.onAdd(nodeId, nodeType);
-/*
-        if (nodeType === "root") {
-            methods.onAdd({'nodeType': 'node', 'action': event.type, 'nodeName': data.node.text}, data);
-        }
-        if (nodeType === 'node') {
-            var nodeId = data.node.parent.replace(/\D+/g, '');
-            methods.onAdd({'nodeType': 'device', 'action': event.type, 'nodeName': data.node.text, 'id': nodeId});
-        }
-        if (nodeType === 'device') {
-            var devId = data.node.parent.replace(/\D+/g, '');
-            methods.onAdd({'nodeType': 'tag', 'action': event.type, 'nodeName': data.node.text, 'id': devId});
-        }
-*/
-        data.instance.refresh();
     });
 
     function TreeOperations(name) {
         this.name = name;
     }
-    
-    TreeOperations.prototype.onClick = function(id, type) {
+
+    TreeOperations.prototype.onClick = function (id, type) {
         var types = {
-            node: function() {
-                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id": id, "type": type, "action":"getNode"} });
-                resp.success(function(data) {
-                    console.log(data);
+            node: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"id": id, "type": type, "action": "getNode"}
+                });
+                resp.success(function (json) {
+                    if (json.type === "rtu") {
+                        addDeleteForm(getForm.getRtu());
+                        $("input[name=nodename]").val(json.name);
+                        $("select[name=modbustype]").val(json.type);
+                        $("input[name=port]").val(json.rtuEntity.port);
+                        $("select[name=baudrate]").val(json.rtuEntity.baudrate);
+                        $("select[name=databits]").val(json.rtuEntity.databits);
+                        $("input[name=parity]").val(json.rtuEntity.parity);
+                        $("select[name=stopbits]").val(json.rtuEntity.stopbits);
+                        $("input[name=retries]").val(json.rtuEntity.retries);
+                        $("input[name=timeout]").val(json.rtuEntity.timeout);
+                        $("input[name=period]").val(json.rtuEntity.period);
+                    }
+                    if (json.type === "tcp") {
+                        addDeleteForm(getForm.getTcp());
+                        $("input[name=nodename]").val(json.name);
+                        $("select[name=modbustype]").val(json.type);
+                        $("input[name=ip]").val(json.tcpEntity.ip);
+                        $("input[name=port]").val(json.tcpEntity.port);
+                        $("input[name=retries]").val(json.tcpEntity.retries);
+                        $("input[name=timeout]").val(json.tcpEntity.timeout);
+                        $("input[name=period]").val(json.tcpEntity.period);
+                    }
                 });
             },
-            device: function() {
-                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id":id, "type": type, "action": "getDevice"}});
-                resp.success(function(data) {
-                    console.log(data);
+            device: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"id": id, "type": type, "action": "getDevice"}
+                });
+                resp.success(function (json) {
+                    addDeleteForm(getForm.getDevice());
+                    $("input[name=devicename]").val(json.name);
+                    $("input[name=slaveid]").val(json.slaveid);
+                    $("input[name=startoffset]").val(json.startOffset);
+                    $("input[name=counts]").val(json.counts);
+                    $("select[name=regtype]").val(json.registerEntity.name);
                 });
             },
-            tag: function() {
-                var resp = treeCrudRequest({"url": "ModbusEdit.do", "data": {"id":id, "type": type, "action": "getTag"}});
-                resp.success(function(data) {
-                    console.log(data);
+            tag: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"id": id, "type": type, "action": "getTag"}
+                });
+                resp.success(function (json) {
+                    //addDeleteForm(getForm.getTag());
+                    getForm.getTag();
+                    $("input[name=tagname]").val(json.name);
+                    //$("input[name=realoffset]").val(json.realOffset);
+                    //$("select[name=datatype]").val(json.datatypeEntity.name);
+
+                });
+            }
+        };
+        try {
+            types[type]();
+        } catch (e) {
+            console.log(e.name);
+            console.log(e.message);
+        }
+    };
+
+    TreeOperations.prototype.onAdd = function (id, type, data) {
+        var nodeName = this.name;
+        var types = {
+            root: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"action": "addNode", "nodeName": nodeName}
+                });
+                resp.success(function (json) {
+                    data.instance.set_id(data.node, json.id);
+                    data.node.data = json.data;
+                    data.instance.refresh();
+                });
+            },
+            node: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"action": "addDevice", "nodeName": nodeName, "id": id}
+                });
+                resp.success(function (json) {
+                    data.instance.set_id(data.node, json.id);
+                    data.node.data = json.data;
+                    data.instance.refresh();
+                });
+            },
+            device: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    "data": {"action": "addTag", "nodeName": nodeName, "id": id}
+                });
+                resp.success(function (json) {
+                    data.instance.set_id(data.node, json.id);
+                    data.node.data = json.data;
+                    data.instance.refresh();
                 });
             }
         };
         types[type]();
     };
 
-    TreeOperations.prototype.onAdd = function(id, type) {
+    TreeOperations.prototype.onDelete = function (id, type, data) {
         var types = {
-            root: function() {
-                treeCrudRequest({"url": "ModbusEdit.do", "data": {"action": "addNode", "nodeName": this.name}})
+            node: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    data: {"action": "deleteNode", "id": id}
+                });
+                resp.success(function (json) {
+                    data.instance.refresh();
+                });
             },
-            node: function() {
-
+            device: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    data: {"action": "deleteDevice", "id": id}
+                });
+                resp.success(function (json) {
+                    data.instance.refresh();
+                });
             },
-            device: function() {
-
+            tag: function () {
+                var resp = treeCrudRequest({
+                    "url": "ModbusEdit.do",
+                    data: {"action": "deleteTag", "id": id}
+                });
+                resp.success(function (json) {
+                    data.instance.refresh();
+                });
             }
         };
         types[type]();
     };
 
     function treeCrudRequest(obj) {
-       return $.ajax({
-            url : obj.url,
+        return $.ajax({
+            url: obj.url,
             data: obj.data
         });
     }
-
-    var methods = {
-        node: function (id, type) {
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "GET",
-                data: {"id": id, "type": type},
-                success: function (data) {
-                    if (data.type === "rtu") {
-                        var html = getForm.getRtu();
-                        addDeleteForm(html);
-                        $("input[name=nodename]").val(data.name);
-                        $("select[name=modbustype]").val(data.type);
-                        $("input[name=port]").val(data.rtuEntity.port);
-                        $("select[name=baudrate]").val(data.rtuEntity.baudrate);
-                        $("select[name=databits]").val(data.rtuEntity.databits);
-                        $("input[name=parity]").val(data.rtuEntity.parity);
-                        $("select[name=stopbits]").val(data.rtuEntity.stopbits);
-                        $("input[name=retries]").val(data.rtuEntity.retries);
-                        $("input[name=timeout]").val(data.rtuEntity.timeout);
-                        $("input[name=period]").val(data.rtuEntity.period);
-                    }
-                    if (data.type === "tcp") {
-                        var html = getForm.getTcp();
-                        addDeleteForm(html);
-                        $("input[name=nodename]").val(data.name);
-                        $("select[name=modbustype]").val(data.type);
-                        $("input[name=ip]").val(data.tcpEntity.ip);
-                        $("input[name=port]").val(data.tcpEntity.port);
-                        $("input[name=retries]").val(data.tcpEntity.retries);
-                        $("input[name=timeout]").val(data.tcpEntity.timeout);
-                        $("input[name=period]").val(data.tcpEntity.period);
-                    }
-                }
-            });
-        },
-        device: function (id, type) {
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "GET",
-                data: {"id": id, "type": type},
-                success: function (data) {
-                    var html = getForm.getDevice();
-                    addDeleteForm(html);
-                    $("input[name=devicename]").val(data.name);
-                    $("input[name=slaveid]").val(data.slaveid);
-                    $("input[name=startoffset]").val(data.startOffset);
-                    $("input[name=counts]").val(data.counts);
-                    $("select[name=regtype]").val(data.registerEntity.name);
-                }
-            });
-        },
-        tag: function (id, type) {
-            $.ajax({
-                url: "ModbusTreeEdit.do",
-                type: "GET",
-                data: {"id": id, "type": type},
-                success: function (data) {
-                    var html = getForm.getTag();
-                    addDeleteForm(html);
-                    $("input[name=tagname]").val(data.name);
-                    $("input[name=realoffset]").val(data.realOffset);
-                    $("select[name=datatype]").val(data.datatypeEntity.name);
-                }
-            });
-        },
-        onAdd: function (obj, data) {
-            $.ajax({
-                url: 'ModbusTreeEdit.do',
-                type: 'POST',
-                data: obj,
-                success: function (json) {
-                    var parse = JSON.parse(json);
-                    data.instance.set_id(data.node, parse.id);
-                    data.node.data = parse.data;
-                }
-            });
-        },
-        onDelete: function(obj) {
-            $.ajax({
-                url: 'ModbusTreeEdit.do',
-                type: 'POST',
-                data: obj,
-                error: function() {
-                    data.instance.refresh();
-                }
-            });
-        }
-    };
 
     function addDeleteForm(html) {
         var mparams = $('.form_style');
@@ -308,6 +279,7 @@ $(function () {
 
                 '<label><span>Тип modbus <span class="required">*</span></span>' +
                 '<select name="modbustype" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="rtu">Rtu</option>' +
                 '<option value="tcp">Tcp</option>' +
                 '</select>' +
@@ -319,6 +291,7 @@ $(function () {
 
                 '<label><span>Скорость <span class="required">*</span></span>' +
                 '<select name="baudrate" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="1200">1200</option>' +
                 '<option value="1800">1800</option>' +
                 '<option value="2400">2400</option>' +
@@ -333,6 +306,7 @@ $(function () {
 
                 '<label><span>Данные <span class="required">*</span></span>' +
                 '<select name="databits" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="5">5</option>' +
                 '<option value="6">6</option>' +
                 '<option value="7">7</option>' +
@@ -345,7 +319,8 @@ $(function () {
                 '</label>' +
 
                 '<label><span>Стоп биты <span class="required">*</span></span>' +
-                '<select name="parity" class="select-field">' +
+                '<select name="stopbits" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="0">0</option>' +
                 '<option value="1">1</option>' +
                 '<option value="1.5">1.5</option>' +
@@ -375,6 +350,7 @@ $(function () {
 
                 '<label><span>Тип modbus <span class="required">*</span></span>' +
                 '<select name="modbustype" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="rtu">Rtu</option>' +
                 '<option value="tcp">Tcp</option>' +
                 '</select>' +
@@ -421,6 +397,7 @@ $(function () {
 
                 '<label><span>Тип регистров <span class="required">*</span></span>' +
                 '<select name="regtype" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="COIL_STATUS">COIL_STATUS</option>' +
                 '<option value="HOLDING_REGISTER">HOLDING_REGISTER</option>' +
                 '<option value="INPUT_REGISTER">INPUT_REGISTER</option>' +
@@ -431,7 +408,34 @@ $(function () {
                 '</form>';
         },
         getTag: function () {
-            return '<form><label><span>Имя узла<span class="required">*</span></span>' +
+            var elems = [];
+
+            var $formElement = $('<form>');
+            var $label = $('<label>');
+            var $firstSpan = $('<span>');
+            var $secondSpan = $('<span>');
+            var $input = $('<input>');
+
+            $firstSpan.text('Имя узла');
+            $firstSpan.append($secondSpan.text('*').addClass('required'));
+            $label.append($firstSpan);
+            $input.attr({'type': 'text', 'name': 'tagname'}).addClass('input-field');
+            $label.append($input);
+            elems.push($label);
+            $formElement.append(elems);
+
+            /*$firstSpan.text('Смещение');
+            $firstSpan.append($secondSpan.text('*').addClass('required'));
+            $label.append($firstSpan);
+            $input.attr({'type': 'text', 'name': 'realoffset'}).addClass('input-field');
+            $label.append($input);
+            elems.push($label);
+            $formElement.append(elems);*/
+
+            addDeleteForm($formElement);
+        }
+/*            return '<form>
+<label><span>Имя узла<span class="required">*</span></span>' +
                 '<input type="text" name="tagname" class="input-field">' +
                 '</label>' +
 
@@ -441,6 +445,7 @@ $(function () {
 
                 '<label><span>Тип даты <span class="required">*</span></span>' +
                 '<select name="datatype" class="select-field">' +
+                '<option value=""> - </option>' +
                 '<option value="BINARY">BINARY</option>' +
                 '<option value="CHAR">CHAR</option>' +
                 '<option value="EIGHT_BYTE_FLOAT">EIGHT_BYTE_FLOAT</option>' +
@@ -465,7 +470,7 @@ $(function () {
                 '</label>' +
                 '<input type="submit" value="Сохранить"/>' +
                 '</form>';
-        }
+        }*/
     }
 });
 

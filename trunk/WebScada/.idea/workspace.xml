@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddDeviceOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddTagOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetAllOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetDeviceOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetNodeOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetTagOperation.java" />
-      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\tree_edit_delegation\FactoryOperation.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\tree_edit_delegation\AddOperation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddNodeOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Command.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteOperation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DoOperation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DoOperation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteDeviceOperation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\tree_edit_delegation\DeleteOperation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteNodeOperation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -61,22 +52,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin_module.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin_module.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.3876853">
+              <caret line="426" column="0" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
               <folding>
-                <element signature="e#6837#7727#0" expanded="false" />
-                <element signature="e#8291#10118#0" expanded="false" />
-                <element signature="e#10156#10816#0" expanded="false" />
-                <element signature="e#10851#11378#0" expanded="false" />
-                <element signature="e#11416#11786#0" expanded="false" />
-                <element signature="e#11820#12066#0" expanded="false" />
-                <element signature="e#12259#15375#0" expanded="false" />
-                <element signature="e#15405#16994#0" expanded="false" />
-                <element signature="e#17027#18426#0" expanded="false" />
-                <element signature="e#18456#20853#0" expanded="false" />
+                <element signature="e#107#3759#0" expanded="false" />
+                <element signature="e#180#3749#0" expanded="false" />
+                <element signature="e#2970#3669#0" expanded="false" />
+                <element signature="e#5229#6067#0" expanded="false" />
+                <element signature="e#6113#6700#0" expanded="false" />
+                <element signature="e#8257#9726#0" expanded="false" />
+                <element signature="e#9795#10846#0" expanded="false" />
+                <element signature="e#10883#10979#0" expanded="false" />
+                <element signature="e#11165#14483#0" expanded="false" />
+                <element signature="e#14513#16152#0" expanded="false" />
+                <element signature="e#16185#17634#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -86,20 +78,52 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="31" />
-              <folding />
+              <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+              <folding>
+                <element signature="method#doPost#0;class#ModbusEditController#0" expanded="false" />
+                <element signature="method#doGet#0;class#ModbusEditController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeleteTagOperation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteTagOperation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteDeviceOperation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteDeviceOperation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#333#334#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40706956">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#649#650#0" expanded="true" />
                 <element signature="e#681#682#0" expanded="true" />
+                <element signature="method#getAll#0;class#Operation#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,9 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/model/TestEntity.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/model/TagEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/model/RtuEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/model/TcpEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/TreeEditFactory.java" />
@@ -164,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/TreeElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/FactoryOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddDeviceOperation.java" />
@@ -175,9 +195,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetNodeOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetDeviceOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/GetTagOperation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteOperation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteNodeOperation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteDeviceOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteTagOperation.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
       </list>
     </option>
   </component>
@@ -259,6 +283,24 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB Consoles" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -292,24 +334,6 @@
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DB Consoles" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -936,6 +960,9 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Unknown" factoryName="Unknown">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -1131,7 +1158,8 @@
       <workItem from="1437964108594" duration="27450000" />
       <workItem from="1437994175791" duration="9614000" />
       <workItem from="1438050435618" duration="17963000" />
-      <workItem from="1438136827815" duration="24223000" />
+      <workItem from="1438136827815" duration="24597000" />
+      <workItem from="1438223486362" duration="27298000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1295,11 +1323,17 @@
       <option name="project" value="LOCAL" />
       <updated>1438078000962</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Refactor ModbusTreeEditController. Перенос всего функционала tree_edit_delegation. Refactoring admin_module.js. Создание конструктора TreeOperations. Добавление методов к объекту TreeOperations.">
+      <created>1438166317686</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1438166317686</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="906765000" />
+    <option name="totallyTimeSpent" value="934437000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1323,7 +1357,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18381241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40331492" sideWeight="0.49755502" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44088396" sideWeight="0.49755502" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1360,7 +1394,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create ConfigDaoFactory for AbstractDao." />
     <MESSAGE value="Переделал страницы html в jsp. Необходимо сверстать дерево." />
     <MESSAGE value="Добавил контроллер для настройки Modbus опроса. Добавил пару Section в основной контент на странице modbus_page.jsp" />
     <MESSAGE value="Добились передачи данных из сервлета ModbusEditController в jsp страницу. Вывод в jsp посредством jstl. Вывод оформил в виде дерева. Необходимо дальнейшее редактирование дерева." />
@@ -1385,6 +1418,7 @@
     <MESSAGE value="Добавил контекстное меню для дерева." />
     <MESSAGE value="При вызове контекстного меню узлы не выделяются." />
     <MESSAGE value="Переделал события по клику на узле дерева." />
+    <MESSAGE value="Refactor ModbusTreeEditController. Перенос всего функционала tree_edit_delegation. Refactoring admin_module.js. Создание конструктора TreeOperations. Добавление методов к объекту TreeOperations." />
     <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
@@ -1413,20 +1447,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13568985">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295324">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/a30eee0c-46a0-4574-9089-af4eee78005f.schema:scada.public">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1465,26 +1485,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.datatype">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.registertype">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1580,14 +1600,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/dao/AbstractDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/dist/themes/default-dark/32px.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1599,26 +1611,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tcpconfig">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.rtuconfig">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1683,50 +1695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/dao/DaoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3579832">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tag">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.device">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/TreeElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3876853">
@@ -1735,24 +1703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058152795">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13568985">
           <caret line="7" column="100" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,17 +1715,7 @@
         <state vertical-scroll-proportion="0.11630559">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddNodeOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23261118">
-          <caret line="14" column="107" selection-start-line="14" selection-start-column="107" selection-end-line="14" selection-end-column="107" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1781,9 +1725,9 @@
         <state vertical-scroll-proportion="0.2713797">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#286#287#0" expanded="false" />
+            <element signature="e#324#325#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1827,7 +1771,7 @@
         <state vertical-scroll-proportion="0.6347656">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1849,45 +1793,150 @@
         <state vertical-scroll-proportion="0.25199544">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tag">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.device">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/AddNodeOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25199544">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#323#324#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/dao/AbstractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2713797">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/dao/DaoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59293044">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteNodeOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23261118">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteDeviceOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/DeleteTagOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.node">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
+          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
           <folding>
-            <element signature="e#6837#7727#0" expanded="false" />
-            <element signature="e#8291#10118#0" expanded="false" />
-            <element signature="e#10156#10816#0" expanded="false" />
-            <element signature="e#10851#11378#0" expanded="false" />
-            <element signature="e#11416#11786#0" expanded="false" />
-            <element signature="e#11820#12066#0" expanded="false" />
-            <element signature="e#12259#15375#0" expanded="false" />
-            <element signature="e#15405#16994#0" expanded="false" />
-            <element signature="e#17027#18426#0" expanded="false" />
-            <element signature="e#18456#20853#0" expanded="false" />
+            <element signature="method#doPost#0;class#ModbusEditController#0" expanded="false" />
+            <element signature="method#doGet#0;class#ModbusEditController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40706956">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#649#650#0" expanded="true" />
             <element signature="e#681#682#0" expanded="true" />
+            <element signature="method#getAll#0;class#Operation#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3876853">
+          <caret line="426" column="0" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
+          <folding>
+            <element signature="e#107#3759#0" expanded="false" />
+            <element signature="e#180#3749#0" expanded="false" />
+            <element signature="e#2970#3669#0" expanded="false" />
+            <element signature="e#5229#6067#0" expanded="false" />
+            <element signature="e#6113#6700#0" expanded="false" />
+            <element signature="e#8257#9726#0" expanded="false" />
+            <element signature="e#9795#10846#0" expanded="false" />
+            <element signature="e#10883#10979#0" expanded="false" />
+            <element signature="e#11165#14483#0" expanded="false" />
+            <element signature="e#14513#16152#0" expanded="false" />
+            <element signature="e#16185#17634#0" expanded="false" />
           </folding>
         </state>
       </provider>
