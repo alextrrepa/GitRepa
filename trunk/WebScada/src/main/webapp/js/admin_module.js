@@ -169,7 +169,7 @@ $(function () {
                 resp.success(function (json) {
                     //addDeleteForm(getForm.getTag());
                     getForm.getTag();
-                    $("input[name=tagname]").val(json.name);
+                    //$("input[name=tagname]").val(json.name);
                     //$("input[name=realoffset]").val(json.realOffset);
                     //$("select[name=datatype]").val(json.datatypeEntity.name);
 
@@ -408,30 +408,27 @@ $(function () {
                 '</form>';
         },
         getTag: function () {
-            var elems = [];
+            var labelNames = [
+                {labelName: "Имя узла", inputName: "tagname"},
+                {labelName: "Смещение", inputName: "realoffset"}
+                /*{labelName: "Тип даты", inputName: "datatype"}*/
+            ];
 
             var $formElement = $('<form>');
-            var $label = $('<label>');
-            var $firstSpan = $('<span>');
-            var $secondSpan = $('<span>');
-            var $input = $('<input>');
 
-            $firstSpan.text('Имя узла');
-            $firstSpan.append($secondSpan.text('*').addClass('required'));
-            $label.append($firstSpan);
-            $input.attr({'type': 'text', 'name': 'tagname'}).addClass('input-field');
-            $label.append($input);
-            elems.push($label);
-            $formElement.append(elems);
+            labelNames.forEach(function(item) {
+                var $label = $('<label>');
+                var $firstSpan = $('<span>'),
+                    $secondSpan = $('<span>');
+                var $input = $('<input>');
 
-            /*$firstSpan.text('Смещение');
-            $firstSpan.append($secondSpan.text('*').addClass('required'));
-            $label.append($firstSpan);
-            $input.attr({'type': 'text', 'name': 'realoffset'}).addClass('input-field');
-            $label.append($input);
-            elems.push($label);
-            $formElement.append(elems);*/
-
+                $firstSpan.text(item);
+                $firstSpan.append($secondSpan.text('*').addClass('required'));
+                $label.append($firstSpan);
+                $input.attr({'type': 'text', 'name': 'tagname'}).addClass('input-field');
+                $label.append($input);
+                $formElement.append($label);
+            });
             addDeleteForm($formElement);
         }
 /*            return '<form>
