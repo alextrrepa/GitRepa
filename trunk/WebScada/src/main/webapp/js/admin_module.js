@@ -95,7 +95,7 @@ $(function () {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
         var select = new TreeOperations();
-        select.onClick(id, type);
+        select.onNodeClick(id, type);
     }).on('delete_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
@@ -107,14 +107,14 @@ $(function () {
         var name = data.node.text;
         var addNode = new TreeOperations(name);
         addNode.onAdd(nodeId, nodeType, data);
-
     });
+
 
     function TreeOperations(name) {
         this.name = name;
     }
 
-    TreeOperations.prototype.onClick = function (id, type) {
+    TreeOperations.prototype.onNodeClick = function (id, type) {
         var types = {
             node: function () {
                 var resp = treeCrudRequest({
@@ -123,7 +123,46 @@ $(function () {
                 });
                 resp.success(function (json) {
                     if (json.type === "rtu") {
-                        addDeleteForm(getForm.getRtu());
+                        var params = [
+                            {labelName: "Имя узла", inputName: "nodename"},
+                            {labelName: "Тип modbus", selectName: "modbustype", options:{
+                                '-': '',
+                                RTU: 'rtu',
+                                TCP: 'tcp'
+                            }},
+                            {labelName: "Порт", inputName: "port"},
+                            {labelName: "Скорость", selectName: "baudrate", options:{
+                                '-': '',
+                                1200: 1200,
+                                1800: 1800,
+                                2400: 2400,
+                                4800: 4800,
+                                9600: 9600,
+                                19200: 19200,
+                                38400: 38400,
+                                57600: 57600,
+                                115200: 115200
+                            }},
+                            {labelName: "Данные", selectName: "databits", options:{
+                                '-': '',
+                                5: 5,
+                                6: 6,
+                                7: 7,
+                                8:8
+                            }},
+                            {labelName: "Четность", inputName: "parity"},
+                            {labelName: "Стоп биты", selectName: "stopbits", options:{
+                                '-': '',
+                                0: 0,
+                                1: 1,
+                                1.5: 1.5,
+                                2:2
+                            }},
+                            {labelName: "Повторы при ошибке", inputName: "retries"},
+                            {labelName: "Время ответа", inputName: "timeout"},
+                            {labelName: "Период опроса", inputName: "period"}
+                        ];
+                        createForm(params);
                         $("input[name=nodename]").val(json.name);
                         $("select[name=modbustype]").val(json.type);
                         $("input[name=port]").val(json.rtuEntity.port);
@@ -136,7 +175,20 @@ $(function () {
                         $("input[name=period]").val(json.rtuEntity.period);
                     }
                     if (json.type === "tcp") {
-                        addDeleteForm(getForm.getTcp());
+                        var params = [
+                            {labelName: "Имя узла", inputName: "nodename"},
+                            {labelName: "Тип modbus", selectName: "modbustype", options:{
+                                '-': '',
+                                RTU: 'rtu',
+                                TCP: 'tcp'
+                            }},
+                            {labelName: "IP адрес", inputName: "ip"},
+                            {labelName: "Порт", inputName: "port"},
+                            {labelName: "Повторы при ошибке", inputName: "retries"},
+                            {labelName: "Время ответа", inputName: "timeout"},
+                            {labelName: "Период опроса", inputName: "period"}
+                        ];
+                        createForm(params);
                         $("input[name=nodename]").val(json.name);
                         $("select[name=modbustype]").val(json.type);
                         $("input[name=ip]").val(json.tcpEntity.ip);
@@ -146,6 +198,7 @@ $(function () {
                         $("input[name=period]").val(json.tcpEntity.period);
                     }
                 });
+                return type;
             },
             device: function () {
                 var resp = treeCrudRequest({
@@ -153,12 +206,25 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getDevice"}
                 });
                 resp.success(function (json) {
-                    addDeleteForm(getForm.getDevice());
+                    var params = [
+                        {labelName: "Имя узла", inputName: "devicename"},
+                        {labelName: "SlaveId", inputName: "slaveid"},
+                        {labelName: "Начальное смещение", inputName: "startoffset"},
+                        {labelName: "Количество", inputName: "counts"},
+                        {labelName: "Тип регистров", selectName: "regtype", options:{
+                            '-': '',
+                            COIL_STATUS: 1,
+                            HOLDING_REGISTER: 3,
+                            INPUT_REGISTER: 4,
+                            INPUT_STATUS: 2
+                        }}
+                    ];
+                    createForm(params);
                     $("input[name=devicename]").val(json.name);
                     $("input[name=slaveid]").val(json.slaveid);
                     $("input[name=startoffset]").val(json.startOffset);
                     $("input[name=counts]").val(json.counts);
-                    $("select[name=regtype]").val(json.registerEntity.name);
+                    $("select[name=regtype]").val(json.registerEntity.value);
                 });
             },
             tag: function () {
@@ -167,12 +233,37 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getTag"}
                 });
                 resp.success(function (json) {
-                    //addDeleteForm(getForm.getTag());
-                    getForm.getTag();
-                    //$("input[name=tagname]").val(json.name);
-                    //$("input[name=realoffset]").val(json.realOffset);
-                    //$("select[name=datatype]").val(json.datatypeEntity.name);
-
+                    var params = [
+                        {labelName: "Имя узла", inputName: "tagname"},
+                        {labelName: "Смещение", inputName: "realoffset"},
+                        {labelName: "Тип даты", selectName: "datatype", options:{
+                            '-': '',
+                            BINARY: 1,
+                            CHAR: 18,
+                            EIGHT_BYTE_FLOAT: 14,
+                            EIGHT_BYTE_FLOAT_SWAPPED: 15,
+                            EIGHT_BYTE_INT_SIGNED: 11,
+                            EIGHT_BYTE_INT_SIGNED_SWAPPED: 13,
+                            EIGHT_BYTE_INT_UNSIGNED: 10,
+                            EIGHT_BYTE_INT_UNSIGNED_SWAPPED: 12,
+                            FOUR_BYTE_BCD: 17,
+                            FOUR_BYTE_BCD_SWAPPED: 20,
+                            FOUR_BYTE_FLOAT: 8,
+                            FOUR_BYTE_FLOAT_SWAPPED: 9,
+                            FOUR_BYTE_INT_SIGNED: 5,
+                            FOUR_BYTE_INT_SIGNED_SWAPPED: 7,
+                            FOUR_BYTE_INT_UNSIGNED: 4,
+                            FOUR_BYTE_INT_UNSIGNED_SWAPPED: 6,
+                            TWO_BYTE_BCD: 16,
+                            TWO_BYTE_INT_SIGNED: 3,
+                            TWO_BYTE_INT_UNSIGNED: 2,
+                            VARCHAR: 19
+                        }}
+                    ];
+                    createForm(params);
+                    $("input[name=tagname]").val(json.name);
+                    $("input[name=realoffset]").val(json.realOffset);
+                    $("select[name=datatype]").val(json.datatypeEntity.value);
                 });
             }
         };
@@ -257,6 +348,10 @@ $(function () {
         types[type]();
     };
 
+    TreeOperations.prototype.onUpdate = function() {
+
+    };
+
     function treeCrudRequest(obj) {
         return $.ajax({
             url: obj.url,
@@ -270,205 +365,47 @@ $(function () {
         mparams.append(html)
     }
 
-    var getForm = {
-        getRtu: function () {
-            return '<form action="" method="post">' +
-                '<label><span>Имя Узла<span class="required">*</span></span>' +
-                '<input type="text" name="nodename" class="input-field"/>' +
-                '</label>' +
+    function createForm (params) {
+        var $formElement = $('<form>');
+        params.forEach(function(item) {
+            var $label = $('<label>');
+            var $firstSpan = $('<span>'),
+                $secondSpan = $('<span>');
+            var $input = $('<input>');
+            var $select = $('<select>');
 
-                '<label><span>Тип modbus <span class="required">*</span></span>' +
-                '<select name="modbustype" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="rtu">Rtu</option>' +
-                '<option value="tcp">Tcp</option>' +
-                '</select>' +
-                '</label>' +
+            $firstSpan.text(item.labelName);
+            $firstSpan.append($secondSpan.text('*').addClass('required'));
+            $label.append($firstSpan);
+            $formElement.append($label);
 
-                '<label><span>Порт <span class="required">*</span></span>' +
-                '<input type="text" name="port" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Скорость <span class="required">*</span></span>' +
-                '<select name="baudrate" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="1200">1200</option>' +
-                '<option value="1800">1800</option>' +
-                '<option value="2400">2400</option>' +
-                '<option value="4800">4800</option>' +
-                '<option value="9600">9600</option>' +
-                '<option value="19200">19200</option>' +
-                '<option value="38400">38400</option>' +
-                '<option value="57600">57600</option>' +
-                '<option value="115200">115200</option>' +
-                '</select>' +
-                '</label>' +
-
-                '<label><span>Данные <span class="required">*</span></span>' +
-                '<select name="databits" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="5">5</option>' +
-                '<option value="6">6</option>' +
-                '<option value="7">7</option>' +
-                '<option value="8">8</option>' +
-                '</select>' +
-                '</label>' +
-
-                '<label><span>Четность <span class="required">*</span></span>' +
-                '<input type="text" name="parity" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Стоп биты <span class="required">*</span></span>' +
-                '<select name="stopbits" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="0">0</option>' +
-                '<option value="1">1</option>' +
-                '<option value="1.5">1.5</option>' +
-                '<option value="2">2</option>' +
-                '</select>' +
-                '</label>' +
-
-                '<label><span>Повторы при ошибке <span class="required">*</span></span>' +
-                '<input type="text" name="retries" class="input-field">' +
-                '</label>' +
-
-                '<label><span>Время ответа <span class="required">*</span></span>' +
-                '<input type="text" name="timeout" class="input-field">' +
-                '</label>' +
-
-                '<label><span>Период опроса<span class="required">*</span></span>' +
-                '<input type="text" name="period" class="input-field">' +
-                '</label>' +
-                '<input type="submit" value="Сохранить"/>' +
-                '</form>';
-        },
-        getTcp: function () {
-            return '<form action="" method="post">' +
-                '<label><span>Имя узла <span class="required">*</span></span>' +
-                '<input type="text" name="nodename" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Тип modbus <span class="required">*</span></span>' +
-                '<select name="modbustype" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="rtu">Rtu</option>' +
-                '<option value="tcp">Tcp</option>' +
-                '</select>' +
-                '</label>' +
-
-                '<label><span>IP <span class="required">*</span></span>' +
-                '<input type="text" name="ip" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Порт <span class="required">*</span></span>' +
-                '<input type="text" name="port" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Повторы при ошибке<span class="required">*</span></span>' +
-                '<input type="text" name="retries" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Время ответа<span class="required">*</span></span>' +
-                '<input type="text" name="timeout" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Период опроса<span class="required">*</span></span>' +
-                '<input type="text" name="period" class="input-field"/>' +
-                '</label>' +
-                '<input type="submit" value="Сохранить"/>' +
-                '</form>';
-        },
-        getDevice: function () {
-            return '<form action="" method="post"><label><span>Имя узла <span class="required">*</span></span>' +
-                '<input type="text" name="devicename" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>SlaveId <span class="required">*</span></span>' +
-                '<input type="text" name="slaveid" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Начальное смещение<span class="required">*</span></span>' +
-                '<input type="text" name="startoffset" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Количество<span class="required">*</span></span>' +
-                '<input type="text" name="counts" class="input-field"/>' +
-                '</label>' +
-
-                '<label><span>Тип регистров <span class="required">*</span></span>' +
-                '<select name="regtype" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="COIL_STATUS">COIL_STATUS</option>' +
-                '<option value="HOLDING_REGISTER">HOLDING_REGISTER</option>' +
-                '<option value="INPUT_REGISTER">INPUT_REGISTER</option>' +
-                '<option value="INPUT_STATUS">INPUT_STATUS</option>' +
-                '</select>' +
-                '</label>' +
-                '<input type="submit" value="Сохранить"/>' +
-                '</form>';
-        },
-        getTag: function () {
-            var labelNames = [
-                {labelName: "Имя узла", inputName: "tagname"},
-                {labelName: "Смещение", inputName: "realoffset"}
-                /*{labelName: "Тип даты", inputName: "datatype"}*/
-            ];
-
-            var $formElement = $('<form>');
-
-            labelNames.forEach(function(item) {
-                var $label = $('<label>');
-                var $firstSpan = $('<span>'),
-                    $secondSpan = $('<span>');
-                var $input = $('<input>');
-
-                $firstSpan.text(item);
-                $firstSpan.append($secondSpan.text('*').addClass('required'));
-                $label.append($firstSpan);
-                $input.attr({'type': 'text', 'name': 'tagname'}).addClass('input-field');
+            if (item.hasOwnProperty('selectName')) {
+                $select.attr({'name': item.selectName}).addClass('select-field');
+                var opArray = item.options;
+                var op = [];
+                $.each(opArray, function(key, value) {
+                    var $option = $('<option>');
+                    $option.attr({'value': value}).text(key);
+                    op.push($option);
+                });
+                $label.append($select.append(op));
+            }
+            else {
+                $input.attr({'type': 'text', 'name': item.inputName}).addClass('input-field');
                 $label.append($input);
-                $formElement.append($label);
-            });
-            addDeleteForm($formElement);
-        }
-/*            return '<form>
-<label><span>Имя узла<span class="required">*</span></span>' +
-                '<input type="text" name="tagname" class="input-field">' +
-                '</label>' +
-
-                '<label><span>Смещение<span class="required">*</span></span>' +
-                '<input type="text" name="realoffset" class="input-field">' +
-                '</label>' +
-
-                '<label><span>Тип даты <span class="required">*</span></span>' +
-                '<select name="datatype" class="select-field">' +
-                '<option value=""> - </option>' +
-                '<option value="BINARY">BINARY</option>' +
-                '<option value="CHAR">CHAR</option>' +
-                '<option value="EIGHT_BYTE_FLOAT">EIGHT_BYTE_FLOAT</option>' +
-                '<option value="EIGHT_BYTE_FLOAT_SWAPPED">EIGHT_BYTE_FLOAT_SWAPPED</option>' +
-                '<option value="EIGHT_BYTE_INT_SIGNED">EIGHT_BYTE_INT_SIGNED</option>' +
-                '<option value="EIGHT_BYTE_INT_SIGNED_SWAPPED">EIGHT_BYTE_INT_SIGNED_SWAPPED</option>' +
-                '<option value="EIGHT_BYTE_INT_UNSIGNED">EIGHT_BYTE_INT_UNSIGNED</option>' +
-                '<option value="EIGHT_BYTE_INT_UNSIGNED_SWAPPED">EIGHT_BYTE_INT_UNSIGNED_SWAPPED</option>' +
-                '<option value="FOUR_BYTE_BCD">FOUR_BYTE_BCD</option>' +
-                '<option value="FOUR_BYTE_BCD_SWAPPED">FOUR_BYTE_BCD_SWAPPED</option>' +
-                '<option value="FOUR_BYTE_FLOAT">FOUR_BYTE_FLOAT</option>' +
-                '<option value="FOUR_BYTE_FLOAT_SWAPPED">FOUR_BYTE_FLOAT_SWAPPED</option>' +
-                '<option value="FOUR_BYTE_INT_SIGNED">FOUR_BYTE_INT_SIGNED</option>' +
-                '<option value="FOUR_BYTE_INT_SIGNED_SWAPPED">FOUR_BYTE_INT_SIGNED_SWAPPED</option>' +
-                '<option value="FOUR_BYTE_INT_UNSIGNED">FOUR_BYTE_INT_UNSIGNED</option>' +
-                '<option value="FOUR_BYTE_INT_UNSIGNED_SWAPPED">FOUR_BYTE_INT_UNSIGNED_SWAPPED</option>' +
-                '<option value="TWO_BYTE_BCD">TWO_BYTE_BCD</option>' +
-                '<option value="TWO_BYTE_INT_SIGNED">TWO_BYTE_INT_SIGNED</option>' +
-                '<option value="TWO_BYTE_INT_UNSIGNED">TWO_BYTE_INT_UNSIGNED</option>' +
-                '<option value="VARCHAR">VARCHAR</option>' +
-                '</select>' +
-                '</label>' +
-                '<input type="submit" value="Сохранить"/>' +
-                '</form>';
-        }*/
+            }
+        });
+        $formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
+        addDeleteForm($formElement);
     }
+
+    $('.form_style').on('click', 'input[type="button"]', function() {
+        //var updateParams = new TreeOperations();
+        //updateParams.onUpdate();
+        $.each($('form').serializeArray(), function(i, field) {
+            console.log(field.name + " :" + field.value);
+        });
+    });
 });
 
 
