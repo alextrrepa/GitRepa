@@ -162,7 +162,7 @@ $(function () {
                             {labelName: "Время ответа", inputName: "timeout"},
                             {labelName: "Период опроса", inputName: "period"}
                         ];
-                        createForm(params);
+                        createForm(params, type, id);
                         $("input[name=nodename]").val(json.name);
                         $("select[name=modbustype]").val(json.type);
                         $("input[name=port]").val(json.rtuEntity.port);
@@ -188,7 +188,7 @@ $(function () {
                             {labelName: "Время ответа", inputName: "timeout"},
                             {labelName: "Период опроса", inputName: "period"}
                         ];
-                        createForm(params);
+                        createForm(params, type, id);
                         $("input[name=nodename]").val(json.name);
                         $("select[name=modbustype]").val(json.type);
                         $("input[name=ip]").val(json.tcpEntity.ip);
@@ -219,7 +219,7 @@ $(function () {
                             INPUT_STATUS: 2
                         }}
                     ];
-                    createForm(params);
+                    createForm(params, type, id);
                     $("input[name=devicename]").val(json.name);
                     $("input[name=slaveid]").val(json.slaveid);
                     $("input[name=startoffset]").val(json.startOffset);
@@ -260,7 +260,7 @@ $(function () {
                             VARCHAR: 19
                         }}
                     ];
-                    createForm(params);
+                    createForm(params, type, id);
                     $("input[name=tagname]").val(json.name);
                     $("input[name=realoffset]").val(json.realOffset);
                     $("select[name=datatype]").val(json.datatypeEntity.value);
@@ -348,7 +348,91 @@ $(function () {
         types[type]();
     };
 
-    TreeOperations.prototype.onUpdate = function() {
+    TreeOperations.prototype.onUpdate = function(obj) {
+        var resp = treeCrudRequest(obj);
+        resp.success(function (json) {
+            console.log(json);
+            if (json.type === "rtu") {
+                var params = [
+                    {labelName: "Имя узла", inputName: "nodename"},
+                    {labelName: "Тип modbus", selectName: "modbustype", options:{
+                        '-': '',
+                        RTU: 'rtu',
+                        TCP: 'tcp'
+                    }},
+                    {labelName: "Порт", inputName: "port"},
+                    {labelName: "Скорость", selectName: "baudrate", options:{
+                        '-': '',
+                        1200: 1200,
+                        1800: 1800,
+                        2400: 2400,
+                        4800: 4800,
+                        9600: 9600,
+                        19200: 19200,
+                        38400: 38400,
+                        57600: 57600,
+                        115200: 115200
+                    }},
+                    {labelName: "Данные", selectName: "databits", options:{
+                        '-': '',
+                        5: 5,
+                        6: 6,
+                        7: 7,
+                        8:8
+                    }},
+                    {labelName: "Четность", inputName: "parity"},
+                    {labelName: "Стоп биты", selectName: "stopbits", options:{
+                        '-': '',
+                        0: 0,
+                        1: 1,
+                        1.5: 1.5,
+                        2:2
+                    }},
+                    {labelName: "Повторы при ошибке", inputName: "retries"},
+                    {labelName: "Время ответа", inputName: "timeout"},
+                    {labelName: "Период опроса", inputName: "period"}
+                ];
+                var id = json.id;
+                createForm(params, "node", id);
+                $("input[name=nodename]").val(json.name);
+                $("select[name=modbustype]").val(json.type);
+                $("input[name=port]").val(json.rtuEntity.port);
+                $("select[name=baudrate]").val(json.rtuEntity.baudrate);
+                $("select[name=databits]").val(json.rtuEntity.databits);
+                $("input[name=parity]").val(json.rtuEntity.parity);
+                $("select[name=stopbits]").val(json.rtuEntity.stopbits);
+                $("input[name=retries]").val(json.rtuEntity.retries);
+                $("input[name=timeout]").val(json.rtuEntity.timeout);
+                $("input[name=period]").val(json.rtuEntity.period);
+            }
+            if (json.type === "tcp") {
+                var params = [
+                    {labelName: "Имя узла", inputName: "nodename"},
+                    {labelName: "Тип modbus", selectName: "modbustype", options:{
+                        '-': '',
+                        RTU: 'rtu',
+                        TCP: 'tcp'
+                    }},
+                    {labelName: "IP адрес", inputName: "ip"},
+                    {labelName: "Порт", inputName: "port"},
+                    {labelName: "Повторы при ошибке", inputName: "retries"},
+                    {labelName: "Время ответа", inputName: "timeout"},
+                    {labelName: "Период опроса", inputName: "period"}
+                ];
+                var id = json.id;
+                createForm(params, "node", id);
+                $("input[name=nodename]").val(json.name);
+                $("select[name=modbustype]").val(json.type);
+                $("input[name=ip]").val(json.tcpEntity.ip);
+                $("input[name=port]").val(json.tcpEntity.port);
+                $("input[name=retries]").val(json.tcpEntity.retries);
+                $("input[name=timeout]").val(json.tcpEntity.timeout);
+                $("input[name=period]").val(json.tcpEntity.period);
+            }
+        });
+    };
+
+    TreeOperations.prototype.createForm = function() {
 
     };
 
@@ -362,11 +446,13 @@ $(function () {
     function addDeleteForm(html) {
         var mparams = $('.form_style');
         mparams.empty();
-        mparams.append(html)
+        mparams.append(html);
     }
 
-    function createForm (params) {
+    function createForm (params, type, id) {
         var $formElement = $('<form>');
+        $formElement.attr({'type': type});
+        $formElement.attr({'id': id});
         params.forEach(function(item) {
             var $label = $('<label>');
             var $firstSpan = $('<span>'),
@@ -399,13 +485,65 @@ $(function () {
         addDeleteForm($formElement);
     }
 
+    function form() {
+        function addDeleteForm() {
+            var mparams = $('.form_style');
+            mparams.empty();
+            mparams.append(html);
+        }
+        function createForm() {
+            var $formElement = $('<form>');
+            $formElement.attr({'type': type});
+            $formElement.attr({'id': id});
+            params.forEach(function(item) {
+                var $label = $('<label>');
+                var $firstSpan = $('<span>'),
+                    $secondSpan = $('<span>');
+                var $input = $('<input>');
+                var $select = $('<select>');
+
+                $firstSpan.text(item.labelName);
+                $firstSpan.append($secondSpan.text('*').addClass('required'));
+                $label.append($firstSpan);
+                $formElement.append($label);
+
+                if (item.hasOwnProperty('selectName')) {
+                    $select.attr({'name': item.selectName}).addClass('select-field');
+                    var opArray = item.options;
+                    var op = [];
+                    $.each(opArray, function(key, value) {
+                        var $option = $('<option>');
+                        $option.attr({'value': value}).text(key);
+                        op.push($option);
+                    });
+                    $label.append($select.append(op));
+                }
+                else {
+                    $input.attr({'type': 'text', 'name': item.inputName}).addClass('input-field');
+                    $label.append($input);
+                }
+            });
+            $formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
+            addDeleteForm($formElement);
+        }
+
+
+    }
+
     $('.form_style').on('click', 'input[type="button"]', function() {
-        //var updateParams = new TreeOperations();
-        //updateParams.onUpdate();
+        var formAttr = $('form').attr('type');
+        var id = $('form').attr('id');
+        var values = {};
+        var d = {};
+        d.id = id;
         $.each($('form').serializeArray(), function(i, field) {
-            console.log(field.name + " :" + field.value);
+            d[field.name] = field.value;
         });
+        d.type = formAttr;
+        d.action = 'update';
+        values.url = 'ModbusEdit.do';
+        values.data = d;
+        var updateParams = new TreeOperations();
+        updateParams.onUpdate(values);
     });
 });
-
-

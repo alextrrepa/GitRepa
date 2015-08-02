@@ -115,4 +115,24 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
             session.close();
         }
     }
+
+    @Override
+    public void update(T entity) {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.update(entity);
+            transaction.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            try {
+                transaction.rollback();
+            }catch (Exception ex) {
+                log.error("Rollback transaction error", ex);
+            }
+        } finally {
+            session.close();
+        }
+    }
 }

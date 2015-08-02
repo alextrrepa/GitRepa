@@ -7,6 +7,7 @@ import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
 import org.webscada.model.DeviceEntity;
 import org.webscada.model.NodeEntity;
+import org.webscada.model.RtuEntity;
 import org.webscada.model.TagEntity;
 
 import javax.servlet.http.HttpServletRequest;
@@ -130,5 +131,53 @@ public class Operation {
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = tagDao.getById(id);
         return gson.toJson(tagEntity);
+    }
+
+    public String update(HttpServletRequest request, HttpServletResponse response) {
+        String type = request.getParameter("type");
+        switch (type) {
+            case "node":
+                return updateNode(request);
+            case "device":
+                updateDevice(request);
+                break;
+            case "tag":
+                updateTag(request);
+                break;
+        }
+        return "Success";
+    }
+
+    private String updateNode(HttpServletRequest request) {
+        String modbusType = request.getParameter("modbustype");
+        if (modbusType.equalsIgnoreCase("rtu")) {
+            AbstractDao<NodeEntity, Long> rtuDao = new DaoConfig<>(NodeEntity.class);
+            Long id = Long.valueOf(request.getParameter("id"));
+            NodeEntity node = rtuDao.getById(id);
+            node.setName(request.getParameter("nodename"));
+            node.setType(request.getParameter("modbustype"));
+            RtuEntity rtu = node.getRtuEntity();
+            rtu.setPort(request.getParameter("port"));
+            rtu.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
+            rtu.setDatabits(Integer.valueOf(request.getParameter("databits")));
+            rtu.setParity(Integer.valueOf(request.getParameter("parity")));
+            rtu.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
+            rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
+            rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
+            rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
+            rtuDao.update(node);
+
+            NodeEntity nodeAfter = rtuDao.getById(id);
+            return gson.toJson(nodeAfter);
+        }
+        return null;
+    }
+
+    private void updateDevice(HttpServletRequest request) {
+
+    }
+
+    private void updateTag(HttpServletRequest request) {
+
     }
 }

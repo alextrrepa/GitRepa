@@ -32,6 +32,7 @@ public class ModbusEditController extends HttpServlet {
         commandMap.put("deleteNode", new DeleteNodeOperation(operation));
         commandMap.put("deleteDevice", new DeleteDeviceOperation(operation));
         commandMap.put("deleteTag", new DeleteTagOperation(operation));
+        commandMap.put("update", new UpdateOperation(operation));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
