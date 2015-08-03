@@ -1,23 +1,24 @@
 package org.webscada.dao;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.webscada.model.NodeEntity;
 import org.webscada.util.SessionUtil;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
-    private final static Logger log = Logger.getLogger(DaoConfig.class);
+public abstract class GenericHibernateDAO<T, ID extends Serializable> implements GenericDao<T, ID> {
+    private final static Logger log = Logger.getLogger(GenericHibernateDAO.class);
+    private Class<T> persistanceClass;
 
-    public DaoConfig(Class<T> persistanceClass) {
-        super(persistanceClass);
+    public GenericHibernateDAO(Class<T> persistanceClass) {
+        this.persistanceClass = persistanceClass;
+    }
+
+    public Class<T> getPersistanceClass() {
+        return persistanceClass;
     }
 
     @Override
@@ -132,28 +133,6 @@ public class DaoConfig<T, ID extends Serializable> extends AbstractDao<T, ID> {
                 log.error("Rollback transaction error", ex);
             }
         } finally {
-            session.close();
-        }
-    }
-
-    @Override
-    public void findByValue(Object obj) {
-        Session session = SessionUtil.getSession();
-        Transaction transaction = null;
-        try {
-            transaction = session.beginTransaction();
-            Query query = session.createQuery("from RegisterEntity where value =:val");
-            query.setParameter("val", obj);
-            query.uniqueResult();
-            transaction.commit();
-        }catch (Exception e) {
-            e.printStackTrace();
-            try {
-                transaction.rollback();
-            }catch (Exception ex) {
-                log.error("Rollback transaction error", ex);
-            }
-        }finally {
             session.close();
         }
     }
