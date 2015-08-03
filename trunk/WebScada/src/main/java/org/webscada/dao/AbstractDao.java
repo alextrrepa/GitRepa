@@ -19,4 +19,5 @@ public abstract class AbstractDao<T, ID extends Serializable> {
     public abstract void create(T entity);
     public abstract void delete(ID id);
     public abstract void update(T entity);
+    public abstract void findByValue(Object obj);
 }
