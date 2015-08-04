@@ -12,7 +12,7 @@ public class DeleteDeviceOperation implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        return operation.deleteDevice(request, response);
+    public String execute(HttpServletRequest request) throws ServletException {
+        return operation.deleteDevice(request);
     }
 }

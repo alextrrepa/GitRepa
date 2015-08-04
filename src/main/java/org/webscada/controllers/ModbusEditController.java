@@ -33,6 +33,7 @@ public class ModbusEditController extends HttpServlet {
         commandMap.put("deleteDevice", new DeleteDeviceOperation(operation));
         commandMap.put("deleteTag", new DeleteTagOperation(operation));
         commandMap.put("update", new UpdateOperation(operation));
+        commandMap.put("rename", new RenameOperation(operation));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,7 +48,7 @@ public class ModbusEditController extends HttpServlet {
         String action = request.getParameter("action");
         Command command = commandMap.get(action);
         DoOperation operation = new DoOperation(command);
-        String json = operation.makeCommand(request, response);
+        String json = operation.makeCommand(request);
         log.trace(json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
