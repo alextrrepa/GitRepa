@@ -12,7 +12,7 @@ public class DeleteTagOperation implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        return operation.deleteTag(request, response);
+    public String execute(HttpServletRequest request) throws ServletException {
+        return operation.deleteTag(request);
     }
 }

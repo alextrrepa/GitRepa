@@ -11,7 +11,7 @@ public class DeleteNodeOperation implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
-        return operation.deleteNode(request, response);
+    public String execute(HttpServletRequest request) {
+        return operation.deleteNode(request);
     }
 }

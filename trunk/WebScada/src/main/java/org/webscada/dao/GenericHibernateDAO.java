@@ -22,7 +22,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
     }
 
     @Override
-    public List<T> getAllConfig() {
+    public List<T> getAllConfig() throws Exception{
         Session session = SessionUtil.getSession();
         List<T> result = null;
 //        List<T> typeList = new ArrayList<>();
@@ -126,12 +126,13 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             session.update(entity);
             transaction.commit();
         }catch (Exception e){
-            e.printStackTrace();
+
             try {
                 transaction.rollback();
             }catch (Exception ex) {
                 log.error("Rollback transaction error", ex);
             }
+
         } finally {
             session.close();
         }

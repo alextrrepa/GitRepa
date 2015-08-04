@@ -14,7 +14,6 @@ public class DaoTest {
     @Test
     public void testAbstractDao() {
         ItemDAO<RegisterEntity, Long> regDao = new ItemDAOHibernate<>(RegisterEntity.class);
-        regDao.findRegByValue(new Integer(2));
 
     }
 }

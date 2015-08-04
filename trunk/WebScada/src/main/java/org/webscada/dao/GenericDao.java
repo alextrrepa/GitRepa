@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public interface GenericDao<T, ID extends Serializable> {
-    public  List<T> getAllConfig();
-    public T getById(ID id);
-    public void create(T entity);
-    public void delete(ID id);
-    public void update(T entity);
+    List<T> getAllConfig() throws Exception;
+    T getById(ID id) throws Exception;
+    void create(T entity) throws Exception;
+    void delete(ID id) throws Exception;
+    void update(T entity) throws Exception;
 }
