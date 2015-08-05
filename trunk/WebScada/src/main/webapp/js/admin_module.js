@@ -181,13 +181,6 @@ $(function () {
                             $("input[name=timeout]").val(json.tcpEntity.timeout);
                             $("input[name=period]").val(json.tcpEntity.period);
                             break;
-                        default :
-                            var dForm = forms();
-                            dForm.defForm(type, id);
-                            $("input[name=nodename]").attr("readonly", "readonly");
-                            $("input[name=nodename]").val(json.name);
-                            $("select[name=modbustype]").val(json.type);
-                            break;
                     }
                 });
             },
@@ -197,26 +190,18 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getDevice"}
                 });
                 resp.success(function (json) {
-                    var params = [
-                        {labelName: "Имя узла", inputName: "devicename"},
-                        {labelName: "SlaveId", inputName: "slaveid"},
-                        {labelName: "Начальное смещение", inputName: "startoffset"},
-                        {labelName: "Количество", inputName: "counts"},
-                        {labelName: "Тип регистров", selectName: "regtype", options:{
-                            '-': '',
-                            COIL_STATUS: 1,
-                            HOLDING_REGISTER: 3,
-                            INPUT_REGISTER: 4,
-                            INPUT_STATUS: 2
-                        }}
-                    ];
-                    createForm(params, type, id);
+                    var devForm = forms();
+                    devForm.deviceForm(type, id);
                     $("input[name=devicename]").attr("readonly", "readonly");
                     $("input[name=devicename]").val(json.name);
                     $("input[name=slaveid]").val(json.slaveid);
                     $("input[name=startoffset]").val(json.startOffset);
                     $("input[name=counts]").val(json.counts);
-                    $("select[name=regtype]").val(json.registerEntity.value);
+                    if (json.registerEntity === undefined) {
+                        $("select[name=regtype]").val('-');
+                    } else {
+                        $("select[name=regtype]").val(json.registerEntity.value);
+                    }
                 });
             },
             tag: function () {
@@ -225,38 +210,16 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getTag"}
                 });
                 resp.success(function (json) {
-                    var params = [
-                        {labelName: "Имя узла", inputName: "tagname"},
-                        {labelName: "Смещение", inputName: "realoffset"},
-                        {labelName: "Тип даты", selectName: "datatype", options:{
-                            '-': '',
-                            BINARY: 1,
-                            CHAR: 18,
-                            EIGHT_BYTE_FLOAT: 14,
-                            EIGHT_BYTE_FLOAT_SWAPPED: 15,
-                            EIGHT_BYTE_INT_SIGNED: 11,
-                            EIGHT_BYTE_INT_SIGNED_SWAPPED: 13,
-                            EIGHT_BYTE_INT_UNSIGNED: 10,
-                            EIGHT_BYTE_INT_UNSIGNED_SWAPPED: 12,
-                            FOUR_BYTE_BCD: 17,
-                            FOUR_BYTE_BCD_SWAPPED: 20,
-                            FOUR_BYTE_FLOAT: 8,
-                            FOUR_BYTE_FLOAT_SWAPPED: 9,
-                            FOUR_BYTE_INT_SIGNED: 5,
-                            FOUR_BYTE_INT_SIGNED_SWAPPED: 7,
-                            FOUR_BYTE_INT_UNSIGNED: 4,
-                            FOUR_BYTE_INT_UNSIGNED_SWAPPED: 6,
-                            TWO_BYTE_BCD: 16,
-                            TWO_BYTE_INT_SIGNED: 3,
-                            TWO_BYTE_INT_UNSIGNED: 2,
-                            VARCHAR: 19
-                        }}
-                    ];
-                    createForm(params, type, id);
+                    var tagForm = forms();
+                    tagForm.tagForm(type, id);
                     $("input[name=tagname]").attr("readonly", "readonly");
                     $("input[name=tagname]").val(json.name);
                     $("input[name=realoffset]").val(json.realOffset);
-                    $("select[name=datatype]").val(json.datatypeEntity.value);
+                    if (json.datatypeEntity === undefined) {
+                        $("select[name=datatype]").val('-');
+                    } else {
+                        $("select[name=datatype]").val(json.datatypeEntity.value);
+                    }
                 });
             }
         };
@@ -278,8 +241,6 @@ $(function () {
                         "data": {"action": "addRtuNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
-                        console.log(type);
-                        console.log(json);
                         data.instance.set_id(data.node, json.id);
                         data.node.data = json.data;
                         data.instance.refresh();
@@ -291,8 +252,6 @@ $(function () {
                         "data": {"action": "addTcpNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
-                        console.log(type);
-                        console.log(json);
                         data.instance.set_id(data.node, json.id);
                         data.node.data = json.data;
                         data.instance.refresh();
@@ -456,6 +415,7 @@ $(function () {
             url: obj.url,
             data: obj.data,
             beforeSend: function() {
+                addDeleteForm();
                 var $r = $('.form_style');
                 $r.addClass("loading");
             },
@@ -512,74 +472,24 @@ $(function () {
                         op.push($option);
                     });
                     $label.append($select.append(op));
-                }
-                if (item.hasOwnProperty('button')) {
-                    $formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
-                }
-                if (item.hasOwnProperty('inputName')) {
+                } else {
                     $input.attr({'type': 'text', 'name': item.inputName}).addClass('input-field');
                     $label.append($input);
                 }
             });
-            //$formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
+            $formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
             addDeleteForm($formElement);
         }
-        function defCreateForm(params, type, id) {
-            var $formElement = $('form');
-            $formElement.attr({'type': type});
-            $formElement.attr({'id': id});
-            params.forEach(function(item) {
-                var $label = $('<label>');
-                var $firstSpan = $('<span>'),
-                    $secondSpan = $('<span>');
-                var $input = $('<input>');
-                var $select = $('<select>');
-
-                $firstSpan.text(item.labelName);
-                //$firstSpan.append($secondSpan.text('*').addClass('required'));
-                //$label.append($firstSpan);
-                //$formElement.append($label);
-
-                if (item.hasOwnProperty('selectName')) {
-                    $firstSpan.append($secondSpan.text('*').addClass('required'));
-                    $label.append($firstSpan);
-                    $formElement.append($label);
-
-                    $select.attr({'name': item.selectName}).addClass('select-field');
-                    var opArray = item.options;
-                    var op = [];
-                    $.each(opArray, function(key, value) {
-                        var $option = $('<option>');
-                        $option.attr({'value': value}).text(key);
-                        op.push($option);
-                    });
-                    $label.append($select.append(op));
-                }
-                if (item.hasOwnProperty('button')) {
-                    $formElement.append($('<input>').attr({'type': 'button', 'value': item.button}));
-                }
-                if (item.hasOwnProperty('inputName')) {
-                    $firstSpan.append($secondSpan.text('*').addClass('required'));
-                    $label.append($firstSpan);
-                    $formElement.append($label);
-
-                    $input.attr({'type': 'text', 'name': item.inputName}).addClass('input-field');
-                    $label.append($input);
-                }
-            });
-        }
         return {
-            rtuForm: function(id, type) {
+            rtuForm: function(type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "nodename"},
                     {labelName: "Тип modbus", selectName: "modbustype", options:{
-                        '-': '',
                         RTU: 'rtu',
                         TCP: 'tcp'
                     }},
                     {labelName: "Порт", inputName: "port"},
                     {labelName: "Скорость", selectName: "baudrate", options:{
-                        '-': '',
                         1200: 1200,
                         1800: 1800,
                         2400: 2400,
@@ -591,7 +501,6 @@ $(function () {
                         115200: 115200
                     }},
                     {labelName: "Данные", selectName: "databits", options:{
-                        '-': '',
                         5: 5,
                         6: 6,
                         7: 7,
@@ -599,7 +508,6 @@ $(function () {
                     }},
                     {labelName: "Четность", inputName: "parity"},
                     {labelName: "Стоп биты", selectName: "stopbits", options:{
-                        '-': '',
                         0: 0,
                         1: 1,
                         1.5: 1.5,
@@ -607,16 +515,14 @@ $(function () {
                     }},
                     {labelName: "Повторы при ошибке", inputName: "retries"},
                     {labelName: "Время ответа", inputName: "timeout"},
-                    {labelName: "Период опроса", inputName: "period"},
-                    {button: "Сохранить"}
+                    {labelName: "Период опроса", inputName: "period"}
                 ];
-                createForm(params, id, type);
+                createForm(params, type, id);
             },
-            tcpForm: function(id, type) {
+            tcpForm: function(type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "nodename"},
                     {labelName: "Тип modbus", selectName: "modbustype", options:{
-                        '-': '',
                         RTU: 'rtu',
                         TCP: 'tcp'
                     }},
@@ -626,72 +532,51 @@ $(function () {
                     {labelName: "Время ответа", inputName: "timeout"},
                     {labelName: "Период опроса", inputName: "period"}
                 ];
-                createForm(id, type);
+                createForm(params, type, id);
             },
-            deviceForm: function() {
-            },
-            tagForm: function() {
-            },
-            defForm: function(id, type) {
+            deviceForm: function(type, id) {
                 var params = [
-                    {labelName: "Имя узла", inputName: "nodename"},
-                    {labelName: "Тип modbus", selectName: "modbustype", options:{
-                        '-': '',
-                        RTU: 'rtu',
-                        TCP: 'tcp'
-                    }},
+                    {labelName: "Имя узла", inputName: "devicename"},
+                    {labelName: "SlaveId", inputName: "slaveid"},
+                    {labelName: "Начальное смещение", inputName: "startoffset"},
+                    {labelName: "Количество", inputName: "counts"},
+                    {labelName: "Тип регистров", selectName: "regtype", options:{
+                        COIL_STATUS: 1,
+                        HOLDING_REGISTER: 3,
+                        INPUT_REGISTER: 4,
+                        INPUT_STATUS: 2
+                    }}
                 ];
-                createForm(params, id, type);
-                $('.form_style select.select-field').change(function(){
-                    if ($(this).val() === 'rtu') {
-                        var params = [
-                            {labelName: "Порт", inputName: "port"},
-                            {labelName: "Скорость", selectName: "baudrate", options:{
-                                1200: 1200,
-                                1800: 1800,
-                                2400: 2400,
-                                4800: 4800,
-                                9600: 9600,
-                                19200: 19200,
-                                38400: 38400,
-                                57600: 57600,
-                                115200: 115200
-                            }},
-                            {labelName: "Данные", selectName: "databits", options:{
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8
-                            }},
-                            {labelName: "Четность", inputName: "parity"},
-                            {labelName: "Стоп биты", selectName: "stopbits", options:{
-                                0: 0,
-                                1: 1,
-                                1.5: 1.5,
-                                2:2
-                            }},
-                            {labelName: "Повторы при ошибке", inputName: "retries"},
-                            {labelName: "Время ответа", inputName: "timeout"},
-                            {labelName: "Период опроса", inputName: "period"},
-                            {button: "Сохранить"}
-                        ];
-                        $(this).parent().nextAll().remove();
-                        defCreateForm(params, id, type);
-                    }
-                    if ($(this).val() === 'tcp') {
-                        var params = [
-                            {labelName: "IP адрес", inputName: "ip"},
-                            {labelName: "Порт", inputName: "port"},
-                            {labelName: "Повторы при ошибке", inputName: "retries"},
-                            {labelName: "Время ответа", inputName: "timeout"},
-                            {labelName: "Период опроса", inputName: "period"},
-                            {button: "Сохранить"}
-                        ];
-                        $(this).parent().nextAll().remove();
-                        defCreateForm(params, id, type);
-                    }
-                });
-
+                createForm(params, type, id);
+            },
+            tagForm: function(type, id) {
+                var params = [
+                    {labelName: "Имя узла", inputName: "tagname"},
+                    {labelName: "Смещение", inputName: "realoffset"},
+                    {labelName: "Тип даты", selectName: "datatype", options:{
+                        BINARY: 1,
+                        CHAR: 18,
+                        EIGHT_BYTE_FLOAT: 14,
+                        EIGHT_BYTE_FLOAT_SWAPPED: 15,
+                        EIGHT_BYTE_INT_SIGNED: 11,
+                        EIGHT_BYTE_INT_SIGNED_SWAPPED: 13,
+                        EIGHT_BYTE_INT_UNSIGNED: 10,
+                        EIGHT_BYTE_INT_UNSIGNED_SWAPPED: 12,
+                        FOUR_BYTE_BCD: 17,
+                        FOUR_BYTE_BCD_SWAPPED: 20,
+                        FOUR_BYTE_FLOAT: 8,
+                        FOUR_BYTE_FLOAT_SWAPPED: 9,
+                        FOUR_BYTE_INT_SIGNED: 5,
+                        FOUR_BYTE_INT_SIGNED_SWAPPED: 7,
+                        FOUR_BYTE_INT_UNSIGNED: 4,
+                        FOUR_BYTE_INT_UNSIGNED_SWAPPED: 6,
+                        TWO_BYTE_BCD: 16,
+                        TWO_BYTE_INT_SIGNED: 3,
+                        TWO_BYTE_INT_UNSIGNED: 2,
+                        VARCHAR: 19
+                    }}
+                ];
+                createForm(params, type, id);
             }
         }
     };
@@ -712,6 +597,4 @@ $(function () {
         var updateParams = new TreeOperations();
         updateParams.onUpdate(values);
     });
-
-
 });

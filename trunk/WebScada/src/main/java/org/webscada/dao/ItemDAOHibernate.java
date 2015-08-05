@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.webscada.model.RegisterEntity;
 import org.webscada.util.SessionUtil;
 import java.io.Serializable;
 
