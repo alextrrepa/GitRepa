@@ -7,7 +7,6 @@ import org.webscada.dao.*;
 import org.webscada.model.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.soap.Node;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +18,21 @@ public class Operation {
         this.gson = gson;
     }
 
-    public String addNode(HttpServletRequest request) {
+    public String addRtuNode(HttpServletRequest request) {
         GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(request.getParameter("nodeName"));
+        nodeEntity.setType(request.getParameter("mtype"));
+
         TreeElement treeElement;
         try {
             nodeDao.create(nodeEntity);
+
+            RtuEntity rtuEntity = new RtuEntity();
+            rtuEntity.setNodeEntity(nodeEntity);
+            GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
+            rtuDao.create(rtuEntity);
+
             treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                     "root", nodeEntity.getName(),
                     "images/icn_node.png", Long.toString(nodeEntity.getId()));
@@ -35,11 +42,35 @@ public class Operation {
         }
     }
 
+    public String addTcpNode(HttpServletRequest request) {
+        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+        NodeEntity nodeEntity = new NodeEntity();
+        nodeEntity.setName(request.getParameter("nodeName"));
+        nodeEntity.setType(request.getParameter("mtype"));
+        TreeElement treeElement;
+        try {
+            nodeDao.create(nodeEntity);
+            TcpEntity tcpEntity = new TcpEntity();
+            tcpEntity.setNodeEntity(nodeEntity);
+            GenericDao<TcpEntity, Long> tcpDao = new ItemDAOHibernate<>(TcpEntity.class);
+            tcpDao.create(tcpEntity);
+
+            treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
+                    "root", nodeEntity.getName(),
+                    "images/icn_node.png", Long.toString(nodeEntity.getId()));
+            return gson.toJson(treeElement);
+        }catch (Exception e) {
+            return gson.toJson("fail");
+        }
+    }
+
     public String addDevice(HttpServletRequest request) {
         GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
+
         DeviceEntity deviceEntity = new DeviceEntity();
         deviceEntity.setName(request.getParameter("nodeName"));
+
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setId(id);
         deviceEntity.setNodeEntity(nodeEntity);
@@ -175,6 +206,7 @@ public class Operation {
 
     public String update(HttpServletRequest request) {
         String type = request.getParameter("type");
+        log.trace(type);
         switch (type) {
             case "node":
                 return updateNode(request);
@@ -202,7 +234,9 @@ public class Operation {
 
     private String updateNode(HttpServletRequest request) {
         String modbusType = request.getParameter("modbustype");
+        log.trace(modbusType);
         Long id = Long.valueOf(request.getParameter("id"));
+        log.trace(id);
         if (modbusType.equalsIgnoreCase("rtu")) {
             GenericDao<NodeEntity, Long> rtuDao = new ItemDAOHibernate<>(NodeEntity.class);
             NodeEntity node;
@@ -210,15 +244,30 @@ public class Operation {
                 node = rtuDao.getById(id);
                 node.setName(request.getParameter("nodename"));
                 node.setType(request.getParameter("modbustype"));
+
                 RtuEntity rtu = node.getRtuEntity();
-                rtu.setPort(request.getParameter("port"));
-                rtu.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
-                rtu.setDatabits(Integer.valueOf(request.getParameter("databits")));
-                rtu.setParity(Integer.valueOf(request.getParameter("parity")));
-                rtu.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
-                rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
-                rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
-                rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
+                if (rtu == null) {
+                    RtuEntity r = new RtuEntity();
+                    r.setPort(request.getParameter("port"));
+                    r.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
+                    r.setDatabits(Integer.valueOf(request.getParameter("databits")));
+                    r.setParity(Integer.valueOf(request.getParameter("parity")));
+                    r.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
+                    r.setRetries(Integer.valueOf(request.getParameter("retries")));
+                    r.setTimeout(Integer.valueOf(request.getParameter("timeout")));
+                    r.setPeriod(Integer.valueOf(request.getParameter("period")));
+                    GenericDao<RtuEntity, Long> rDao = new ItemDAOHibernate<>(RtuEntity.class);
+                    rDao.create(r);
+                } else {
+                    rtu.setPort(request.getParameter("port"));
+                    rtu.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
+                    rtu.setDatabits(Integer.valueOf(request.getParameter("databits")));
+                    rtu.setParity(Integer.valueOf(request.getParameter("parity")));
+                    rtu.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
+                    rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
+                    rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
+                    rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
+                }
                 rtuDao.update(node);
                 NodeEntity nodeAfter = rtuDao.getById(id);
                 return gson.toJson(nodeAfter);
@@ -244,7 +293,8 @@ public class Operation {
                 NodeEntity nodeAfter = tcpDao.getById(id);
                 return gson.toJson(nodeAfter);
             } catch (Exception e) {
-                return gson.toJson("fail");
+                e.printStackTrace();
+//                return gson.toJson("fail");
             }
         }
         return null;

@@ -23,7 +23,8 @@ public class ModbusEditController extends HttpServlet {
     public ModbusEditController() {
         Operation operation = new Operation(gson);
         commandMap.put("getAll", new GetAllOperation(operation));
-        commandMap.put("addNode", new AddNodeOperation(operation));
+        commandMap.put("addRtuNode", new AddRtuNodeOperation(operation));
+        commandMap.put("addTcpNode", new AddTcpNodeOperation(operation));
         commandMap.put("addDevice", new AddDeviceOperation(operation));
         commandMap.put("addTag", new AddTagOperation(operation));
         commandMap.put("getNode", new GetNodeOperation(operation));
