@@ -23,11 +23,9 @@ public class Operation {
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(request.getParameter("nodeName"));
         nodeEntity.setType(request.getParameter("mtype"));
-
         TreeElement treeElement;
         try {
             nodeDao.create(nodeEntity);
-
             RtuEntity rtuEntity = new RtuEntity();
             rtuEntity.setNodeEntity(nodeEntity);
             GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
