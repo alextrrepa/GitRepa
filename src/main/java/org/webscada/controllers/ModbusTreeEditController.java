@@ -14,13 +14,13 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ModbusEditController extends HttpServlet {
-    private final static Logger log = Logger.getLogger(ModbusEditController.class);
+public class ModbusTreeEditController extends HttpServlet {
+    private final static Logger log = Logger.getLogger(ModbusTreeEditController.class);
     private Map<String, Command> commandMap = new HashMap<>();
     private Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
             create();
 
-    public ModbusEditController() {
+    public ModbusTreeEditController() {
         Operation operation = new Operation(gson);
         commandMap.put("getAll", new GetAllOperation(operation));
         commandMap.put("addRtuNode", new AddRtuNodeOperation(operation));

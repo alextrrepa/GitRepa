@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/icn_alert_success.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/waitMe.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/waitMe.min.js" />
-      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\ModbusTreeEditController.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\TreeElement.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/TreeElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\java\org\webscada\controllers\ModbusEditController.java" afterPath="$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -60,46 +53,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
               <folding>
-                <element signature="e#38#5317#0" expanded="false" />
-                <element signature="e#5366#5542#0" expanded="false" />
-                <element signature="e#5591#5778#0" expanded="false" />
-                <element signature="e#6179#6401#0" expanded="false" />
-                <element signature="e#6439#6472#0" expanded="false" />
-                <element signature="e#6537#11627#0" expanded="false" />
-                <element signature="e#6591#9098#0" expanded="false" />
-                <element signature="e#7041#9042#0" expanded="false" />
-                <element signature="e#9132#10350#0" expanded="false" />
-                <element signature="e#10381#11453#0" expanded="false" />
-                <element signature="e#10426#10562#0" expanded="false" />
-                <element signature="e#11700#14699#0" expanded="false" />
-                <element signature="e#11788#13282#0" expanded="false" />
-                <element signature="e#14005#14659#0" expanded="false" />
-                <element signature="e#14768#16470#0" expanded="false" />
-                <element signature="e#14822#15336#0" expanded="false" />
-                <element signature="e#15370#15886#0" expanded="false" />
-                <element signature="e#16527#18406#0" expanded="false" />
-                <element signature="e#16549#18214#0" expanded="false" />
-                <element signature="e#17159#17667#0" expanded="false" />
-                <element signature="e#17697#18204#0" expanded="false" />
-                <element signature="e#18474#19775#0" expanded="false" />
-                <element signature="e#19812#20482#0" expanded="false" />
-                <element signature="e#19927#20165#0" expanded="false" />
-                <element signature="e#20200#20264#0" expanded="false" />
-                <element signature="e#20325#20464#0" expanded="false" />
-                <element signature="e#20517#20619#0" expanded="false" />
-                <element signature="e#20661#20870#0" expanded="false" />
-                <element signature="e#20914#21125#0" expanded="false" />
-                <element signature="e#21154#27163#0" expanded="false" />
-                <element signature="e#21203#22693#0" expanded="false" />
-                <element signature="e#22751#24329#0" expanded="false" />
-                <element signature="e#22782#24268#0" expanded="false" />
-                <element signature="e#24371#25067#0" expanded="false" />
-                <element signature="e#25112#25781#0" expanded="false" />
-                <element signature="e#25143#25720#0" expanded="false" />
-                <element signature="e#25823#27147#0" expanded="false" />
-                <element signature="e#27234#28121#0" expanded="false" />
+                <element signature="e#180#5069#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -115,11 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25714287">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.114285715">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -196,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
       </list>
     </option>
   </component>
@@ -365,7 +331,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,7 +353,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,44 +474,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webscada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree_edit_delegation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1139,7 +1089,7 @@
       <workItem from="1438659685146" duration="23404000" />
       <workItem from="1438741719859" duration="24419000" />
       <workItem from="1438772916720" duration="7086000" />
-      <workItem from="1438826779386" duration="17342000" />
+      <workItem from="1438826779386" duration="18879000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1333,11 +1283,17 @@
       <option name="project" value="LOCAL" />
       <updated>1438793503055</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Доделал CRUD дерево для modbus опроса. Работает корректно и со всеми exception.">
+      <created>1438867028396</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1438867028397</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1079482000" />
+    <option name="totallyTimeSpent" value="1081019000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1398,7 +1354,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил контроллер для настройки Modbus опроса. Добавил пару Section в основной контент на странице modbus_page.jsp" />
     <MESSAGE value="Добились передачи данных из сервлета ModbusEditController в jsp страницу. Вывод в jsp посредством jstl. Вывод оформил в виде дерева. Необходимо дальнейшее редактирование дерева." />
     <MESSAGE value="Переработал дерево. Добавил скрытие/раскрытие узлов. Подсветка элементов по наведению  указателя." />
     <MESSAGE value="Реорганизация кода на странице modbus_page.jsp" />
@@ -1423,7 +1378,8 @@
     <MESSAGE value="Переделал события по клику на узле дерева." />
     <MESSAGE value="Refactor ModbusTreeEditController. Перенос всего функционала tree_edit_delegation. Refactoring admin_module.js. Создание конструктора TreeOperations. Добавление методов к объекту TreeOperations." />
     <MESSAGE value="Переделана даоха. Разделил на два интерфейса и один абстрактный класс." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Доделал CRUD дерево для modbus опроса. Работает корректно и со всеми exception." />
+    <option name="LAST_COMMIT_MESSAGE" value="Доделал CRUD дерево для modbus опроса. Работает корректно и со всеми exception." />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
@@ -1827,7 +1783,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusEditController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/webscada/controllers/ModbusTreeEditController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.114285715">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
@@ -1839,14 +1795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45714286">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1879,50 +1827,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#5317#0" expanded="false" />
-            <element signature="e#5366#5542#0" expanded="false" />
-            <element signature="e#5591#5778#0" expanded="false" />
-            <element signature="e#6179#6401#0" expanded="false" />
-            <element signature="e#6439#6472#0" expanded="false" />
-            <element signature="e#6537#11627#0" expanded="false" />
-            <element signature="e#6591#9098#0" expanded="false" />
-            <element signature="e#7041#9042#0" expanded="false" />
-            <element signature="e#9132#10350#0" expanded="false" />
-            <element signature="e#10381#11453#0" expanded="false" />
-            <element signature="e#10426#10562#0" expanded="false" />
-            <element signature="e#11700#14699#0" expanded="false" />
-            <element signature="e#11788#13282#0" expanded="false" />
-            <element signature="e#14005#14659#0" expanded="false" />
-            <element signature="e#14768#16470#0" expanded="false" />
-            <element signature="e#14822#15336#0" expanded="false" />
-            <element signature="e#15370#15886#0" expanded="false" />
-            <element signature="e#16527#18406#0" expanded="false" />
-            <element signature="e#16549#18214#0" expanded="false" />
-            <element signature="e#17159#17667#0" expanded="false" />
-            <element signature="e#17697#18204#0" expanded="false" />
-            <element signature="e#18474#19775#0" expanded="false" />
-            <element signature="e#19812#20482#0" expanded="false" />
-            <element signature="e#19927#20165#0" expanded="false" />
-            <element signature="e#20200#20264#0" expanded="false" />
-            <element signature="e#20325#20464#0" expanded="false" />
-            <element signature="e#20517#20619#0" expanded="false" />
-            <element signature="e#20661#20870#0" expanded="false" />
-            <element signature="e#20914#21125#0" expanded="false" />
-            <element signature="e#21154#27163#0" expanded="false" />
-            <element signature="e#21203#22693#0" expanded="false" />
-            <element signature="e#22751#24329#0" expanded="false" />
-            <element signature="e#22782#24268#0" expanded="false" />
-            <element signature="e#24371#25067#0" expanded="false" />
-            <element signature="e#25112#25781#0" expanded="false" />
-            <element signature="e#25143#25720#0" expanded="false" />
-            <element signature="e#25823#27147#0" expanded="false" />
-            <element signature="e#27234#28121#0" expanded="false" />
-          </folding>
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1934,10 +1843,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/admin_style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/admin_module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25714287">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+          <folding>
+            <element signature="e#180#5069#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.114285715">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
           <folding />
         </state>
       </provider>
