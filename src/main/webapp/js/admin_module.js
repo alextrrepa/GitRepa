@@ -84,6 +84,8 @@ $(function () {
                     root: function () {
                         delete items.Add_Device;
                         delete items.Add_Tag;
+                        delete items.Rename;
+                        delete items.Delete;
                     },
                     node: function () {
                         delete items.Add_RtuNode;
@@ -153,34 +155,39 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getNode"}
                 });
                 resp.success(function (json) {
-                    switch (json.type) {
-                        case 'rtu':
-                            var rForm = forms();
-                            rForm.rtuForm(type, id);
-                            $("input[name=nodename]").attr("readonly", "readonly");
-                            $("input[name=nodename]").val(json.name);
-                            $("select[name=modbustype]").val(json.type);
-                            $("input[name=port]").val(json.rtuEntity.port);
-                            $("select[name=baudrate]").val(json.rtuEntity.baudrate);
-                            $("select[name=databits]").val(json.rtuEntity.databits);
-                            $("input[name=parity]").val(json.rtuEntity.parity);
-                            $("select[name=stopbits]").val(json.rtuEntity.stopbits);
-                            $("input[name=retries]").val(json.rtuEntity.retries);
-                            $("input[name=timeout]").val(json.rtuEntity.timeout);
-                            $("input[name=period]").val(json.rtuEntity.period);
-                            break;
-                        case 'tcp':
-                            var tForm = forms();
-                            tForm.tcpForm(type, id);
-                            $("input[name=nodename]").attr("readonly", "readonly");
-                            $("input[name=nodename]").val(json.name);
-                            $("select[name=modbustype]").val(json.type);
-                            $("input[name=ip]").val(json.tcpEntity.ip);
-                            $("input[name=port]").val(json.tcpEntity.port);
-                            $("input[name=retries]").val(json.tcpEntity.retries);
-                            $("input[name=timeout]").val(json.tcpEntity.timeout);
-                            $("input[name=period]").val(json.tcpEntity.period);
-                            break;
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка получения данных');
+                    } else {
+                        switch (json.type) {
+                            case 'rtu':
+                                var rForm = forms();
+                                rForm.rtuForm(type, id);
+                                $("input[name=nodename]").attr("readonly", "readonly");
+                                $("input[name=nodename]").val(json.name);
+                                $("select[name=modbustype]").val(json.type);
+                                $("input[name=port]").val(json.rtuEntity.port);
+                                $("select[name=baudrate]").val(json.rtuEntity.baudrate);
+                                $("select[name=databits]").val(json.rtuEntity.databits);
+                                $("input[name=parity]").val(json.rtuEntity.parity);
+                                $("select[name=stopbits]").val(json.rtuEntity.stopbits);
+                                $("input[name=retries]").val(json.rtuEntity.retries);
+                                $("input[name=timeout]").val(json.rtuEntity.timeout);
+                                $("input[name=period]").val(json.rtuEntity.period);
+                                break;
+                            case 'tcp':
+                                var tForm = forms();
+                                tForm.tcpForm(type, id);
+                                $("input[name=nodename]").attr("readonly", "readonly");
+                                $("input[name=nodename]").val(json.name);
+                                $("select[name=modbustype]").val(json.type);
+                                $("input[name=ip]").val(json.tcpEntity.ip);
+                                $("input[name=port]").val(json.tcpEntity.port);
+                                $("input[name=retries]").val(json.tcpEntity.retries);
+                                $("input[name=timeout]").val(json.tcpEntity.timeout);
+                                $("input[name=period]").val(json.tcpEntity.period);
+                                break;
+                        }
                     }
                 });
             },
@@ -190,17 +197,22 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getDevice"}
                 });
                 resp.success(function (json) {
-                    var devForm = forms();
-                    devForm.deviceForm(type, id);
-                    $("input[name=devicename]").attr("readonly", "readonly");
-                    $("input[name=devicename]").val(json.name);
-                    $("input[name=slaveid]").val(json.slaveid);
-                    $("input[name=startoffset]").val(json.startOffset);
-                    $("input[name=counts]").val(json.counts);
-                    if (json.registerEntity === undefined) {
-                        $("select[name=regtype]").val('-');
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка получения данных');
                     } else {
-                        $("select[name=regtype]").val(json.registerEntity.value);
+                        var devForm = forms();
+                        devForm.deviceForm(type, id);
+                        $("input[name=devicename]").attr("readonly", "readonly");
+                        $("input[name=devicename]").val(json.name);
+                        $("input[name=slaveid]").val(json.slaveid);
+                        $("input[name=startoffset]").val(json.startOffset);
+                        $("input[name=counts]").val(json.counts);
+                        if (json.registerEntity === undefined) {
+                            $("select[name=regtype]").val('-');
+                        } else {
+                            $("select[name=regtype]").val(json.registerEntity.value);
+                        }
                     }
                 });
             },
@@ -210,15 +222,20 @@ $(function () {
                     "data": {"id": id, "type": type, "action": "getTag"}
                 });
                 resp.success(function (json) {
-                    var tagForm = forms();
-                    tagForm.tagForm(type, id);
-                    $("input[name=tagname]").attr("readonly", "readonly");
-                    $("input[name=tagname]").val(json.name);
-                    $("input[name=realoffset]").val(json.realOffset);
-                    if (json.datatypeEntity === undefined) {
-                        $("select[name=datatype]").val('-');
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка получения данных');
                     } else {
-                        $("select[name=datatype]").val(json.datatypeEntity.value);
+                        var tagForm = forms();
+                        tagForm.tagForm(type, id);
+                        $("input[name=tagname]").attr("readonly", "readonly");
+                        $("input[name=tagname]").val(json.name);
+                        $("input[name=realoffset]").val(json.realOffset);
+                        if (json.datatypeEntity === undefined) {
+                            $("select[name=datatype]").val('-');
+                        } else {
+                            $("select[name=datatype]").val(json.datatypeEntity.value);
+                        }
                     }
                 });
             }
@@ -241,9 +258,14 @@ $(function () {
                         "data": {"action": "addRtuNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
-                        data.instance.set_id(data.node, json.id);
-                        data.node.data = json.data;
-                        data.instance.refresh();
+                        if (json === 'fail') {
+                            addDeleteForm();
+                            alertError($('.form_style'), 'Ошибка добавления узла');
+                        } else {
+                            data.instance.set_id(data.node, json.id);
+                            data.node.data = json.data;
+                            data.instance.refresh();
+                        }
                     });
                 }
                 if (mtype === 'tcp') {
@@ -252,9 +274,13 @@ $(function () {
                         "data": {"action": "addTcpNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
-                        data.instance.set_id(data.node, json.id);
-                        data.node.data = json.data;
-                        data.instance.refresh();
+                        if (json === 'fail') {
+                            alertError($('.form_style'), 'Ошибка добавления узла');
+                        } else {
+                            data.instance.set_id(data.node, json.id);
+                            data.node.data = json.data;
+                            data.instance.refresh();
+                        }
                     });
                 }
             },
@@ -264,9 +290,14 @@ $(function () {
                     "data": {"action": "addDevice", "nodeName": nodeName, "id": id}
                 });
                 resp.success(function (json) {
-                    data.instance.set_id(data.node, json.id);
-                    data.node.data = json.data;
-                    data.instance.refresh();
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка добавления узла');
+                    } else {
+                        data.instance.set_id(data.node, json.id);
+                        data.node.data = json.data;
+                        data.instance.refresh();
+                    }
                 });
             },
             device: function () {
@@ -275,9 +306,14 @@ $(function () {
                     "data": {"action": "addTag", "nodeName": nodeName, "id": id}
                 });
                 resp.success(function (json) {
-                    data.instance.set_id(data.node, json.id);
-                    data.node.data = json.data;
-                    data.instance.refresh();
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка добавления узла');
+                    } else {
+                        data.instance.set_id(data.node, json.id);
+                        data.node.data = json.data;
+                        data.instance.refresh();
+                    }
                 });
             }
         };
@@ -292,7 +328,12 @@ $(function () {
                     data: {"action": "deleteNode", "id": id}
                 });
                 resp.success(function (json) {
-                    data.instance.refresh();
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка удаления узла');
+                    } else {
+                        data.instance.refresh();
+                    }
                 });
             },
             device: function () {
@@ -301,7 +342,12 @@ $(function () {
                     data: {"action": "deleteDevice", "id": id}
                 });
                 resp.success(function (json) {
-                    data.instance.refresh();
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка удаления узла');
+                    } else {
+                        data.instance.refresh();
+                    }
                 });
             },
             tag: function () {
@@ -310,7 +356,12 @@ $(function () {
                     data: {"action": "deleteTag", "id": id}
                 });
                 resp.success(function (json) {
-                    data.instance.refresh();
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка удаления узла');
+                    } else {
+                        data.instance.refresh();
+                    }
                 });
             }
         };
@@ -322,45 +373,42 @@ $(function () {
             node: function() {
                 var resp = treeCrudRequest(obj);
                 resp.success(function(json) {
-                    if (json.type === "rtu") {
-                        $("input[name=nodename]").val(json.name);
-                        $("select[name=modbustype]").val(json.type);
-                        $("input[name=port]").val(json.rtuEntity.port);
-                        $("select[name=baudrate]").val(json.rtuEntity.baudrate);
-                        $("select[name=databits]").val(json.rtuEntity.databits);
-                        $("input[name=parity]").val(json.rtuEntity.parity);
-                        $("select[name=stopbits]").val(json.rtuEntity.stopbits);
-                        $("input[name=retries]").val(json.rtuEntity.retries);
-                        $("input[name=timeout]").val(json.rtuEntity.timeout);
-                        $("input[name=period]").val(json.rtuEntity.period);
+                    console.log(json);
+                    if (json === 'success') {
+                        addDeleteForm();
+                        alertSuccess($('.form_style'), 'Успешно сохранено !');
                     }
-                    if (json.type === "tcp") {
-                        $("input[name=nodename]").val(json.name);
-                        $("select[name=modbustype]").val(json.type);
-                        $("input[name=ip]").val(json.tcpEntity.ip);
-                        $("input[name=port]").val(json.tcpEntity.port);
-                        $("input[name=retries]").val(json.tcpEntity.retries);
-                        $("input[name=timeout]").val(json.tcpEntity.timeout);
-                        $("input[name=period]").val(json.tcpEntity.period);
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка обновления данных!');
                     }
                 });
             },
             device: function() {
                 var resp = treeCrudRequest(obj);
                 resp.success(function(json) {
-                    $("input[name=devicename]").val(json.name);
-                    $("input[name=slaveid]").val(json.slaveid);
-                    $("input[name=startoffset]").val(json.startOffset);
-                    $("input[name=counts]").val(json.counts);
-                    $("select[name=regtype]").val(json.registerEntity.value);
+                    if (json === 'success') {
+                        addDeleteForm();
+                        alertSuccess($('.form_style'), 'Успешно сохранено !');
+                    }
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка обновления данных!');
+                    }
+
                 });
             },
             tag: function() {
                 var resp = treeCrudRequest(obj);
                 resp.success(function(json) {
-                    $("input[name=tagname]").val(json.name);
-                    $("input[name=realoffset]").val(json.realOffset);
-                    $("select[name=datatype]").val(json.datatypeEntity.value);
+                    if (json === 'success') {
+                        addDeleteForm();
+                        alertSuccess($('.form_style'), 'Успешно сохранено !');
+                    }
+                    if (json === 'fail') {
+                        addDeleteForm();
+                        alertError($('.form_style'), 'Ошибка обновления данных!');
+                    }
                 });
             }
         };
@@ -415,13 +463,15 @@ $(function () {
             url: obj.url,
             data: obj.data,
             beforeSend: function() {
-                addDeleteForm();
-                var $r = $('.form_style');
-                $r.addClass("loading");
+                $('.form_style').waitMe({
+                    effect: 'bounce',
+                    text: 'Loading...',
+                    bg: 'rgba(255,255,255,0.7)',
+                    color: '#000'
+                });
             },
             complete: function() {
-                var $r = $(".form_style");
-                $r.removeClass("loading");
+                $('.form_style').waitMe('hide');
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 addDeleteForm();
@@ -440,6 +490,15 @@ $(function () {
         var $div = $('<div>');
         var $h4 = $('<h4>');
         $h4.addClass("error_loading").text(text);
+        $div.append($h4);
+        var $selector = selector;
+        $selector.append($div);
+    }
+
+    function alertSuccess(selector, text) {
+        var $div = $('<div>');
+        var $h4 = $('<h4>');
+        $h4.addClass("success_loading").text(text);
         $div.append($h4);
         var $selector = selector;
         $selector.append($div);
@@ -584,6 +643,15 @@ $(function () {
     $('.form_style').on('click', 'input[type="button"]', function() {
         var formAttr = $('form').attr('type');
         var id = $('form').attr('id');
+        var isValid = true;
+        $(":input, select").each(function() {
+            var elemVal = $(this).val();
+            if ((elemVal === "") || (elemVal === null) || (elemVal === undefined)) {
+                addDeleteForm();
+                alertError($('.form_style'), 'Не все поля заполнены !');
+                isValid = false;
+            }
+        });
         var values = {};
         var d = {};
         d.id = id;
@@ -594,7 +662,9 @@ $(function () {
         d.action = 'update';
         values.url = 'ModbusEdit.do';
         values.data = d;
-        var updateParams = new TreeOperations();
-        updateParams.onUpdate(values);
+        if (isValid) {
+            var updateParams = new TreeOperations();
+            updateParams.onUpdate(values);
+        }
     });
 });

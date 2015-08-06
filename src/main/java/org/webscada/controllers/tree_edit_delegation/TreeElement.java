@@ -1,4 +1,4 @@
-package org.webscada.controllers;
+package org.webscada.controllers.tree_edit_delegation;
 
 import com.google.gson.annotations.Expose;
 

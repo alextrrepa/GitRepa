@@ -75,7 +75,6 @@ section.head_bar .user {
     font-weight: bold;
     text-decoration: underline;
     color: #666666;
-
 }
 
 .user a:hover {
@@ -95,7 +94,7 @@ section.head_bar .breadcrumbs_container {
 nav.sidebar {
     width: 23%;
     height: 90.5%;
-    background: #E0E0E3 url("../images/sidebar.png") repeat scroll 0% 0%;
+    background: #E0E0E3 url("../images/sidebar.png") repeat scroll 0 0;
     float: left;
     /*min-height: 500px;*/
     margin-top: -4px;
@@ -118,7 +117,7 @@ nav h3 {
 
 .sidebar li {
     list-style: outside none none;
-    margin: 0px 0px 0px 12%;
+    margin: 0 0 0 12%;
 }
 
 .sidebar li a {
@@ -128,8 +127,8 @@ nav h3 {
     display: inline-block;
     height: 17px;
     line-height: 17px;
-    text-shadow: 0px 1px 0px #FFF;
-    margin: 2px 0px;
+    text-shadow: 0 1px 0 #FFF;
+    margin: 2px 0;
 }
 
 .sidebar li a:hover {
@@ -154,12 +153,12 @@ section.content {
 
 section.content h4.alert_info {
     width: 95%;
-    margin: 20px 3% 0px;
+    margin: 20px 3% 0;
     border-radius: 5px;
     background: #B5E5EF url("../images/icn_alert_info.png") no-repeat scroll 10px 10px;
     border: 1px solid #77BACE;
     color: #082B33;
-    padding: 10px 0px;
+    padding: 10px 0;
     text-indent: 40px;
     font-size: 14px;
 }
@@ -167,7 +166,7 @@ section.content h4.alert_info {
 section.content h3 {
     color: #1F1F20;
     text-transform: uppercase;
-    text-shadow: 0px 1px 0px #FFF;
+    text-shadow: 0 1px 0 #FFF;
     font-size: 13px;
     margin: 8px 20px;
 }
@@ -210,7 +209,7 @@ section.content h3 {
 
 .modbus_tree {
     width: 50%;
-    margin-right: 0px;
+    margin-right: 0;
     float: left;
 }
 
@@ -219,14 +218,14 @@ section.content h3 {
 .tree_item-li {
     text-indent: 0;
     background-color: transparent;
-    border: 0px solid transparent;
+    border: 0 solid transparent;
     list-style: none;
     left: 100%;
     right: 0;
     text-align: left;
     outline: none;
-    margin: 1px 0px 0px;
-    padding: 0px;
+    margin: 1px 0 0;
+    padding: 0;
 }
 
 .tree_item {
@@ -234,7 +233,7 @@ section.content h3 {
     text-indent: 0;
     list-style: none;
     padding: 3px;
-    margin: 0px;
+    margin: 0;
     float: none;
     overflow: hidden;
     left: 100%;
@@ -288,12 +287,11 @@ section.content h3 {
     max-width: 500px;
     padding: 20px 12px 10px 20px;
     font: 13px Arial, Helvetica, sans-serif;
-
 }
 
 .form_style label{
     display: block;
-    margin: 0px 0px 15px 0px;
+    margin: 0 0 15px 0;
 }
 
 .form_style label > span {
@@ -345,14 +343,14 @@ section.content h3 {
 
 .form_style input[type=submit],
 .form_style input[type=button]{
-    background: #D0D1D4 url("../images/btn_submit.png") repeat-x scroll 0% 0%;
+    background: #D0D1D4 url("../images/btn_submit.png") repeat-x scroll 0 0;
     border: 1px solid #A8A9A8;
-    box-shadow: 0px 1px 0px #FFF;
+    box-shadow: 0 1px 0 #FFF;
     font-weight: bold;
     border-radius: 5px;
     padding: 8px 15px 8px 15px;
     color: #666;
-    text-shadow: 0px 1px 0px #FFF;
+    text-shadow: 0 1px 0 #FFF;
     cursor: pointer;
 }
 
@@ -375,6 +373,21 @@ h4.error_loading {
     background: #F3D9D9 url("../images/icn_alert_error.png") no-repeat 10px 10px;
     border: 1px solid #D20009;
     color: #7B040F;
+    padding: 10px 0;
+    text-indent: 40px;
+    font-size: 14px;
+}
+
+h4.success_loading {
+    display: block;
+    width: 95%;
+    margin: 20px 3% 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #E2F6C5 url("../images/icn_alert_success.png") no-repeat 10px 10px;
+    border: 1px solid #79C20D;
+    color: #32510F;
     padding: 10px 0;
     text-indent: 40px;
     font-size: 14px;

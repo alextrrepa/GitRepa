@@ -13,16 +13,6 @@
         <servlet-class>org.webscada.controllers.ModbusEditController</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>ModbusTreeEdit</servlet-name>
-        <servlet-class>org.webscada.controllers.ModbusTreeEditController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ModbusTreeEdit</servlet-name>
-        <url-pattern>/ModbusTreeEdit.do</url-pattern>
-    </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>ModbusEdit</servlet-name>
         <url-pattern>/ModbusEdit.do</url-pattern>
