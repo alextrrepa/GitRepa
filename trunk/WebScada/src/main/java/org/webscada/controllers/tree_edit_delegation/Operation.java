@@ -2,7 +2,6 @@ package org.webscada.controllers.tree_edit_delegation;
 
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
-import org.webscada.controllers.TreeElement;
 import org.webscada.dao.*;
 import org.webscada.model.*;
 
@@ -232,9 +231,7 @@ public class Operation {
 
     private String updateNode(HttpServletRequest request) {
         String modbusType = request.getParameter("modbustype");
-        log.trace(modbusType);
         Long id = Long.valueOf(request.getParameter("id"));
-        log.trace(id);
         if (modbusType.equalsIgnoreCase("rtu")) {
             GenericDao<NodeEntity, Long> rtuDao = new ItemDAOHibernate<>(NodeEntity.class);
             NodeEntity node;
@@ -242,33 +239,17 @@ public class Operation {
                 node = rtuDao.getById(id);
                 node.setName(request.getParameter("nodename"));
                 node.setType(request.getParameter("modbustype"));
-
                 RtuEntity rtu = node.getRtuEntity();
-                if (rtu == null) {
-                    RtuEntity r = new RtuEntity();
-                    r.setPort(request.getParameter("port"));
-                    r.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
-                    r.setDatabits(Integer.valueOf(request.getParameter("databits")));
-                    r.setParity(Integer.valueOf(request.getParameter("parity")));
-                    r.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
-                    r.setRetries(Integer.valueOf(request.getParameter("retries")));
-                    r.setTimeout(Integer.valueOf(request.getParameter("timeout")));
-                    r.setPeriod(Integer.valueOf(request.getParameter("period")));
-                    GenericDao<RtuEntity, Long> rDao = new ItemDAOHibernate<>(RtuEntity.class);
-                    rDao.create(r);
-                } else {
-                    rtu.setPort(request.getParameter("port"));
-                    rtu.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
-                    rtu.setDatabits(Integer.valueOf(request.getParameter("databits")));
-                    rtu.setParity(Integer.valueOf(request.getParameter("parity")));
-                    rtu.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
-                    rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
-                    rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
-                    rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
-                }
+                rtu.setPort(request.getParameter("port"));
+                rtu.setBaudrate(Integer.valueOf(request.getParameter("baudrate")));
+                rtu.setDatabits(Integer.valueOf(request.getParameter("databits")));
+                rtu.setParity(Integer.valueOf(request.getParameter("parity")));
+                rtu.setStopbits(Integer.valueOf(request.getParameter("stopbits")));
+                rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
+                rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
+                rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
                 rtuDao.update(node);
-                NodeEntity nodeAfter = rtuDao.getById(id);
-                return gson.toJson(nodeAfter);
+                return gson.toJson("success");
             } catch (Exception e) {
                 return gson.toJson("fail");
             }
@@ -288,11 +269,9 @@ public class Operation {
                 tcp.setTimeout(Integer.valueOf(request.getParameter("timeout")));
                 tcp.setPeriod(Integer.valueOf(request.getParameter("period")));
                 tcpDao.update(node);
-                NodeEntity nodeAfter = tcpDao.getById(id);
-                return gson.toJson(nodeAfter);
+                return gson.toJson("success");
             } catch (Exception e) {
-                e.printStackTrace();
-//                return gson.toJson("fail");
+                return gson.toJson("fail");
             }
         }
         return null;
@@ -314,8 +293,7 @@ public class Operation {
             RegisterEntity regEntity = regDao.findRegByValue(Integer.valueOf(regtype));
             device.setRegisterEntity(regEntity);
             deviceDao.update(device);
-            DeviceEntity deviceAfter = deviceDao.getById(id);
-            return gson.toJson(deviceAfter);
+            return gson.toJson("success");
         } catch (Exception e) {
             return gson.toJson("fail");
         }
@@ -335,9 +313,7 @@ public class Operation {
             DatatypeEntity dataEntity = datDao.findDataByValue(Integer.valueOf(datType));
             tag.setDatatypeEntity(dataEntity);
             tagDao.update(tag);
-            TagEntity tagAfter = tagDao.getById(id);
-            return gson.toJson(tagAfter);
-
+            return gson.toJson("success");
         } catch (Exception e) {
             return gson.toJson("fail");
         }
