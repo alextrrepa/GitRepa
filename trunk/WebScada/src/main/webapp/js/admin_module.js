@@ -114,7 +114,7 @@ $(function () {
                 "name": "default-dark"
             },
             'data': {
-                'url': 'ModbusEdit.do?action=getAll'
+                'url': 'ModbusTreeEdit.do?action=getAll'
             }
         }
     }).on('select_node.jstree', function(event, data) {
@@ -151,7 +151,7 @@ $(function () {
         var types = {
             node: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "action": "getNode"}
                 });
                 resp.success(function (json) {
@@ -193,7 +193,7 @@ $(function () {
             },
             device: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "action": "getDevice"}
                 });
                 resp.success(function (json) {
@@ -218,7 +218,7 @@ $(function () {
             },
             tag: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "action": "getTag"}
                 });
                 resp.success(function (json) {
@@ -254,7 +254,7 @@ $(function () {
             root: function () {
                 if (mtype === 'rtu') {
                     var resp = treeCrudRequest({
-                        "url": "ModbusEdit.do",
+                        "url": "ModbusTreeEdit.do",
                         "data": {"action": "addRtuNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
@@ -270,7 +270,7 @@ $(function () {
                 }
                 if (mtype === 'tcp') {
                     var resp = treeCrudRequest({
-                        "url": "ModbusEdit.do",
+                        "url": "ModbusTreeEdit.do",
                         "data": {"action": "addTcpNode", "nodeName": nodeName, "mtype": mtype}
                     });
                     resp.success(function (json) {
@@ -286,7 +286,7 @@ $(function () {
             },
             node: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"action": "addDevice", "nodeName": nodeName, "id": id}
                 });
                 resp.success(function (json) {
@@ -302,7 +302,7 @@ $(function () {
             },
             device: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"action": "addTag", "nodeName": nodeName, "id": id}
                 });
                 resp.success(function (json) {
@@ -324,7 +324,7 @@ $(function () {
         var types = {
             node: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     data: {"action": "deleteNode", "id": id}
                 });
                 resp.success(function (json) {
@@ -338,7 +338,7 @@ $(function () {
             },
             device: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     data: {"action": "deleteDevice", "id": id}
                 });
                 resp.success(function (json) {
@@ -352,7 +352,7 @@ $(function () {
             },
             tag: function () {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     data: {"action": "deleteTag", "id": id}
                 });
                 resp.success(function (json) {
@@ -424,7 +424,7 @@ $(function () {
         var types = {
             node: function() {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
                 resp.success(function(json) {
@@ -433,7 +433,7 @@ $(function () {
             },
             device: function() {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
                 resp.success(function(json) {
@@ -442,7 +442,7 @@ $(function () {
             },
             tag: function() {
                 var resp = treeCrudRequest({
-                    "url": "ModbusEdit.do",
+                    "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
                 resp.success(function(json) {
@@ -660,7 +660,7 @@ $(function () {
         });
         d.type = formAttr;
         d.action = 'update';
-        values.url = 'ModbusEdit.do';
+        values.url = 'ModbusTreeEdit.do';
         values.data = d;
         if (isValid) {
             var updateParams = new TreeOperations();
