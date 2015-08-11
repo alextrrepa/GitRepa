@@ -72,7 +72,6 @@ public class ModbusTask implements Runnable {
             byte [] data = response.getData();
             ModbusLocator locator = new ModbusLocator(device.getRegisterEntity().getValue(), data);
             String devName = device.getName();
-            log.error(devName);
             Map<String, Float> packTagValues = new LinkedHashMap<>();
             List<TagEntity> tagList = device.getTagEntities();
             for (int  j = 0; j < tagList.size(); j++) {
