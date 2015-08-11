@@ -3,6 +3,8 @@ package org.webscada.modbusserver;
 import org.apache.log4j.Logger;
 import org.webscada.dao.AbstractDao;
 import org.webscada.dao.DaoConfig;
+import org.webscada.dao.GenericDao;
+import org.webscada.dao.ItemDAOHibernate;
 import org.webscada.model.NodeEntity;
 
 import java.util.List;
@@ -19,19 +21,25 @@ public class ModbusBridge {
 
     private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
-        ModbusType modbusType;
-        AbstractDao config = new DaoConfig(NodeEntity.class);
-        List<NodeEntity> listConfig = config.getAllConfig();
-        for (NodeEntity entity : listConfig) {
-            if (entity.getType().equalsIgnoreCase("rtu")) {
-                modbusType = new ModbusRtu(entity);
-                modbusType.getTypes(taskList, queue);
+//        AbstractDao config = new DaoConfig(NodeEntity.class);
+        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+        try {
+            List<NodeEntity> listConfig = config.getAllConfig();
+            ModbusType modbusType;
+            for (NodeEntity entity : listConfig) {
+//                ModbusType modbusType = new ModbusRtu(entity);
+//                modbusType.getTypes(taskList, queue);
+                if (entity.getType().equalsIgnoreCase("rtu")) {
+                    modbusType = new ModbusRtu(entity);
+                    modbusType.getTypes(taskList, queue);
+                }
+                if (entity.getType().equalsIgnoreCase("tcp")) {
+                    modbusType = new ModbusTcp(entity);
+                    modbusType.getTypes(taskList, queue);
+                }
             }
-
-            if (entity.getType().equalsIgnoreCase("tcp")) {
-                modbusType = new ModbusTcp(entity);
-                modbusType.getTypes(taskList, queue);
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
