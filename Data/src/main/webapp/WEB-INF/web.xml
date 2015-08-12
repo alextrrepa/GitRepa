@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>ModbusTreeEdit</servlet-name>
+        <servlet-class>controllers.ModbusTreeEditController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModbusTreeEdit</servlet-name>
+        <url-pattern>/ModbusTreeEdit.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>

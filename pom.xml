@@ -6,8 +6,8 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <modules>
-     <module>View</module>
-     <module>Data</module>
+     <module>view</module>
+     <module>data</module>
   </modules>
   <name>webscada Maven Webapp</name>
   <url>http://maven.apache.org</url>
