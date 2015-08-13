@@ -1,4 +1,4 @@
-package modbusserver;
+package modbusserver.exception;
 
 public class ConfigException extends Exception {
 

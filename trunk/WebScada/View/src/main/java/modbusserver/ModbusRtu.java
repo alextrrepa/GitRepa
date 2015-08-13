@@ -33,6 +33,9 @@ public class ModbusRtu extends ModbusType {
 
         int period = nodeEntity.getRtuEntity().getPeriod();
         List<DeviceEntity> devList = nodeEntity.getDeviceEntity();
+        for (DeviceEntity d : devList) {
+            d.getName();
+        }
         taskList.add(new ModbusTask(master, devList, queue, name, period));
     }
 }
