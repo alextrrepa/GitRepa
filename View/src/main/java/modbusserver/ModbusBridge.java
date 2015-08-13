@@ -2,6 +2,8 @@ package modbusserver;
 
 import dao.GenericDao;
 import dao.ItemDAOHibernate;
+import modbusserver.exception.ConfigException;
+import model.DeviceEntity;
 import model.NodeEntity;
 import org.apache.log4j.Logger;
 
@@ -20,10 +22,10 @@ public class ModbusBridge {
     private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
         GenericDao config = new ItemDAOHibernate(NodeEntity.class);
-        try {
-            List<NodeEntity> listConfig = config.getAllConfig();
-            ModbusType modbusType;
-            for (NodeEntity entity : listConfig) {
+        List<NodeEntity> listConfig = config.getAllConfig();
+        ModbusType modbusType;
+        for (NodeEntity entity : listConfig) {
+            try {
                 if (entity.getType().equalsIgnoreCase("rtu")) {
                     modbusType = new ModbusRtu(entity);
                     modbusType.getTypes(taskList, queue);
@@ -32,9 +34,9 @@ public class ModbusBridge {
                     modbusType = new ModbusTcp(entity);
                     modbusType.getTypes(taskList, queue);
                 }
+            }catch (NullPointerException ex) {
+                log.error("Can't get configuration for " + entity.getName());
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

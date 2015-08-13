@@ -22,24 +22,14 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
     }
 
     @Override
-    public List<T> getAllConfig() throws Exception{
+    public List<T> getAllConfig() {
         Session session = SessionUtil.getSession();
         List<T> result = null;
-//        List<T> typeList = new ArrayList<>();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("from NodeEntity as node");
             result = query.list();
-            /*for (T entity : rtuList) {
-                typeList.add(entity);
-            }*/
-
-/*            Query tcpQuery = session.createQuery("from NodeEntity as node where node.type = 'tcp' ");
-            List<T> tcpList = tcpQuery.list();
-            for (T entity : tcpList) {
-                typeList.add(entity);
-            }*/
             transaction.commit();
         } catch (Exception e) {
             try {
@@ -126,13 +116,11 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             session.update(entity);
             transaction.commit();
         }catch (Exception e){
-
             try {
                 transaction.rollback();
             }catch (Exception ex) {
                 log.error("Rollback transaction error", ex);
             }
-
         } finally {
             session.close();
         }
