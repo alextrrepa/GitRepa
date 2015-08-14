@@ -35,9 +35,10 @@ public class ModbusTask implements Runnable {
     @Override
     public void run() {
         try {
+            log.trace("Before interrupted  " + Thread.currentThread().isInterrupted());
             master.init();
             log.trace("Port " + portName + " is open : " + master.isInitialized());
-            while (!Thread.currentThread().isInterrupted()) {
+            while (true) {
                 Map<String, Map<String, Float>> values = startPolling();
                 for (Map.Entry<String, Map<String, Float>> val : values.entrySet()) {
                     log.trace(val.getKey() + " : " + val.getValue());
@@ -49,6 +50,8 @@ public class ModbusTask implements Runnable {
             }
         } catch (ModbusInitException e) {
             log.error("Can't init port " + portName);
+            Thread.currentThread().interrupt();
+//            log.trace("After Interrupted  " + Thread.currentThread().isInterrupted());
         } catch (ModbusTransportException e) {
             log.error("Error in request/responce operation", e.getCause());
         } catch (InterruptedException e) {

@@ -27,16 +27,18 @@ public class Operation {
         TreeElement treeElement;
         try {
             nodeDao.create(nodeEntity);
+            log.trace("@@@@@@@@@");
             RtuEntity rtuEntity = new RtuEntity();
             rtuEntity.setNodeEntity(nodeEntity);
             GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
             rtuDao.create(rtuEntity);
-
+            log.trace("<><><><><><>");
             treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                     "root", nodeEntity.getName(),
                     "images/icn_node.png", Long.toString(nodeEntity.getId()));
             return gson.toJson(treeElement);
         } catch (Exception e) {
+            e.printStackTrace();
             return gson.toJson("fail");
         }
     }
@@ -253,6 +255,7 @@ public class Operation {
                 rtuDao.update(node);
                 return gson.toJson("success");
             } catch (Exception e) {
+                e.printStackTrace();
                 return gson.toJson("fail");
             }
         }
@@ -273,6 +276,7 @@ public class Operation {
                 tcpDao.update(node);
                 return gson.toJson("success");
             } catch (Exception e) {
+                e.printStackTrace();
                 return gson.toJson("fail");
             }
         }
