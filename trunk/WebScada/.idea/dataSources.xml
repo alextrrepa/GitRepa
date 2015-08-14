@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2548051878">
-    <data-source source="LOCAL" name="PostgreSQL - scada@localhost" uuid="a30eee0c-46a0-4574-9089-af4eee78005f">
+  <component name="DataSourceManagerImpl" format="xml" hash="4172635482">
+    <data-source source="LOCAL" name="PostgreSQL - scada@localhost [2]" uuid="79c829de-57ea-4489-b344-fb2de0ef759e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

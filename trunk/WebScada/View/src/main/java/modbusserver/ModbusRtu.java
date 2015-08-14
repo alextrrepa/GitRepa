@@ -20,22 +20,17 @@ public class ModbusRtu extends ModbusType {
     @Override
     public void getTypes(List<ModbusTask> taskList, TransferQueue<Map<String, Map<String, Float>>> queue) {
         SerialParameters serialParameters = new SerialParameters();
-        String name = nodeEntity.getRtuEntity().getPort();
+        String portName = nodeEntity.getRtuEntity().getPort();
         serialParameters.setCommPortId(nodeEntity.getRtuEntity().getPort());
         serialParameters.setBaudRate(nodeEntity.getRtuEntity().getBaudrate());
         serialParameters.setDataBits(nodeEntity.getRtuEntity().getDatabits());
         serialParameters.setStopBits(nodeEntity.getRtuEntity().getStopbits());
         serialParameters.setParity(nodeEntity.getRtuEntity().getParity());
-
         ModbusMaster master = factory.createRtuMaster(serialParameters);
         master.setTimeout(nodeEntity.getRtuEntity().getTimeout());
         master.setRetries(nodeEntity.getRtuEntity().getRetries());
-
         int period = nodeEntity.getRtuEntity().getPeriod();
         List<DeviceEntity> devList = nodeEntity.getDeviceEntity();
-        for (DeviceEntity d : devList) {
-            d.getName();
-        }
-        taskList.add(new ModbusTask(master, devList, queue, name, period));
+        taskList.add(new ModbusTask(master, devList, queue, portName, period));
     }
 }

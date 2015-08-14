@@ -27,13 +27,13 @@ public class ModbusServer implements ServletContextListener {
         try {
             CheckConfigUtil.check();
             new ModbusBridge(taskList, queue);
-//            log.info("TaskList size :" + taskList.size());
-//            int count = taskList.size();
+            log.info("TaskList size :" + taskList.size());
             executor = Executors.newScheduledThreadPool(taskList.size());
             for (ModbusTask task : taskList) {
                 executor.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);
             }
             log.info("Server is started");
+            log.info("TaskList size :" + taskList.size());
         } catch (ConfigException e) {
             log.trace("Can't init configuration" + e);
             return;
