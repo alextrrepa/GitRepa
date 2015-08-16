@@ -5,10 +5,15 @@ import com.serotonin.modbus4j.exception.ModbusInitException;
 import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersRequest;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersResponse;
+import dao.GenericDao;
+import dao.GenericHibernateDAO;
+import dao.ItemDAOHibernate;
+import model.CurrentEntity;
 import model.DeviceEntity;
 import model.TagEntity;
 import org.apache.log4j.Logger;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,12 +44,15 @@ public class ModbusTask implements Runnable {
             log.trace("Port " + portName + " is open : " + master.isInitialized());
             while (true) {
                 Map<String, Map<String, Float>> values = startPolling();
+/*
                 for (Map.Entry<String, Map<String, Float>> val : values.entrySet()) {
                     log.trace(val.getKey() + " : " + val.getValue());
                 }
+*/
                 if (queue.hasWaitingConsumer()) {
                     queue.transfer(values);
                 }
+
                 TimeUnit.SECONDS.sleep(period);
             }
         } catch (ModbusInitException e) {
@@ -79,10 +87,21 @@ public class ModbusTask implements Runnable {
             for (int  j = 0; j < tagList.size(); j++) {
                 TagEntity tag = tagList.get(j);
                 float value = (float) locator.getValue(tag.getRealOffset(), tag.getDatatypeEntity().getValue());
+                log.trace(tag.getName() + " " + tag.getId() + " " + value);
+                insertCurrentData(tag.getId(), value);
                 packTagValues.put(tag.getName(), value);
             }
             packValues.put(devName, packTagValues);
         }
         return packValues;
+    }
+
+    private void insertCurrentData(long id, float value) {
+        GenericDao<CurrentEntity, Long> curData = new ItemDAOHibernate<>(CurrentEntity.class);
+        CurrentEntity curEntity = new CurrentEntity();
+        curEntity.setDatetime(new Date());
+        curEntity.setTag_id(id);
+        curEntity.setValue(value);
+        curData.create(curEntity);
     }
 }
