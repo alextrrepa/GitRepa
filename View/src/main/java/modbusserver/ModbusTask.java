@@ -35,7 +35,6 @@ public class ModbusTask implements Runnable {
     @Override
     public void run() {
         try {
-            log.trace("Before interrupted  " + Thread.currentThread().isInterrupted());
             master.init();
             log.trace("Port " + portName + " is open : " + master.isInitialized());
             while (true) {

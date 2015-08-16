@@ -15,7 +15,7 @@ public class ModbusServer implements ServletContextListener {
     private final static Logger log = Logger.getLogger(ModbusServer.class);
     private List<ModbusTask> taskList = new ArrayList<>();
     private TransferQueue<Map<String, Map<String, Float>>> queue = new LinkedTransferQueue<>();
-    private ScheduledExecutorService executor;
+    private ThreadPoolExecutor executor;
 
     public ModbusServer() {
         CommonQueue.setQueue(queue);
@@ -27,13 +27,19 @@ public class ModbusServer implements ServletContextListener {
         try {
             CheckConfigUtil.check();
             new ModbusBridge(taskList, queue);
-            log.info("TaskList size :" + taskList.size());
+            executor = (ThreadPoolExecutor)Executors.newFixedThreadPool(taskList.size());
+            for (ModbusTask task : taskList) {
+                executor.execute(task);
+            }
+//            log.info("TaskList size :" + taskList.size());
+/*
             executor = Executors.newScheduledThreadPool(taskList.size());
             for (ModbusTask task : taskList) {
                 executor.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);
             }
+*/
             log.info("Server is started");
-            log.info("TaskList size :" + taskList.size());
+//            log.info("TaskList size :" + taskList.size());
         } catch (ConfigException e) {
             log.trace("Can't init configuration" + e);
             return;
