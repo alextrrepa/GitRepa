@@ -1,11 +1,10 @@
 package endpointserver;
 
-import org.codehaus.jackson.map.ObjectMapper;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javax.websocket.EncodeException;
 import javax.websocket.Encoder;
 import javax.websocket.EndpointConfig;
-import java.io.IOException;
 import java.util.Map;
 
 
@@ -13,13 +12,8 @@ public class ResultEncoder implements Encoder.Text<Map<String, Map<String, Float
 
     @Override
     public String encode(Map<String, Map<String, Float>> stringMap) throws EncodeException {
-        String val = null;
-        try {
-            val = new ObjectMapper().writeValueAsString(stringMap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return val;
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(stringMap);
     }
 
     @Override

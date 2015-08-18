@@ -87,7 +87,7 @@ public class ModbusTask implements Runnable {
             for (int  j = 0; j < tagList.size(); j++) {
                 TagEntity tag = tagList.get(j);
                 float value = (float) locator.getValue(tag.getRealOffset(), tag.getDatatypeEntity().getValue());
-                log.trace(tag.getName() + " " + tag.getId() + " " + value);
+//                log.trace(tag.getName() + " " + tag.getId() + " " + value);
                 insertCurrentData(tag.getId(), value);
                 packTagValues.put(tag.getName(), value);
             }

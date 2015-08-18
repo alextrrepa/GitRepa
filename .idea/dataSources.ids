@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="PostgreSQL - scada@localhost [2]" uuid="79c829de-57ea-4489-b344-fb2de0ef759e">
-    <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+    <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
@@ -168,15 +168,15 @@
     </table>
     <table name="rtuconfig" schema="public" catalog="scada" type="TABLE">
       <column name="rtu_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncnR1Y29uZmlnX3J0dV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="port" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="baudrate" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="databits" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="stopbits" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="parity" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="timeout" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="retries" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="period" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="node_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="port" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="baudrate" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="databits" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="stopbits" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="parity" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="timeout" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="retries" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="period" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="node_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="rtuconfig_pkey" columns="rtu_id"/>
       <foreign-key name="rtuconfig_node_id_fkey" columns="node_id" ref-table="node" ref-schema="public" ref-catalog="" ref-columns="node_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
@@ -216,12 +216,12 @@
     </table>
     <table name="tcpconfig" schema="public" catalog="scada" type="TABLE">
       <column name="tcp_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGNwY29uZmlnX3RjcF9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="ip" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="port" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="timeout" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="retries" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="period" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="node_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ip" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="port" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="timeout" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="retries" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="period" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="node_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="tcpconfig_pkey" columns="tcp_id"/>
       <foreign-key name="tcpconfig_node_id_fkey" columns="node_id" ref-table="node" ref-schema="public" ref-catalog="" ref-columns="node_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
@@ -237,5 +237,15 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
+    <procedure name="createday" schema="public" catalog="scada" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="void" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="createhour" schema="public" catalog="scada" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="void" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
   </data-source>
 </component>
