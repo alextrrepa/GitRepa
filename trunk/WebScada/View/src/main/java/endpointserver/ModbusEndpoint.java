@@ -12,7 +12,7 @@ import java.util.Set;
         encoders = { ResultEncoder.class }
 )
 public class ModbusEndpoint implements DataSourceListener {
-    private final static Logger log = Logger.getLogger(ModbusEndpoint.class.getName());
+    private final static Logger log = Logger.getLogger(ModbusEndpoint.class);
 //    private Session session;
 //    private ServerEndpointConfig endpointConfig;
     private ModbusClientConsumer consumer;

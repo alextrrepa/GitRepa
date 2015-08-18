@@ -31,15 +31,7 @@ public class ModbusServer implements ServletContextListener {
             for (ModbusTask task : taskList) {
                 executor.execute(task);
             }
-//            log.info("TaskList size :" + taskList.size());
-/*
-            executor = Executors.newScheduledThreadPool(taskList.size());
-            for (ModbusTask task : taskList) {
-                executor.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);
-            }
-*/
             log.info("Server is started");
-//            log.info("TaskList size :" + taskList.size());
         } catch (ConfigException e) {
             log.trace("Can't init configuration" + e);
             return;
