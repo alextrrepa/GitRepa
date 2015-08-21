@@ -2,31 +2,14 @@
 <html>
 <head>
     <title>Мониторинг</title>
-  <script>
-    var websocket;
-    function init(){
-      var uri = "ws://localhost:8080/view/monitor";
-      writeLog("Connecting To " + uri);
-      websocket = new WebSocket(uri);
-      websocket.onopen = function(evt){
-        writeLog("Connected to Server !!! @@@");
-      };
-      websocket.onmessage = function(evt){
-        writeLog("Received Message" + evt.data);
-      };
-      websocket.onclose = function(evt){
-        websocket.close();
-      }
-    }
-
-    function writeLog(message){
-      document.getElementById("logger").value += message + "\n";
-    }
-    window.addEventListener("load", init, false);
-  </script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/view.js"></script>
 </head>
-<br>
-   <textarea id="logger" name="log" cols="40" rows="10"></textarea></br>
-   <p><a href="index.jsp">На главную</a></p>
+<body>
+<div id="test" style="background-color: #787878"></div>
+<%--<br>
+<textarea id="logger" name="log" cols="40" rows="10"></textarea></br>
+<p><a href="index.jsp">На главную</a></p>--%>
 </body>
 </html>
