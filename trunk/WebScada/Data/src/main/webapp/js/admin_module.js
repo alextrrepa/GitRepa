@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $("#tree").jstree({
         'plugins': ['ccrm', 'contextmenu'],
         'contextmenu': {
