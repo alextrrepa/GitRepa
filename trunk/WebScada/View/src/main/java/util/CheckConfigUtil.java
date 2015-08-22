@@ -28,10 +28,12 @@ public class CheckConfigUtil {
         Class[] mas = {NodeEntity.class, RtuEntity.class, TcpEntity.class, DeviceEntity.class, TagEntity.class};
         for (Class t : mas) {
             long count = getCount(t);
+/*
             if (count == 0) {
                 throw new NullConfigParamsException("Error in modbus configuration!" + " "
                         + t.getSimpleName() + " " + "is empty!");
             }
+*/
         }
     }
 

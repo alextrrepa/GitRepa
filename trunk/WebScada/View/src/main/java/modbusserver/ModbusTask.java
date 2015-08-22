@@ -6,7 +6,6 @@ import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersRequest;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersResponse;
 import dao.GenericDao;
-import dao.GenericHibernateDAO;
 import dao.ItemDAOHibernate;
 import model.CurrentEntity;
 import model.DeviceEntity;
@@ -44,23 +43,17 @@ public class ModbusTask implements Runnable {
             log.trace("Port " + portName + " is open : " + master.isInitialized());
             while (true) {
                 Map<String, Map<String, Float>> values = startPolling();
-/*
                 for (Map.Entry<String, Map<String, Float>> val : values.entrySet()) {
                     log.trace(val.getKey() + " : " + val.getValue());
                 }
-*/
                 if (queue.hasWaitingConsumer()) {
                     queue.transfer(values);
                 }
-
                 TimeUnit.SECONDS.sleep(period);
             }
         } catch (ModbusInitException e) {
             log.error("Can't init port " + portName);
             Thread.currentThread().interrupt();
-//            log.trace("After Interrupted  " + Thread.currentThread().isInterrupted());
-        } catch (ModbusTransportException e) {
-            log.error("Error in request/responce operation", e.getCause());
         } catch (InterruptedException e) {
             log.error("Current thread interrupted" + Thread.currentThread().getName(), e.getCause());
         }finally {
@@ -69,29 +62,30 @@ public class ModbusTask implements Runnable {
         }
     }
 
-    private Map<String, Map<String, Float>> startPolling() throws ModbusTransportException {
+    private Map<String, Map<String, Float>> startPolling() {
         Map<String, Map<String, Float>> packValues = new LinkedHashMap<>();
         for (int i = 0; i < deviceList.size(); i++) {
             DeviceEntity device = deviceList.get(i);
-            ReadHoldingRegistersRequest request = new ReadHoldingRegistersRequest(device.getSlaveid(),
-                    device.getStartOffset(), device.getCounts());
-            ReadHoldingRegistersResponse response = (ReadHoldingRegistersResponse)master.send(request);
-            if (response.isException()) {
+            try {
+                ReadHoldingRegistersRequest request = new ReadHoldingRegistersRequest(device.getSlaveid(),
+                        device.getStartOffset(), device.getCounts());
+                ReadHoldingRegistersResponse response = (ReadHoldingRegistersResponse)master.send(request);
+                byte [] data = response.getData();
+                ModbusLocator locator = new ModbusLocator(device.getRegisterEntity().getValue(), data);
+                String devName = device.getName();
+                Map<String, Float> packTagValues = new LinkedHashMap<>();
+                List<TagEntity> tagList = device.getTagEntities();
+                for (int  j = 0; j < tagList.size(); j++) {
+                    TagEntity tag = tagList.get(j);
+                    float value = (float) locator.getValue(tag.getRealOffset(), tag.getDatatypeEntity().getValue());
+                    insertCurrentData(tag.getId(), value);
+                    packTagValues.put(tag.getName(), value);
+                }
+                packValues.put(devName, packTagValues);
+            } catch (ModbusTransportException e) {
                 log.error("Error responce in " + device.getName());
+                deviceList.remove(i);
             }
-            byte [] data = response.getData();
-            ModbusLocator locator = new ModbusLocator(device.getRegisterEntity().getValue(), data);
-            String devName = device.getName();
-            Map<String, Float> packTagValues = new LinkedHashMap<>();
-            List<TagEntity> tagList = device.getTagEntities();
-            for (int  j = 0; j < tagList.size(); j++) {
-                TagEntity tag = tagList.get(j);
-                float value = (float) locator.getValue(tag.getRealOffset(), tag.getDatatypeEntity().getValue());
-//                log.trace(tag.getName() + " " + tag.getId() + " " + value);
-                insertCurrentData(tag.getId(), value);
-                packTagValues.put(tag.getName(), value);
-            }
-            packValues.put(devName, packTagValues);
         }
         return packValues;
     }
