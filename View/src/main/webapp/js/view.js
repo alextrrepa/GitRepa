@@ -4,7 +4,7 @@ $(function() {
         var importNode = document.importNode(xml.documentElement, true);
         var getDiv = document.getElementById("test");
         getDiv.appendChild(importNode);
-        d3.select("#test svg g").select("#text7687").text(1.235);
+        //
     });
 
     function initWebSocket() {
@@ -15,15 +15,12 @@ $(function() {
             //writeLog("Connected to Server !!! @@@");
         };
         websocket.onmessage = function (evt) {
-            $.each(evt.data, function(key, value) {
-                console.log(key);
-                console.log(value);
-            });
-            //writeLog("Received Message" + evt.data);
-            //var json = JSON.parse(evt.data);
-
-            //console.log(evt.data);
-
+            var json = JSON.parse(evt.data);
+            d3.select("#test svg g").select("#text7687").text(json.Dev1.Tag1);
+            d3.select("#test svg g").select("#text7722").text(json.Dev1.Tag2);
+            d3.select("#test svg g").select("#text8663").text(json.Dev1.Tag3);
+            //d3.select("#test svg g").select("text8667").text(json.Dev1.Tag4);
+            //d3.select("#test svg g").select("text5454").text(json.Dev1.Tag5);
         };
         websocket.onclose = function (evt) {
             websocket.close();
