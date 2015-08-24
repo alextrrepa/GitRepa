@@ -2,9 +2,8 @@ $(function() {
     initWebSocket();
     d3.xml("images/drawing.svg", "image/svg+xml", function(xml) {
         var importNode = document.importNode(xml.documentElement, true);
-        var getDiv = document.getElementById("test");
+        var getDiv = document.getElementById("svg");
         getDiv.appendChild(importNode);
-        //
     });
 
     function initWebSocket() {
@@ -15,21 +14,33 @@ $(function() {
             //writeLog("Connected to Server !!! @@@");
         };
         websocket.onmessage = function (evt) {
-            var json = JSON.parse(evt.data);
-            d3.select("#test svg g").select("#text7687").text(json.Dev1.Tag1);
-            d3.select("#test svg g").select("#text7722").text(json.Dev1.Tag2);
-            d3.select("#test svg g").select("#text8663").text(json.Dev1.Tag3);
-            //d3.select("#test svg g").select("text8667").text(json.Dev1.Tag4);
-            //d3.select("#test svg g").select("text5454").text(json.Dev1.Tag5);
+            var json = $.parseJSON(evt.data);
+            $.each(json, function(k, v) {
+                $.each(v, function(key, value) {
+                    d3.select("#test svg g").select("#"+key).text(value);
+                });
+            });
+            //d3.select("#test svg g").select("#text7687").text(json.Dev1.Tag1);
         };
         websocket.onclose = function (evt) {
             websocket.close();
         }
     }
 
-/*    function writeLog(message) {
-        document.getElementById("logger").value += message + "\n";
-    }
-    window.addEventListener("load", init, false);*/
+    $('.menu-icon').click(function () {
+        if ($('.navigator').css("left") == "-250px") {
+            $('.navigator').animate({left: '0px'}, 350);
+            $('.menu-icon').animate({left: '250px'}, 350);
+            $('.menu-text').animate({left: '300px'}, 350).empty().text("Close");
+        }
+        else  {
+            $('#navigator').animate({left: '-250px'}, 350);
+            $(this).animate({left: '0px'}, 350);
+            $('.menu-text').animate({left: '50px'}, 350).empty().text("Menu");
 
+        }
+    });
+    $('.menu-icon').click(function () {
+        $(this).toggleClass("on");
+    });
 });
