@@ -10,7 +10,7 @@
     </appender>
 
     <logger name="org.hibernate">
-        <level value="WARN"/>
+        <level value="ERROR"/>
         <appender-ref ref="ConsoleAppender"/>
     </logger>
 
@@ -18,5 +18,5 @@
         <priority value="TRACE"/>
         <appender-ref ref="ConsoleAppender"/>
     </root>
-    
+
 </log4j:configuration>

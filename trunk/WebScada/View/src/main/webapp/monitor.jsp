@@ -9,36 +9,40 @@
     <script type="text/javascript" src="js/view.js"></script>
 </head>
 <body>
-<%--<header class="header">--%>
-    <div id="navigator">
-        <ul id="nav">
-            <li class="nav_tab"> <a href="#">
-                <p>Home</p>
-            </a> </li>
-            <li class="nav_tab"> <a href="#">
-                <p>Services</p>
-            </a> </li>
-            <li class="nav_tab"> <a href="#">
-                <p>Works</p>
-            </a> </li>
-            <li class="nav_tab"> <a href="#">
-                <p>Contact</p>
-            </a> </li>
-            <li class="nav_tab"> <a href="#">
-                <p>Blog</p>
-            </a> </li>
-        </ul>
-    </div>
-    <div class="menu-icon">
-        <div class="line_one"></div>
-        <div class="line_two"></div>
-        <div class="line_three"></div>
-    </div>
-    <h1 class="site_title"><a href="monitor.jsp">Test</a></h1>
-    <h2 class="section_title">Test</h2>
-    <%--<hgroup>--%>
-    <%--</hgroup>--%>
-<%--</header>--%>
-<div id="svg" style="background-color: #787878"></div>
+<div id="navigator">
+    <ul id="nav">
+        <li class="nav_tab">
+            <a href="monitor.jsp"><p>Мониторинг</p></a>
+        </li>
+        <li class="nav_tab">
+            <a href="#"><p>Demo</p></a>
+        </li>
+        <li class="nav_tab">
+            <a href="#"><p>Demo</p></a>
+        </li>
+        <li class="nav_tab">
+            <a href="#"><p>Demo</p></a>
+        </li>
+        <li class="nav_tab">
+            <a href="#"><p>Demo</p></a>
+        </li>
+    </ul>
+</div>
+<div class="menu-icon">
+    <div class="line_one"></div>
+    <div class="line_two"></div>
+    <div class="line_three"></div>
+</div>
+<%--<p class="menu-text">Меню</p>--%>
+<header class="header">
+    <hgroup>
+        <div class="site_title"></div>
+        <h2 class="section_title">Demo</h2>
+    </hgroup>
+</header>
+<section class="content">
+    <div id="svg"></div>
+</section>
+<%--<div id="svg" style="background-color: #787878"></div>--%>
 </body>
 </html>
