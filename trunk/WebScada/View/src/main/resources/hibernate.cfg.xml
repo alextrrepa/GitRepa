@@ -6,8 +6,8 @@
     <session-factory>
 
         <!--Properties for Connection-->
-        <!--<property name="hibernate.connection.datasource">postgresql</property>-->
-        <property name="hibernate.dialect">
+        <property name="hibernate.connection.datasource">postgresql</property>
+        <!--<property name="hibernate.dialect">
             org.hibernate.dialect.PostgresPlusDialect
         </property>
         <property name="hibernate.connection.driver_class">
@@ -23,21 +23,18 @@
             cezet123
         </property>
         <property name="hibernate.default_schema">public</property>
-        <!--Properties for Connection-->
 
-        <!--Hibernate Properties-->
-        <property name="hibernate.show_sql">false</property>
-        <!--Hibernate Properties-->
+        <property name="hibernate.show_sql">false</property>-->
 
         <!--Hibernate Mapping-->
-        <mapping class="model.NodeEntity"/>
-        <mapping class="model.RtuEntity"/>
-        <mapping class="model.DeviceEntity"/>
-        <mapping class="model.DatatypeEntity"/>
-        <mapping class="model.RegisterEntity"/>
-        <mapping class="model.TagEntity"/>
-        <mapping class="model.TcpEntity"/>
-        <mapping class="model.CurrentEntity"/>
+        <mapping class="ru.scada.model.NodeEntity"/>
+        <mapping class="ru.scada.model.RtuEntity"/>
+        <mapping class="ru.scada.model.DeviceEntity"/>
+        <mapping class="ru.scada.model.DatatypeEntity"/>
+        <mapping class="ru.scada.model.RegisterEntity"/>
+        <mapping class="ru.scada.model.TagEntity"/>
+        <mapping class="ru.scada.model.TcpEntity"/>
+        <mapping class="ru.scada.model.CurrentEntity"/>
         <!--Hibernate Mapping-->
 
     </session-factory>
