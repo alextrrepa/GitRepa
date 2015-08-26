@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration status="error">
+<!--<Configuration>
     <Appenders>
         <JDBC name="databaseAppender" tableName="public.logs">
-            <ConnectionFactory jndiName="jdbc/PostgreSQL" />
+            <DataSource jndiName="java:/comp/env/jdbc/postgresql" />
             <Column name="dt" isEventTimestamp="true"/>
             <Column name="logger" pattern="%level"/>
             <Column name="level" pattern="%logger"/>
@@ -14,20 +14,17 @@
             <AppenderRef ref = "databaseAppender" />
         </Root>
     </Loggers>
-</Configuration>
-<!--
+</Configuration>-->
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
-    
-    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
-        <param name="driver" value="org.postgresql.Driver"/>
-        <param name="url" value="jdbc:postgresql://localhost:5432/scada"/>
-        <param name="user" value="postgres"/>
-        <param name="password" value="cezet123"/>
+    <appender name="DB" class="org.apache.log4j.DBAppender">
+        <connectionSource class="org.apache.log4j.receivers.db.JNDIConnectionSource">
+            <param name="jndiLocation" value="java:/comp/env/jdbc/postgresql" />
+        </connectionSource>
         <param name="sql" value="INSERT INTO logs(l_id, dt, logger, level, message) VALUES(DEFAULT, '%d', '%C', '%p', '%m')"/>
         <layout class="org.apache.log4j.PatternLayout">
-            &lt;!&ndash;<param name="ConversionPattern"&ndash;&gt;
-                   &lt;!&ndash;value="INSERT INTO logs(l_id, dt, logger, level, message) VALUES(DEFAULT, '%d', '%C', '%p', '%m')"/>&ndash;&gt;
+            <!--<param name="ConversionPattern"-->
+                   <!--value="INSERT INTO logs(l_id, dt, logger, level, message) VALUES(DEFAULT, '%d', '%C', '%p', '%m')"/>-->
         </layout>
     </appender>
 
@@ -52,4 +49,4 @@
         <priority value="ERROR"/>
         <appender-ref ref="DB"/>
     </root>
-</log4j:configuration>-->
+</log4j:configuration>
