@@ -1411,7 +1411,7 @@
 		 * @name _append_html_data(obj, data)
 		 * @param  {mixed} obj the node to append to
 		 * @param  {String} data the HTML string to parse and append
-		 * @trigger model.jstree, changed.jstree
+		 * @trigger ru.scada.model.jstree, changed.jstree
 		 */
 		_append_html_data : function (dom, data, cb) {
 			dom = this.get_node(dom);
@@ -1441,13 +1441,13 @@
 				m[p.parents[i]].children_d = m[p.parents[i]].children_d.concat(dpc);
 			}
 			/**
-			 * triggered when new data is inserted to the tree model
+			 * triggered when new data is inserted to the tree ru.scada.model
 			 * @event
-			 * @name model.jstree
+			 * @name ru.scada.model.jstree
 			 * @param {Array} nodes an array of node IDs
 			 * @param {String} parent the parent ID of the nodes
 			 */
-			this.trigger('model', { "nodes" : dpc, 'parent' : par });
+			this.trigger('ru.scada.model', { "nodes" : dpc, 'parent' : par });
 			if(par !== '#') {
 				this._node_changed(par);
 				this.redraw();
@@ -1457,7 +1457,7 @@
 				this.redraw(true);
 			}
 			if(this._data.core.selected.length !== s) {
-				this.trigger('changed', { 'action' : 'model', 'selected' : this._data.core.selected });
+				this.trigger('changed', { 'action' : 'ru.scada.model', 'selected' : this._data.core.selected });
 			}
 			cb.call(this, true);
 		},
@@ -1468,7 +1468,7 @@
 		 * @param  {mixed} obj the node to append to
 		 * @param  {String} data the JSON object to parse and append
 		 * @param  {Boolean} force_processing internal param - do not set
-		 * @trigger model.jstree, changed.jstree
+		 * @trigger ru.scada.model.jstree, changed.jstree
 		 */
 		_append_json_data : function (dom, data, cb, force_processing) {
 			if(this.element === null) { return; }
@@ -1791,7 +1791,7 @@
 						this._data.core.selected = this._data.core.selected.concat(rslt.add);
 					}
 
-					this.trigger('model', { "nodes" : rslt.dpc, 'parent' : rslt.par });
+					this.trigger('ru.scada.model', { "nodes" : rslt.dpc, 'parent' : rslt.par });
 
 					if(rslt.par !== '#') {
 						this._node_changed(rslt.par);
@@ -1802,7 +1802,7 @@
 						this.redraw(true);
 					}
 					if(rslt.add.length) {
-						this.trigger('changed', { 'action' : 'model', 'selected' : this._data.core.selected });
+						this.trigger('changed', { 'action' : 'ru.scada.model', 'selected' : this._data.core.selected });
 					}
 					cb.call(this, true);
 				};
@@ -1860,13 +1860,13 @@
 			}
 		},
 		/**
-		 * parses a node from a jQuery object and appends them to the in memory tree model. Used internally.
+		 * parses a node from a jQuery object and appends them to the in memory tree ru.scada.model. Used internally.
 		 * @private
 		 * @name _parse_model_from_html(d [, p, ps])
 		 * @param  {jQuery} d the jQuery object to parse
 		 * @param  {String} p the parent ID
 		 * @param  {Array} ps list of all parents
-		 * @return {String} the ID of the object added to the model
+		 * @return {String} the ID of the object added to the ru.scada.model
 		 */
 		_parse_model_from_html : function (d, p, ps) {
 			if(!ps) { ps = []; }
@@ -1972,13 +1972,13 @@
 			return data.id;
 		},
 		/**
-		 * parses a node from a JSON object (used when dealing with flat data, which has no nesting of children, but has id and parent properties) and appends it to the in memory tree model. Used internally.
+		 * parses a node from a JSON object (used when dealing with flat data, which has no nesting of children, but has id and parent properties) and appends it to the in memory tree ru.scada.model. Used internally.
 		 * @private
 		 * @name _parse_model_from_flat_json(d [, p, ps])
 		 * @param  {Object} d the JSON object to parse
 		 * @param  {String} p the parent ID
 		 * @param  {Array} ps list of all parents
-		 * @return {String} the ID of the object added to the model
+		 * @return {String} the ID of the object added to the ru.scada.model
 		 */
 		_parse_model_from_flat_json : function (d, p, ps) {
 			if(!ps) { ps = []; }
@@ -2070,13 +2070,13 @@
 			return tmp.id;
 		},
 		/**
-		 * parses a node from a JSON object and appends it to the in memory tree model. Used internally.
+		 * parses a node from a JSON object and appends it to the in memory tree ru.scada.model. Used internally.
 		 * @private
 		 * @name _parse_model_from_json(d [, p, ps])
 		 * @param  {Object} d the JSON object to parse
 		 * @param  {String} p the parent ID
 		 * @param  {Array} ps list of all parents
-		 * @return {String} the ID of the object added to the model
+		 * @return {String} the ID of the object added to the ru.scada.model
 		 */
 		_parse_model_from_json : function (d, p, ps) {
 			if(!ps) { ps = []; }
@@ -3322,7 +3322,7 @@
 			}
 			i = $.inArray(obj.id, this._data.core.selected);
 			if(i !== -1) { this._data.core.selected[i] = id; }
-			// update model and obj itself (obj.id, this._model.data[KEY])
+			// update ru.scada.model and obj itself (obj.id, this._model.data[KEY])
 			i = this.get_node(obj.id, true);
 			if(i) {
 				i.attr('id', id).children('.jstree-anchor').attr('id', id + '_anchor').end().attr('aria-labelledby', id + '_anchor');
@@ -3452,7 +3452,7 @@
 		 * @param  {Function} callback a function to be called once the node is created
 		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was succesfully loaded
 		 * @return {String}            the ID of the newly create node
-		 * @trigger model.jstree, create_node.jstree
+		 * @trigger ru.scada.model.jstree, create_node.jstree
 		 */
 		create_node : function (par, node, pos, callback, is_loaded) {
 			if(par === null) { par = "#"; }
@@ -3506,7 +3506,7 @@
 			dpc = [];
 			dpc.push(node);
 			dpc = dpc.concat(tmp.children_d);
-			this.trigger('model', { "nodes" : dpc, "parent" : par.id });
+			this.trigger('ru.scada.model', { "nodes" : dpc, "parent" : par.id });
 
 			par.children_d = par.children_d.concat(dpc);
 			for(i = 0, j = par.parents.length; i < j; i++) {
@@ -3857,7 +3857,7 @@
 		 * @param  {Boolean} is_loaded internal parameter indicating if the parent node has been loaded
 		 * @param  {Boolean} skip_redraw internal parameter indicating if the tree should be redrawn
 		 * @param  {Boolean} instance internal parameter indicating if the node comes from another instance
-		 * @trigger model.jstree copy_node.jstree
+		 * @trigger ru.scada.model.jstree copy_node.jstree
 		 */
 		copy_node : function (obj, par, pos, callback, is_loaded, skip_redraw, origin) {
 			var t1, t2, dpc, tmp, i, j, node, old_par, new_par, old_ins, is_multi;
@@ -3934,7 +3934,7 @@
 			dpc = [];
 			dpc.push(node);
 			dpc = dpc.concat(tmp.children_d);
-			this.trigger('model', { "nodes" : dpc, "parent" : new_par.id });
+			this.trigger('ru.scada.model', { "nodes" : dpc, "parent" : new_par.id });
 
 			// insert into new parent and up
 			for(i = 0, j = new_par.parents.length; i < j; i++) {
@@ -4515,7 +4515,7 @@
 			}
 			if(!this.settings.checkbox.tie_selection) {
 				this.element
-					.on('model.jstree', $.proxy(function (e, data) {
+					.on('ru.scada.model.jstree', $.proxy(function (e, data) {
 						var m = this._model.data,
 							p = m[data.parent],
 							dpc = data.nodes,
@@ -4530,7 +4530,7 @@
 			}
 			if(this.settings.checkbox.cascade.indexOf('up') !== -1 || this.settings.checkbox.cascade.indexOf('down') !== -1) {
 				this.element
-					.on('model.jstree', $.proxy(function (e, data) {
+					.on('ru.scada.model.jstree', $.proxy(function (e, data) {
 							var m = this._model.data,
 								p = m[data.parent],
 								dpc = data.nodes,
@@ -6829,7 +6829,7 @@
 		this.bind = function () {
 			parent.bind.call(this);
 			this.element
-				.on("model.jstree", $.proxy(function (e, data) {
+				.on("ru.scada.model.jstree", $.proxy(function (e, data) {
 						this.sort(data.parent, true);
 					}, this))
 				.on("rename_node.jstree create_node.jstree", $.proxy(function (e, data) {
@@ -7026,7 +7026,7 @@
 		};
 		this.bind = function () {
 			this.element
-				.on('model.jstree', $.proxy(function (e, data) {
+				.on('ru.scada.model.jstree', $.proxy(function (e, data) {
 						var m = this._model.data,
 							dpc = data.nodes,
 							t = this.settings.types,

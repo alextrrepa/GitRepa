@@ -1,12 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="В monitor.jsp создал toggle меню. Содержимое с svg разместил по центру.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/webapp/css/client.css" afterPath="$PROJECT_DIR$/View/src/main/webapp/css/client.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/resources/log4j.xml" afterPath="$PROJECT_DIR$/View/src/main/resources/log4j.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/webapp/monitor.jsp" afterPath="$PROJECT_DIR$/View/src/main/webapp/monitor.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/webapp/js/view.js" afterPath="$PROJECT_DIR$/View/src/main/webapp/js/view.js" />
+    <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/exception" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/CommonQueue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/exception/ConfigException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/util/ConnectionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusBridge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusLocator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusRtu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTcp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/exception/NullConfigParamsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/exception/NullDeviceException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/exception/NullTagException.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\ModbusTreeEditController.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ModbusTreeEditController.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\AddDeviceOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/AddDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\AddRtuNodeOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/AddRtuNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\AddTagOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/AddTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\AddTcpNodeOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/AddTcpNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\Command.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/Command.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\DeleteDeviceOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\DeleteNodeOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\DeleteTagOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\DoOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/DoOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\GetAllOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/GetAllOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\GetDeviceOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/GetDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\GetNodeOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/GetNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\GetTagOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/GetTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\Operation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/Operation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\RenameOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/RenameOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\TreeElement.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/TreeElement.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation\UpdateOperation.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation/UpdateOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\dao\GenericDao.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao/GenericDao.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\dao\GenericHibernateDAO.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao/GenericHibernateDAO.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\dao\ItemDAO.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao/ItemDAO.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\dao\ItemDAOHibernate.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao/ItemDAOHibernate.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\CurrentEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/CurrentEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\DatatypeEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/DatatypeEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\DeviceEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/DeviceEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\NodeEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/NodeEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\RegisterEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/RegisterEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\RtuEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/RtuEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\TagEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/TagEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model\TcpEntity.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/TcpEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\util\SessionUtil.java" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/util/SessionUtil.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\ModbusTreeEditController.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/ModbusTreeEditController.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\AddDeviceOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/AddDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\AddRtuNodeOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/AddRtuNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\AddTagOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/AddTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\AddTcpNodeOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/AddTcpNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\Command.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/Command.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\DeleteDeviceOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\DeleteNodeOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\DeleteTagOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/DeleteTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\DoOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/DoOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\GetAllOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/GetAllOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\GetDeviceOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/GetDeviceOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\GetNodeOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/GetNodeOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\GetTagOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/GetTagOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\Operation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/Operation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\RenameOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/RenameOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\TreeElement.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/TreeElement.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation\UpdateOperation.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/UpdateOperation.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\dao\GenericDao.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/GenericDao.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\dao\GenericHibernateDAO.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/GenericHibernateDAO.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\dao\ItemDAO.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAO.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\dao\ItemDAOHibernate.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAOHibernate.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\endpointserver\DataSourceListener.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/DataSourceListener.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\endpointserver\ModbusClientConsumer.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusClientConsumer.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\endpointserver\ModbusEndpoint.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusEndpoint.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\endpointserver\ResultEncoder.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ResultEncoder.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\CurrentEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/CurrentEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\DatatypeEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/DatatypeEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\DeviceEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/DeviceEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\NodeEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/NodeEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\RegisterEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/RegisterEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\RtuEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/RtuEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\TagEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/TagEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model\TcpEntity.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model/TcpEntity.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\util\CheckConfigUtil.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/util/CheckConfigUtil.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\util\SessionUtil.java" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/util/SessionUtil.java" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\resources\log4j.xml" afterPath="$PROJECT_DIR$/View/src/main/resources/log4j2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/test/java/DaoTest.java" afterPath="$PROJECT_DIR$/View/src/test/java/DaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Data.iml" afterPath="$PROJECT_DIR$/Data/Data.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/View.iml" afterPath="$PROJECT_DIR$/View/View.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/View_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/View_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebScada.iml" afterPath="$PROJECT_DIR$/WebScada.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.js" afterPath="$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.min.js" afterPath="$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/js/jstree.min.js" afterPath="$PROJECT_DIR$/Data/src/main/webapp/js/jstree.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/pom.xml" afterPath="$PROJECT_DIR$/View/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/View/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\dao" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\dao" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/dao" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\endpointserver" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\model" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\model" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/model" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\controllers\tree_edit_delegation" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/tree_edit_delegation" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\controllers\tree_edit_delegation" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\Data\src\main\java\util" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/util" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\View\src\main\java\util" afterPath="$PROJECT_DIR$/View/src/main/java/ru/scada/util" />
     </list>
     <ignored path="WebScada.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,28 +168,62 @@
       <file leaf-file-name="monitor.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/src/main/webapp/monitor.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.730769">
-              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/src/main/resources/log4j.xml">
+      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/src/main/resources/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/View/src/main/webapp/css/client.css">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75598633">
-              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+              <folding>
+                <marker date="1440583221533" expanded="true" signature="916:1077" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/util/ConnectionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.69783354">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="55" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/src/test/java/DaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -92,16 +239,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/admin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -111,9 +248,9 @@
         <option value="Html5" />
         <option value="Jsp File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,24 +262,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/modbus_page.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/controllers/tree_edit_delegation/Operation.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/admin_style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/admin_module.js" />
-        <option value="dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.tcpconfig" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusBridge.java" />
-        <option value="dbtable:/db770c6/a30eee0c-46a0-4574-9089-af4eee78005f/scada.public.currentdata" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a30eee0c-46a0-4574-9089-af4eee78005f/console.sql" />
-        <option value="$PROJECT_DIR$/src/test/java/org/webscada/modbusserver/config/dao/DaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusRtu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/webscada/modbusserver/ModbusTcp.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/Data/pom.xml" />
         <option value="$PROJECT_DIR$/View/src/main/java/org/webscada/util/CheckConfigUtil.java" />
-        <option value="$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/View/src/main/java/modbusserver/ModbusBridge.java" />
         <option value="$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/Data/src/main/java/dao/ItemDAOHibernate.java" />
@@ -156,17 +276,13 @@
         <option value="dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.testFunc" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.currentdata" />
         <option value="dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.testfunc" />
-        <option value="$PROJECT_DIR$/View/src/test/java/DaoTest.java" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.rtuconfig" />
-        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.hourdata" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.daydata" />
         <option value="dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.createday" />
         <option value="dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.createhour" />
         <option value="$PROJECT_DIR$/View/src/main/java/endpointserver/ModbusEndpoint.java" />
         <option value="$PROJECT_DIR$/View/src/main/java/modbusserver/ModbusTask.java" />
         <option value="$PROJECT_DIR$/View/src/main/java/modbusserver/DataTransfer.java" />
-        <option value="$PROJECT_DIR$/View/pom.xml" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
         <option value="$PROJECT_DIR$/View/src/main/java/endpointserver/ResultEncoder.java" />
         <option value="$PROJECT_DIR$/Data/src/main/webapp/js/admin_module.js" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.tag" />
@@ -175,7 +291,28 @@
         <option value="$PROJECT_DIR$/View/src/main/webapp/js/view.js" />
         <option value="$PROJECT_DIR$/View/src/main/webapp/css/client.css" />
         <option value="$PROJECT_DIR$/View/src/main/webapp/monitor.jsp" />
+        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.hourdata" />
+        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.logs" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
         <option value="$PROJECT_DIR$/View/src/main/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusClientConsumer.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTask.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/util/SessionUtil.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/util/CheckConfigUtil.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusBridge.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusRtu.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusServer.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTcp.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusEndpoint.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAOHibernate.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/GenericHibernateDAO.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/ModbusTreeEditController.java" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/Operation.java" />
+        <option value="$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/View/src/test/java/DaoTest.java" />
+        <option value="$PROJECT_DIR$/View/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/View/pom.xml" />
+        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/util/ConnectionFactory.java" />
       </list>
     </option>
   </component>
@@ -277,51 +414,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DB Consoles" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -371,30 +463,12 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -417,74 +491,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,6 +545,18 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -566,7 +584,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modbusserver" />
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,39 +606,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -624,7 +618,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -638,7 +640,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -650,33 +652,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
+              <option name="myItemId" value="ru" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="scada" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="endpointserver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -692,12 +680,57 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB Consoles" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -1041,13 +1074,10 @@
       <method />
     </configuration>
     <configuration default="false" name="GlassFish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.0.0" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
-      <deployment>
-        <artifact name="View:war">
-          <settings />
-        </artifact>
-      </deployment>
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
       <server-settings>
         <option name="DOMAIN" value="domain1" />
         <option name="PRESERVE" value="true" />
@@ -1105,11 +1135,7 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="View:war" />
-        </option>
-      </method>
+      <method />
     </configuration>
     <configuration default="false" name="glassfish_deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -1384,7 +1410,9 @@
       <workItem from="1440382890323" duration="6765000" />
       <workItem from="1440390670194" duration="17978000" />
       <workItem from="1440412402116" duration="81000" />
-      <workItem from="1440469559601" duration="19635000" />
+      <workItem from="1440469559601" duration="20950000" />
+      <workItem from="1440556658466" duration="14299000" />
+      <workItem from="1440573187509" duration="11398000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1626,11 +1654,17 @@
       <option name="project" value="LOCAL" />
       <updated>1440412139743</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="В monitor.jsp создал toggle меню. Содержимое с svg разместил по центру.">
+      <created>1440497482624</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1440497482624</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1214382000" />
+    <option name="totallyTimeSpent" value="1241394000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1652,30 +1686,30 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6773481" sideWeight="0.50488997" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="94" y="94" width="1492" height="832" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23349634" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18154034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46961325" sideWeight="0.49511003" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32486188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.49511003" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26222494" sideWeight="0.47071823" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2212714" sideWeight="0.47071823" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30623472" sideWeight="0.5160221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18520783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26222494" sideWeight="0.5292818" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5005525" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26222494" sideWeight="0.5292818" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="94" y="94" width="1492" height="832" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63977903" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1922652" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1716,7 +1750,7 @@
     <MESSAGE value="Refactor структуры проекта. Многомодульный проект." />
     <MESSAGE value="В ModbusServer поменял SheduledExecutor на ThreadPoolExecutor." />
     <MESSAGE value="В monitor.jsp создал toggle меню. Содержимое с svg разместил по центру." />
-    <option name="LAST_COMMIT_MESSAGE" value="В monitor.jsp создал toggle меню. Содержимое с svg разместил по центру." />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
@@ -1744,305 +1778,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/dao/GenericHibernateDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057142857">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/dao/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057142857">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/tree_edit_delegation/AddDeviceOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114285715">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/tree_edit_delegation/AddRtuNodeOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114285715">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/tree_edit_delegation/TreeElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114285715">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/tree_edit_delegation/UpdateOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114285715">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/ModbusTreeEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2571429">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22857143">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/View.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42857143">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45714286">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31428573">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/controllers/tree_edit_delegation/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.857142">
-          <caret line="356" column="18" selection-start-line="356" selection-start-column="18" selection-end-line="356" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.tcpconfig">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/79c829de-57ea-4489-b344-fb2de0ef759e.schema:scada.public">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>79c829de-57ea-4489-b344-fb2de0ef759e.schema:scada.public</OriginalElement>
-          <nodes>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.device</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.node</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.daydata</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.tcpconfig</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.rtuconfig</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.tag</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.registertype</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.currentdata</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.hourdata</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.datatype</node>
-            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.monthdata</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8094420600858369" x="548.0" y="619.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/dao/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/dao/GenericHibernateDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/model/CurrentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54214126">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/dao/ItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/dao/ItemDAOHibernate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09681094">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.node">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.device">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/controllers/tree_edit_delegation/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.581528">
-          <caret line="369" column="1" selection-start-line="369" selection-start-column="1" selection-end-line="369" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.testfunc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.rtuconfig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/test/java/DaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05808656">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.createday">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5708955">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.daydata">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="tag_id=1" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbfunction:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.createhour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20070839">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.currentdata">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.hourdata">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/endpointserver/ResultEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23261118">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/endpointserver/ModbusClientConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43785632">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/src/main/webapp/js/d3.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2072,30 +1807,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050171036">
-          <caret line="84" column="52" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/modbusserver/ModbusTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.tag">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2113,36 +1833,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/endpointserver/ModbusEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30216646">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/css/admin_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07753706">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/modbusserver/ModbusServer.java">
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.hourdata">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3477765">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.026397515">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/webapp/css/client.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15507412">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
+        <state vertical-scroll-proportion="0.092057765">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2154,27 +1882,338 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/jre/lib/rt.jar!/sun/jdbc/odbc/JdbcOdbc.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3536036">
+          <caret line="3342" column="0" selection-start-line="3342" selection-start-column="0" selection-end-line="3342" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/View/src/main/webapp/monitor.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.730769">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/resources/log4j.xml">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/sql/DriverManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/webapp/css/client.css">
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/jdbc/JDBCAppender.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75598633">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+        <state vertical-scroll-proportion="-8.185185">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusClientConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15315315">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/util/CheckConfigUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.327252">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusBridge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23261118">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusRtu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07753706">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23261118">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTcp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25199544">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1440565660019" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23261118">
+          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAOHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19384265">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/dao/GenericHibernateDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19384265">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/ModbusTreeEditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31014824">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25199544">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.logs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/util/SessionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.3/log4j-core-2.3.jar!/org/apache/logging/log4j/core/impl/Log4jContextFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12235294">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/javax/naming/InitialContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3312102">
+          <caret line="410" column="0" selection-start-line="410" selection-start-column="0" selection-end-line="410" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/test/java/DaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.3/log4j-core-2.3.jar!/org/apache/logging/log4j/core/appender/db/jdbc/JdbcAppender.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5555553">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding>
+            <marker date="1440583221533" expanded="true" signature="916:1077" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/javax/management/ObjectName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33295324">
+          <caret line="222" column="13" selection-start-line="222" selection-start-column="13" selection-end-line="222" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.jar!/org/apache/commons/dbcp2/PoolableConnectionFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33294117">
+          <caret line="52" column="96" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/GenericObjectPool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.703704">
+          <caret line="45" column="48" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/model/CurrentEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15315315">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/DatatypeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/DeviceEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/NodeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/TcpEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/TagEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/RtuEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/dist/jstree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="121" column="13" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/util/ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69783354">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2245,11 +2284,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.hibernate:hibernate-core:4.3.10.Final</last-edited>
+          <last-edited>Maven: postgresql:postgresql:9.1-901-1.jdbc4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.36091954" />
               </list>
             </option>
           </splitter-proportions>

@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
     <servlet>
         <servlet-name>ModbusTreeEdit</servlet-name>
-        <servlet-class>controllers.ModbusTreeEditController</servlet-class>
+        <servlet-class>ru.scada.controllers.ModbusTreeEditController</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -1,13 +1,13 @@
-import modbusserver.exception.ConfigException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
-import util.CheckConfigUtil;
-
-import java.util.Calendar;
-import java.util.Date;
 
 public class DaoTest {
+    private static final Logger log = LogManager.getLogger(DaoTest.class.getName());
+
     @Test
     public void testGet() {
-        System.out.println(new Date());
+        log.info("@@@@@@@@@@@@@@@@@@");
+        log.error("!!!!!!!!!!!!!!!!!!!");
     }
 }
