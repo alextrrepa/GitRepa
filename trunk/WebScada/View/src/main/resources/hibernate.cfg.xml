@@ -4,12 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-
-        <!--Properties for Connection-->
-        <property name="hibernate.connection.datasource">postgresql</property>
-        <!--<property name="hibernate.dialect">
+        <property name="hibernate.dialect">
             org.hibernate.dialect.PostgresPlusDialect
         </property>
+        <!--<property name="hibernate.connection.datasource">postgresql</property>-->
+
         <property name="hibernate.connection.driver_class">
             org.postgresql.Driver
         </property>
@@ -24,9 +23,8 @@
         </property>
         <property name="hibernate.default_schema">public</property>
 
-        <property name="hibernate.show_sql">false</property>-->
+        <property name="hibernate.show_sql">false</property>
 
-        <!--Hibernate Mapping-->
         <mapping class="ru.scada.model.NodeEntity"/>
         <mapping class="ru.scada.model.RtuEntity"/>
         <mapping class="ru.scada.model.DeviceEntity"/>
@@ -35,7 +33,6 @@
         <mapping class="ru.scada.model.TagEntity"/>
         <mapping class="ru.scada.model.TcpEntity"/>
         <mapping class="ru.scada.model.CurrentEntity"/>
-        <!--Hibernate Mapping-->
 
     </session-factory>
 </hibernate-configuration>

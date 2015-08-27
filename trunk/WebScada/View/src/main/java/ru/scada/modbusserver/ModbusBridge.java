@@ -1,7 +1,6 @@
 package ru.scada.modbusserver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDAOHibernate;
 import ru.scada.model.NodeEntity;
@@ -11,7 +10,7 @@ import java.util.Map;
 import java.util.concurrent.TransferQueue;
 
 public class ModbusBridge {
-    private final static Logger log = LogManager.getLogger(ModbusBridge.class);
+    private final static Logger log = Logger.getLogger(ModbusBridge.class);
 
     public ModbusBridge(List<ModbusTask> taskList,
                         TransferQueue<Map<String, Map<String, Float>>> queue) {

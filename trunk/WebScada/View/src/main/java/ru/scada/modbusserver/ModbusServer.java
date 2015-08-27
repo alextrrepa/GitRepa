@@ -1,7 +1,6 @@
 package ru.scada.modbusserver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.modbusserver.exception.ConfigException;
 import ru.scada.util.CheckConfigUtil;
 
@@ -13,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 public class ModbusServer implements ServletContextListener {
-    private final static Logger log = LogManager.getLogger(ModbusServer.class);
+    private final static Logger log = Logger.getLogger(ModbusServer.class);
     private List<ModbusTask> taskList = new ArrayList<>();
     private TransferQueue<Map<String, Map<String, Float>>> queue = new LinkedTransferQueue<>();
     private ThreadPoolExecutor executor;
@@ -24,19 +23,14 @@ public class ModbusServer implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        log.trace("Starting Server....");
-        try {
-            CheckConfigUtil.check();
-            new ModbusBridge(taskList, queue);
-            executor = (ThreadPoolExecutor)Executors.newFixedThreadPool(taskList.size());
-            for (ModbusTask task : taskList) {
-                executor.execute(task);
-            }
-            log.info("Server is started");
-        } catch (ConfigException e) {
-            log.error("Can't init configuration" + e);
-            return;
+        log.info("Starting Server....");
+        //            CheckConfigUtil.check();
+        new ModbusBridge(taskList, queue);
+        executor = (ThreadPoolExecutor)Executors.newFixedThreadPool(taskList.size());
+        for (ModbusTask task : taskList) {
+            executor.execute(task);
         }
+        log.info("Server is started");
     }
 
     @Override

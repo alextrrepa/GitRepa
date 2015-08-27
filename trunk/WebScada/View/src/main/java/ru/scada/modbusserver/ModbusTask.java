@@ -5,8 +5,7 @@ import com.serotonin.modbus4j.exception.ModbusInitException;
 import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersRequest;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersResponse;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDAOHibernate;
 import ru.scada.model.CurrentEntity;
@@ -21,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TransferQueue;
 
 public class ModbusTask implements Runnable {
-    private final static Logger log = LogManager.getLogger(ModbusTask.class);
+    private static final Logger log = Logger.getLogger(ModbusTask.class);
     private ModbusMaster master;
     private List<DeviceEntity> deviceList;
     private TransferQueue<Map<String, Map<String, Float>>> queue;
@@ -45,7 +44,7 @@ public class ModbusTask implements Runnable {
             while (true) {
                 Map<String, Map<String, Float>> values = startPolling();
 //                for (Map.Entry<String, Map<String, Float>> val : values.entrySet()) {
-//                    log.trace(val.getKey() + " : " + val.getValue());
+//                    System.out.println(val.getKey() + " : " + val.getValue());
 //                }
                 if (queue.hasWaitingConsumer()) {
                     queue.transfer(values);
@@ -54,13 +53,13 @@ public class ModbusTask implements Runnable {
             }
         } catch (ModbusInitException e) {
             log.error("Can't init port " + portName);
-            Thread.currentThread().interrupt();
+//            Thread.currentThread().interrupt();
         } catch (InterruptedException e) {
-            log.error("Current thread interrupted" + Thread.currentThread().getName(), e.getCause());
-            Thread.currentThread().interrupt();
+//            log.error("Current thread interrupted" + Thread.currentThread().getName());
+//            Thread.currentThread().interrupt();
         }finally {
-            master.destroy();
             log.info("Destroy Master");
+            master.destroy();
         }
     }
 

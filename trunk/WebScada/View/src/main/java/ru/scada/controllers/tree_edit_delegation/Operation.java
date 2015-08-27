@@ -1,8 +1,7 @@
 package ru.scada.controllers.tree_edit_delegation;
 
 import com.google.gson.Gson;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.dao.ItemDAOHibernate;
 import ru.scada.model.*;
 import ru.scada.dao.GenericDao;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Operation {
-    private final static Logger log = LogManager.getLogger(Operation.class);
+    private final static Logger log = Logger.getLogger(Operation.class);
     private Gson gson;
 
     public Operation(Gson gson) {

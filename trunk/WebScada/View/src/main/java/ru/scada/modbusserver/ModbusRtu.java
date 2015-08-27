@@ -2,8 +2,7 @@ package ru.scada.modbusserver;
 
 import com.serotonin.io.serial.SerialParameters;
 import com.serotonin.modbus4j.ModbusMaster;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.model.DeviceEntity;
 import ru.scada.model.NodeEntity;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.TransferQueue;
 
 public class ModbusRtu extends ModbusType {
-    private final static Logger log = LogManager.getLogger(ModbusRtu.class);
+    private final static Logger log = Logger.getLogger(ModbusRtu.class);
 
     public ModbusRtu(NodeEntity nodeEntityEntity) {
         super(nodeEntityEntity);
