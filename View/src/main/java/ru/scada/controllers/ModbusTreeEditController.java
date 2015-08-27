@@ -2,8 +2,7 @@ package ru.scada.controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.controllers.tree_edit_delegation.*;
 
 import javax.servlet.ServletException;
@@ -16,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ModbusTreeEditController extends HttpServlet {
-    private final static Logger log = LogManager.getLogger(ModbusTreeEditController.class);
+    private final static Logger log = Logger.getLogger(ModbusTreeEditController.class);
     private Map<String, Command> commandMap = new HashMap<>();
     private Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().
             create();

@@ -7,7 +7,6 @@ import javax.websocket.Encoder;
 import javax.websocket.EndpointConfig;
 import java.util.Map;
 
-
 public class ResultEncoder implements Encoder.Text<Map<String, Map<String, Float>>> {
 
     @Override

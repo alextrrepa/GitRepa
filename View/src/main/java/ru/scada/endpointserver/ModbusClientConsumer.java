@@ -1,7 +1,6 @@
 package ru.scada.endpointserver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.modbusserver.CommonQueue;
 
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.TransferQueue;
 
 public class ModbusClientConsumer {
-    private final Logger log = LogManager.getLogger(this.getClass());
+    private final Logger log = Logger.getLogger(this.getClass());
     private List<DataSourceListener> listeners = new ArrayList<>();
     private TransferQueue<Map<String, Map<String, Float>>> queue;
     private Thread thread;

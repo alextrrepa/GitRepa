@@ -1,7 +1,6 @@
 package ru.scada.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDAOHibernate;
 import ru.scada.modbusserver.exception.ConfigException;
@@ -17,7 +16,7 @@ import org.hibernate.criterion.Projections;
 import java.util.List;
 
 public class CheckConfigUtil {
-    private final static Logger log = LogManager.getLogger(CheckConfigUtil.class);
+    private final static Logger log = Logger.getLogger(CheckConfigUtil.class);
 
     public static void check() throws ConfigException {
         checkTablesConfiguration();

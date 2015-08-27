@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="PostgreSQL - scada@localhost [2]" uuid="79c829de-57ea-4489-b344-fb2de0ef759e">
-    <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+    <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
@@ -110,9 +110,9 @@
     <table name="logs" schema="public" catalog="scada" type="TABLE">
       <column name="l_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbG9nc19sX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="dt" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="logger" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="level" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="message" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="logger" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="level" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="message" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="logs_pkey" columns="l_id"/>
     </table>
     <table name="logs_l_id_seq" schema="public" catalog="scada" type="SEQUENCE">

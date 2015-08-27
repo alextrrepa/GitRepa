@@ -1,8 +1,6 @@
 package ru.scada.endpointserver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import org.apache.log4j.Logger;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
@@ -13,7 +11,7 @@ import java.util.Set;
         encoders = { ResultEncoder.class }
 )
 public class ModbusEndpoint implements DataSourceListener {
-    private final static Logger log = LogManager.getLogger(ModbusEndpoint.class);
+    private final static Logger log = Logger.getLogger(ModbusEndpoint.class);
 //    private Session session;
 //    private ServerEndpointConfig endpointConfig;
     private ModbusClientConsumer consumer;

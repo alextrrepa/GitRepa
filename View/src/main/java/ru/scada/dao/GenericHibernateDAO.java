@@ -1,7 +1,6 @@
 package ru.scada.dao;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,7 +10,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public abstract class GenericHibernateDAO<T, ID extends Serializable> implements GenericDao<T, ID> {
-    private final static Logger log = LogManager.getLogger(GenericHibernateDAO.class);
+    private final static Logger log = Logger.getLogger(GenericHibernateDAO.class);
     private Class<T> persistanceClass;
 
     public GenericHibernateDAO(Class<T> persistanceClass) {
