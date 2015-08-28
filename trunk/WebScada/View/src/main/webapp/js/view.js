@@ -26,16 +26,14 @@ $(function () {
     function initWebSocket() {
         var svgId = [];
         var resp = ajaxRequest();
-        resp.success(function(json) {
-            $.each(json, function(key, value) {
+        resp.success(function (json) {
+            $.each(json, function (key, value) {
                 svgId.push("#" + value);
             })
         });
         var uri = "ws://localhost:8080/view/monitor";
-        //writeLog("Connecting To " + uri);
         var websocket = new WebSocket(uri);
         websocket.onopen = function (evt) {
-            //writeLog("Connected to Server !!! @@@");
         };
         websocket.onmessage = function (evt) {
             var json = $.parseJSON(evt.data);
@@ -44,13 +42,12 @@ $(function () {
                     d3.select("#image svg g").select("#" + key).text(value);
                 });
             });
-            //d3.select("#test svg g").select("#text7687").text(json.Dev1.Tag1);
         };
         websocket.onclose = function (evt) {
             websocket.close();
             for (var key in svgId) {
-                d3.select("#image svg g").select(svgId[key]).text(0.00);
-                d3.select("#image svg g").select(svgId[key]).style("fill", 'red');
+                //d3.select("#image svg g").select(svgId[key]).text(0.00);
+                d3.select("#image svg g").select(svgId[key]).style("fill", 'red').text(0.00);
             }
         }
     }
