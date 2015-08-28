@@ -33,8 +33,8 @@ $(function () {
         });
         var uri = "ws://localhost:8080/view/monitor";
         var websocket = new WebSocket(uri);
-        websocket.onopen = function (evt) {
-        };
+
+        websocket.onopen = function (evt) {};
         websocket.onmessage = function (evt) {
             var json = $.parseJSON(evt.data);
             $.each(json, function (k, v) {
@@ -46,7 +46,6 @@ $(function () {
         websocket.onclose = function (evt) {
             websocket.close();
             for (var key in svgId) {
-                //d3.select("#image svg g").select(svgId[key]).text(0.00);
                 d3.select("#image svg g").select(svgId[key]).style("fill", 'red').text(0.00);
             }
         }
