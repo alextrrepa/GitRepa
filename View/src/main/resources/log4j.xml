@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration>
-    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
+<!--    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
         <param name="URL" value="jdbc:postgresql://localhost:5432/scada"/>
         <param name="Driver" value="org.postgresql.Driver"/>
         <param name="User" value="postgres"/>
@@ -10,7 +10,7 @@
             <param name="ConversionPattern"
                    value="INSERT INTO logs(dt, logger, level, message) VALUES(current_timestamp, '%c', '%p', '%m')"/>
         </layout>
-    </appender>
+    </appender>-->
 
     <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="C:\\application.log"/>
@@ -31,12 +31,11 @@
 
     <logger name="ru.scada.modbusserver">
         <level value="INFO"/>
-        <appender-ref ref="DB"/>
+        <appender-ref ref="FILE"/>
     </logger>
 
     <root>
         <priority value="ERROR"/>
         <appender-ref ref="FILE"/>
-        <appender-ref ref="DB"/>
     </root>
 </log4j:configuration>
