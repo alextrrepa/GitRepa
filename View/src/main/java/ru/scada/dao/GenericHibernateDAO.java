@@ -32,6 +32,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             result = query.list();
             transaction.commit();
         } catch (Exception e) {
+            log.error(e);
             try {
                 transaction.rollback();
             } catch (Exception ex) {
@@ -53,6 +54,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             entity = (T) session.get(getPersistanceClass(), id);
             transaction.commit();
         }catch (Exception e) {
+            log.error(e);
             try {
                 transaction.rollback();
             } catch (Exception ex) {
@@ -73,7 +75,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             session.save(entity);
             transaction.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e);
             try {
                 transaction.rollback();
             } catch (Exception ex) {
@@ -96,7 +98,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             }
             transaction.commit();
         }catch (Exception e) {
-            e.printStackTrace();
+            log.error(e);
             try {
                 transaction.rollback();
             }catch (Exception ex) {
@@ -116,6 +118,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
             session.update(entity);
             transaction.commit();
         }catch (Exception e){
+            log.error(e);
             try {
                 transaction.rollback();
             }catch (Exception ex) {

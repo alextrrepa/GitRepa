@@ -19,12 +19,18 @@ $(function () {
     initWebSocket();
     d3.xml("images/drawing.svg", "image/svg+xml", function (xml) {
         var importNode = document.importNode(xml.documentElement, true);
-        //var getDiv = $('.svg').get();
         var getDiv = document.getElementById("image");
         getDiv.appendChild(importNode);
     });
 
     function initWebSocket() {
+        var svgId = [];
+        var resp = ajaxRequest();
+        resp.success(function(json) {
+            $.each(json, function(key, value) {
+                svgId.push("#" + value);
+            })
+        });
         var uri = "ws://localhost:8080/view/monitor";
         //writeLog("Connecting To " + uri);
         var websocket = new WebSocket(uri);
@@ -42,6 +48,16 @@ $(function () {
         };
         websocket.onclose = function (evt) {
             websocket.close();
+            for (var key in svgId) {
+                d3.select("#image svg g").select(svgId[key]).text(0.00);
+                d3.select("#image svg g").select(svgId[key]).style("fill", 'red');
+            }
         }
+    }
+
+    function ajaxRequest() {
+        return $.ajax({
+            url: "TagNames.do"
+        });
     }
 });

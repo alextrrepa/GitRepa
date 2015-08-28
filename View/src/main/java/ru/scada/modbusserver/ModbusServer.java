@@ -23,7 +23,6 @@ public class ModbusServer implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-/*
         log.info("Starting Server....");
         try {
             CheckConfigUtil.check();
@@ -36,18 +35,17 @@ public class ModbusServer implements ServletContextListener {
         } catch (ConfigException e) {
             log.error("Can't init configuration" + e);
         }
-*/
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-/*        executor.shutdown();
+        executor.shutdown();
         log.info("Try to stop server.....");
         try {
             executor.awaitTermination(1, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             log.error("Interrupt error" + e);
         }
-        log.info("Server is stoped ");*/
+        log.info("Server is stoped ");
     }
 }
