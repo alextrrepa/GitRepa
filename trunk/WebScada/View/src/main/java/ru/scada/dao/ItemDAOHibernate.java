@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import ru.scada.util.SessionUtil;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHibernateDAO<T, ID> implements ItemDAO<T, ID> {
     private final static Logger log = Logger.getLogger(ItemDAOHibernate.class);
@@ -27,7 +28,7 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
             entity  = (T) query.uniqueResult();
             transaction.commit();
         }catch (Exception e) {
-            e.printStackTrace();
+            log.error(e);
             try {
                 transaction.rollback();
             }catch (Exception ex) {
@@ -51,7 +52,7 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
             entity = (T) query.uniqueResult();
             transaction.commit();
         }catch (Exception e) {
-            e.printStackTrace();
+            log.error(e);
             try {
                 transaction.rollback();
             }catch (Exception ex) {
@@ -61,5 +62,26 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
             session.close();
         }
         return entity;
+    }
+
+    @Override
+    public List<T> getTags() {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        List<T> tags = null;
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from TagEntity");
+            tags = query.list();
+            transaction.commit();
+        }catch (Exception e) {
+            log.error(e);
+            try {
+                transaction.rollback();
+            }catch (Exception ex) {
+                log.error("Rollback transaction error", ex);
+            }
+        }
+        return tags;
     }
 }

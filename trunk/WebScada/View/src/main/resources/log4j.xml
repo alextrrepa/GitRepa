@@ -29,13 +29,20 @@
         </layout>
     </appender>
 
+    <logger name="ru.scada.controllers">
+        <level value="INFO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
     <logger name="ru.scada.modbusserver">
         <level value="INFO"/>
         <appender-ref ref="FILE"/>
     </logger>
 
+
     <root>
         <priority value="ERROR"/>
         <appender-ref ref="FILE"/>
+        <appender-ref ref="ConsoleAppender"/>
     </root>
 </log4j:configuration>
