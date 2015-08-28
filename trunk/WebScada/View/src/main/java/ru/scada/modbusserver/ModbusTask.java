@@ -55,7 +55,7 @@ public class ModbusTask implements Runnable {
             log.error("Can't init port " + portName);
 //            Thread.currentThread().interrupt();
         } catch (InterruptedException e) {
-//            log.error("Current thread interrupted" + Thread.currentThread().getName());
+            log.error("Current thread interrupted" + Thread.currentThread().getName());
 //            Thread.currentThread().interrupt();
         }finally {
             log.info("Destroy Master");

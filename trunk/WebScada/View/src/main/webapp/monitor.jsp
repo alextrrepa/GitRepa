@@ -33,7 +33,6 @@
     <div class="line_two"></div>
     <div class="line_three"></div>
 </div>
-<%--<p class="menu-text">Меню</p>--%>
 <header class="header">
     <hgroup>
         <div class="site_title"></div>
@@ -41,8 +40,9 @@
     </hgroup>
 </header>
 <section class="content">
-    <div id="svg"></div>
+    <article>
+        <div id="image"></div>
+    </article>
 </section>
-<%--<div id="svg" style="background-color: #787878"></div>--%>
 </body>
 </html>

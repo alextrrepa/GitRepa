@@ -20,7 +20,7 @@ $(function () {
     d3.xml("images/drawing.svg", "image/svg+xml", function (xml) {
         var importNode = document.importNode(xml.documentElement, true);
         //var getDiv = $('.svg').get();
-        var getDiv = document.getElementById("svg");
+        var getDiv = document.getElementById("image");
         getDiv.appendChild(importNode);
     });
 
@@ -35,7 +35,7 @@ $(function () {
             var json = $.parseJSON(evt.data);
             $.each(json, function (k, v) {
                 $.each(v, function (key, value) {
-                    d3.select("#svg svg g").select("#" + key).text(value);
+                    d3.select("#image svg g").select("#" + key).text(value);
                 });
             });
             //d3.select("#test svg g").select("#text7687").text(json.Dev1.Tag1);
