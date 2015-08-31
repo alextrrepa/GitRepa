@@ -7,7 +7,6 @@
     <link href="css/admin_style.css" rel="stylesheet">
 </head>
 <body>
-
 <header>
     <hgroup>
         <h1 class="site_title"><a href="Dispatch.do?action=adminPart">Админка</a></h1>
