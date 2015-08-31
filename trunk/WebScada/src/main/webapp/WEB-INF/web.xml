@@ -1,0 +1,16 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <servlet>
+        <servlet-name>CrossContextController</servlet-name>
+        <servlet-class>ru.scada.controllers.CrossContextController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CrossContextController</servlet-name>
+        <url-pattern>/CrossContext.do</url-pattern>
+    </servlet-mapping>
+</web-app>
