@@ -1,0 +1,6 @@
+ru\scada\controllers\DispatchController.class
+ru\scada\controllers\dispatch_delegation\Dispatch.class
+ru\scada\controllers\dispatch_delegation\DoDispatch.class
+ru\scada\controllers\dispatch_delegation\ModbusDispatch.class
+ru\scada\controllers\dispatch_delegation\Command.class
+ru\scada\controllers\dispatch_delegation\AdminDispatch.class

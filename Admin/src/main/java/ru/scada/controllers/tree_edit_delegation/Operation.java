@@ -27,12 +27,10 @@ public class Operation {
         TreeElement treeElement;
         try {
             nodeDao.create(nodeEntity);
-            log.trace("@@@@@@@@@");
             RtuEntity rtuEntity = new RtuEntity();
             rtuEntity.setNodeEntity(nodeEntity);
             GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
             rtuDao.create(rtuEntity);
-            log.trace("<><><><><><>");
             treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                     "root", nodeEntity.getName(),
                     "images/icn_node.png", Long.toString(nodeEntity.getId()));
