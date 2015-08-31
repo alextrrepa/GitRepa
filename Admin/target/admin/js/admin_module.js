@@ -667,6 +667,4 @@ $(function() {
             updateParams.onUpdate(values);
         }
     });
-
-
 });

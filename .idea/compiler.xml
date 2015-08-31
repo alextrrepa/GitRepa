@@ -32,8 +32,16 @@
         <processorPath useClasspath="true" />
         <module name="Data" />
       </profile>
+      <profile default="false" name="Annotation profile for Admin" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Admin" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Admin" target="1.7" />
       <module name="Data" target="1.7" />
       <module name="View" target="1.7" />
       <module name="WebScada" target="1.5" />
