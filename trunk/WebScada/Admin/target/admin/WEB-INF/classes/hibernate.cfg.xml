@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--Properties for Connection-->
+        <!--<property name="hibernate.connection.datasource">postgresql</property>-->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgresPlusDialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://localhost:5432/scada
+        </property>
+        <property name="hibernate.connection.username">
+            postgres
+        </property>
+        <property name="hibernate.connection.password">
+            cezet123
+        </property>
+        <property name="hibernate.default_schema">public</property>
+        <!--Properties for Connection-->
+
+        <!--Hibernate Properties-->
+        <property name="hibernate.show_sql">false</property>
+        <!--Hibernate Properties-->
+
+        <!--Hibernate Mapping-->
+        <mapping class="ru.scada.model.NodeEntity"/>
+        <mapping class="ru.scada.model.RtuEntity"/>
+        <mapping class="ru.scada.model.DeviceEntity"/>
+        <mapping class="ru.scada.model.DatatypeEntity"/>
+        <mapping class="ru.scada.model.RegisterEntity"/>
+        <mapping class="ru.scada.model.TagEntity"/>
+        <mapping class="ru.scada.model.TcpEntity"/>
+        <mapping class="ru.scada.model.CurrentEntity"/>
+        <!--Hibernate Mapping-->
+
+    </session-factory>
+</hibernate-configuration>
