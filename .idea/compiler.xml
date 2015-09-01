@@ -44,7 +44,7 @@
       <module name="Admin" target="1.7" />
       <module name="Data" target="1.7" />
       <module name="View" target="1.7" />
-      <module name="WebScada" target="1.5" />
+      <module name="WebScada" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
