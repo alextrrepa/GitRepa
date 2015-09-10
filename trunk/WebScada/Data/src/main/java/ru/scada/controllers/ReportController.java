@@ -1,26 +1,26 @@
 package ru.scada.controllers;
 
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.util.JRLoader;
-import org.hibernate.Session;
-import ru.scada.model.HourEntity;
-import ru.scada.util.SessionUtil;
+import ru.scada.controllers.report_delegation.Command;
+import ru.scada.controllers.report_delegation.DoReport;
+import ru.scada.controllers.report_delegation.HoursData;
+import ru.scada.controllers.report_delegation.ReportActions;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 public class ReportController extends HttpServlet {
+    private Map<String, Command> commandMap = new HashMap<>();
+
+    public ReportController() {
+        ReportActions actions = new ReportActions();
+        commandMap.put("hoursData", new HoursData(actions));
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -30,7 +30,11 @@ public class ReportController extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("application/pdf");
+        String parameter = request.getParameter("actions");
+        Command command = commandMap.get(parameter);
+        DoReport doReport = new DoReport(command);
+        doReport.makeCommand(request, response);
+/*        response.setContentType("application/pdf");
         ServletOutputStream servletOutputStream = response.getOutputStream();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         FileInputStream fileInputStream;
@@ -61,6 +65,6 @@ public class ReportController extends HttpServlet {
             servletOutputStream.flush();
             servletOutputStream.close();
             baos.close();
-        }
+        }*/
     }
 }

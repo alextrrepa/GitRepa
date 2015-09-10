@@ -1,17 +1,26 @@
 $(function () {
+
+
     $('#tableContainer').jtable({
-        title: 'Table of people',
+        title: 'Demo',
+        actions: {
+            listAction: '/Report.do?actions=hoursData'
+        },
         fields: {
-            name: {
-                title: "Name",
+            hid: {
+                title: "H_id",
+                width: '10%'
+            },
+            tagid: {
+                title: "Tag_id",
+                width: '10%'
+            },
+            dtime: {
+                title: 'Dtime',
                 width: '40%'
             },
-            age: {
-                title: 'Age',
-                width: '20%'
-            },
-            birth: {
-                title: 'Birth',
+            value: {
+                title: 'Value',
                 width: '40%'
             }
         }
