@@ -1,25 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/MyRep.jasper" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/dao" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/util" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/CurrentEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/test/java/DaoTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/HourEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ReportController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/java/ru/scada/util/SessionUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Admin.iml" afterPath="$PROJECT_DIR$/Admin/Admin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Data.iml" afterPath="$PROJECT_DIR$/Data/Data.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebScada.iml" afterPath="$PROJECT_DIR$/WebScada.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml" />
+    <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="В модуль data добавил jtable плагин.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/bg-thead.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/bg-thead.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/blue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/blue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/brown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/column-asc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/column-asc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/column-asc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/column-asc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/column-desc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/column-desc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/column-desc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/column-desc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/column-sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/column-sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/column-sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/column-sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/crimson" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkgray" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkorange" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/gray" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/green" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/green" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/images" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/lightgray" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/blue/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/gray/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/green/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/orange/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/blue/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/brown/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/crimson/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkgray/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkorange/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/green/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/lightgray/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/pink/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/purple/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/red/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/orange" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/pink" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/purple" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/red" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-icons_222222_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-icons_2e83ff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-icons_454545_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-icons_888888_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/js/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/js/jquery-1.11.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/jquery-ui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jq_ui/jquery-ui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/jquery.jtable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/jquery.jtable.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/blue/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/gray/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/green/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/orange/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/blue/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/brown/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/crimson/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkgray/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkorange/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/green/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/lightgray/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/pink/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/purple/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/red/jtable.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/blue/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/gray/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/green/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/orange/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/blue/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/brown/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/crimson/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkgray/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/darkorange/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/green/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/lightgray/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/pink/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/purple/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/red/jtable.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/jtable_basic.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/jtable_basic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/jtable_jqueryui.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/jtable_jqueryui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/jtable_lightcolor_base.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/jtable_metro_base.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/jtable_metro_base.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jtable_theme_base.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/src/main/resources/log4j.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp" afterPath="$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScada.iws" />
@@ -85,51 +198,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReportController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ReportController.java">
+      <file leaf-file-name="testReport.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3876853">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.54018694">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HourEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/model/HourEntity.java">
+      <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/js/data.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#377#378#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#771#772#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#935#936#0" expanded="true" />
-              </folding>
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,11 +225,11 @@
       <list>
         <option value="package-info" />
         <option value="Html5" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -157,22 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusClientConsumer.java" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ModbusEndpoint.java" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/endpointserver/ResultEncoder.java" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/tree_edit_delegation/Operation.java" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/ModbusTreeEditController.java" />
-        <option value="$PROJECT_DIR$/View/pom.xml" />
-        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.rtuconfig" />
-        <option value="$PROJECT_DIR$/View/src/test/java/DaoTest.java" />
-        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.logs" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/util/SessionUtil.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusTask.java" />
-        <option value="$PROJECT_DIR$/View/src/main/webapp/monitor.jsp" />
-        <option value="$PROJECT_DIR$/View/src/main/webapp/css/client.css" />
-        <option value="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ModbusTreeEditController.java" />
-        <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/GenericHibernateDAO.java" />
         <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAO.java" />
         <option value="$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAOHibernate.java" />
         <option value="$PROJECT_DIR$/View/src/main/resources/log4j.xml" />
@@ -202,12 +270,28 @@
         <option value="$PROJECT_DIR$/Data/pom.xml" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/Data/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp" />
         <option value="$PROJECT_DIR$/Data/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/Data/src/main/java/ru/scada/model/HourEntity.java" />
         <option value="$PROJECT_DIR$/Data/src/test/java/DaoTest.java" />
         <option value="$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ReportController.java" />
         <option value="$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/Data/src/main/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/css/jquery-ui.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/js/data.js" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/orange/jtable.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/localization/jquery.jtable.fa.js" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/jtable_basic.less" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jqueryui/jtable_jqueryui.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red/jtable.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/gray/jtable.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/blue/jtable.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/green/jtable.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jtable_theme_base.less" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/basic/jtable_basic.css" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/jquery.jtable.js" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/jtable_lightcolor_base.less" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp" />
+        <option value="$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/jtable_metro_base.less" />
       </list>
     </option>
   </component>
@@ -336,24 +420,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DB Consoles" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,7 +530,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="jtable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jtable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jtable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jq_ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,6 +694,138 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="scada" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB Consoles" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a30eee0c-46a0-4574-9089-af4eee78005f" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -652,13 +952,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\java\ru\scada" />
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\WEB-INF" />
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\java\ru\scada\model" />
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\resources" />
-      <recent name="C:\WorkSpace\WebScada\src\main\webapp\WEB-INF" />
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\jtable\themes" />
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\jq_ui" />
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\js" />
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\css" />
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp" />
       <recent name="C:\WorkSpace\WebScada\Data\src\main\resources" />
       <recent name="C:\WorkSpace\WebScada\Admin\src\main\webapp" />
       <recent name="C:\WorkSpace\WebScada\Admin\src\main\webapp\WEB-INF" />
@@ -878,7 +1179,7 @@
       <deployment />
       <server-settings>
         <data>
-          <option name="transportHostId" />
+          <option name="transportHostId" value="" />
           <host-id />
         </data>
       </server-settings>
@@ -1006,9 +1307,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Unknown" factoryName="Unknown">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -1482,7 +1780,9 @@
       <workItem from="1440995243353" duration="2582000" />
       <workItem from="1440997995910" duration="1556000" />
       <workItem from="1441001131144" duration="13323000" />
-      <workItem from="1441075891095" duration="13197000" />
+      <workItem from="1441075891095" duration="15474000" />
+      <workItem from="1441852103425" duration="6150000" />
+      <workItem from="1441868162285" duration="8162000" />
     </task>
     <task id="LOCAL-00001">
       <created>1432116838256</created>
@@ -1772,13 +2072,19 @@
       <option name="project" value="LOCAL" />
       <updated>1441015469384</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Написал небольшое тестовое приложение для формирования отчета в PDF формат.">
+      <created>1441100182983</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1441100182983</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1327032000" />
+    <option name="totallyTimeSpent" value="1343621000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1788,12 +2094,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1692" height="1032" extended-state="7" />
+    <frame x="-6" y="-6" width="1692" height="1032" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262295" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20331492" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34917128" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22320442" sideWeight="0.50977993" order="8" side_tool="true" content_ui="tabs" />
@@ -1837,7 +2143,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил форму rtuform.html при клике по узлу дерева." />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="По клику на любом узле дерева создается форма с данными." />
     <MESSAGE value="Добавление контекстного меню для дерева modbus." />
     <MESSAGE value="В DaoConfig создан метод добавления сущности в базу. В treeModbus при добавлении узла типа node происходит запись в базу в таблицу node." />
@@ -1862,7 +2168,11 @@
     <MESSAGE value="В Admin части создал dispatch_delegation." />
     <MESSAGE value="В Admin в pom добавил JasperReports." />
     <MESSAGE value="Написал небольшое тестовое приложение для формирования отчета в PDF формат." />
-    <option name="LAST_COMMIT_MESSAGE" value="Написал небольшое тестовое приложение для формирования отчета в PDF формат." />
+    <MESSAGE value="В модуль data добавил jtable плагин." />
+    <option name="LAST_COMMIT_MESSAGE" value="В модуль data добавил jtable плагин." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
@@ -1890,149 +2200,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/modbusserver/ModbusServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5940707">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/webapp/js/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47722095">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/css/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48460662">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/ru/scada/model/RegisterEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/ru/scada/model/RtuEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/ru/scada/model/DatatypeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/CurrentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/NodeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/model/TagEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11630559">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.659065">
-          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/controllers/TagNamesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67266184">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/dao/ItemDAOHibernate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2823741">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/src/main/java/ru/scada/util/SessionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1528777">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/dist/jstree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="47" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/ru/scada/dao/GenericHibernateDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3876853">
-          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2713797">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4960091">
-          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14709236">
-          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/ru/scada/controllers/tree_edit_delegation/AddTcpNodeOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21322691">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modbus_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.019976499">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2095,9 +2266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2133,10 +2301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07753706">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#338#339#0" expanded="false" />
-            <element signature="e#378#379#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2152,7 +2316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23971798">
           <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2160,11 +2323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29076397">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#336#337#0" expanded="false" />
-            <element signature="e#376#377#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2180,7 +2338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2196,9 +2353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29076397">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2206,7 +2360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36830103">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2222,7 +2375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71915394">
           <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2230,7 +2382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096921325">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2238,14 +2389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11985899">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2596945">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -2258,36 +2401,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/model/HourEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/src/test/java/DaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.019384265">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2299,20 +2416,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ReportController.java">
+    <entry file="file://$PROJECT_DIR$/Data/src/main/resources/log4j.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.34891677">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3876853">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.21322691">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/controllers/ReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4960091">
+          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/java/ru/scada/model/HourEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11630559">
+          <caret line="6" column="25" selection-start-line="5" selection-start-column="7" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/js/jquery-1.11.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/jtable_theme_base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0953271">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jq_ui/jquery-ui.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jtable/jquery.jtable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60889393">
+          <caret line="3315" column="0" selection-start-line="3315" selection-start-column="0" selection-end-line="3315" selection-end-column="0" />
+          <folding>
+            <marker date="1441875888903" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/red/jtable.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/lightcolor/jtable_lightcolor_base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7140187">
+          <caret line="271" column="4" selection-start-line="271" selection-start-column="4" selection-end-line="271" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/jtable/themes/metro/jtable_metro_base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7140187">
+          <caret line="368" column="4" selection-start-line="368" selection-start-column="4" selection-end-line="368" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/src/main/webapp/testReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54018694">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

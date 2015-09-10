@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <!--    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
+            <param name="URL" value="jdbc:postgresql://localhost:5432/scada"/>
+            <param name="Driver" value="org.postgresql.Driver"/>
+            <param name="User" value="postgres"/>
+            <param name="Password" value="cezet123"/>
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern"
+                       value="INSERT INTO logs(dt, logger, level, message) VALUES(current_timestamp, '%c', '%p', '%m')"/>
+            </layout>
+        </appender>-->
+
+    <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="C:\\application.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c{-2}] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p[%-16.16t][%32.32c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="ru.scada.controllers">
+        <level value="INFO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="ru.scada.model">
+        <level value="INFO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+
+    <root>
+        <priority value="ERROR"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ConsoleAppender"/>
+    </root>
+</log4j:configuration>
