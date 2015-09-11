@@ -1,23 +1,25 @@
 $(function () {
-
-
     $('#tableContainer').jtable({
         title: 'Demo',
+        paging: true,
+        pageSize: 5,
         actions: {
-            listAction: '/Report.do?actions=hoursData'
+            listAction: 'Report.do?actions=hoursData'
         },
         fields: {
-            hid: {
+            h_id: {
                 title: "H_id",
                 width: '10%'
             },
-            tagid: {
+            tag_id: {
                 title: "Tag_id",
                 width: '10%'
             },
             dtime: {
                 title: 'Dtime',
-                width: '40%'
+                width: '40%',
+                type: 'datetime',
+                displayFormat: 'YYYY-MM-DD HH:MM:SS'
             },
             value: {
                 title: 'Value',
@@ -25,4 +27,5 @@ $(function () {
             }
         }
     });
+    $('#tableContainer').jtable('load');
 });
