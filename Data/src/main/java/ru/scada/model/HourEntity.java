@@ -1,14 +1,20 @@
 package ru.scada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "hourdata")
 public class HourEntity {
+    @Expose
     private int h_id;
+    @Expose
     private int tag_id;
+    @Expose
     private Date dtime;
+    @Expose
     private double value;
 
     @Id
@@ -31,13 +37,13 @@ public class HourEntity {
         this.tag_id = tag_id;
     }
 
+    public Date getDtime() {
+        return dtime;
+    }
+
     @Column(name = "dtime")
     public void setDtime(Date dtime) {
         this.dtime = dtime;
-    }
-
-    public Date getDtime() {
-        return dtime;
     }
 
     @Column(name = "value")

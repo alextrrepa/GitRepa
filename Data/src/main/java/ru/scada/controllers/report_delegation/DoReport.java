@@ -2,7 +2,6 @@ package ru.scada.controllers.report_delegation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public class DoReport {
     private Command command;
@@ -11,7 +10,7 @@ public class DoReport {
         this.command = command;
     }
 
-    public void makeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void makeCommand(HttpServletRequest request, HttpServletResponse response) {
         command.execute(request, response);
     }
 }
