@@ -32,6 +32,7 @@
         <!--Hibernate Mapping-->
         <mapping class="ru.scada.model.CurrentEntity"/>
         <mapping class="ru.scada.model.HourEntity"/>
+        <mapping class="ru.scada.model.TagEntity"/>
         <!--Hibernate Mapping-->
 
     </session-factory>

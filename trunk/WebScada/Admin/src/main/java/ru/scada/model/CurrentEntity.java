@@ -22,7 +22,7 @@ public class CurrentEntity {
         this.c_id = c_id;
     }
 
-    @Column(name = "tag_id")
+    @Column(name = "t_id")
     public long getTag_id() {
         return tag_id;
     }

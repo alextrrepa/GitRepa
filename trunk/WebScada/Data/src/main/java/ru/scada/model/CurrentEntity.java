@@ -7,9 +7,9 @@ import java.util.Date;
 @Table(name = "currentdata")
 public class CurrentEntity {
     private long c_id;
-    private long tag_id;
     private Date datetime;
     private float value;
+    private TagEntity tagEntity;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,15 +20,6 @@ public class CurrentEntity {
 
     public void setId(long c_id) {
         this.c_id = c_id;
-    }
-
-    @Column(name = "tag_id")
-    public long getTag_id() {
-        return tag_id;
-    }
-
-    public void setTag_id(long tag_id) {
-        this.tag_id = tag_id;
     }
 
     @Column(name = "dtime")
@@ -52,5 +43,15 @@ public class CurrentEntity {
 
     public void setValue(float value) {
         this.value = value;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "t_id")
+    public TagEntity getTagEntity() {
+        return tagEntity;
+    }
+
+    public void setTagEntity(TagEntity tagEntity) {
+        this.tagEntity = tagEntity;
     }
 }

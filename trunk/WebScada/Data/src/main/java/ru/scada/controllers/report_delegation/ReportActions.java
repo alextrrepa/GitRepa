@@ -26,7 +26,7 @@ public class ReportActions {
         response.setContentType("application/json");
 
         GenericDao<HourEntity, Long> dao = new ItemDao<>(HourEntity.class);
-        List<HourEntity> hours = dao.showHoursData(startPageIndex, numRecordsPerPage);
+        List<HourEntity> hours = dao.showHoursData(/*startPageIndex, numRecordsPerPage*/);
         Long counts = dao.getCount();
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
         JsonElement element = gson.toJsonTree(hours, new TypeToken<List<HourEntity>>() {

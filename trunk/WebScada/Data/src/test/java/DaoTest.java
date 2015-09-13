@@ -1,7 +1,4 @@
 import org.junit.Test;
-import ru.scada.dao.GenericDao;
-import ru.scada.dao.ItemDao;
-import ru.scada.model.HourEntity;
 
 public class DaoTest {
     @Test
@@ -15,8 +12,10 @@ public class DaoTest {
 
     @Test
     public void countTest() {
-        GenericDao<HourEntity, Long> dao = new ItemDao<>(HourEntity.class);
-        Long c = dao.getCount();
-        System.out.println("Counts" + c);
+        /*GenericDao<CurrentEntity, Long> dao = new ItemDao<>(CurrentEntity.class);
+        List<CurrentEntity> l = dao.showHoursData();
+        for (CurrentEntity tt : l) {
+            String name = tt.getTagEntity().getName();
+            System.out.println(name + " " + tt.getDatetime() + " " + tt.getValue());         }*/
     }
 }
