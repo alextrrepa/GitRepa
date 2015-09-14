@@ -38,5 +38,21 @@
     <div class="line_three"></div>
 </div>
 
+<form>
+    <ul class="form_style">
+        <li>
+            <input type="text"<%--class="from"--%> placeholder="Начало">
+            <input type="text" <%--class="to"--%> placeholder="Конец">
+        </li>
+        <%--
+                <li>
+
+                </li>
+        --%>
+        <li<%-- style="list-style: none"--%>>
+            <input <%--class="findButton"--%> type="submit" value="Найти">
+        </li>
+    </ul>
+</form>
 </body>
 </html>
