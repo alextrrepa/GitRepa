@@ -1,16 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Данные</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
+
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
     <script src="js/data.js"></script>
 </head>
 <body>
 <header class="header">
-    <h1 class="site_title"></h1>
-
+    <!--<h1 class="site_title"></h1>-->
     <h2 class="section_title">Demo</h2>
 </header>
 <div id="navigator">
@@ -38,21 +41,16 @@
     <div class="line_three"></div>
 </div>
 
-<form>
-    <ul class="form_style">
-        <li>
-            <input type="text"<%--class="from"--%> placeholder="Начало">
-            <input type="text" <%--class="to"--%> placeholder="Конец">
-        </li>
-        <%--
-                <li>
-
-                </li>
-        --%>
-        <li<%-- style="list-style: none"--%>>
-            <input <%--class="findButton"--%> type="submit" value="Найти">
-        </li>
-    </ul>
+<form action="Data.do" method="post">
+    <input id="datetimepicker1" class="from" placeholder="Начало" type="text" name="dtime1">
+    <input id="datetimepicker2" class="to" placeholder="Конец" type="text" name="dtime2">
+    <select class="selectType" name="selectData">
+        <option selected="selected">Выберите период</option>
+        <option value="hoursData">Часовые</option>
+        <option value="dayData">Суточные</option>
+    </select>
+    <input type="submit" value="OK">
 </form>
+
 </body>
 </html>

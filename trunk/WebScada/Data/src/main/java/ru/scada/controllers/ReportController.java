@@ -1,5 +1,6 @@
 package ru.scada.controllers;
 
+import org.apache.log4j.Logger;
 import ru.scada.controllers.report_delegation.Command;
 import ru.scada.controllers.report_delegation.DoReport;
 import ru.scada.controllers.report_delegation.HoursData;
@@ -14,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReportController extends HttpServlet {
+    private final static Logger log = Logger.getLogger(ReportController.class);
     private Map<String, Command> commandMap = new HashMap<>();
 
     public ReportController() {
@@ -21,7 +23,8 @@ public class ReportController extends HttpServlet {
         commandMap.put("hoursData", new HoursData(actions));
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 

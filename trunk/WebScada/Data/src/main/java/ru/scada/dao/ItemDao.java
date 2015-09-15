@@ -24,15 +24,15 @@ public class ItemDao<T, ID extends Serializable> implements GenericDao<T, ID> {
     }
 
     @Override
-    public List<T> showHoursData(/*int startIndex, int pageSize*/) {
+    public List<T> showHoursData(int startIndex, int pageSize) {
         Session session = SessionUtil.getSession();
         List<T> result = null;
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from CurrentEntity as cur");
-//            query.setFirstResult(startIndex);
-//            query.setMaxResults(pageSize);
+            Query query = session.createQuery("from HourEntity as hour");
+            query.setFirstResult(startIndex);
+            query.setMaxResults(pageSize);
             result = query.list();
             transaction.commit();
         } catch (Exception e) {
