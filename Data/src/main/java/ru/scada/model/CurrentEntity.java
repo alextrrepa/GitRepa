@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "currentdata")
 public class CurrentEntity {
     private long c_id;
-    private Date datetime;
+    private Date dtime;
     private float value;
     private TagEntity tagEntity;
 
@@ -23,17 +23,17 @@ public class CurrentEntity {
     }
 
     @Column(name = "dtime")
-    public Date getDatetime() {
-        return datetime;
+    public Date getdtime() {
+        return dtime;
     }
 
-    public void setDatetime(Date datetime) {
-        this.datetime = datetime;
+    public void setdtime(Date dtime) {
+        this.dtime = dtime;
     }
 
     @PrePersist
     protected void onInsert(){
-        datetime = new Date();
+        dtime = new Date();
     }
 
     @Column(name = "value")
@@ -46,7 +46,7 @@ public class CurrentEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "t_id")
+    @JoinColumn(name = "tag_id")
     public TagEntity getTagEntity() {
         return tagEntity;
     }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%--<%@page contentType="application/pdf" %>--%>
 <html>
 <head>
@@ -79,9 +80,19 @@
     <div class="line_three"></div>
 </div>
 <div id="tableContainer"></div>
+
+<table>
+    <c:forEach items="${data}" var="params">
+        <tr>
+            <td>
+                <c:out value="${params.dtime}"/>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
+
 <%--<jsp:getProperty name="data" property="dtime1"/>--%>
 <%--<jsp:getProperty name="data" property="dtime2"/>--%>
 <%--<jsp:getProperty name="data" property="selectData"/>--%>
-
 </body>
 </html>
