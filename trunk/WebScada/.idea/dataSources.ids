@@ -12,6 +12,7 @@
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <primary-key name="currentdata_pkey" columns="c_id"/>
+      <foreign-key name="currentdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="tag_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="currentdata_c_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -94,6 +95,7 @@
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <primary-key name="hourdata_pkey" columns="h_id"/>
+      <foreign-key name="hourdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="tag_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="hourdata_h_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -218,9 +220,13 @@
       <column name="realoffset" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="dev_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="dtype_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="columnname" sqlType="varchar" precision="300" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="varchar" precision="600" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="tag_pkey" columns="tag_id"/>
       <foreign-key name="tag_dtype_id_fkey" columns="dtype_id" ref-table="datatype" ref-schema="public" ref-catalog="" ref-columns="dtype_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="tag_dev_id_fkey" columns="dev_id" ref-table="device" ref-schema="public" ref-catalog="" ref-columns="dev_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="currentdata_tag_id_fkey" table="currentdata" schema="public" catalog="scada" columns="tag_id"/>
+      <exported-key name="hourdata_tag_id_fkey" table="hourdata" schema="public" catalog="scada" columns="tag_id"/>
     </table>
     <table name="tag_tag_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>

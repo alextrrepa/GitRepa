@@ -2,16 +2,14 @@ package ru.scada.dao;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
 import ru.scada.util.SessionUtil;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class ItemDao<T, ID extends Serializable> implements GenericDao<T, ID> {
+public class ItemDao<T> implements GenericDao {
     private final static Logger log = Logger.getLogger(ItemDao.class);
     private Class<T> persistanceClass;
 
@@ -24,16 +22,21 @@ public class ItemDao<T, ID extends Serializable> implements GenericDao<T, ID> {
     }
 
     @Override
-    public List<T> showHoursData(int startIndex, int pageSize) {
+    public List<T> showHoursData(/*int startIndex, int pageSize*/String minDtime, String maxDtime) {
         Session session = SessionUtil.getSession();
         List<T> result = null;
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from HourEntity as hour");
-            query.setFirstResult(startIndex);
-            query.setMaxResults(pageSize);
-            result = query.list();
+            Criteria criteria = session.createCriteria(getPersistanceClass());
+//                    .add(Restrictions.between("dtime", minDtime, maxDtime));
+//                    .addOrder(Order.asc("tag_id"))
+//                    .addOrder(Order.asc("dtime"));
+//
+            result = criteria.list();
+//            query.setFirstResult(startIndex);
+//            query.setMaxResults(pageSize);
+//            result = query.list();
             transaction.commit();
         } catch (Exception e) {
             try {
@@ -48,7 +51,7 @@ public class ItemDao<T, ID extends Serializable> implements GenericDao<T, ID> {
     }
 
     @Override
-    public List<T> showDayData() {
+    public List showDayData() {
         return null;
     }
 

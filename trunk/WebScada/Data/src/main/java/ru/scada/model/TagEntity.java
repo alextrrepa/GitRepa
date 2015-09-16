@@ -16,6 +16,7 @@ public class TagEntity implements Serializable {
     private String columnName;
     private String description;
     private List<CurrentEntity> currentEntities;
+    private List<HourEntity> hourEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -72,5 +73,15 @@ public class TagEntity implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.DETACH)
+    @Fetch(FetchMode.SELECT)
+    public List<HourEntity> getHourEntities() {
+        return hourEntities;
+    }
+
+    public void setHourEntities(List<HourEntity> hourEntities) {
+        this.hourEntities = hourEntities;
     }
 }

@@ -18,10 +18,10 @@ $(function () {
 
     $('#datetimepicker1').datetimepicker({
         lang: 'ru',
-        format: 'd-m-Y H:i'
+        format: 'Y-d-m H:i'
     });
     $('#datetimepicker2').datetimepicker({
         lang: 'ru',
-        format: 'd-m-Y H:i'
+        format: 'Y-d-m H:i'
     });
 });

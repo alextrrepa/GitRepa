@@ -1,13 +1,18 @@
 import org.junit.Test;
+import ru.scada.dao.GenericDao;
+import ru.scada.dao.ItemDao;
+import ru.scada.model.HourEntity;
+
+import java.util.List;
 
 public class DaoTest {
     @Test
     public void hourTest() {
-        /*GenericDao<HourEntity, Long> dao = new ItemDao<>(HourEntity.class);
-        List<HourEntity> hours = dao.showHoursData();
-        for (HourEntity h : hours) {
-            System.out.println(h.getDtime() + " " + h.getValue());
-        }*/
+        GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
+        List<HourEntity> hList = dao.showHoursData("2015-09-08 16:00", "2015-17-09 21:00");
+        for (HourEntity h : hList) {
+            System.out.println(h.getDtime() + ":::" + h.getValue());
+        }
     }
 
     @Test
