@@ -3,16 +3,32 @@ import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDao;
 import ru.scada.model.HourEntity;
 
-import java.util.List;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DaoTest {
     @Test
     public void hourTest() {
-        GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
-        List<HourEntity> hList = dao.showHoursData("2015-09-08 16:00", "2015-17-09 21:00");
-        for (HourEntity h : hList) {
-            System.out.println(h.getDtime() + ":::" + h.getValue());
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String s1 = "2015-08-18 11:00";
+        String s2 = "2015-08-28 21:00";
+        Date sDate = null;
+        Date enDate = null;
+        try {
+            sDate = formatter.parse(s1);
+            enDate = formatter.parse(s2);
+            System.out.println(sDate);
+            System.out.println(enDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+        GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
+        dao.showData(sDate, enDate);
+        /*for (HourEntity h : hList) {
+            System.out.println(h.getDtime() + ":::" + h.getValue());
+        }*/
     }
 
     @Test

@@ -7,11 +7,11 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
     <schema name="public" catalog="scada"/>
     <table name="currentdata" schema="public" catalog="scada" type="TABLE">
-      <column name="c_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY3VycmVudGRhdGFfY19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY3VycmVudGRhdGFfY19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="tag_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
-      <primary-key name="currentdata_pkey" columns="c_id"/>
+      <primary-key name="currentdata_pkey" columns="id"/>
       <foreign-key name="currentdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="tag_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="currentdata_c_id_seq" schema="public" catalog="scada" type="SEQUENCE">
@@ -90,11 +90,11 @@
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="hourdata" schema="public" catalog="scada" type="TABLE">
-      <column name="h_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaG91cmRhdGFfaF9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaG91cmRhdGFfaF9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="tag_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
-      <primary-key name="hourdata_pkey" columns="h_id"/>
+      <primary-key name="hourdata_pkey" columns="id"/>
       <foreign-key name="hourdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="tag_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="hourdata_h_id_seq" schema="public" catalog="scada" type="SEQUENCE">

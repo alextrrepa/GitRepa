@@ -26,7 +26,7 @@
         <!--Properties for Connection-->
 
         <!--Hibernate Properties-->
-        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.show_sql">true</property>
         <!--Hibernate Properties-->
 
         <!--Hibernate Mapping-->

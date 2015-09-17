@@ -85,8 +85,11 @@
     <c:forEach items="${data}" var="params">
         <tr>
             <td>
-                <c:out value="${params.dtime}"/>
+                <c:out value="${params.columnName}"/>
             </td>
+                <%--<td>
+                    <c:out value="${params.value}"/>
+                </td>--%>
         </tr>
     </c:forEach>
 </table>
