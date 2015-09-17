@@ -13,7 +13,7 @@ public class CurrentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "c_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     public long getId() {
         return c_id;
     }
@@ -22,7 +22,7 @@ public class CurrentEntity {
         this.c_id = c_id;
     }
 
-    @Column(name = "t_id")
+    @Column(name = "tag_id")
     public long getTag_id() {
         return tag_id;
     }

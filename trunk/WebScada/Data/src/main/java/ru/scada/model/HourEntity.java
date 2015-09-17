@@ -6,27 +6,28 @@ import java.util.Date;
 @Entity
 @Table(name = "hourdata")
 public class HourEntity {
-    private long h_id;
+    private long id;
     private Date dtime;
     private double value;
     private TagEntity tagEntity;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "h_id")
-    public long getH_id() {
-        return h_id;
+    @Column(name = "id")
+    public long getid() {
+        return id;
     }
 
-    public void setH_id(long h_id) {
-        this.h_id = h_id;
+    public void setid(long id) {
+        this.id = id;
     }
 
+    @Column(name = "dtime", updatable = false, insertable = false, columnDefinition = "timestamp without time zone")
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getDtime() {
         return dtime;
     }
 
-    @Column(name = "dtime")
     public void setDtime(Date dtime) {
         this.dtime = dtime;
     }

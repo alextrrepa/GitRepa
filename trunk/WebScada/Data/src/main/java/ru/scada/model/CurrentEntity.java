@@ -6,20 +6,20 @@ import java.util.Date;
 @Entity
 @Table(name = "currentdata")
 public class CurrentEntity {
-    private long c_id;
+    private long id;
     private Date dtime;
     private float value;
     private TagEntity tagEntity;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "c_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     public long getId() {
-        return c_id;
+        return id;
     }
 
-    public void setId(long c_id) {
-        this.c_id = c_id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Column(name = "dtime")

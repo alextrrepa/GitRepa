@@ -5,8 +5,12 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import ru.scada.model.HourEntity;
+import ru.scada.model.TagEntity;
 import ru.scada.util.SessionUtil;
 
+import java.util.Date;
 import java.util.List;
 
 public class ItemDao<T> implements GenericDao {
@@ -22,21 +26,20 @@ public class ItemDao<T> implements GenericDao {
     }
 
     @Override
-    public List<T> showHoursData(/*int startIndex, int pageSize*/String minDtime, String maxDtime) {
+    public List<T> showData(Date sDtime, Date enDtime) {
         Session session = SessionUtil.getSession();
-        List<T> result = null;
+//        List<T> result = null;
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Criteria criteria = session.createCriteria(getPersistanceClass());
-//                    .add(Restrictions.between("dtime", minDtime, maxDtime));
-//                    .addOrder(Order.asc("tag_id"))
-//                    .addOrder(Order.asc("dtime"));
-//
-            result = criteria.list();
-//            query.setFirstResult(startIndex);
-//            query.setMaxResults(pageSize);
-//            result = query.list();
+            Criteria criteria = session.createCriteria(TagEntity.class);
+//                    .add(Restrictions.between("dtime", sDtime, enDtime));
+            List<TagEntity> result = criteria.list();
+            for (TagEntity tag : result) {
+                long id = tag.getId();
+                log.info(tag.getColumnName());
+                data(session, sDtime, enDtime, id);
+            }
             transaction.commit();
         } catch (Exception e) {
             try {
@@ -47,7 +50,17 @@ public class ItemDao<T> implements GenericDao {
         } finally {
             session.close();
         }
-        return result;
+        return null;
+    }
+
+    private void data(Session session, Date sDtime, Date enDtime, long id) throws Exception {
+        Criteria criteria = session.createCriteria(HourEntity.class)
+                .add(Restrictions.between("dtime", sDtime, enDtime))
+                .add(Restrictions.eq("id", id));
+        List<HourEntity> result = criteria.list();
+        for (HourEntity h : result) {
+            log.info(h.getDtime() + ":::" + h.getValue());
+        }
     }
 
     @Override
