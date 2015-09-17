@@ -46,7 +46,7 @@ public class CurrentEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "tag_id")
+    @JoinColumn(name = "t_id")
     public TagEntity getTagEntity() {
         return tagEntity;
     }

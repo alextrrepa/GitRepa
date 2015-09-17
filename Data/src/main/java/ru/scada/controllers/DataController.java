@@ -5,6 +5,7 @@ import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDao;
 import ru.scada.model.CurrentEntity;
 import ru.scada.model.HourEntity;
+import ru.scada.model.TagEntity;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class DataController extends HttpServlet {
     private final static Logger log = Logger.getLogger(DataController.class);
@@ -37,10 +39,13 @@ public class DataController extends HttpServlet {
             e.printStackTrace();
         }
 
-
         if (dtype.equalsIgnoreCase("hoursData")) {
             GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
-            dao.showData(sDate, enDate);
+            List<HourEntity> hList = dao.showData(sDate, enDate);
+            for (HourEntity h : hList) {
+                TagEntity tag = h.getTagEntity();
+                log.info(tag.getColumnName() + ":::" + tag.getId() + ":::" + h.getDtime() + ":::" + h.getValue());
+            }
         }
 
         if (dtype.equalsIgnoreCase("dayData")) {
