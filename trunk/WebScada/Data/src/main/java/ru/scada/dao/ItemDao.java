@@ -4,10 +4,10 @@ import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import ru.scada.model.HourEntity;
-import ru.scada.model.TagEntity;
 import ru.scada.util.SessionUtil;
 
 import java.util.Date;
@@ -28,18 +28,19 @@ public class ItemDao<T> implements GenericDao {
     @Override
     public List<T> showData(Date sDtime, Date enDtime) {
         Session session = SessionUtil.getSession();
-//        List<T> result = null;
+        List<T> result = null;
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Criteria criteria = session.createCriteria(TagEntity.class);
-//                    .add(Restrictions.between("dtime", sDtime, enDtime));
-            List<TagEntity> result = criteria.list();
-            for (TagEntity tag : result) {
-                long id = tag.getId();
-                log.info(tag.getColumnName());
+            Criteria criteria = session.createCriteria(getPersistanceClass())
+                    .add(Restrictions.between("dtime", sDtime, enDtime))
+                    .addOrder(Order.asc("tagEntity.id"));
+            result = criteria.list();
+/*            for (HourEntity h : result) {
+                TagEntity tag = h.getTagEntity();
+                log.info(tag.getColumnName() + ":::" + tag.getId() + ":::" + h.getDtime() + ":::" + h.getValue());
                 data(session, sDtime, enDtime, id);
-            }
+            }*/
             transaction.commit();
         } catch (Exception e) {
             try {
@@ -50,7 +51,7 @@ public class ItemDao<T> implements GenericDao {
         } finally {
             session.close();
         }
-        return null;
+        return result;
     }
 
     private void data(Session session, Date sDtime, Date enDtime, long id) throws Exception {

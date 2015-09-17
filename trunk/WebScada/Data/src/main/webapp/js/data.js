@@ -9,7 +9,6 @@ $(function () {
             $('#navigator').animate({left: '-250px'}, 350);
             $(this).animate({left: '0px'}, 350);
             $('.menu-text').animate({left: '50px'}, 350).empty().text("Меню");
-
         }
     });
     $('.menu-icon').click(function () {
@@ -18,10 +17,10 @@ $(function () {
 
     $('#datetimepicker1').datetimepicker({
         lang: 'ru',
-        format: 'Y-d-m H:i'
+        format: 'Y-m-d H:i'
     });
     $('#datetimepicker2').datetimepicker({
         lang: 'ru',
-        format: 'Y-d-m H:i'
+        format: 'Y-m-d H:i'
     });
 });
