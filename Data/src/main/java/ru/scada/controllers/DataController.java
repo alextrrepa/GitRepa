@@ -4,8 +4,6 @@ import org.apache.log4j.Logger;
 import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDao;
 import ru.scada.model.CurrentEntity;
-import ru.scada.model.HourEntity;
-import ru.scada.model.TagEntity;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +15,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DataController extends HttpServlet {
     private final static Logger log = Logger.getLogger(DataController.class);
@@ -39,20 +39,21 @@ public class DataController extends HttpServlet {
             e.printStackTrace();
         }
 
+        Map<String, List<?>> resultToJson = new LinkedHashMap<>();
         if (dtype.equalsIgnoreCase("hoursData")) {
-            GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
-            List<HourEntity> hList = dao.showData(sDate, enDate);
-            for (HourEntity h : hList) {
-                TagEntity tag = h.getTagEntity();
-                log.info(tag.getColumnName() + ":::" + tag.getId() + ":::" + h.getDtime() + ":::" + h.getValue());
-            }
+//            GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
+//            List<HourEntity> hList = dao.showData(sDate, enDate);
+//            for (HourEntity h : hList) {
+//                TagEntity tag = h.getTagEntity();
+//                String cName = tag.getColumnName();
+//                log.info(tag.getColumnName() + ":::" + tag.getId() + ":::" + h.getDtime() + ":::" + h.getValue());
+//            }
         }
 
         if (dtype.equalsIgnoreCase("dayData")) {
             GenericDao<CurrentEntity> dao = new ItemDao<>(CurrentEntity.class);
             dao.showData(sDate, enDate);
         }
-
 //        request.setAttribute("data", tagEntities);
         RequestDispatcher dispatcher = request.getRequestDispatcher("report.jsp");
         dispatcher.forward(request, response);

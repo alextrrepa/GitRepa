@@ -1,5 +1,6 @@
 package ru.scada.model;
 
+import com.google.gson.annotations.Expose;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -10,9 +11,12 @@ import java.util.List;
 @Entity
 @Table(name = "tag")
 public class TagEntity implements Serializable {
+    @Expose
     private long id;
+    @Expose
     private String name;
     private int realOffset;
+    @Expose
     private String columnName;
     private String description;
     private List<CurrentEntity> currentEntities;

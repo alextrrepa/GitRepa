@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.junit.Test;
 import ru.scada.dao.GenericDao;
 import ru.scada.dao.ItemDao;
@@ -7,6 +9,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class DaoTest {
     @Test
@@ -23,7 +27,10 @@ public class DaoTest {
             e.printStackTrace();
         }
         GenericDao<HourEntity> dao = new ItemDao<>(HourEntity.class);
-        dao.showData(sDate, enDate);
+        Map<String, List<HourEntity>> m = dao.showData(sDate, enDate);
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(m);
+        System.out.println(json);
     }
 
     @Test

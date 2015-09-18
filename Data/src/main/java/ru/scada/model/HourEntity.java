@@ -1,13 +1,18 @@
 package ru.scada.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "hourdata")
 public class HourEntity {
+    @Expose
     private long id;
+    @Expose
     private Date dtime;
+    @Expose
     private double value;
     private TagEntity tagEntity;
 
