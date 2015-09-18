@@ -39,7 +39,7 @@
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="ru.scada.dao">
+    <logger name="ru.scada.dao" additivity="false">
         <level value="INFO"/>
         <appender-ref ref="ConsoleAppender"/>
     </logger>

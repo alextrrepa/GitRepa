@@ -41,7 +41,7 @@ public class ItemDao<T> implements GenericDao<T> {
             List<TagEntity> result = criteria.list();
             for (TagEntity tag : result) {
 //                System.out.println(tag.getColumnName() + ":::" + tag.getId());
-//                log.info(tag.getColumnName() + ":::" + tag.getId());
+                log.info(tag.getColumnName() + ":::" + tag.getId());
                 listMap.put(tag.getColumnName(), data(session, sDtime, enDtime));
             }
             transaction.commit();
