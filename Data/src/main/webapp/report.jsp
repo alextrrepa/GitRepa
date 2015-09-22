@@ -7,7 +7,7 @@
     <link href="jq_ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link href="jtable/themes/metro/darkgray/jtable.min.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/data.css" rel="stylesheet" type="text/css">
 
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="jq_ui/jquery-ui.min.js" type="text/javascript"></script>
