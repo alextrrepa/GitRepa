@@ -6,9 +6,11 @@ public class DaoTest {
 
     @Test
     public void testGet() {
+/*
         log.info("Info Message");
         log.warn("Warn Message");
         log.error("Error Message");
         log.fatal("Fatal Message");
+*/
     }
 }

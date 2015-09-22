@@ -1,20 +1,9 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.junit.Test;
-import ru.scada.dao.GenericDao;
-import ru.scada.dao.ItemDao;
-import ru.scada.model.HourEntity;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 public class DaoTest {
     @Test
     public void hourTest() {
+/*
         DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String s1 = "2015-08-18 11:00";
         String s2 = "2015-08-18 12:00";
@@ -31,6 +20,7 @@ public class DaoTest {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
         String json = gson.toJson(m);
         System.out.println(json);
+*/
     }
 
     @Test
