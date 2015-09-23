@@ -123,7 +123,8 @@ $(function () {
         var uri = "ws://localhost:8080/webscada/monitor";
         var websocket = new WebSocket(uri);
 
-        websocket.onopen = function (evt) {};
+        websocket.onopen = function (evt) {
+        };
         websocket.onmessage = function (evt) {
             var json = $.parseJSON(evt.data);
             $.each(json, function (k, v) {

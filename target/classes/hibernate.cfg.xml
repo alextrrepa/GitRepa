@@ -35,9 +35,9 @@
         <mapping class="entities.TagEntity"/>
         <mapping class="entities.TcpEntity"/>
 
-    <!--    <mapping class="data.entities.TagEntity"/>
-        <mapping class="data.entities.CurrentEntity"/>
-        <mapping class="data.entities.HourEntity"/>-->
+        <!--    <mapping class="data.entities.TagEntity"/>
+            <mapping class="data.entities.CurrentEntity"/>
+            <mapping class="data.entities.HourEntity"/>-->
 
     </session-factory>
 </hibernate-configuration>
