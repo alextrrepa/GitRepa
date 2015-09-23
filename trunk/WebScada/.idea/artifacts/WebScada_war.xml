@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="WebScada:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="webscada.war">
-      <element id="artifact" artifact-name="WebScada:war exploded" />
-    </root>
-  </artifact>
-</component>
