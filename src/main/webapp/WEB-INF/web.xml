@@ -1,16 +1,58 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <listener>
+        <listener-class>view.modbusserver.ModbusServer</listener-class>
+    </listener>
 
     <servlet>
-        <servlet-name>CrossContextController</servlet-name>
-        <servlet-class>ru.scada.controllers.CrossContextController</servlet-class>
+        <servlet-name>TagNamesController</servlet-name>
+        <servlet-class>view.controllers.TagNamesController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DataController</servlet-name>
+        <servlet-class>data.controllers.DataController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportController</servlet-name>
+        <servlet-class>data.controllers.ReportController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DispatchController</servlet-name>
+        <servlet-class>admin.controllers.DispatchController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModbusTreeEditController</servlet-name>
+        <servlet-class>admin.controllers.ModbusTreeEditController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>CrossContextController</servlet-name>
-        <url-pattern>/CrossContext.do</url-pattern>
+        <servlet-name>ModbusTreeEditController</servlet-name>
+        <url-pattern>/ModbusTreeEdit.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DispatchController</servlet-name>
+        <url-pattern>/Dispatch.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportController</servlet-name>
+        <url-pattern>/Report.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DataController</servlet-name>
+        <url-pattern>/Data.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TagNamesController</servlet-name>
+        <url-pattern>/TagNames.do</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>monitor.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
