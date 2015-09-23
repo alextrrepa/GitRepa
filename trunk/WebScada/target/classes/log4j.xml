@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration>
-<!--    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
-        <param name="URL" value="jdbc:postgresql://localhost:5432/scada"/>
-        <param name="Driver" value="org.postgresql.Driver"/>
-        <param name="User" value="postgres"/>
-        <param name="Password" value="cezet123"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern"
-                   value="INSERT INTO logs(dt, logger, level, message) VALUES(current_timestamp, '%c', '%p', '%m')"/>
-        </layout>
-    </appender>-->
+    <!--    <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
+            <param name="URL" value="jdbc:postgresql://localhost:5432/scada"/>
+            <param name="Driver" value="org.postgresql.Driver"/>
+            <param name="User" value="postgres"/>
+            <param name="Password" value="cezet123"/>
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern"
+                       value="INSERT INTO logs(dt, logger, level, message) VALUES(current_timestamp, '%c', '%p', '%m')"/>
+            </layout>
+        </appender>-->
 
     <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="C:\\application.log"/>
@@ -29,20 +29,20 @@
         </layout>
     </appender>
 
-<!--    <logger name="ru.scada.controllers">
-        <level value="INFO"/>
-        <appender-ref ref="FILE"/>
-    </logger>
+    <!--    <logger name="ru.scada.controllers">
+            <level value="INFO"/>
+            <appender-ref ref="FILE"/>
+        </logger>
 
-    <logger name="ru.scada.entities">
-        <level value="INFO"/>
-        <appender-ref ref="FILE"/>
-    </logger>
+        <logger name="ru.scada.entities">
+            <level value="INFO"/>
+            <appender-ref ref="FILE"/>
+        </logger>
 
-    <logger name="ru.scada.dao" additivity="false">
-        <level value="INFO"/>
-        <appender-ref ref="ConsoleAppender"/>
-    </logger>-->
+        <logger name="ru.scada.dao" additivity="false">
+            <level value="INFO"/>
+            <appender-ref ref="ConsoleAppender"/>
+        </logger>-->
 
     <root>
         <priority value="ERROR"/>

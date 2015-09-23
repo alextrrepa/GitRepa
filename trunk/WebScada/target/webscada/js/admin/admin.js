@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     $("#tree").jstree({
         'plugins': ['ccrm', 'contextmenu'],
         'contextmenu': {
@@ -11,7 +11,10 @@ $(function() {
                         'action': function (data) {
                             var inst = $.jstree.reference(data.reference),
                                 obj = inst.get_node(data.reference);
-                            inst.create_node(obj, {icon: "../../images/icn_node.png", data: "rtu"}, "last", function (new_node) {
+                            inst.create_node(obj, {
+                                icon: "../../images/icn_node.png",
+                                data: "rtu"
+                            }, "last", function (new_node) {
                                 setTimeout(function () {
                                     inst.edit(new_node);
                                 }, 0);
@@ -21,10 +24,13 @@ $(function() {
                     'Add_TcpNode': {
                         'separator_after': true,
                         'label': 'Добавить узел TCP',
-                        'action': function(data) {
+                        'action': function (data) {
                             var inst = $.jstree.reference(data.reference),
                                 obj = inst.get_node(data.reference);
-                            inst.create_node(obj, {icon: "../../images/icn_node.png", data: "tcp"}, "last", function (new_node) {
+                            inst.create_node(obj, {
+                                icon: "../../images/icn_node.png",
+                                data: "tcp"
+                            }, "last", function (new_node) {
                                 setTimeout(function () {
                                     inst.edit(new_node);
                                 }, 0);
@@ -117,17 +123,17 @@ $(function() {
                 'url': 'ModbusTreeEdit.do?action=getAll'
             }
         }
-    }).on('select_node.jstree', function(event, data) {
+    }).on('select_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
         var select = new TreeOperations();
         select.onNodeClick(id, type);
-    }).on('delete_node.jstree', function(event, data) {
+    }).on('delete_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
         var deleteNode = new TreeOperations();
         deleteNode.onDelete(id, type, data);
-    }).on('create_node.jstree', function(event, data) {
+    }).on('create_node.jstree', function (event, data) {
         var nodeType = data.node.parent.replace(/[0-9]/g, '');
         var nodeId = data.node.parent.replace(/\D+/g, '');
         var name = data.node.text;
@@ -135,7 +141,7 @@ $(function() {
 
         var addNode = new TreeOperations(name);
         addNode.onAdd(nodeId, nodeType, data, mtype);
-    }).on('rename_node.jstree', function(event, data) {
+    }).on('rename_node.jstree', function (event, data) {
         var id = data.node.data;
         var type = data.node.id.replace(/[0-9]/g, '');
         var name = data.node.text;
@@ -368,11 +374,11 @@ $(function() {
         types[type]();
     };
 
-    TreeOperations.prototype.onUpdate = function(obj) {
+    TreeOperations.prototype.onUpdate = function (obj) {
         var types = {
-            node: function() {
+            node: function () {
                 var resp = treeCrudRequest(obj);
-                resp.success(function(json) {
+                resp.success(function (json) {
                     console.log(json);
                     if (json === 'success') {
                         addDeleteForm();
@@ -384,9 +390,9 @@ $(function() {
                     }
                 });
             },
-            device: function() {
+            device: function () {
                 var resp = treeCrudRequest(obj);
-                resp.success(function(json) {
+                resp.success(function (json) {
                     if (json === 'success') {
                         addDeleteForm();
                         alertSuccess($('.form_style'), 'Успешно сохранено !');
@@ -398,9 +404,9 @@ $(function() {
 
                 });
             },
-            tag: function() {
+            tag: function () {
                 var resp = treeCrudRequest(obj);
-                resp.success(function(json) {
+                resp.success(function (json) {
                     if (json === 'success') {
                         addDeleteForm();
                         alertSuccess($('.form_style'), 'Успешно сохранено !');
@@ -414,45 +420,45 @@ $(function() {
         };
         try {
             types[obj.data.type]();
-        }catch(e) {
+        } catch (e) {
             addDeleteForm();
             alertError($('.form_style'), "Ошибка ввода" + " " + e.message);
         }
     };
 
-    TreeOperations.prototype.onRename = function(id, type, text) {
+    TreeOperations.prototype.onRename = function (id, type, text) {
         var types = {
-            node: function() {
+            node: function () {
                 var resp = treeCrudRequest({
                     "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
-                resp.success(function(json) {
+                resp.success(function (json) {
                     $("input[name=nodename]").val(json);
                 });
             },
-            device: function() {
+            device: function () {
                 var resp = treeCrudRequest({
                     "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
-                resp.success(function(json) {
+                resp.success(function (json) {
                     $("input[name=devicename]").val(json);
                 });
             },
-            tag: function() {
+            tag: function () {
                 var resp = treeCrudRequest({
                     "url": "ModbusTreeEdit.do",
                     "data": {"id": id, "type": type, "text": text, "action": "rename"}
                 });
-                resp.success(function(json) {
+                resp.success(function (json) {
                     $("input[name=tagname]").val(json);
                 });
             }
         };
         try {
             types[type]();
-        } catch(e) {
+        } catch (e) {
             addDeleteForm();
             alertError($('.form_style'), "Ошибка" + e.message);
         }
@@ -462,7 +468,7 @@ $(function() {
         return $.ajax({
             url: obj.url,
             data: obj.data,
-            beforeSend: function() {
+            beforeSend: function () {
                 $('.form_style').waitMe({
                     effect: 'bounce',
                     text: 'Loading...',
@@ -470,10 +476,10 @@ $(function() {
                     color: '#000'
                 });
             },
-            complete: function() {
+            complete: function () {
                 $('.form_style').waitMe('hide');
             },
-            error: function(xhr, ajaxOptions, thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
                 addDeleteForm();
                 alertError($('.form_style'), "Ошибка Ajax запроса :" + " " + thrownError);
             }
@@ -504,12 +510,12 @@ $(function() {
         $selector.append($div);
     }
 
-    var forms = function() {
-        function createForm (params, type, id) {
+    var forms = function () {
+        function createForm(params, type, id) {
             var $formElement = $('<form>');
             $formElement.attr({'type': type});
             $formElement.attr({'id': id});
-            params.forEach(function(item) {
+            params.forEach(function (item) {
                 var $label = $('<label>');
                 var $firstSpan = $('<span>'),
                     $secondSpan = $('<span>');
@@ -525,7 +531,7 @@ $(function() {
                     $select.attr({'name': item.selectName}).addClass('select-field');
                     var opArray = item.options;
                     var op = [];
-                    $.each(opArray, function(key, value) {
+                    $.each(opArray, function (key, value) {
                         var $option = $('<option>');
                         $option.attr({'value': value}).text(key);
                         op.push($option);
@@ -539,16 +545,20 @@ $(function() {
             $formElement.append($('<input>').attr({'type': 'button', 'value': 'Сохранить'}));
             addDeleteForm($formElement);
         }
+
         return {
-            rtuForm: function(type, id) {
+            rtuForm: function (type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "nodename"},
-                    {labelName: "Тип modbus", selectName: "modbustype", options:{
+                    {
+                        labelName: "Тип modbus", selectName: "modbustype", options: {
                         RTU: 'rtu',
                         TCP: 'tcp'
-                    }},
+                    }
+                    },
                     {labelName: "Порт", inputName: "port"},
-                    {labelName: "Скорость", selectName: "baudrate", options:{
+                    {
+                        labelName: "Скорость", selectName: "baudrate", options: {
                         1200: 1200,
                         1800: 1800,
                         2400: 2400,
@@ -558,33 +568,40 @@ $(function() {
                         38400: 38400,
                         57600: 57600,
                         115200: 115200
-                    }},
-                    {labelName: "Данные", selectName: "databits", options:{
+                    }
+                    },
+                    {
+                        labelName: "Данные", selectName: "databits", options: {
                         5: 5,
                         6: 6,
                         7: 7,
-                        8:8
-                    }},
+                        8: 8
+                    }
+                    },
                     {labelName: "Четность", inputName: "parity"},
-                    {labelName: "Стоп биты", selectName: "stopbits", options:{
+                    {
+                        labelName: "Стоп биты", selectName: "stopbits", options: {
                         0: 0,
                         1: 1,
                         1.5: 1.5,
-                        2:2
-                    }},
+                        2: 2
+                    }
+                    },
                     {labelName: "Повторы при ошибке", inputName: "retries"},
                     {labelName: "Время ответа", inputName: "timeout"},
                     {labelName: "Период опроса", inputName: "period"}
                 ];
                 createForm(params, type, id);
             },
-            tcpForm: function(type, id) {
+            tcpForm: function (type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "nodename"},
-                    {labelName: "Тип modbus", selectName: "modbustype", options:{
+                    {
+                        labelName: "Тип modbus", selectName: "modbustype", options: {
                         RTU: 'rtu',
                         TCP: 'tcp'
-                    }},
+                    }
+                    },
                     {labelName: "IP адрес", inputName: "ip"},
                     {labelName: "Порт", inputName: "port"},
                     {labelName: "Повторы при ошибке", inputName: "retries"},
@@ -593,26 +610,29 @@ $(function() {
                 ];
                 createForm(params, type, id);
             },
-            deviceForm: function(type, id) {
+            deviceForm: function (type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "devicename"},
                     {labelName: "SlaveId", inputName: "slaveid"},
                     {labelName: "Начальное смещение", inputName: "startoffset"},
                     {labelName: "Количество", inputName: "counts"},
-                    {labelName: "Тип регистров", selectName: "regtype", options:{
+                    {
+                        labelName: "Тип регистров", selectName: "regtype", options: {
                         COIL_STATUS: 1,
                         HOLDING_REGISTER: 3,
                         INPUT_REGISTER: 4,
                         INPUT_STATUS: 2
-                    }}
+                    }
+                    }
                 ];
                 createForm(params, type, id);
             },
-            tagForm: function(type, id) {
+            tagForm: function (type, id) {
                 var params = [
                     {labelName: "Имя узла", inputName: "tagname"},
                     {labelName: "Смещение", inputName: "realoffset"},
-                    {labelName: "Тип даты", selectName: "datatype", options:{
+                    {
+                        labelName: "Тип даты", selectName: "datatype", options: {
                         BINARY: 1,
                         CHAR: 18,
                         EIGHT_BYTE_FLOAT: 14,
@@ -633,18 +653,19 @@ $(function() {
                         TWO_BYTE_INT_SIGNED: 3,
                         TWO_BYTE_INT_UNSIGNED: 2,
                         VARCHAR: 19
-                    }}
+                    }
+                    }
                 ];
                 createForm(params, type, id);
             }
         }
     };
 
-    $('.form_style').on('click', 'input[type="button"]', function() {
+    $('.form_style').on('click', 'input[type="button"]', function () {
         var formAttr = $('form').attr('type');
         var id = $('form').attr('id');
         var isValid = true;
-        $(":input, select").each(function() {
+        $(":input, select").each(function () {
             var elemVal = $(this).val();
             if ((elemVal === "") || (elemVal === null) || (elemVal === undefined)) {
                 addDeleteForm();
@@ -655,7 +676,7 @@ $(function() {
         var values = {};
         var d = {};
         d.id = id;
-        $.each($('form').serializeArray(), function(i, field) {
+        $.each($('form').serializeArray(), function (i, field) {
             d[field.name] = field.value;
         });
         d.type = formAttr;

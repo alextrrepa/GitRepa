@@ -11,6 +11,7 @@
 <header>
     <hgroup>
         <h1 class="site_title"><a href="Dispatch.do?action=adminPart">Админка</a></h1>
+
         <h2 class="section_title">Панель</h2>
     </hgroup>
 </header>

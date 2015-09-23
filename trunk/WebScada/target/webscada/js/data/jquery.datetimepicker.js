@@ -2424,7 +2424,7 @@ function HighlightedDate(date, desc, style) {
         return a.replace(/('|\\)/g, "\\$1");
     };
     String.leftPad = function (d, b, c) {
-        var a = new String(d);
+        var a = String(d);
         if (c == null) {
             c = " ";
         }
