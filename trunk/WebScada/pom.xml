@@ -109,7 +109,7 @@
         <configuration>
           <echo>true</echo>
           <debug>true</debug>
-          <glassfishDirectory>C:/Program Files/glassfish-4.0</glassfishDirectory>
+          <glassfishDirectory>C:/Program Files (x86)/glassfish-4.0</glassfishDirectory>
           <user>admin</user>
           <adminPassword>cezet123</adminPassword>
           <domain>
