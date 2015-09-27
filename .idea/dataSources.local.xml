@@ -7,5 +7,11 @@
       <schema-pattern>scada.public</schema-pattern>
       <default-schemas>scada.pg_catalog scada.public</default-schemas>
     </data-source>
+    <data-source name="PostgreSQL - test@localhost" uuid="74c7fbc5-e513-4f96-9f50-7f95b33e7d49">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>test.public</schema-pattern>
+      <default-schemas>test.pg_catalog test.public</default-schemas>
+    </data-source>
   </component>
 </project>
