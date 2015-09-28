@@ -69,5 +69,6 @@ admin\controllers\ModbusTreeEditController.class
 admin\controllers\dispatch_delegation\AdminDispatch.class
 admin\controllers\dispatch_delegation\ModbusDispatch.class
 data\entities\CurrentEntity.class
+auth\controllers\AuthenticationFilter.class
 admin\controllers\tree_edit_delegation\TreeElement.class
 view\modbusserver\ModbusTask.class

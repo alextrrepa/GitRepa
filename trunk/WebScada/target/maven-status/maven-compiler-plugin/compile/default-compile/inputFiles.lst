@@ -61,6 +61,7 @@ C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\DoReport.
 C:\WorkSpace\WebScada\src\main\java\view\dao\ItemDAO.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\AddDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteTagOperation.java
+C:\WorkSpace\WebScada\src\main\java\auth\controllers\AuthenticationFilter.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteNodeOperation.java
 C:\WorkSpace\WebScada\src\main\java\data\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\DeviceEntity.java
