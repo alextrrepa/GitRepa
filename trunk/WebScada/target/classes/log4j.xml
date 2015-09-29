@@ -28,7 +28,6 @@
             <param name="ConversionPattern" value="%-5p[%-16.16t][%32.32c] - %m%n"/>
         </layout>
     </appender>
-
     <!--    <logger name="ru.scada.controllers">
             <level value="INFO"/>
             <appender-ref ref="FILE"/>
@@ -43,10 +42,9 @@
             <level value="INFO"/>
             <appender-ref ref="ConsoleAppender"/>
         </logger>-->
-
     <root>
-        <priority value="ERROR"/>
-        <appender-ref ref="FILE"/>
+        <priority value="INFO"/>
+        <!--<appender-ref ref="FILE"/>-->
         <appender-ref ref="ConsoleAppender"/>
     </root>
 </log4j:configuration>
