@@ -66,6 +66,7 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\Delet
 C:\WorkSpace\WebScada\src\main\java\data\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\DeviceEntity.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ModbusEndpoint.java
+C:\WorkSpace\WebScada\src\main\java\auth\controllers\LoginServlet.java
 C:\WorkSpace\WebScada\src\main\java\entities\RtuEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\DispatchController.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\CommonQueue.java

@@ -11,14 +11,13 @@
 <body>
 <div class="container">
     <section id="content">
-        <form action="">
+        <form action="Login.do" method="post">
             <h1>Вход</h1>
-
             <div>
-                <input type="text" placeholder="Пользователь" required="" id="username"/>
+                <input type="text" placeholder="Пользователь" required="" id="username" name="user"/>
             </div>
             <div>
-                <input type="password" placeholder="Пароль" required="" id="password"/>
+                <input type="password" placeholder="Пароль" required="" id="password" name="password"/>
             </div>
             <div>
                 <input type="submit" value="Войти"/>

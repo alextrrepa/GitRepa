@@ -36,7 +36,23 @@
         <servlet-name>ModbusTreeEditController</servlet-name>
         <servlet-class>admin.controllers.ModbusTreeEditController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>auth.controllers.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>auth.controllers.LogoutServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/Logout.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/Login.do</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ModbusTreeEditController</servlet-name>
         <url-pattern>/ModbusTreeEdit.do</url-pattern>
@@ -49,17 +65,14 @@
         <servlet-name>ReportController</servlet-name>
         <url-pattern>/Report.do</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>DataController</servlet-name>
         <url-pattern>/Data.do</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>TagNamesController</servlet-name>
         <url-pattern>/TagNames.do</url-pattern>
     </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

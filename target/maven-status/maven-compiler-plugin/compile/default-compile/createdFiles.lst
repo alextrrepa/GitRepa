@@ -15,6 +15,7 @@ view\endpointserver\ModbusClientConsumer$1.class
 data\controllers\DataController.class
 util\SessionUtil.class
 admin\controllers\tree_edit_delegation\DeleteDeviceOperation.class
+auth\controllers\LogoutServlet.class
 entities\RtuEntity.class
 admin\controllers\tree_edit_delegation\GetTagOperation.class
 admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
@@ -63,6 +64,7 @@ data\controllers\data_delegation\DataBean.class
 admin\controllers\tree_edit_delegation\GetNodeOperation.class
 admin\dao\GenericHibernateDAO.class
 view\modbusserver\exception\ConfigException.class
+auth\controllers\LoginServlet.class
 entities\RegisterEntity.class
 view\endpointserver\ModbusEndpoint.class
 admin\controllers\ModbusTreeEditController.class
