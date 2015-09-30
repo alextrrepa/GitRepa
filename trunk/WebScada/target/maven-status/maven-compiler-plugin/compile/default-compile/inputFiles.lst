@@ -10,6 +10,7 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetAl
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\ModbusDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\Dispatch.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\Command.java
+C:\WorkSpace\WebScada\src\main\java\auth\controllers\LogoutServlet.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ModbusClientConsumer.java
 C:\WorkSpace\WebScada\src\main\java\view\dao\ItemDAOHibernate.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ResultEncoder.java
