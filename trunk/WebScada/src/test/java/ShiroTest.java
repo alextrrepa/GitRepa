@@ -26,9 +26,21 @@ public class ShiroTest {
 
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
         SecurityManager securityManager = factory.getInstance();
+
+        // for this simple example quickstart, make the SecurityManager
+        // accessible as a JVM singleton.  Most applications wouldn't do this
+        // and instead rely on their container configuration or web.xml for
+        // webapps.  That is outside the scope of this simple quickstart, so
+        // we'll just do the bare minimum so you can continue to get a feel
+        // for things.
         SecurityUtils.setSecurityManager(securityManager);
+
+        // Now that a simple Shiro environment is set up, let's see what you can do:
+
+        // get the currently executing user:
         Subject currentUser = SecurityUtils.getSubject();
 
+        // Do some stuff with a Session (no need for a web or EJB container!!!)
         Session session = currentUser.getSession();
         session.setAttribute("someKey", "aValue");
         String value = (String) session.getAttribute("someKey");

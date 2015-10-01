@@ -7,20 +7,21 @@
         <property name="hibernate.dialect">
             org.hibernate.dialect.PostgresPlusDialect
         </property>
-        <!--<property name="connection.datasource">postgresql</property>-->
-
-        <property name="hibernate.connection.driver_class">
-            org.postgresql.Driver
-        </property>
-        <property name="hibernate.connection.url">
-            jdbc:postgresql://localhost:5432/scada
-        </property>
-        <property name="hibernate.connection.username">
-            postgres
-        </property>
-        <property name="hibernate.connection.password">
-            cezet123
-        </property>
+        <property name="connection.datasource">jdbc/postgresql</property>
+        <!--
+                <property name="hibernate.connection.driver_class">
+                    org.postgresql.Driver
+                </property>
+                <property name="hibernate.connection.url">
+                    jdbc:postgresql://localhost:5432/scada
+                </property>
+                <property name="hibernate.connection.username">
+                    postgres
+                </property>
+                <property name="hibernate.connection.password">
+                    cezet123
+                </property>
+        -->
         <property name="hibernate.default_schema">public</property>
 
         <property name="hibernate.show_sql">false</property>
@@ -34,6 +35,9 @@
         <mapping class="entities.RtuEntity"/>
         <mapping class="entities.TagEntity"/>
         <mapping class="entities.TcpEntity"/>
+        <mapping class="auth.entities.User"/>
+        <mapping class="auth.entities.UserRole"/>
+        <mapping class="auth.entities.RolePermission"/>
 
         <!--    <mapping class="data.entities.TagEntity"/>
             <mapping class="data.entities.CurrentEntity"/>
