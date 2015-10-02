@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,6 +10,7 @@
     <script src="js/auth/auth.js"></script>
 </head>
 <body>
+<%--<c:out value="${requestScope.message}"/>--%>
 <div class="container">
     <section id="content">
         <form action="Login.do" method="post">

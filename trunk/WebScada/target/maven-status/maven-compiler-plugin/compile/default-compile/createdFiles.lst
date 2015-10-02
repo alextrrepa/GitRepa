@@ -1,5 +1,6 @@
 view\dao\ItemDAOHibernate.class
 view\dao\GenericDao.class
+auth\dao\UserDao.class
 view\dao\GenericHibernateDAO.class
 admin\controllers\tree_edit_delegation\AddDeviceOperation.class
 entities\NodeEntity.class
@@ -9,6 +10,7 @@ data\controllers\report_delegation\Command.class
 view\endpointserver\ModbusClientConsumer.class
 admin\controllers\tree_edit_delegation\AddTagOperation.class
 entities\TcpEntity.class
+auth\entities\User.class
 view\modbusserver\ModbusTcp.class
 view\modbusserver\exception\NullDeviceException.class
 view\endpointserver\ModbusClientConsumer$1.class
@@ -23,6 +25,7 @@ admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class
 view\dao\ItemDAO.class
 admin\dao\ItemDAOHibernate.class
+auth\CustomRealm.class
 view\modbusserver\exception\NullConfigParamsException.class
 view\modbusserver\ModbusServer.class
 admin\dao\ItemDAO.class
@@ -41,6 +44,7 @@ entities\TagEntity.class
 entities\CurrentEntity.class
 data\dao\ItemDao.class
 view\modbusserver\exception\NullTagException.class
+auth\controllers\RegisterServlet.class
 view\controllers\TagNamesController.class
 admin\controllers\tree_edit_delegation\DoOperation.class
 view\util\CheckConfigUtil.class
@@ -51,8 +55,10 @@ entities\HourEntity.class
 data\entities\TagEntity.class
 admin\controllers\DispatchController.class
 admin\controllers\tree_edit_delegation\DeleteTagOperation.class
+auth\entities\UserRole.class
 view\endpointserver\ResultEncoder.class
 admin\controllers\dispatch_delegation\Command.class
+auth\MySaltedAuthentificationInfo.class
 admin\controllers\dispatch_delegation\Dispatch.class
 admin\controllers\tree_edit_delegation\GetAllOperation.class
 view\modbusserver\ModbusType.class
@@ -74,3 +80,4 @@ data\entities\CurrentEntity.class
 auth\controllers\AuthenticationFilter.class
 admin\controllers\tree_edit_delegation\TreeElement.class
 view\modbusserver\ModbusTask.class
+auth\entities\RolePermission.class
