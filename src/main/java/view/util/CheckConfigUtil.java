@@ -1,5 +1,7 @@
 package view.util;
 
+import dao.CommonOperationsHibernateDao;
+import dao.ViewItemHibernateDao;
 import entities.*;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -7,8 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
 import util.SessionUtil;
-import view.dao.GenericDao;
-import view.dao.ItemDAOHibernate;
 import view.modbusserver.exception.ConfigException;
 import view.modbusserver.exception.NullConfigParamsException;
 import view.modbusserver.exception.NullDeviceException;
@@ -18,6 +18,7 @@ import java.util.List;
 
 public class CheckConfigUtil {
     private final static Logger log = Logger.getLogger(CheckConfigUtil.class);
+    private static CommonOperationsHibernateDao<NodeEntity, Long> config = new ViewItemHibernateDao<>(NodeEntity.class);
 
     public static void check() throws ConfigException {
         checkTablesConfiguration();
@@ -62,7 +63,7 @@ public class CheckConfigUtil {
     }
 
     private static void checkDeviceExistence() throws NullDeviceException {
-        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAllConfig();
         for (NodeEntity node : listConfig) {
             List<DeviceEntity> dev = node.getDeviceEntity();
@@ -74,7 +75,8 @@ public class CheckConfigUtil {
     }
 
     private static void checkTagExistence() throws NullTagException {
-        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+//        CommonOperationsHibernateDao<NodeEntity, Long> config = new ViewItemHibernateDao<>(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAllConfig();
         for (NodeEntity node : listConfig) {
             List<DeviceEntity> dev = node.getDeviceEntity();

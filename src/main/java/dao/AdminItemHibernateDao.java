@@ -1,6 +1,7 @@
-package admin.dao;
+package dao;
 
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -8,15 +9,16 @@ import util.SessionUtil;
 
 import java.io.Serializable;
 
-public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHibernateDAO<T, ID> implements ItemDAO<T, ID> {
-    private final static Logger log = Logger.getLogger(ItemDAOHibernate.class);
+public class AdminItemHibernateDao<T, ID extends Serializable> extends CommonOperationsHibernateDao<T, ID>
+        implements AdminDaoIF<T, ID> {
+    private final static Logger log = Logger.getLogger(AdminItemHibernateDao.class);
 
-    public ItemDAOHibernate(Class<T> persistanceClass) {
-        super(persistanceClass);
+    public AdminItemHibernateDao(Class<T> persistenceClass) {
+        super(persistenceClass);
     }
 
     @Override
-    public T findRegByValue(Integer value) {
+    public T findRegByValue(Integer value) throws Exception {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         T entity = null;
@@ -26,13 +28,15 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
             query.setParameter("val", value);
             entity = (T) query.uniqueResult();
             transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                transaction.rollback();
-            } catch (Exception ex) {
-                log.error("Rollback transaction error", ex);
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
             }
+            log.error("Original error when executing query", e);
         } finally {
             session.close();
         }
@@ -40,7 +44,7 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
     }
 
     @Override
-    public T findDataByValue(Integer value) {
+    public T findDataByValue(Integer value) throws Exception {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         T entity = null;
@@ -50,13 +54,15 @@ public class ItemDAOHibernate<T, ID extends Serializable> extends GenericHiberna
             query.setParameter("val", value);
             entity = (T) query.uniqueResult();
             transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                transaction.rollback();
-            } catch (Exception ex) {
-                log.error("Rollback transaction error", ex);
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
             }
+            log.error("Original error when executing query", e);
         } finally {
             session.close();
         }

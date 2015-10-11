@@ -1,8 +1,8 @@
-package admin.dao;
+package dao;
 
 import java.io.Serializable;
 
-public interface ItemDAO<T, ID extends Serializable> extends GenericDao<T, ID> {
+public interface AdminDaoIF<T, ID extends Serializable> {
     T findRegByValue(Integer value) throws Exception;
 
     T findDataByValue(Integer value) throws Exception;

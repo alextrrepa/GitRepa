@@ -1,9 +1,9 @@
 package view.modbusserver;
 
+import dao.CommonOperationsHibernateDao;
+import dao.ViewItemHibernateDao;
 import entities.NodeEntity;
 import org.apache.log4j.Logger;
-import view.dao.GenericDao;
-import view.dao.ItemDAOHibernate;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +19,8 @@ public class ModbusBridge {
 
     private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
-        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
+        CommonOperationsHibernateDao<NodeEntity, Long> config = new ViewItemHibernateDao<>(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAllConfig();
         ModbusType modbusType;
         for (NodeEntity entity : listConfig) {

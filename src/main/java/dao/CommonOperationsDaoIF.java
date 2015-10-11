@@ -1,9 +1,9 @@
-package admin.dao;
+package dao;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface GenericDao<T, ID extends Serializable> {
+public interface CommonOperationsDaoIF<T, ID extends Serializable> {
     List<T> getAllConfig() throws Exception;
 
     T getById(ID id) throws Exception;

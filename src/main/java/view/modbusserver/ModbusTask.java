@@ -5,12 +5,12 @@ import com.serotonin.modbus4j.exception.ModbusInitException;
 import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersRequest;
 import com.serotonin.modbus4j.msg.ReadHoldingRegistersResponse;
+import dao.CommonOperationsHibernateDao;
+import dao.ViewItemHibernateDao;
 import entities.CurrentEntity;
 import entities.DeviceEntity;
 import entities.TagEntity;
 import org.apache.log4j.Logger;
-import view.dao.GenericDao;
-import view.dao.ItemDAOHibernate;
 
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -92,7 +92,8 @@ public class ModbusTask implements Runnable {
     }
 
     private void insertCurrentData(long id, float value) {
-        GenericDao<CurrentEntity, Long> curData = new ItemDAOHibernate<>(CurrentEntity.class);
+//        GenericDao<CurrentEntity, Long> curData = new ItemDAOHibernate<>(CurrentEntity.class);
+        CommonOperationsHibernateDao<CurrentEntity, Long> curData = new ViewItemHibernateDao<>(CurrentEntity.class);
         CurrentEntity curEntity = new CurrentEntity();
         curEntity.setDatetime(new Date());
         curEntity.setTag_id(id);

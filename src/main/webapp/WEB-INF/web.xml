@@ -4,20 +4,21 @@
          id="WebApp_ID" version="3.0">
     <display-name>Archetype Created Web Application</display-name>
     <filter>
-        <filter-name>ShiroFilter</filter-name>
-        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>auth.controllers.AuthenticationFilter</filter-class>
+        <init-param>
+            <param-name>appName</param-name>
+            <param-value>webscada</param-value>
+        </init-param>
+        <init-param>
+            <param-name>subjectkey</param-name>
+            <param-value>subject</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
-        <filter-name>ShiroFilter</filter-name>
+        <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-        <dispatcher>INCLUDE</dispatcher>
-        <dispatcher>ERROR</dispatcher>
     </filter-mapping>
-    <listener>
-        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
-    </listener>
     <listener>
         <listener-class>view.modbusserver.ModbusServer</listener-class>
     </listener>

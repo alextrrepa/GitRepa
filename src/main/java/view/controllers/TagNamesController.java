@@ -2,10 +2,10 @@ package view.controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dao.ViewDaoIF;
+import dao.ViewItemHibernateDao;
 import entities.TagEntity;
 import org.apache.log4j.Logger;
-import view.dao.ItemDAO;
-import view.dao.ItemDAOHibernate;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +28,8 @@ public class TagNamesController extends HttpServlet {
     }
 
     private void performTask(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        ItemDAO<TagEntity, Long> tagsDao = new ItemDAOHibernate(TagEntity.class);
+//        ItemDAO<TagEntity, Long> tagsDao = new ItemDAOHibernate(TagEntity.class);
+        ViewDaoIF<TagEntity, Long> tagsDao = new ViewItemHibernateDao<>(TagEntity.class);
         List<TagEntity> tags = tagsDao.getTags();
         List<String> names = new ArrayList<>();
         for (TagEntity t : tags) {
