@@ -1,9 +1,9 @@
 package admin.controllers.tree_edit_delegation;
 
-import admin.dao.GenericDao;
-import admin.dao.ItemDAO;
-import admin.dao.ItemDAOHibernate;
 import com.google.gson.Gson;
+import dao.AdminDaoIF;
+import dao.AdminItemHibernateDao;
+import dao.CommonOperationsHibernateDao;
 import entities.*;
 import org.apache.log4j.Logger;
 
@@ -13,6 +13,9 @@ import java.util.List;
 
 public class Operation {
     private final static Logger log = Logger.getLogger(Operation.class);
+    CommonOperationsHibernateDao<NodeEntity, Long> nodeDao = new AdminItemHibernateDao<>(NodeEntity.class);
+    CommonOperationsHibernateDao<DeviceEntity, Long> deviceDao = new AdminItemHibernateDao<>(DeviceEntity.class);
+    CommonOperationsHibernateDao<TagEntity, Long> tagDao = new AdminItemHibernateDao<>(TagEntity.class);
     private Gson gson;
 
     public Operation(Gson gson) {
@@ -20,7 +23,8 @@ public class Operation {
     }
 
     public String addRtuNode(HttpServletRequest request) {
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        CommonOperationsHibernateDao<NodeEntity, Long> nodeDao = new AdminItemHibernateDao<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(request.getParameter("nodeName"));
         nodeEntity.setType(request.getParameter("mtype"));
@@ -29,7 +33,8 @@ public class Operation {
             nodeDao.create(nodeEntity);
             RtuEntity rtuEntity = new RtuEntity();
             rtuEntity.setNodeEntity(nodeEntity);
-            GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
+//            GenericDao<RtuEntity, Long> rtuDao = new ItemDAOHibernate<>(RtuEntity.class);
+            CommonOperationsHibernateDao<RtuEntity, Long> rtuDao = new AdminItemHibernateDao<>(RtuEntity.class);
             rtuDao.create(rtuEntity);
             treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
                     "root", nodeEntity.getName(),
@@ -42,7 +47,8 @@ public class Operation {
     }
 
     public String addTcpNode(HttpServletRequest request) {
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        CommonOperationsHibernateDao<NodeEntity, Long> nodeDao = new AdminItemHibernateDao<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         NodeEntity nodeEntity = new NodeEntity();
         nodeEntity.setName(request.getParameter("nodeName"));
         nodeEntity.setType(request.getParameter("mtype"));
@@ -51,7 +57,8 @@ public class Operation {
             nodeDao.create(nodeEntity);
             TcpEntity tcpEntity = new TcpEntity();
             tcpEntity.setNodeEntity(nodeEntity);
-            GenericDao<TcpEntity, Long> tcpDao = new ItemDAOHibernate<>(TcpEntity.class);
+//            GenericDao<TcpEntity, Long> tcpDao = new ItemDAOHibernate<>(TcpEntity.class);
+            CommonOperationsHibernateDao<TcpEntity, Long> tcpDao = new AdminItemHibernateDao<>(TcpEntity.class);
             tcpDao.create(tcpEntity);
 
             treeElement = new TreeElement("node" + Long.toString(nodeEntity.getId()),
@@ -64,7 +71,8 @@ public class Operation {
     }
 
     public String addDevice(HttpServletRequest request) {
-        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
+//        CommonOperationsHibernateDao<DeviceEntity, Long> deviceDao = new AdminItemHibernateDao<>(DeviceEntity.class);
+//        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
 
         DeviceEntity deviceEntity = new DeviceEntity();
@@ -82,7 +90,8 @@ public class Operation {
     }
 
     public String addTag(HttpServletRequest request) {
-        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
+//        CommonOperationsHibernateDao<TagEntity, Long> tagDao = new AdminItemHibernateDao<>(TagEntity.class);
+//        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity = new TagEntity();
         tagEntity.setName(request.getParameter("nodeName"));
@@ -98,7 +107,7 @@ public class Operation {
     }
 
     public String deleteNode(HttpServletRequest request) {
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         try {
             nodeDao.delete(id);
@@ -109,7 +118,7 @@ public class Operation {
     }
 
     public String deleteDevice(HttpServletRequest request) {
-        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
+//        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         try {
             deviceDao.delete(id);
@@ -120,7 +129,7 @@ public class Operation {
     }
 
     public String deleteTag(HttpServletRequest request) {
-        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
+//        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         try {
             tagDao.delete(id);
@@ -135,7 +144,7 @@ public class Operation {
         TreeElement root = new TreeElement("root", "#", "Сервер", "images/icn_server.png");
         treeElements.add(root);
 
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         try {
             List<NodeEntity> nodeList = nodeDao.getAllConfig();
             for (NodeEntity node : nodeList) {
@@ -168,7 +177,7 @@ public class Operation {
     }
 
     public String getNode(HttpServletRequest request) {
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         NodeEntity nodeEntity;
         try {
@@ -180,7 +189,7 @@ public class Operation {
     }
 
     public String getDevice(HttpServletRequest request) {
-        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
+//        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity devEntity;
         try {
@@ -192,7 +201,7 @@ public class Operation {
     }
 
     public String getTag(HttpServletRequest request) {
-        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
+//        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tagEntity;
         try {
@@ -235,10 +244,10 @@ public class Operation {
         String modbusType = request.getParameter("modbustype");
         Long id = Long.valueOf(request.getParameter("id"));
         if (modbusType.equalsIgnoreCase("rtu")) {
-            GenericDao<NodeEntity, Long> rtuDao = new ItemDAOHibernate<>(NodeEntity.class);
+//            GenericDao<NodeEntity, Long> rtuDao = new ItemDAOHibernate<>(NodeEntity.class);
             NodeEntity node;
             try {
-                node = rtuDao.getById(id);
+                node = nodeDao.getById(id);
                 node.setName(request.getParameter("nodename"));
                 node.setType(request.getParameter("modbustype"));
                 RtuEntity rtu = node.getRtuEntity();
@@ -250,7 +259,7 @@ public class Operation {
                 rtu.setRetries(Integer.valueOf(request.getParameter("retries")));
                 rtu.setTimeout(Integer.valueOf(request.getParameter("timeout")));
                 rtu.setPeriod(Integer.valueOf(request.getParameter("period")));
-                rtuDao.update(node);
+                nodeDao.update(node);
                 return gson.toJson("success");
             } catch (Exception e) {
                 e.printStackTrace();
@@ -259,10 +268,10 @@ public class Operation {
         }
 
         if (modbusType.equalsIgnoreCase("tcp")) {
-            GenericDao<NodeEntity, Long> tcpDao = new ItemDAOHibernate<>(NodeEntity.class);
+//            GenericDao<NodeEntity, Long> tcpDao = new ItemDAOHibernate<>(NodeEntity.class);
             NodeEntity node;
             try {
-                node = tcpDao.getById(id);
+                node = nodeDao.getById(id);
                 node.setName(request.getParameter("nodename"));
                 node.setType(request.getParameter("modbustype"));
                 TcpEntity tcp = node.getTcpEntity();
@@ -271,7 +280,7 @@ public class Operation {
                 tcp.setRetries(Integer.valueOf(request.getParameter("retries")));
                 tcp.setTimeout(Integer.valueOf(request.getParameter("timeout")));
                 tcp.setPeriod(Integer.valueOf(request.getParameter("period")));
-                tcpDao.update(node);
+                nodeDao.update(node);
                 return gson.toJson("success");
             } catch (Exception e) {
                 e.printStackTrace();
@@ -282,7 +291,7 @@ public class Operation {
     }
 
     private String updateDevice(HttpServletRequest request) {
-        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
+//        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity device;
         try {
@@ -291,9 +300,9 @@ public class Operation {
             device.setSlaveid(Integer.valueOf(request.getParameter("slaveid")));
             device.setStartOffset(Integer.parseInt(request.getParameter("startoffset")));
             device.setCounts(Integer.parseInt(request.getParameter("counts")));
-
             String regtype = request.getParameter("regtype");
-            ItemDAO<RegisterEntity, Long> regDao = new ItemDAOHibernate<>(RegisterEntity.class);
+//            ItemDAO<RegisterEntity, Long> regDao = new ItemDAOHibernate<>(RegisterEntity.class);
+            AdminDaoIF<RegisterEntity, Long> regDao = new AdminItemHibernateDao<>(RegisterEntity.class);
             RegisterEntity regEntity = regDao.findRegByValue(Integer.valueOf(regtype));
             device.setRegisterEntity(regEntity);
             deviceDao.update(device);
@@ -304,15 +313,15 @@ public class Operation {
     }
 
     private String updateTag(HttpServletRequest request) {
-        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
+//        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tag;
         try {
             tag = tagDao.getById(id);
             tag.setName(request.getParameter("tagname"));
             tag.setRealOffset(Integer.valueOf(request.getParameter("realoffset")));
-
-            ItemDAO<DatatypeEntity, Long> datDao = new ItemDAOHibernate<>(DatatypeEntity.class);
+            AdminDaoIF<DatatypeEntity, Long> datDao = new AdminItemHibernateDao<>(DatatypeEntity.class);
+//            ItemDAO<DatatypeEntity, Long> datDao = new ItemDAOHibernate<>(DatatypeEntity.class);
             String datType = request.getParameter("datatype");
             DatatypeEntity dataEntity = datDao.findDataByValue(Integer.valueOf(datType));
             tag.setDatatypeEntity(dataEntity);
@@ -324,14 +333,13 @@ public class Operation {
     }
 
     private String renameNode(HttpServletRequest request) {
-        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
+//        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         log.trace(id);
         NodeEntity node;
         try {
             node = nodeDao.getById(id);
             node.setName(request.getParameter("text"));
-            log.trace(request.getParameter("text"));
             nodeDao.update(node);
             NodeEntity nodeAfter = nodeDao.getById(id);
             return gson.toJson(nodeAfter.getName());
@@ -341,7 +349,7 @@ public class Operation {
     }
 
     private String renameDevice(HttpServletRequest request) {
-        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
+//        GenericDao<DeviceEntity, Long> deviceDao = new ItemDAOHibernate<>(DeviceEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         DeviceEntity device;
         try {
@@ -356,7 +364,7 @@ public class Operation {
     }
 
     private String renameTag(HttpServletRequest request) {
-        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
+//        GenericDao<TagEntity, Long> tagDao = new ItemDAOHibernate<>(TagEntity.class);
         Long id = Long.valueOf(request.getParameter("id"));
         TagEntity tag;
         try {

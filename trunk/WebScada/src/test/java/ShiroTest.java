@@ -12,16 +12,6 @@ public class ShiroTest {
     private static final transient Logger log = LoggerFactory.getLogger(ShiroTest.class);
 
     public void shTest() {
-/*        try {
-            InitialContext ctx = new InitialContext();
-            DataSource ds = (DataSource) ctx.lookup("jdbc/postgresql");
-            Connection connection = ds.getConnection();
-        } catch (NamingException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
         SecurityManager securityManager = factory.getInstance();
 

@@ -23,8 +23,7 @@ public class ModbusServer implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-/*
-        log.info("Starting Server....");
+/*        log.info("Starting Server....");
         try {
             CheckConfigUtil.check();
             new ModbusBridge(taskList, queue);
@@ -35,21 +34,18 @@ public class ModbusServer implements ServletContextListener {
         } catch (ConfigException e) {
             e.printStackTrace();
         }
-        log.info("Server is started");
-*/
+        log.info("Server is started");*/
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-/*
-        executor.shutdown();
+/*        executor.shutdown();
         log.info("Try to stop server.....");
         try {
             executor.awaitTermination(1, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             log.error("Interrupt error" + e);
         }
-        log.info("Server is stoped ");
-*/
+        log.info("Server is stoped ");*/
     }
 }
