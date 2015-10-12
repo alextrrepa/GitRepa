@@ -10,9 +10,9 @@
     <script src="js/auth/auth.js"></script>
 </head>
 <body>
-<c:if test="${not empty requestScope.message}">
+<%--<c:if test="${not empty requestScope.message}">
     <c:out value="${requestScope.message}"/>
-</c:if>
+</c:if>--%>
 <div class="container">
     <section id="content">
         <form action="Login.do" method="post">
