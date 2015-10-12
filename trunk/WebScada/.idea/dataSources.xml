@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2397591954">
+  <component name="DataSourceManagerImpl" format="xml" hash="1243129056">
     <data-source source="LOCAL" name="PostgreSQL - scada@localhost [2]" uuid="79c829de-57ea-4489-b344-fb2de0ef759e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/scada</jdbc-url>
-      <libraries />
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - test@localhost" uuid="74c7fbc5-e513-4f96-9f50-7f95b33e7d49">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
       <libraries />
     </data-source>
   </component>
