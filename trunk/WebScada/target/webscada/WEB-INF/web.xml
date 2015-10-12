@@ -11,17 +11,17 @@
             <param-value>webscada</param-value>
         </init-param>
         <init-param>
-            <param-name>subjectkey</param-name>
-            <param-value>subject</param-value>
+            <param-name>login_page</param-name>
+            <param-value>/login.jsp</param-value>
         </init-param>
     </filter>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
+  <!--      <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
-        <dispatcher>ERROR</dispatcher>
+        <dispatcher>ERROR</dispatcher>-->
     </filter-mapping>
 
     <listener>

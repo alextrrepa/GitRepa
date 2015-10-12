@@ -10,8 +10,7 @@ import java.io.IOException;
 
 public class AuthenticationFilter implements Filter {
     private final static Logger log = Logger.getLogger(AuthenticationFilter.class);
-    private String subjectKey;
-    private String appName;
+    private FilterConfig filterConfig = null;
 
     public void destroy() {
     }
@@ -27,17 +26,25 @@ public class AuthenticationFilter implements Filter {
         log.info("Servlet Path :::" + request.getServletPath());
         log.info("Session:::" + session);
         log.info("ContextPath:::" + request.getContextPath());
+        log.info("PathInfo:::" + request.getPathInfo());
         if (session == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            resp.setContentType("text/html");
+//            response.sendRedirect(/*request.getContextPath() + */"login.jsp");
+//            response.sendRedirect(request.getServletPath());
+            String loginPage = filterConfig.getInitParameter("login_page");
+            filterConfig.getServletContext().getRequestDispatcher(loginPage).forward(req, resp);
+            return;
+        } else {
+            chain.doFilter(req, resp);
             return;
         }
-        chain.doFilter(req, resp);
     }
 
     public void init(FilterConfig config) throws ServletException {
-        subjectKey = config.getInitParameter("subjectkey");
-        appName = config.getInitParameter("appName");
-        log.info(appName);
-        log.info(subjectKey);
+        this.filterConfig = config;
+//        url = config.getInitParameter("login_page");
+//        appName = config.getInitParameter("appName");
+//        log.info(url);
+//        log.info(subjectKey);
     }
 }
