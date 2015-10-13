@@ -1,6 +1,7 @@
 package dao;
 
-import auth.entities.User;
+import auth.entities.AppConfigEntity;
+import auth.entities.UserEntity;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -10,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import util.SessionUtil;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOperationsHibernateDao<T, ID>
         implements AuthDaoIF<T, ID> {
@@ -25,7 +27,7 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
         Transaction transaction = null;
         T entity = null;
         try {
-            Criteria criteria = session.createCriteria(User.class);
+            Criteria criteria = session.createCriteria(UserEntity.class);
             criteria.add(Restrictions.eq("username", login));
             entity = (T) criteria.uniqueResult();
         } catch (HibernateException e) {
@@ -41,5 +43,29 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
             session.close();
         }
         return entity;
+    }
+
+    @Override
+    public List<T> getAppConfig(String appName) {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        List<T> listEntity = null;
+        try {
+            Criteria criteria = session.createCriteria(AppConfigEntity.class);
+            criteria.add(Restrictions.eq("appName", appName));
+            listEntity = criteria.list();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
+            }
+            log.error("Original error when executing query", e);
+        } finally {
+            session.close();
+        }
+        return listEntity;
     }
 }
