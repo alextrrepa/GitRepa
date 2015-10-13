@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class AuthenticationFilter implements Filter {
     private final static Logger log = Logger.getLogger(AuthenticationFilter.class);
-    private FilterConfig filterConfig = null;
 
     public void destroy() {
     }
@@ -21,18 +20,20 @@ public class AuthenticationFilter implements Filter {
 
 //        log.info("Session:::" + request.getSession().getAttribute("username"));
         HttpSession session = request.getSession(false);
-        String uri = request.getRequestURI();
-        log.info("URI:::" + uri);
-        log.info("Servlet Path :::" + request.getServletPath());
+//        String uri = request.getRequestURI();
+//        log.info("URI:::" + uri);
+//        log.info("Servlet Path :::" + request.getServletPath());
         log.info("Session:::" + session);
-        log.info("ContextPath:::" + request.getContextPath());
-        log.info("PathInfo:::" + request.getPathInfo());
+//        log.info("ContextPath:::" + request.getContextPath());
+//        log.info("PathInfo:::" + request.getPathInfo());
         if (session == null) {
-            resp.setContentType("text/html");
+//            resp.setContentType("text/html");
 //            response.sendRedirect(/*request.getContextPath() + */"login.jsp");
-//            response.sendRedirect(request.getServletPath());
-            String loginPage = filterConfig.getInitParameter("login_page");
-            filterConfig.getServletContext().getRequestDispatcher(loginPage).forward(req, resp);
+//            response.sendRedirect("login.jsp");
+//            String loginPage = filterConfig.getInitParameter("login_page");
+//            filterConfig.getServletContext().getRequestDispatcher(loginPage).forward(req, resp);
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
             return;
         } else {
             chain.doFilter(req, resp);
@@ -41,10 +42,5 @@ public class AuthenticationFilter implements Filter {
     }
 
     public void init(FilterConfig config) throws ServletException {
-        this.filterConfig = config;
-//        url = config.getInitParameter("login_page");
-//        appName = config.getInitParameter("appName");
-//        log.info(url);
-//        log.info(subjectKey);
     }
 }
