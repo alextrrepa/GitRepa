@@ -30,6 +30,7 @@ C:\WorkSpace\WebScada\src\main\java\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParamsException.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
+C:\WorkSpace\WebScada\src\main\java\auth\entities\UserRoleEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\DoDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTask.java
@@ -53,7 +54,6 @@ C:\WorkSpace\WebScada\src\main\java\data\controllers\ReportController.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\AdminDispatch.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullDeviceException.java
-C:\WorkSpace\WebScada\src\main\java\auth\entities\AppConfigEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\AdminDaoIF.java
 C:\WorkSpace\WebScada\src\main\java\auth\CustomSaltedAuthentificationInfo.java
 C:\WorkSpace\WebScada\src\main\java\dao\AuthDaoIF.java
