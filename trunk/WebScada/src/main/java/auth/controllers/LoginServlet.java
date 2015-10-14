@@ -26,7 +26,14 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        boolean b = tryLogin(username, password);
+        if (b) {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            log.error("Wrong parameteres");
+        }
 
     }
 
