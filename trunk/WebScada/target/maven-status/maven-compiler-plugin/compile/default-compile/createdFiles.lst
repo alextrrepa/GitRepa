@@ -1,5 +1,4 @@
 dao\ViewItemHibernateDao.class
-auth\DBConfiguration.class
 admin\controllers\tree_edit_delegation\AddDeviceOperation.class
 entities\NodeEntity.class
 view\modbusserver\ModbusRtu.class
@@ -8,10 +7,12 @@ view\endpointserver\DataSourceListener.class
 data\controllers\report_delegation\Command.class
 view\endpointserver\ModbusClientConsumer.class
 admin\controllers\tree_edit_delegation\AddTagOperation.class
+auth\entities\UserRoleEntity.class
 entities\TcpEntity.class
 dao\AuthItemHibernateDao.class
 view\modbusserver\ModbusTcp.class
 view\modbusserver\exception\NullDeviceException.class
+auth\CustomSaltedAuthentificationInfo.class
 view\endpointserver\ModbusClientConsumer$1.class
 data\controllers\DataController.class
 dao\AdminItemHibernateDao.class
@@ -24,15 +25,13 @@ admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
-auth\DbUsernameCredential.class
 dao\AdminDaoIF.class
-auth\WebCallbackHandler.class
+auth\CustomRealm.class
 view\modbusserver\exception\NullConfigParamsException.class
 view\modbusserver\ModbusServer.class
 view\modbusserver\ModbusLocator.class
 data\controllers\report_delegation\ReportActions.class
 admin\controllers\dispatch_delegation\DoDispatch.class
-auth\entities\AppConfigEntity.class
 entities\DatatypeEntity.class
 admin\controllers\tree_edit_delegation\RenameOperation.class
 admin\controllers\tree_edit_delegation\AddTcpNodeOperation.class
@@ -70,7 +69,6 @@ data\controllers\report_delegation\HoursData.class
 data\controllers\data_delegation\DataBean.class
 admin\controllers\tree_edit_delegation\GetNodeOperation.class
 view\modbusserver\exception\ConfigException.class
-auth\DBLoginModule.class
 auth\controllers\LoginServlet.class
 entities\RegisterEntity.class
 view\endpointserver\ModbusEndpoint.class

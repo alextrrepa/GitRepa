@@ -49,7 +49,7 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
     }
 
     @Override
-    public T getById(ID id) throws Exception {
+    public T getById(ID id) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         T entity = null;
@@ -95,7 +95,7 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
     }
 
     @Override
-    public void delete(ID id) throws Exception {
+    public void delete(ID id) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         try {
@@ -120,7 +120,7 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
     }
 
     @Override
-    public void update(T entity) throws Exception {
+    public void update(T entity) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         try {

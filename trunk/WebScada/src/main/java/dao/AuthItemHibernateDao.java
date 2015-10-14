@@ -1,7 +1,7 @@
 package dao;
 
-import auth.entities.AppConfigEntity;
 import auth.entities.UserEntity;
+import auth.entities.UserRoleEntity;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -46,12 +46,12 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
     }
 
     @Override
-    public List<T> getAppConfig(String appName) {
+    public List<T> getUserRole(String appName) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         List<T> listEntity = null;
         try {
-            Criteria criteria = session.createCriteria(AppConfigEntity.class);
+            Criteria criteria = session.createCriteria(UserRoleEntity.class);
             criteria.add(Restrictions.eq("appName", appName));
             listEntity = criteria.list();
         } catch (HibernateException e) {

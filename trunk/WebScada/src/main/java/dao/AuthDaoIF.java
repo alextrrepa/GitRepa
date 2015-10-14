@@ -6,5 +6,5 @@ import java.util.List;
 public interface AuthDaoIF<T, ID extends Serializable> {
     T getUserByUsername(String login);
 
-    List<T> getAppConfig(String appName);
+    List<T> getUserRole(String appName);
 }
