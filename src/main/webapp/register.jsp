@@ -16,6 +16,12 @@
     Password
     <input type="text" name="password"/>
     <br/>
+    Roles
+    <select name="selectRole">
+        <option value="admin">Администратор</option>
+        <option value="user">Пользователь</option>
+    </select>
+    <br/>
     <input type="submit" value="Сохранить">
 </form>
 </body>

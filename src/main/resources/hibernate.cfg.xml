@@ -34,7 +34,7 @@
         <mapping class="entities.TagEntity"/>
         <mapping class="entities.TcpEntity"/>
         <mapping class="auth.entities.UserEntity"/>
-        <mapping class="auth.entities.AppConfigEntity"/>
+        <mapping class="auth.entities.UserRoleEntity"/>
 
         <!--    <mapping class="data.entities.TagEntity"/>
             <mapping class="data.entities.CurrentEntity"/>
