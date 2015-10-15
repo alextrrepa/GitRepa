@@ -11,7 +11,9 @@ import org.hibernate.criterion.Restrictions;
 import util.SessionUtil;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOperationsHibernateDao<T, ID>
         implements AuthDaoIF<T, ID> {
@@ -46,14 +48,18 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
     }
 
     @Override
-    public List<T> getUserRole(String appName) {
+    public Set<String> getUserRolesByUsername(String username) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
-        List<T> listEntity = null;
+        Set<String> userRoles = null;
         try {
             Criteria criteria = session.createCriteria(UserRoleEntity.class);
-            criteria.add(Restrictions.eq("appName", appName));
-            listEntity = criteria.list();
+            criteria.add(Restrictions.eq("username", username));
+            List<UserRoleEntity> listEntity = criteria.list();
+            userRoles = new HashSet<>();
+            for (UserRoleEntity role : listEntity) {
+                userRoles.add(role.getRolename());
+            }
         } catch (HibernateException e) {
             if (transaction != null) {
                 try {
@@ -66,6 +72,6 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
         } finally {
             session.close();
         }
-        return listEntity;
+        return userRoles;
     }
 }
