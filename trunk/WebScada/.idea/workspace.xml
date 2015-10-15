@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/AuthTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada.war" afterPath="$PROJECT_DIR$/target/webscada.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" afterPath="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/entities/UserRoleEntity.java" afterPath="$PROJECT_DIR$/src/main/java/auth/entities/UserRoleEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScada.iws" />
@@ -74,27 +66,29 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomRealm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomRealm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/auth/CustomRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13568985">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthItemHibernateDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthItemHibernateDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.59293044">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/loginSuccess.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/auth/entities/UserRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/entities/RolePermission.java" />
         <option value="$PROJECT_DIR$/src/test/java/ShiroTest.java" />
@@ -188,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AuthTest.java" />
       </list>
     </option>
   </component>
@@ -326,6 +320,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -662,6 +660,135 @@
       <recent name="ru.scada.util" />
       <recent name="org.webscada.endpointserver" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\admin\dao</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\admin\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\admin\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\admin\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\admin\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\view\dao</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\view\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\view\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\view\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="120">C:\WorkSpace\WebScada\target\classes\view\dao\ItemDAOHibernate.class</PATH>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Maven.webscada [redeploy]">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1576,13 +1703,7 @@
       <workItem from="1444789273491" duration="19612000" />
       <workItem from="1444818796344" duration="143000" />
       <workItem from="1444876554870" duration="9323000" />
-      <workItem from="1444892313587" duration="8661000" />
-    </task>
-    <task id="LOCAL-00017" summary="Добавление контекстного меню для дерева modbus.">
-      <created>1436351297610</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1436351297610</updated>
+      <workItem from="1444892313587" duration="9174000" />
     </task>
     <task id="LOCAL-00018">
       <created>1436437344572</created>
@@ -1872,11 +1993,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444818966086</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066">
+      <created>1444904666834</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1444904666843</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1767872000" />
+    <option name="totallyTimeSpent" value="1768385000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1898,7 +2025,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53932583" sideWeight="0.5128593" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1809291" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1809291" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32486188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5160221" sideWeight="0.4871407" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1907,7 +2034,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2292176" sideWeight="0.43867403" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23349634" sideWeight="0.5562914" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1913203" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1913203" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2537,14 +2664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.jar!/org/apache/shiro/authz/SimpleAuthorizationInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.7777777">
@@ -2585,6 +2704,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auth/CustomRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2595,21 +2732,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/AuthTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.29076397">
+          <caret line="15" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auth/CustomRealm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13568985">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.59293044">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
