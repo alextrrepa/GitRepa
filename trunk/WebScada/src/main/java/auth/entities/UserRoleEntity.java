@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class UserRoleEntity {
     private Long id;
     private String rolename;
+    private String username;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,5 +26,14 @@ public class UserRoleEntity {
 
     public void setRolename(String rolename) {
         this.rolename = rolename;
+    }
+
+    @Column(name = "username")
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

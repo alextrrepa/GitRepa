@@ -266,6 +266,7 @@
     <table name="userrole" schema="public" catalog="scada" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnJvbGVfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="rolename" sqlType="varchar" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="varchar" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="userrole_pkey" columns="id"/>
     </table>
     <table name="userrole_id_seq" schema="public" catalog="scada" type="SEQUENCE">

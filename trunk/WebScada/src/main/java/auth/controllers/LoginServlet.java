@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
         boolean b = tryLogin(username, password);
         if (b) {
             request.getRequestDispatcher("index.jsp").forward(request, response);
+            log.info("Authentication success !!!");
         } else {
             log.error("Wrong parameteres");
         }
@@ -47,6 +48,7 @@ public class LoginServlet extends HttpServlet {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             try {
                 currentUser.login(token);
+                return true;
             } catch (UnknownAccountException e) {
                 log.error("There is no user with username of" + token.getPrincipal());
             } catch (IncorrectCredentialsException ex) {
