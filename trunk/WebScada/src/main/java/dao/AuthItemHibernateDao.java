@@ -1,5 +1,6 @@
 package dao;
 
+import auth.entities.PermissionEntity;
 import auth.entities.UserEntity;
 import auth.entities.UserRoleEntity;
 import org.apache.log4j.Logger;
@@ -73,5 +74,33 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
             session.close();
         }
         return userRoles;
+    }
+
+    @Override
+    public Set<String> getPermissionsByUsername(String username) {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        Set<String> permissions = null;
+        try {
+            Criteria criteria = session.createCriteria(PermissionEntity.class);
+            criteria.add(Restrictions.eq("username", username));
+            List<PermissionEntity> permList = criteria.list();
+            permissions = new HashSet<>();
+            for (PermissionEntity perm : permList) {
+                permissions.add(perm.getPermissions());
+            }
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
+            }
+            log.error("Original error when executing query", e);
+        } finally {
+            session.close();
+        }
+        return permissions;
     }
 }

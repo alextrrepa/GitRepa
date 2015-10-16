@@ -17,15 +17,20 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-//        String username = (String) principalCollection.getPrimaryPrincipal();
-        String username = (String) getAvailablePrincipal(principalCollection);
+        String username = (String) principalCollection.getPrimaryPrincipal();
+//        String username = (String) getAvailablePrincipal(principalCollection);
         log.info("Authorization !!!!!");
         log.info("AuthorizationInfo:::" + username);
-        Set<String> permissions = null;
+
         AuthDaoIF<String, Long> rolesDao = new AuthItemHibernateDao<>(String.class);
         Set<String> roleNames = rolesDao.getUserRolesByUsername(username);
+        Set<String> permissions = rolesDao.getPermissionsByUsername(username);
         for (String role : roleNames) {
             log.info(role + ":::");
+        }
+
+        for (String perm : permissions) {
+            log.info(perm + ":::");
         }
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
         info.setStringPermissions(permissions);

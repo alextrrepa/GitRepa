@@ -23,6 +23,7 @@ entities\RtuEntity.class
 admin\controllers\tree_edit_delegation\GetTagOperation.class
 admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
+auth\entities\PermissionEntity.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
 dao\AdminDaoIF.class

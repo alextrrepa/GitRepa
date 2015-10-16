@@ -35,7 +35,6 @@ public class LoginServlet extends HttpServlet {
         } else {
             log.error("Wrong parameteres");
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,6 +47,9 @@ public class LoginServlet extends HttpServlet {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             try {
                 currentUser.login(token);
+                log.info("Is authenticated:::" + currentUser.isAuthenticated());
+                currentUser.checkPermission("menu:view");
+                log.info("Is permitted" + currentUser.isPermitted("menu:view"));
                 return true;
             } catch (UnknownAccountException e) {
                 log.error("There is no user with username of" + token.getPrincipal());
