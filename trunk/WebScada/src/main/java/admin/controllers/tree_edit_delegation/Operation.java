@@ -141,7 +141,7 @@ public class Operation {
 
     public String getAll(HttpServletRequest request) {
         List<TreeElement> treeElements = new ArrayList<>();
-        TreeElement root = new TreeElement("root", "#", "Сервер", "images/icn_server.png");
+        TreeElement root = new TreeElement("root", "#", "Сервер", "../static/images/icn_server.png");
         treeElements.add(root);
 
 //        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
@@ -149,7 +149,7 @@ public class Operation {
             List<NodeEntity> nodeList = nodeDao.getAllConfig();
             for (NodeEntity node : nodeList) {
                 TreeElement nodeElem = new TreeElement("node" + Long.toString(node.getId()),
-                        "root", node.getName(), "images/icn_node.png", Long.toString(node.getId()));
+                        "root", node.getName(), "../static/images/icn_node.png", Long.toString(node.getId()));
                 treeElements.add(nodeElem);
 
                 List<DeviceEntity> deviceList = node.getDeviceEntity();
@@ -157,7 +157,7 @@ public class Operation {
                     TreeElement deviceElem = new TreeElement(
                             "device" + Long.toString(device.getId()),
                             "node" + Long.toString(node.getId()), device.getName(),
-                            "images/icn_device.png", Long.toString(device.getId()));
+                            "../static/images/icn_device.png", Long.toString(device.getId()));
                     treeElements.add(deviceElem);
 
                     List<TagEntity> tagList = device.getTagEntities();
@@ -165,11 +165,12 @@ public class Operation {
                         TreeElement tagElem = new TreeElement(
                                 "tag" + Long.toString(tag.getId()),
                                 "device" + Long.toString(device.getId()), tag.getName(),
-                                "images/icn_tag.png", Long.toString(tag.getId()));
+                                "../static/images/icn_tag.png", Long.toString(tag.getId()));
                         treeElements.add(tagElem);
                     }
                 }
             }
+            log.info(treeElements);
             return gson.toJson(treeElements);
         } catch (Exception e) {
             return gson.toJson("fail");

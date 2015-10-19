@@ -31,6 +31,7 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParams
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
 C:\WorkSpace\WebScada\src\main\java\auth\entities\UserRoleEntity.java
+C:\WorkSpace\WebScada\src\main\java\auth\entities\PermissionEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\DoDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTask.java

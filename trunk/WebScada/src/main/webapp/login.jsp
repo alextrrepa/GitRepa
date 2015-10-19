@@ -4,10 +4,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8">
     <title>Вход</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/auth/auth.css" rel="stylesheet">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/auth/auth.js"></script>
+    <link href="static/css/reset.css" rel="stylesheet">
+    <link href="static/css/auth/auth.css" rel="stylesheet">
+    <script src="static/js/jquery-1.11.3.min.js"></script>
+    <script src="static/js/auth/auth.js"></script>
 </head>
 <body>
 <%--<c:if test="${not empty requestScope.message}">
