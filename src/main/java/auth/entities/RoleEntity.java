@@ -1,7 +1,6 @@
 package auth.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "role")
@@ -9,7 +8,7 @@ public class RoleEntity {
     private Long id;
     private String role;
     private String description;
-    private List<UserEntity> users;
+//    private List<UserEntity> users;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +39,8 @@ public class RoleEntity {
         this.description = description;
     }
 
-
+/*
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
     public List<UserEntity> getUsers() {
         return users;
     }
@@ -48,4 +48,5 @@ public class RoleEntity {
     public void setUsers(List<UserEntity> users) {
         this.users = users;
     }
+*/
 }

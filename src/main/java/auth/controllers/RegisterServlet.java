@@ -1,9 +1,6 @@
 package auth.controllers;
 
 import auth.entities.UserEntity;
-import auth.entities.UserRoleEntity;
-import dao.AuthItemHibernateDao;
-import dao.CommonOperationsDaoIF;
 import org.apache.log4j.Logger;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
@@ -19,11 +16,24 @@ public class RegisterServlet extends HttpServlet {
     private final static Logger log = Logger.getLogger(RegisterServlet.class);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean blocked;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String b = request.getParameter("blocked");
+        if (b == null) {
+            blocked = false;
+        } else {
+            blocked = true;
+        }
         String role = request.getParameter("selectRole");
+        String description = request.getParameter("description");
+//        log.info(username);
+//        log.info(password);
+//        log.info(blocked);
+//        log.info(role);
+//        log.info(description);
         try {
-            registrate(username, password, role);
+            registrate(username, password, blocked, role, description);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -31,20 +41,22 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
-    private void registrate(String username, String plainPassword, String role) throws Exception {
+    private void registrate(String username, String plainPassword, Boolean blocked, String role, String description) throws Exception {
         UserEntity user = new UserEntity();
         user.setUsername(username);
         generatePassword(user, plainPassword);
-        CommonOperationsDaoIF<UserEntity, Long> authDao = new AuthItemHibernateDao<>(UserEntity.class);
-        authDao.create(user);
+        user.setLocked(blocked);
 
-        CommonOperationsDaoIF<UserRoleEntity, Long> roleDao = new AuthItemHibernateDao<>(UserRoleEntity.class);
-        UserRoleEntity roleEntity = new UserRoleEntity();
-        roleEntity.setRolename(role);
-        roleDao.create(roleEntity);
+
+//        CommonOperationsDaoIF<UserEntity, Long> authDao = new AuthItemHibernateDao<>(UserEntity.class);
+//        authDao.create(user);
+
+//        CommonOperationsDaoIF<UserRoleEntity, Long> roleDao = new AuthItemHibernateDao<>(UserRoleEntity.class);
+//        UserRoleEntity roleEntity = new UserRoleEntity();
+//        roleEntity.setRolename(role);
+//        roleDao.create(roleEntity);
     }
 
     private void generatePassword(UserEntity user, String plainPassword) {
