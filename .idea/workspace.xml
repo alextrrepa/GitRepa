@@ -2,18 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/auth/entities/PermissionEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/data" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/view" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/auth/entities/ResourceEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/auth/entities/RoleEntity.java" />
+      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\checkout.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\WorkSpace\WebScada\src\test\java\AuthTest.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\admin\admin.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/admin/admin.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\admin\waitMe.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/admin/waitMe.min.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\auth\auth.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/auth/auth.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\data\data.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/data/data.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\data\jquery.datetimepicker.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/data/jquery.datetimepicker.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\reset.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/reset.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\view\view.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/view/view.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\data.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/data/data.jsp" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\jstree.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/jstree.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\jstree.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/jstree.min.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\style.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/style.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\style.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/style.min.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default\style.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default/style.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default\style.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default/style.min.css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\admin\admin.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/admin/admin.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\admin\jstree.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/admin/jstree.min.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\admin\waitMe.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/admin/waitMe.min.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\auth\auth.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/auth/auth.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\data\data.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/data/data.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\data\jquery.datetimepicker.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/data/jquery.datetimepicker.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\data\pushy.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/data/pushy.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\jquery-1.11.3.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/jquery-1.11.3.min.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\view\d3.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/view/d3.min.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\view\view.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/view/view.js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\modbus_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/modbus_page.jsp" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\monitor.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/view/monitor.jsp" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/user/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/admin/controllers/tree_edit_delegation/Operation.class" afterPath="$PROJECT_DIR$/target/classes/admin/controllers/tree_edit_delegation/Operation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/admin/controllers/tree_edit_delegation/Operation.class" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/admin/controllers/tree_edit_delegation/Operation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/controllers/TagNamesController.class" afterPath="$PROJECT_DIR$/target/classes/view/controllers/TagNamesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/view/controllers/TagNamesController.class" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/view/controllers/TagNamesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/AuthTest.java" afterPath="$PROJECT_DIR$/src/test/java/AuthTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" afterPath="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada.war" afterPath="$PROJECT_DIR$/target/webscada.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default\32px.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default/32px.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\32px.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/32px.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default\40px.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default/40px.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\40px.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/40px.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\admin" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/admin" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\admin" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/admin" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\ajax-loader.gif" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/ajax-loader.gif" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\auth" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/auth" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\auth" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/auth" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\btn_submit.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/btn_submit.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\calendar.ico" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/calendar.ico" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\data" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/data" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\data" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/data" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\drawing.svg" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/drawing.svg" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\header_bg.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/header_bg.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\header_shadow.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/header_shadow.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_alert_error.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_alert_error.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_alert_info.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_alert_info.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_alert_success.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_alert_success.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_device.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_device.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_login.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_login.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_node.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_node.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_server.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_server.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\icn_settings.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/icn_settings.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_settings.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_settings.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_tag.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_tag.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icn_user.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icn_user.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icon-down.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icon-down.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\icon-right.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/icon-right.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images" afterPath="$PROJECT_DIR$/src/main/webapp/static/images" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\login_background.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/login_background.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\module_footer_bg.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/module_footer_bg.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\ok.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/ok.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\search.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/search.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\secondary_bar.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/secondary_bar.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\sidebar.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/sidebar.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\images\sidebar_shadow.png" afterPath="$PROJECT_DIR$/src/main/webapp/static/images/sidebar_shadow.png" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default\throbber.gif" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default/throbber.gif" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\dist\themes\default-dark\throbber.gif" afterPath="$PROJECT_DIR$/src/main/webapp/static/dist/themes/default-dark/throbber.gif" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\css\view" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/view" />
+      <change type="MOVED" beforePath="C:\WorkSpace\WebScada\src\main\webapp\js\view" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/view" />
     </list>
     <ignored path="WebScada.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,6 +141,60 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - scada@localhost [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="scada.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="users" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - scada@localhost [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="scada.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="userrole" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - scada@localhost [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="scada.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="role" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -60,46 +202,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/user/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shiro.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
+      <file leaf-file-name="UserEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1096#1097#0" expanded="true" />
+                <element signature="e#1141#1142#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
+                <element signature="e#1446#1447#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1532#1533#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5427594">
+              <caret line="28" column="48" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomRealm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auth/CustomRealm.java">
+      <file leaf-file-name="RoleEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/RoleEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
+                <element signature="e#881#882#0" expanded="true" />
+                <element signature="e#933#934#0" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java">
+      <file leaf-file-name="scada.public.users" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/RegisterServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26339796">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,22 +318,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/auth/entities/RolePermission.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ShiroTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/auth/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/admin/dao/GenericDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/admin/dao/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CommonOperationsDaoIF.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/AdminDaoIF.java" />
-        <option value="$PROJECT_DIR$/src/main/java/admin/dao/ItemDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/AdminItemHibernateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ViewDaoIF.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ViewItemHibernateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/controllers/TagNamesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/util/CheckConfigUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusBridge.java" />
         <option value="$PROJECT_DIR$/src/main/resources/shiro.ini" />
         <option value="$PROJECT_DIR$/src/main/java/auth/MyRealm.java" />
@@ -161,23 +338,37 @@
         <option value="$PROJECT_DIR$/src/test/java/ConfigTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/CustomAuthentificationInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dao/CommonOperationsHibernateDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/controllers/RegisterServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.users" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini" />
         <option value="$PROJECT_DIR$/src/main/java/auth/entities/UserRoleEntity.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/auth/entities/PermissionEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/dao/AuthDaoIF.java" />
         <option value="$PROJECT_DIR$/src/test/java/AuthTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/CustomRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/controllers/TagNamesController.java" />
+        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.node" />
+        <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.device" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/monitor.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/data/data.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/admin/controllers/ModbusTreeEditController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/modbus_page.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/admin/admin.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/view/view.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/auth/entities/ResourceEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/auth/entities/RoleEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
       </list>
     </option>
   </component>
@@ -311,16 +502,6 @@
               <option name="myItemId" value="DB Consoles" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DB Consoles" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="79c829de-57ea-4489-b344-fb2de0ef759e" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
@@ -373,10 +554,6 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -422,7 +599,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -467,6 +670,88 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -582,6 +867,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebScada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -639,11 +950,11 @@
       <recent name="C:\WorkSpace\WebScada\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\WorkSpace\WebScada\src\main\resources" />
-      <recent name="C:\WorkSpace\WebScada\src\main\webapp" />
-      <recent name="C:\WorkSpace\WebScada\src\main\webapp\js" />
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\webapp" />
-      <recent name="C:\WorkSpace\WebScada\Data\src\main\resources" />
+      <recent name="C:\WorkSpace\WebScada\src\main\webapp\user" />
+      <recent name="C:\WorkSpace\WebScada\src\main\webapp\view" />
+      <recent name="C:\WorkSpace\WebScada\src\main\webapp\data" />
+      <recent name="C:\WorkSpace\WebScada\src\main\webapp\admin" />
+      <recent name="C:\WorkSpace\WebScada\src\main\webapp\static" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.webscada" />
@@ -1574,13 +1885,9 @@
       <workItem from="1444818796344" duration="143000" />
       <workItem from="1444876554870" duration="9323000" />
       <workItem from="1444892313587" duration="9224000" />
-      <workItem from="1444962736944" duration="14532000" />
-    </task>
-    <task id="LOCAL-00019" summary="В DaoConfig создан метод добавления сущности в базу. В treeModbus при добавлении узла типа node происходит запись в базу в таблицу node.">
-      <created>1436519801994</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1436519801994</updated>
+      <workItem from="1444962736944" duration="14679000" />
+      <workItem from="1445222152567" duration="9353000" />
+      <workItem from="1445240910475" duration="9786000" />
     </task>
     <task id="LOCAL-00020" summary="jquery.ui-tree модуль пополнился инициализацией дерева во время загрузки страницы modbus_page.jsp">
       <created>1436869671614</created>
@@ -1870,11 +2177,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444905138809</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068">
+      <created>1444987900738</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1444987900749</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1782967000" />
+    <option name="totallyTimeSpent" value="1802253000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1896,16 +2209,15 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53932583" sideWeight="0.5128593" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1809291" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1809291" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32486188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5138122" sideWeight="0.4871407" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41767955" sideWeight="0.4871407" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25244498" sideWeight="0.5314917" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28176796" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2292176" sideWeight="0.43867403" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23349634" sideWeight="0.5562914" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1913203" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1913203" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1920,6 +2232,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="94" y="94" width="1492" height="832" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28176796" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2017,7 +2330,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="87" />
+      <option name="time" value="90" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2026,352 +2339,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusBridge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17142858">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2972972">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.login.LoginContext">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.login.LoginContext</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.security.auth.login.LoginContext</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="52.0" y="275.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.login">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.login</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.security.auth.login.LoginException</node>
-            <node x="" y="">javax.security.auth.login.AccountLockedException</node>
-            <node x="" y="">javax.security.auth.login.AppConfigurationEntry</node>
-            <node x="" y="">javax.security.auth.login.CredentialNotFoundException</node>
-            <node x="" y="">javax.security.auth.login.AccountExpiredException</node>
-            <node x="" y="">javax.security.auth.login.LoginContext</node>
-            <node x="" y="">javax.security.auth.login.AccountException</node>
-            <node x="" y="">javax.security.auth.login.CredentialExpiredException</node>
-            <node x="" y="">javax.security.auth.login.AccountNotFoundException</node>
-            <node x="" y="">javax.security.auth.login.ConfigurationSpi</node>
-            <node x="" y="">javax.security.auth.login.FailedLoginException</node>
-            <node x="" y="">javax.security.auth.login.CredentialException</node>
-            <node x="" y="">javax.security.auth.login.Configuration</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.9785714285714285" x="480.0" y="208.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.callback.PasswordCallback">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.callback.PasswordCallback</OriginalElement>
-          <nodes>
-            <node x="0.0" y="79.0">javax.security.auth.callback.PasswordCallback</node>
-            <node x="182.75" y="0.0">javax.security.auth.callback.Callback</node>
-            <node x="72.75" y="0.0">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="javax.security.auth.callback.PasswordCallback" target="java.io.Serializable">
-              <point x="-84.75" y="-81.0" />
-              <point x="84.75" y="54.0" />
-              <point x="117.75" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="javax.security.auth.callback.PasswordCallback" target="javax.security.auth.callback.Callback">
-              <point x="84.75" y="-81.0" />
-              <point x="254.25" y="54.0" />
-              <point x="221.25" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-124.0" y="30.0" />
-          <SelectedNodes>
-            <node>java.io.Serializable</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.callback.NameCallback">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.callback.NameCallback</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.security.auth.callback.NameCallback</node>
-            <node x="" y="">javax.security.auth.callback.Callback</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="94.0" y="175.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.login.Configuration">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.login.Configuration</OriginalElement>
-          <nodes>
-            <node x="-74.0" y="-150.0">javax.security.auth.login.Configuration</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-164.0" y="-30.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.login.AppConfigurationEntry">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.login.AppConfigurationEntry</OriginalElement>
-          <nodes>
-            <node x="-153.0" y="-111.0">javax.security.auth.login.AppConfigurationEntry</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-140.0" y="-30.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javax.security.auth.Subject">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javax.security.auth.Subject</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.security.auth.Subject</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="46.0" y="75.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.security.Permission">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.security.Permission</OriginalElement>
-          <nodes>
-            <node x="0.0" y="101.0">java.security.Permission</node>
-            <node x="142.75" y="0.0">java.security.Guard</node>
-            <node x="32.75" y="11.0">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="java.security.Permission" target="java.io.Serializable">
-              <point x="-78.25" y="-114.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.security.Permission" target="java.security.Guard">
-              <point x="78.25" y="-114.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-130.0" y="150.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.lang.SecurityManager">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.lang.SecurityManager</OriginalElement>
-          <nodes>
-            <node x="" y="">java.lang.SecurityManager</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="73.0" y="95.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.security.Policy">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.security.Policy</OriginalElement>
-          <nodes>
-            <node x="-234.0" y="-188.0">java.security.Policy</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-197.0" y="-30.0" />
-          <SelectedNodes>
-            <node>java.security.Policy</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/data.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29964748">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/dispatch_delegation/DoDispatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1852861">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/dispatch_delegation/Dispatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1852861">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.907357">
-          <caret line="202" column="13" selection-start-line="202" selection-start-column="13" selection-end-line="202" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.app_configuration">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/dao">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>dao</OriginalElement>
-          <nodes>
-            <node x="" y="">dao.AuthDaoIF</node>
-            <node x="" y="">dao.AdminItemHibernateDao</node>
-            <node x="" y="">dao.CommonOperationsDaoIF</node>
-            <node x="" y="">dao.CommonOperationsHibernateDao</node>
-            <node x="" y="">dao.ViewItemHibernateDao</node>
-            <node x="" y="">dao.ViewDaoIF</node>
-            <node x="" y="">dao.AdminDaoIF</node>
-            <node x="" y="">dao.AuthItemHibernateDao</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="291.0" y="94.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/javax/security/auth/login/AppConfigurationEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6043329">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5153934">
@@ -2384,13 +2351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22">
           <caret line="164" column="36" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05466238">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2408,31 +2368,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49941245">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/AuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22462942">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2443,43 +2382,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25199544">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.users">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.userrole">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.userrole">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -2487,7 +2398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4458381">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2495,15 +2405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64042306">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2511,9 +2412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#435#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2521,7 +2419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12">
           <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2529,7 +2426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2537,21 +2433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9">
           <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#4559#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73660207">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2559,38 +2440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17445838">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#293#294#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#352#353#0" expanded="false" />
-            <element signature="e#380#381#0" expanded="false" />
-            <element signature="e#452#453#0" expanded="false" />
-            <element signature="e#486#487#0" expanded="false" />
-            <element signature="e#540#541#0" expanded="false" />
-            <element signature="e#586#587#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AuthTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23261118">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3990878">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2598,7 +2447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13568985">
           <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2606,48 +2454,382 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3435294">
           <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.permissions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/annotation/RetentionPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25199544">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.jar!/org/apache/shiro/authz/annotation/RequiresPermissions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20334928">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/controllers/TagNamesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.096921325">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.node">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/79c829de-57ea-4489-b344-fb2de0ef759e.schema:scada.public">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>79c829de-57ea-4489-b344-fb2de0ef759e.schema:scada.public</OriginalElement>
+          <nodes>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.userrole</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.users</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.role</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.tag</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.hourdata</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.datatype</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.resource</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.device</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.daydata</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.node</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.rtuconfig</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.tcpconfig</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.registertype</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.currentdata</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.monthdata</node>
+            <node x="" y="">79c829de-57ea-4489-b344-fb2de0ef759e.table:scada.public.logs</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8897119341563785" x="351.0" y="951.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.device">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30195382">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auth/CustomRealm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.22576967">
+          <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.permissions">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26339796">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.019384265">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.051311288">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/view/d3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5725938">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/monitor.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27967098">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/data/data.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11985899">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41950646">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/admin/waitMe.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2371721">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/GetAllOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07753706">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/ModbusTreeEditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5039909">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/tree_edit_delegation/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4925884">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/admin/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08893957">
+          <caret line="133" column="35" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+          <folding>
+            <element signature="e#38#5537#0" expanded="false" />
+            <element signature="e#6663#6696#0" expanded="false" />
+            <element signature="e#6761#11872#0" expanded="false" />
+            <element signature="e#11945#14972#0" expanded="false" />
+            <element signature="e#15041#16764#0" expanded="false" />
+            <element signature="e#16822#18709#0" expanded="false" />
+            <element signature="e#18778#20107#0" expanded="false" />
+            <element signature="e#20144#20817#0" expanded="false" />
+            <element signature="e#20852#20954#0" expanded="false" />
+            <element signature="e#20996#21205#0" expanded="false" />
+            <element signature="e#21249#21460#0" expanded="false" />
+            <element signature="e#21490#27836#0" expanded="false" />
+            <element signature="e#23047#27830#0" expanded="false" />
+            <element signature="e#24901#25644#0" expanded="false" />
+            <element signature="e#25690#26406#0" expanded="false" />
+            <element signature="e#26449#27820#0" expanded="false" />
+            <element signature="e#27908#28804#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/modbus_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.079905994">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55934197">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/view/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48916763">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auth/controllers/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/RoleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/DeviceEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30216646">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/NodeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65108323">
+          <caret line="64" column="93" selection-start-line="64" selection-start-column="87" selection-end-line="64" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auth/entities/ResourceEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03876853">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5427594">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

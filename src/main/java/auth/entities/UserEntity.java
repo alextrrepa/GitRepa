@@ -1,6 +1,7 @@
 package auth.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -9,6 +10,8 @@ public class UserEntity {
     private String username;
     private String password;
     private String salt;
+    private Boolean locked;
+    private List<RoleEntity> roles;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,5 +48,27 @@ public class UserEntity {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    @Column(name = "locked")
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "userrole", joinColumns = {
+            @JoinColumn(name = "user_id")
+    }, inverseJoinColumns = {@JoinColumn(name = "role_id")
+    })
+    public List<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
