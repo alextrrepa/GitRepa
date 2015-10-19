@@ -4,11 +4,10 @@
 <head>
     <title>Регистрация</title>
 </head>
-<body>
 <%--<c:if test="${not empty requestScope.message}">
     <c:out value="${requestScope.message}"/>
 </c:if>--%>
-<c:out value="${pageContext.request.contextPath}"/>
+<%--<c:out value="${pageContext.request.contextPath}"/>--%>
 <h1>Register</h1>
 
 <form action="../Register.do" method="post">
@@ -18,11 +17,17 @@
     Password
     <input type="text" name="password"/>
     <br/>
+    Is blocked
+    <input type="checkbox" name="blocked" value="blocked"/>
+    <br/>
     Roles
     <select name="selectRole">
         <option value="admin">Администратор</option>
         <option value="user">Пользователь</option>
     </select>
+    <br/>
+    Description
+    <textarea rows="10" cols="45" name="description"></textarea>
     <br/>
     <input type="submit" value="Сохранить">
 </form>

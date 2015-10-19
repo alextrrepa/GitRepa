@@ -1,8 +1,8 @@
 package dao;
 
 import auth.entities.PermissionEntity;
+import auth.entities.RoleEntity;
 import auth.entities.UserEntity;
-import auth.entities.UserRoleEntity;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -30,9 +30,11 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
         Transaction transaction = null;
         T entity = null;
         try {
+            transaction = session.beginTransaction();
             Criteria criteria = session.createCriteria(UserEntity.class);
             criteria.add(Restrictions.eq("username", login));
             entity = (T) criteria.uniqueResult();
+            transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
                 try {
@@ -49,39 +51,12 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
     }
 
     @Override
-    public Set<String> getUserRolesByUsername(String username) {
-        Session session = SessionUtil.getSession();
-        Transaction transaction = null;
-        Set<String> userRoles = null;
-        try {
-            Criteria criteria = session.createCriteria(UserRoleEntity.class);
-            criteria.add(Restrictions.eq("username", username));
-            List<UserRoleEntity> listEntity = criteria.list();
-            userRoles = new HashSet<>();
-            for (UserRoleEntity role : listEntity) {
-                userRoles.add(role.getRolename());
-            }
-        } catch (HibernateException e) {
-            if (transaction != null) {
-                try {
-                    transaction.rollback();
-                } catch (Exception ex) {
-                    log.error("Rollback transaction error", ex);
-                }
-            }
-            log.error("Original error when executing query", e);
-        } finally {
-            session.close();
-        }
-        return userRoles;
-    }
-
-    @Override
     public Set<String> getPermissionsByUsername(String username) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
         Set<String> permissions = null;
         try {
+            transaction = session.beginTransaction();
             Criteria criteria = session.createCriteria(PermissionEntity.class);
             criteria.add(Restrictions.eq("username", username));
             List<PermissionEntity> permList = criteria.list();
@@ -89,6 +64,7 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
             for (PermissionEntity perm : permList) {
                 permissions.add(perm.getPermissions());
             }
+            transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
                 try {
@@ -102,5 +78,30 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
             session.close();
         }
         return permissions;
+    }
+
+    @Override
+    public List<T> getAllRoles() {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        List<T> roles = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria criteria = session.createCriteria(RoleEntity.class);
+            roles = criteria.list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
+            }
+            log.error("Original error when executing query", e);
+        } finally {
+            session.close();
+        }
+        return roles;
     }
 }
