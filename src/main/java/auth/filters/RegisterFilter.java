@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
-public class RegistrateFilter implements Filter {
+public class RegisterFilter implements Filter {
     public void destroy() {
     }
 
@@ -24,5 +24,4 @@ public class RegistrateFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
 
     }
-
 }

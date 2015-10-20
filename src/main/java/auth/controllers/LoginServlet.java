@@ -33,6 +33,8 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("index.jsp").forward(request, response);
             log.info("Authentication success !!!");
         } else {
+            request.setAttribute("message", "Ошибка аутентификации !!!");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
             log.error("Wrong parameteres");
         }
     }
@@ -47,9 +49,9 @@ public class LoginServlet extends HttpServlet {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             try {
                 currentUser.login(token);
-                log.info("Is authenticated:::" + currentUser.isAuthenticated());
-                currentUser.checkPermission("menu:view");
-                log.info("Is permitted" + currentUser.isPermitted("menu:view"));
+//                log.info("Is authenticated:::" + currentUser.isAuthenticated());
+//                currentUser.checkPermission("menu:view");
+//                log.info("Is permitted" + currentUser.isPermitted("menu:view"));
                 return true;
             } catch (UnknownAccountException e) {
                 log.error("There is no user with username of" + token.getPrincipal());

@@ -39,6 +39,9 @@ public class CustomRealm extends AuthorizingRealm {
         }
         AuthDaoIF<UserEntity, Long> authDao = new AuthItemHibernateDao<>(UserEntity.class);
         UserEntity userEntity = authDao.getUserByUsername(username);
+        if (userEntity == null) {
+            throw new AuthenticationException("There is no username");
+        }
         SaltedAuthenticationInfo info = new CustomSaltedAuthentificationInfo(
                 username, userEntity.getPassword(), userEntity.getSalt());
         return info;

@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,11 +15,13 @@
     <c:out value="${requestScope.message}"/>
 </c:if>--%>
 <div class="container">
+    <section class="error">${message}</section>
     <section id="content">
         <form action="Login.do" method="post">
             <h1>Вход</h1>
             <div>
-                <input type="text" placeholder="Пользователь" required="" id="username" name="username"/>
+                <input type="text" placeholder="Пользователь" required="" id="username" name="username"
+                       value="<shiro:principal/>"/>
             </div>
             <div>
                 <input type="password" placeholder="Пароль" required="" id="password" name="password"/>

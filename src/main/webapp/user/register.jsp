@@ -9,7 +9,6 @@
 </c:if>--%>
 <%--<c:out value="${pageContext.request.contextPath}"/>--%>
 <h1>Register</h1>
-
 <form action="../Register.do" method="post">
     Login
     <input type="text" name="username"/>
@@ -22,13 +21,18 @@
     <br/>
     Roles
     <select name="selectRole">
-        <option value="admin">Администратор</option>
-        <option value="user">Пользователь</option>
+        <c:forEach var="r" items="${requestScope.roles}">
+            <option value="${r.id}">${r.description}</option>
+            <%--<c:out value="${r.role}"/>
+            <c:out value="${r.description}"/>
+            <c:out value="${r.id}"/>--%>
+        </c:forEach>
+        <%--<option value="admin">Администратор</option>
+        <option value="user">Пользователь</option>--%>
     </select>
     <br/>
-    Description
-    <textarea rows="10" cols="45" name="description"></textarea>
-    <br/>
+    <%--Description--%>
+    <%--<textarea rows="10" cols="45" name="description"></textarea>--%>
     <input type="submit" value="Сохранить">
 </form>
 </body>

@@ -35,9 +35,8 @@
         <mapping class="entities.TcpEntity"/>
         <mapping class="auth.entities.UserEntity"/>
         <mapping class="auth.entities.RoleEntity"/>
-        <mapping class="auth.entities.UserRoleEntity"/>
         <mapping class="auth.entities.PermissionEntity"/>
-
+        <mapping class="auth.entities.ResourceEntity"/>
         <!--    <mapping class="data.entities.TagEntity"/>
             <mapping class="data.entities.CurrentEntity"/>
             <mapping class="data.entities.HourEntity"/>-->
