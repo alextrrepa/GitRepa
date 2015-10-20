@@ -16,12 +16,17 @@
     </filter>
     <filter>
         <filter-name>RegistrateFilter</filter-name>
-        <filter-class>auth.filters.RegistrateFilter</filter-class>
+        <filter-class>auth.filters.RegisterFilter</filter-class>
     </filter>
 
     <filter-mapping>
         <filter-name>RegistrateFilter</filter-name>
         <url-pattern>/user/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>RegistrateFilter</filter-name>
+        <url-pattern>/Register.do</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
