@@ -40,12 +40,18 @@ public class CustomRealm extends AuthorizingRealm {
             return null;
         }
         AuthDaoIF<UserEntity, Long> authDao = new AuthItemHibernateDao<>(UserEntity.class);
-        UserEntity userEntity = authDao.getUserByUsername(username);
-        if (userEntity == null) {
-            throw new AuthenticationException("There is no username");
+        UserEntity user = authDao.getUserByUsername(username);
+        if (user == null) {
+            log.error("There is no username");
+            throw new UnknownAccountException();
+        }
+
+        if (Boolean.TRUE.equals(user.getLocked())) {
+            log.error("Account of " + user.getUsername() + " is locked");
+            throw new LockedAccountException();
         }
         SaltedAuthenticationInfo info = new CustomSaltedAuthentificationInfo(
-                username, userEntity.getPassword(), userEntity.getSalt());
+                username, user.getPassword(), user.getSalt());
         return info;
     }
 }
