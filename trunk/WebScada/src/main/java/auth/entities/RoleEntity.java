@@ -1,7 +1,7 @@
 package auth.entities;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "role")
@@ -9,8 +9,8 @@ public class RoleEntity {
     private Long id;
     private String role;
     private String description;
-    private List<UserEntity> users;
-    private List<ResourceEntity> resources;
+    private Set<UserEntity> users;
+    private Set<ResourceEntity> resources;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,24 +42,24 @@ public class RoleEntity {
     }
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
-    public List<UserEntity> getUsers() {
+    public Set<UserEntity> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UserEntity> users) {
+    public void setUsers(Set<UserEntity> users) {
         this.users = users;
     }
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_resource", joinColumns = {
-            @JoinColumn(name = "id_role")
-    }, inverseJoinColumns = {@JoinColumn(name = "id_resource")
+            @JoinColumn(name = "role_id")
+    }, inverseJoinColumns = {@JoinColumn(name = "resource_id")
     })
-    public List<ResourceEntity> getResources() {
+    public Set<ResourceEntity> getResources() {
         return resources;
     }
 
-    public void setResources(List<ResourceEntity> resources) {
+    public void setResources(Set<ResourceEntity> resources) {
         this.resources = resources;
     }
 }

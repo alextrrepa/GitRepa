@@ -6,8 +6,11 @@ import dao.AuthItemHibernateDao;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+
+import java.util.Set;
 
 public class CustomRealm extends AuthorizingRealm {
     private final static Logger log = Logger.getLogger(CustomRealm.class);
@@ -20,11 +23,10 @@ public class CustomRealm extends AuthorizingRealm {
         log.info("AuthorizationInfo:::" + username);
 
         AuthDaoIF<String, Long> rolesDao = new AuthItemHibernateDao<>(String.class);
-//        Set<String> roleNames = rolesDao.getUserRolesByUsername(username);
-//        Set<String> permissions = rolesDao.getPermissionsByUsername(username);
-
-//        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
-//        info.setStringPermissions(permissions);
+        Set<String> roleNames = rolesDao.getRolesByUsername(username);
+        Set<String> permissions = rolesDao.getPermissionsByUsername(username);
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
+        info.setStringPermissions(permissions);
         return null;
     }
 

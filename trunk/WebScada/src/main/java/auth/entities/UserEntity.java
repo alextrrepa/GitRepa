@@ -1,7 +1,7 @@
 package auth.entities;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -11,7 +11,7 @@ public class UserEntity {
     private String password;
     private String salt;
     private Boolean locked;
-    private List<RoleEntity> roles;
+    private Set<RoleEntity> roles;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,11 +64,11 @@ public class UserEntity {
             @JoinColumn(name = "user_id")
     }, inverseJoinColumns = {@JoinColumn(name = "role_id")
     })
-    public List<RoleEntity> getRoles() {
+    public Set<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<RoleEntity> roles) {
+    public void setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
     }
 }
