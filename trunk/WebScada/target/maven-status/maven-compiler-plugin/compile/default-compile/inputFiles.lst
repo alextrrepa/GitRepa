@@ -28,10 +28,9 @@ C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\HoursData
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetNodeOperation.java
 C:\WorkSpace\WebScada\src\main\java\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParamsException.java
+C:\WorkSpace\WebScada\src\main\java\auth\entities\RoleEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
-C:\WorkSpace\WebScada\src\main\java\auth\entities\UserRoleEntity.java
-C:\WorkSpace\WebScada\src\main\java\auth\entities\PermissionEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\DoDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTask.java
@@ -39,6 +38,7 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusType.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewDaoIF.java
 C:\WorkSpace\WebScada\src\main\java\auth\controllers\RegisterServlet.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\ConfigException.java
+C:\WorkSpace\WebScada\src\main\java\auth\filters\RegisterFilter.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\Command.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullTagException.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\TreeElement.java
@@ -55,6 +55,7 @@ C:\WorkSpace\WebScada\src\main\java\data\controllers\ReportController.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\AdminDispatch.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullDeviceException.java
+C:\WorkSpace\WebScada\src\main\java\auth\entities\ResourceEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\AdminDaoIF.java
 C:\WorkSpace\WebScada\src\main\java\auth\CustomSaltedAuthentificationInfo.java
 C:\WorkSpace\WebScada\src\main\java\dao\AuthDaoIF.java
@@ -67,7 +68,6 @@ C:\WorkSpace\WebScada\src\main\java\data\entities\TagEntity.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\DoReport.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\AddDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteTagOperation.java
-C:\WorkSpace\WebScada\src\main\java\auth\controllers\AuthenticationFilter.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteNodeOperation.java
 C:\WorkSpace\WebScada\src\main\java\data\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\DeviceEntity.java

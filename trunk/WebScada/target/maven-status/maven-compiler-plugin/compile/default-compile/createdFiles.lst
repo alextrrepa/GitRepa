@@ -6,8 +6,8 @@ dao\ViewDaoIF.class
 view\endpointserver\DataSourceListener.class
 data\controllers\report_delegation\Command.class
 view\endpointserver\ModbusClientConsumer.class
+auth\entities\ResourceEntity.class
 admin\controllers\tree_edit_delegation\AddTagOperation.class
-auth\entities\UserRoleEntity.class
 entities\TcpEntity.class
 dao\AuthItemHibernateDao.class
 view\modbusserver\ModbusTcp.class
@@ -22,8 +22,8 @@ auth\controllers\LogoutServlet.class
 entities\RtuEntity.class
 admin\controllers\tree_edit_delegation\GetTagOperation.class
 admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
+auth\filters\RegisterFilter.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
-auth\entities\PermissionEntity.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
 dao\AdminDaoIF.class
@@ -55,6 +55,7 @@ view\modbusserver\CommonQueue.class
 entities\HourEntity.class
 data\entities\TagEntity.class
 dao\CommonOperationsHibernateDao.class
+auth\entities\RoleEntity.class
 admin\controllers\DispatchController.class
 admin\controllers\tree_edit_delegation\DeleteTagOperation.class
 view\endpointserver\ResultEncoder.class
@@ -77,6 +78,5 @@ admin\controllers\ModbusTreeEditController.class
 admin\controllers\dispatch_delegation\AdminDispatch.class
 admin\controllers\dispatch_delegation\ModbusDispatch.class
 data\entities\CurrentEntity.class
-auth\controllers\AuthenticationFilter.class
 admin\controllers\tree_edit_delegation\TreeElement.class
 view\modbusserver\ModbusTask.class

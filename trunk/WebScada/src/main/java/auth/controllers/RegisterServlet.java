@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("roles", request.getAttribute("roles"));
-        request.getRequestDispatcher("user/register.jsp").forward(request, response);
+        request.getRequestDispatcher("user/register.jsp").include(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
