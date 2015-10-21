@@ -1,13 +1,17 @@
-/**
- * Created by Администратор on 19.10.2015.
- */
+import auth.entities.UserEntity;
+import dao.AuthDaoIF;
+import dao.AuthItemHibernateDao;
+import org.junit.Test;
+
+import java.util.Set;
+
 public class RoleTest {
-   /* @Test
+    @Test
     public void testRole() {
-        AuthDaoIF<RoleEntity, Long> dao = new AuthItemHibernateDao<>(RoleEntity.class);
-        List<RoleEntity> roles = dao.getAllRoles();
-        for (RoleEntity r : roles) {
-            System.out.println(r.getRole());
+        AuthDaoIF roleDao = new AuthItemHibernateDao(UserEntity.class);
+        Set<String> perms = roleDao.getPermissionsByUsername("zak");
+        for (String p : perms) {
+            System.out.println(p);
         }
-    }*/
+    }
 }

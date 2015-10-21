@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RegisterServlet extends HttpServlet {
     private final static Logger log = Logger.getLogger(RegisterServlet.class);
@@ -51,9 +51,9 @@ public class RegisterServlet extends HttpServlet {
 
         CommonOperationsDaoIF<RoleEntity, Long> roleDao = new AuthItemHibernateDao<>(RoleEntity.class);
         RoleEntity role = roleDao.getById(roleId);
-        List<RoleEntity> rList = new ArrayList<>();
-        rList.add(role);
-        user.setRoles(rList);
+        Set<RoleEntity> sList = new HashSet<>();
+        sList.add(role);
+        user.setRoles(sList);
 
         CommonOperationsDaoIF<UserEntity, Long> regDao = new AuthItemHibernateDao<>(UserEntity.class);
         regDao.create(user);

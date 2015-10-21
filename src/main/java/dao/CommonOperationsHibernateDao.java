@@ -1,8 +1,8 @@
 package dao;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.SessionUtil;
@@ -24,14 +24,15 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
     }
 
     @Override
-    public List<T> getAllConfig() {
+    public List<T> getAll() {
         Session session = SessionUtil.getSession();
         List<T> result = null;
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from NodeEntity as node");
-            result = query.list();
+//            Query query = session.createQuery("from NodeEntity as node");
+            Criteria criteria = session.createCriteria(getPersistenceClass());
+            result = criteria.list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

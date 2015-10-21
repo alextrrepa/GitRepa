@@ -188,18 +188,19 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="resource" schema="public" catalog="scada" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncmVzb3VyY2VfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+    <table name="resources" schema="public" catalog="scada" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncmVzb3VyY2VzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="name" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="type" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="url" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
       <column name="parent_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="parent_ids" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="permission" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="available" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="ZmFsc2U="/>
-      <primary-key name="resource_pkey" columns="id"/>
-      <exported-key name="roles_resource_id_resource_fkey" table="roles_resource" schema="public" catalog="scada" columns="id_resource"/>
+      <primary-key name="resources_pkey" columns="id"/>
+      <exported-key name="rolefk" table="roles_resource" schema="public" catalog="scada" columns="resource_id"/>
     </table>
-    <table name="resource_id_seq" schema="public" catalog="scada" type="SEQUENCE">
+    <table name="resources_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -216,7 +217,7 @@
       <column name="role" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="role_pkey" columns="id"/>
-      <exported-key name="roles_resource_id_role_fkey" table="roles_resource" schema="public" catalog="scada" columns="id_role"/>
+      <exported-key name="roles_resource_id_role_fkey" table="roles_resource" schema="public" catalog="scada" columns="role_id"/>
       <exported-key name="userrole_role_id_fkey" table="userrole" schema="public" catalog="scada" columns="role_id"/>
     </table>
     <table name="role_id_seq" schema="public" catalog="scada" type="SEQUENCE">
@@ -233,11 +234,11 @@
     </table>
     <table name="roles_resource" schema="public" catalog="scada" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncm9sZXNfcmVzb3VyY2VfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_role" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="id_resource" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="role_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="resource_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="roles_resource_pkey" columns="id"/>
-      <foreign-key name="roles_resource_id_resource_fkey" columns="id_resource" ref-table="resource" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="roles_resource_id_role_fkey" columns="id_role" ref-table="role" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="rolefk" columns="resource_id" ref-table="resources" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="roles_resource_id_role_fkey" columns="role_id" ref-table="role" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="roles_resource_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>

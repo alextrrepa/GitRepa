@@ -21,7 +21,7 @@
 
 <header class="header">
     <h1 class="site_title">
-        <div class="menu-btn">&#9776; Menu</div>
+        <div class="menu-btn">&#9776; Меню</div>
         <!--<a href="index.html">Demo</a>-->
     </h1>
     <h2 class="section_title">Demo</h2>

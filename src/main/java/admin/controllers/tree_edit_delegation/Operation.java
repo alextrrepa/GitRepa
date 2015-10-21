@@ -146,7 +146,7 @@ public class Operation {
 
 //        GenericDao<NodeEntity, Long> nodeDao = new ItemDAOHibernate<>(NodeEntity.class);
         try {
-            List<NodeEntity> nodeList = nodeDao.getAllConfig();
+            List<NodeEntity> nodeList = nodeDao.getAll();
             for (NodeEntity node : nodeList) {
                 TreeElement nodeElem = new TreeElement("node" + Long.toString(node.getId()),
                         "root", node.getName(), "../static/images/icn_node.png", Long.toString(node.getId()));
