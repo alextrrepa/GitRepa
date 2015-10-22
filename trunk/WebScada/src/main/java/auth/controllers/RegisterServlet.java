@@ -21,15 +21,12 @@ public class RegisterServlet extends HttpServlet {
     private final static Logger log = Logger.getLogger(RegisterServlet.class);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         boolean blocked;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String b = request.getParameter("blocked");
-        if (b == null) {
-            blocked = false;
-        } else {
-            blocked = true;
-        }
+        blocked = b != null;
         Long roleId = Long.valueOf(request.getParameter("selectRole"));
         try {
             registrate(username, password, blocked, roleId);
@@ -37,10 +34,13 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("roles", request.getAttribute("roles"));
-        request.getRequestDispatcher("user/register.jsp").include(request, response);
+        String reqString = request.getContextPath();
+        log.info(reqString + "/user/register.jsp");
+        request.getRequestDispatcher("/user/register.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/user/register.jsp").forward(request, response);
     }
 
     private void registrate(String username, String plainPassword, Boolean blocked, Long roleId) throws Exception {
@@ -57,13 +57,6 @@ public class RegisterServlet extends HttpServlet {
 
         CommonOperationsDaoIF<UserEntity, Long> regDao = new AuthItemHibernateDao<>(UserEntity.class);
         regDao.create(user);
-//
-//        authDao.create(user);
-
-//        CommonOperationsDaoIF<UserRoleEntity, Long> roleDao = new AuthItemHibernateDao<>(UserRoleEntity.class);
-//        UserRoleEntity roleEntity = new UserRoleEntity();
-//        roleEntity.setRolename(role);
-//        roleDao.create(roleEntity);
     }
 
     private void generatePassword(UserEntity user, String plainPassword) {

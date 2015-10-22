@@ -9,7 +9,8 @@
 </c:if>--%>
 <%--<c:out value="${pageContext.request.contextPath}"/>--%>
 <h1>Register</h1>
-<form action="../Register.do" method="post">
+
+<form action="${pageContext.request.contextPath}/Register.do" method="post">
     Login
     <input type="text" name="username"/>
     <br/>
