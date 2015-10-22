@@ -1,38 +1,54 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8">
-    <title>Панель админа</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/admin/admin.css" rel="stylesheet">
+    <title>Главная</title>
+    <link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/index.js"></script>
 </head>
 <body>
-<header>
-    <hgroup>
-        <h1 class="site_title"><a href="Dispatch.do?action=adminPart">Админка</a></h1>
 
-        <h2 class="section_title">Панель</h2>
-    </hgroup>
+<header class="header">
+    <h1 class="site_title">
+        <div class="menu-btn">&#9776; Меню</div>
+        <!--<a href="index.html">Demo</a>-->
+    </h1>
+    <h2 class="section_title">Главная страница</h2>
 </header>
 
-<section class="head_bar">
-    <div class="user">
-        <p><a href="">Admin</a></p>
-    </div>
-    <div class="breadcrumbs_container">
-    </div>
-</section>
-
-<nav class="sidebar" <%--style="height: 1728px"--%>>
-    <h3>Опрос</h3>
+<nav class="pushy pushy-left">
     <ul>
-        <li class="icn_settings"><a href="Dispatch.do?action=modbusPage">Modbus настройки</a></li>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">На главную</a></li>
+        <li><a href="${pageContext.request.contextPath}/view/monitor.jsp">Текущие параметры</a></li>
+        <li><a href="${pageContext.request.contextPath}/data/data.jsp">Аналитика</a></li>
+        <li><a href="${pageContext.request.contextPath}/admin/admin.jsp">Админка</a></li>
     </ul>
 </nav>
+<div class="site-overlay"></div>
 
-<section class="content"<%-- style="height: 1728px"--%>>
-    <h4 class="alert_info">Добро пожаловать в панель администрирования.</h4>
-</section>
+<div id="container">
+    <section class="secondary_bar">
+        <div class="user">
+            <p><a href="#">Username</a></p>
+            <a class="logout_user" href="#">Выйти</a>
+        </div>
+        <div class="breadcrumbs_container"></div>
+    </section>
+    <shiro:principal/>
+
+    <shiro:authenticated>
+        User is authenticated !!!
+    </shiro:authenticated>
+
+    <shiro:notAuthenticated>
+        User is not authenticated !!!
+    </shiro:notAuthenticated>
+</div>
+
+
 
 </body>
 </html>

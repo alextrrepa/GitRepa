@@ -2,16 +2,16 @@
 <html>
 <head>
     <title>Мониторинг</title>
-    <link href="../static/css/reset.css" rel="stylesheet">
-    <link href="../static/css/view/view.css" rel="stylesheet">
-    <script type="text/javascript" src="../static/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../static/js/view/d3.min.js"></script>
-    <script type="text/javascript" src="../static/js/view/view.js"></script>
+    <link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/view/view.css" rel="stylesheet">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/view/d3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/view/view.js"></script>
 </head>
 <body>
 <header class="header">
     <h1 class="site_title">
-        <div class="menu-btn">&#9776; Menu</div>
+        <div class="menu-btn">&#9776; Меню</div>
         <!--<a href="index.html">Demo</a>-->
     </h1>
     <h2 class="section_title">Demo</h2>
@@ -19,12 +19,10 @@
 
 <nav class="pushy pushy-left">
     <ul>
-        <li><a href="#">Item1</a></li>
-        <li><a href="#">Item2</a></li>
-        <li><a href="#">Item3</a></li>
-        <li><a href="#">Item4</a></li>
-        <li><a href="#">Item5</a></li>
-        <li><a href="#">Item6</a></li>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">На главную</a></li>
+        <li><a href="${pageContext.request.contextPath}/view/monitor.jsp">Текущие параметры</a></li>
+        <li><a href="${pageContext.request.contextPath}/data/data.jsp">Аналитика</a></li>
+        <li><a href="${pageContext.request.contextPath}/admin/admin.jsp">Админка</a></li>
     </ul>
 </nav>
 
