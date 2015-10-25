@@ -1,5 +1,5 @@
 $(function () {
-    var pushy = $('.pushy'), //menu css class
+    /*    var pushy = $('.pushy'), //menu css class
         body = $('body'),
         container = $('#container'), //container css class
         push = $('.push'), //css class to add pushy capability
@@ -103,9 +103,8 @@ $(function () {
                 state = true;
             }
         });
-    }
-
-    initWebSocket();
+     }*/
+    /*    initWebSocket();
     d3.xml("../static/images/drawing.svg", "image/svg+xml", function (xml) {
         var importNode = document.importNode(xml.documentElement, true);
         var getDiv = document.getElementById("image");
@@ -146,5 +145,5 @@ $(function () {
         return $.ajax({
             url: "../TagNames.do"
         });
-    }
+     }*/
 });

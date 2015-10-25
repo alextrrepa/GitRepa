@@ -1,69 +1,154 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Мониторинг</title>
-    <link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">
+
+    <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/view/view.css" rel="stylesheet">
+    <%--<link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">--%>
+    <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/view/d3.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/view/view.js"></script>
 </head>
 <body>
-<header class="header">
-    <h1 class="site_title">
-        <div class="menu-btn">&#9776; Меню</div>
-        <!--<a href="index.html">Demo</a>-->
-    </h1>
-    <h2 class="section_title">Demo</h2>
-</header>
 
-<nav class="pushy pushy-left">
-    <ul>
-        <li><a href="${pageContext.request.contextPath}/index.jsp">На главную</a></li>
-        <li><a href="${pageContext.request.contextPath}/view/monitor.jsp">Текущие параметры</a></li>
-        <li><a href="${pageContext.request.contextPath}/data/data.jsp">Аналитика</a></li>
-        <li><a href="${pageContext.request.contextPath}/admin/admin.jsp">Админка</a></li>
-    </ul>
-</nav>
+<div id="wrapper">
 
-<div class="site-overlay"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.jsp">SB Admin</a>
+        </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
+                        class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-user"></i>Профиль</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li <%--class="active"--%>>
+                    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
+                </li>
+                <li <%--class="active"--%>>
+                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие
+                        параметры</a>
+                </li>
+                <li>
+                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                </li>
+                <li>
+                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                </li>
+                <li>
+                    <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                </li>
+                <li>
+                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                </li>
+                <li>
+                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                </li>
+                <li>
+                    <a href="javascript:" data-toggle="collapse" data-target="#demo"><i
+                            class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="collapse">
+                        <li>
+                            <a href="#">Dropdown Item</a>
+                        </li>
+                        <li>
+                            <a href="#">Dropdown Item</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                </li>
+                <li>
+                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 
-<section id="container">
-    <article>
-        <div id="image"></div>
-    </article>
-</section>
-<%--
-<div id="navigator">
-    <ul id="nav">
-        <li class="nav_tab">
-            <a href="monitor.jsp"><p>Мониторинг</p></a>
-        </li>
-        <li class="nav_tab">
-            <a href="#"><p>Demo</p></a>
-        </li>
-        <li class="nav_tab">
-            <a href="#"><p>Demo</p></a>
-        </li>
-        <li class="nav_tab">
-            <a href="#"><p>Demo</p></a>
-        </li>
-        <li class="nav_tab">
-            <a href="#"><p>Demo</p></a>
-        </li>
-    </ul>
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Текущие параметры
+                        <%--<small>Statistics Overview</small>--%>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <%--                        <li class="active">
+                                                    <i class="fa fa-file"></i> Главная страница
+                                                </li>--%>
+                        <li>
+                            <i class="fa fa-file"></i> <a
+                                href="${pageContext.request.contextPath}/index.jsp">Главная</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-desktop"></i> Текущие параметры
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <%--            <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-info alert-dismissable">
+                                    &lt;%&ndash;<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>&ndash;%&gt;
+                                    <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
+                                </div>
+                            </div>
+                        </div>--%>
+
+            <div class="jumbotron">
+                <h1>Hello, world!</h1>
+
+                <p>This is a template for a simple marketing or informational website. It includes a large callout
+                    called a jumbotron and three supporting pieces of content. Use it as a starting point to create
+                    something more unique.</p>
+
+                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="menu-icon">
-    <div class="line_one"></div>
-    <div class="line_two"></div>
-    <div class="line_three"></div>
-</div>
-<header class="header">
-    <hgroup>
-        <div class="site_title"></div>
-        <h2 class="section_title">Demo</h2>
-    </hgroup>
-</header>
---%>
 </body>
 </html>
