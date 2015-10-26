@@ -1,5 +1,5 @@
 $(function () {
-    var pushy = $('.pushy'), //menu css class
+    /*   var pushy = $('.pushy'), //menu css class
         body = $('body'),
         container = $('#container'), //container css class
         push = $('.push'), //css class to add pushy capability
@@ -103,5 +103,5 @@ $(function () {
                 state = true;
             }
         });
-    }
+     }*/
 });

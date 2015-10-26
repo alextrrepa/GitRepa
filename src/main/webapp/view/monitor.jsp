@@ -13,7 +13,6 @@
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/view/view.css" rel="stylesheet">
-    <%--<link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">--%>
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 
@@ -65,10 +64,11 @@
                         параметры</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i>
+                        Архивные данные</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных</a>
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
@@ -114,38 +114,28 @@
                         <%--<small>Statistics Overview</small>--%>
                     </h1>
                     <ol class="breadcrumb">
-                        <%--                        <li class="active">
-                                                    <i class="fa fa-file"></i> Главная страница
-                                                </li>--%>
                         <li>
                             <i class="fa fa-file"></i> <a
                                 href="${pageContext.request.contextPath}/index.jsp">Главная</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-desktop"></i> Текущие параметры
+                            <i class="fa fa-fw fa-dashboard"></i> Текущие параметры
                         </li>
                     </ol>
                 </div>
             </div>
-
-            <%--            <div class="row">
-                            <div class="col-lg-12">
-                                <div class="alert alert-info alert-dismissable">
-                                    &lt;%&ndash;<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>&ndash;%&gt;
-                                    <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
-                                </div>
-                            </div>
-                        </div>--%>
-
-            <div class="jumbotron">
-                <h1>Hello, world!</h1>
-
-                <p>This is a template for a simple marketing or informational website. It includes a large callout
-                    called a jumbotron and three supporting pieces of content. Use it as a starting point to create
-                    something more unique.</p>
-
-                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
-                </p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-fw fa-dashboard"></i> <%--Текущие параметры--%></h3>
+                        </div>
+                        <div class="panel-body">
+                            <%--<div id="morris-area-chart"></div>--%>
+                            <div id="svgElement"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

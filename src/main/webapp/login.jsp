@@ -3,7 +3,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Вход</title>
     <link href="${pageContext.request.contextPath}/static/css/reset.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/auth/auth.css" rel="stylesheet">
@@ -11,35 +12,20 @@
     <script src="${pageContext.request.contextPath}/static/js/auth/auth.js"></script>
 </head>
 <body>
-<%--<c:if test="${not empty requestScope.message}">
-    <c:out value="${requestScope.message}"/>
-</c:if>--%>
-<div class="container">
-    <section class="error">${message}</section>
-    <section id="content">
-        <form action="Login.do" method="post">
-            <h1>Вход</h1>
-            <div>
-                <input type="text" placeholder="Пользователь" required="" id="username" name="username"
-                       value="<shiro:principal/>"/>
-            </div>
-            <div>
-                <input type="password" placeholder="Пароль" required="" id="password" name="password"/>
-            </div>
-            <div>
-                <input type="submit" value="Войти"/>
-                <%--<a href="#">Lost your password?</a>--%>
-                <%--<a href="#">Register</a>--%>
-            </div>
-        </form>
-        <!-- form -->
-        <div class="button">
-            <%--<a href="#">Download source file</a>--%>
-        </div>
-        <!-- button -->
-    </section>
-    <!-- content -->
-</div>
-<!-- container -->
+<form method="post" action="Login.do" class="login">
+    <p>
+        <label for="login">Логин:</label>
+        <input type="text" name="login" id="login">
+    </p>
+
+    <p>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="password">
+    </p>
+
+    <p class="login-submit">
+        <button type="submit" class="login-button">Вход</button>
+    </p>
+</form>
 </body>
 </html>
