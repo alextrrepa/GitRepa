@@ -57,16 +57,18 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li <%--class="active"--%>>
-                    <a href="index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
+                    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
                 </li>
                 <li <%--class="active"--%>>
-                    <a href="view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие параметры</a>
+                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие
+                        параметры</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i>
+                        Архивные данные</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных</a>
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
@@ -129,13 +131,13 @@
             </div>
 
             <div class="jumbotron">
-                <h1>Hello, world!</h1>
+                <h1>Уважаемый пользователь!</h1>
 
-                <p>This is a template for a simple marketing or informational website. It includes a large callout
-                    called a jumbotron and three supporting pieces of content. Use it as a starting point to create
-                    something more unique.</p>
+                <p>
+                    Для того чтобы посещать необходимые вам ресурсы, необходимо зарегистрироваться в системе
+                </p>
 
-                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
+                <p><a href="#" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>
                 </p>
             </div>
         </div>
