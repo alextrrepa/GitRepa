@@ -60,10 +60,12 @@
                     <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
                 </li>
                 <li <%--class="active"--%>>
-                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие параметры</a>
+                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие
+                        параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i> Архивные данные</a>
+                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i>
+                        Архивные данные</a>
                 </li>
                 <li>
                     <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных</a>
@@ -131,9 +133,9 @@
             <div class="jumbotron">
                 <h1>Уважаемый пользователь!</h1>
                 <p>
-                    Для того чтобы посещать необходимые вам ресурсы, необходимо зарегистрироваться в системе
+                    Для того чтобы посещать необходимые вам ресурсы, необходимо сделать вход в систему
                 </p>
-                <p><a href="#" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>
+                <p><a href="login.jsp" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>
                 </p>
             </div>
         </div>

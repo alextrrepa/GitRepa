@@ -104,6 +104,6 @@
         <url-pattern>/TagNames.do</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
