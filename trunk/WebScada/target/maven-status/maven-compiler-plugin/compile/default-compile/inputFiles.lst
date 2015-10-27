@@ -31,6 +31,7 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParams
 C:\WorkSpace\WebScada\src\main\java\auth\entities\RoleEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
+C:\WorkSpace\WebScada\src\main\java\auth\CustomPath.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\DoDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTask.java
@@ -44,8 +45,8 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullTagException
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\TreeElement.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetTagOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusBridge.java
-C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTcp.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\data_delegation\DataBean.java
+C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTcp.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\RenameOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusServer.java
 C:\WorkSpace\WebScada\src\main\java\view\util\CheckConfigUtil.java

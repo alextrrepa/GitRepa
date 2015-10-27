@@ -26,6 +26,7 @@ auth\filters\RegisterFilter.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
+auth\CustomPath.class
 dao\AdminDaoIF.class
 auth\CustomRealm.class
 view\modbusserver\exception\NullConfigParamsException.class
