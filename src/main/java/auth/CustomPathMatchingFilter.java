@@ -24,8 +24,10 @@ public class CustomPathMatchingFilter extends PathMatchingFilterChainResolver {
         }
 
         String requestURI = getPathWithinApplication(request);
+        System.out.println("RequestUri:::" + requestURI);
         List<String> chainNames = new ArrayList<>();
         for (String pathPattern : filterChainManager.getChainNames()) {
+            System.out.println("PathPattern:::" + pathPattern);
             if (pathMatches(pathPattern, requestURI)) {
                 chainNames.add(pathPattern);
             }
@@ -33,7 +35,6 @@ public class CustomPathMatchingFilter extends PathMatchingFilterChainResolver {
         if (chainNames.size() == 0) {
             return null;
         }
-
         return customFilterChainManager.proxy(originalChain, chainNames);
     }
 }

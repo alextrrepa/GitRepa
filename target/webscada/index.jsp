@@ -135,6 +135,7 @@
                 <p>
                     Для того чтобы посещать необходимые вам ресурсы, необходимо сделать вход в систему
                 </p>
+
                 <p><a href="login.jsp" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>
                 </p>
             </div>
