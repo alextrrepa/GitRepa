@@ -4,6 +4,7 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\Comman
 C:\WorkSpace\WebScada\src\main\java\util\SessionUtil.java
 C:\WorkSpace\WebScada\src\main\java\entities\RegisterEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\CommonOperationsHibernateDao.java
+C:\WorkSpace\WebScada\src\main\java\auth\entities\UrlFilterEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\NodeEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\HourEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetAllOperation.java
@@ -13,6 +14,7 @@ C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\Command.j
 C:\WorkSpace\WebScada\src\main\java\auth\controllers\LogoutServlet.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ModbusClientConsumer.java
 C:\WorkSpace\WebScada\src\main\java\dao\CommonOperationsDaoIF.java
+C:\WorkSpace\WebScada\src\main\java\auth\CustomIniWebEnvironment.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ResultEncoder.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\ReportActions.java
 C:\WorkSpace\WebScada\src\main\java\dao\AdminItemHibernateDao.java
@@ -31,7 +33,6 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParams
 C:\WorkSpace\WebScada\src\main\java\auth\entities\RoleEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
-C:\WorkSpace\WebScada\src\main\java\auth\CustomPath.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\DoDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\DeleteDeviceOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTask.java
@@ -48,6 +49,7 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusBridge.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\data_delegation\DataBean.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTcp.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\RenameOperation.java
+C:\WorkSpace\WebScada\src\main\java\auth\MyPathMatchingFilter.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusServer.java
 C:\WorkSpace\WebScada\src\main\java\view\util\CheckConfigUtil.java
 C:\WorkSpace\WebScada\src\main\java\entities\TagEntity.java
@@ -57,9 +59,11 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\AdminD
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullDeviceException.java
 C:\WorkSpace\WebScada\src\main\java\auth\entities\ResourceEntity.java
+C:\WorkSpace\WebScada\src\main\java\auth\CustomFilterChainManager.java
 C:\WorkSpace\WebScada\src\main\java\dao\AdminDaoIF.java
 C:\WorkSpace\WebScada\src\main\java\auth\CustomSaltedAuthentificationInfo.java
 C:\WorkSpace\WebScada\src\main\java\dao\AuthDaoIF.java
+C:\WorkSpace\WebScada\src\main\java\auth\CustomPathMatchingFilter.java
 C:\WorkSpace\WebScada\src\main\java\dao\AuthItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\auth\entities\UserEntity.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\DataController.java

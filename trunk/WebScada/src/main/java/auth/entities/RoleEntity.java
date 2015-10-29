@@ -11,6 +11,7 @@ public class RoleEntity {
     private String description;
     private Set<UserEntity> users;
     private Set<ResourceEntity> resources;
+    private Set<UrlFilterEntity> urlFilters;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,5 +62,14 @@ public class RoleEntity {
 
     public void setResources(Set<ResourceEntity> resources) {
         this.resources = resources;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    public Set<UrlFilterEntity> getUrlFilters() {
+        return urlFilters;
+    }
+
+    public void setUrlFilters(Set<UrlFilterEntity> urlFilters) {
+        this.urlFilters = urlFilters;
     }
 }

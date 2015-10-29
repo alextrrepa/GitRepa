@@ -2,6 +2,7 @@ package dao;
 
 import auth.entities.ResourceEntity;
 import auth.entities.RoleEntity;
+import auth.entities.UrlFilterEntity;
 import auth.entities.UserEntity;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -139,5 +140,30 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
             session.close();
         }
         return roles;
+    }
+
+    @Override
+    public List<UrlFilterEntity> getUrlFilters() {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        List<UrlFilterEntity> urlFilters = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria criteria = session.createCriteria(UrlFilterEntity.class);
+            criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+            urlFilters = criteria.list();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
+            }
+            log.error("Original error when executing query", e);
+        } finally {
+            session.close();
+        }
+        return urlFilters;
     }
 }

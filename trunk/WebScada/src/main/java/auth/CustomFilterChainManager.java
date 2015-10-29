@@ -12,7 +12,6 @@ import org.apache.shiro.web.filter.mgt.DefaultFilterChainManager;
 import org.apache.shiro.web.filter.mgt.NamedFilterList;
 import org.apache.shiro.web.filter.mgt.SimpleNamedFilterList;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import java.util.LinkedHashMap;
@@ -21,12 +20,12 @@ import java.util.Map;
 
 public class CustomFilterChainManager extends DefaultFilterChainManager {
     private Map<String, String> filterChainDifinitionMap = null;
-
     private String loginUrl;
     private String successUrl;
     private String unauthorizedUrl;
 
     public CustomFilterChainManager() {
+        System.out.println("Init custom filterchainmanager");
         setFilters(new LinkedHashMap<String, Filter>());
         setFilterChains(new LinkedHashMap<String, NamedFilterList>());
         addDefaultFilters(false);
@@ -80,7 +79,6 @@ public class CustomFilterChainManager extends DefaultFilterChainManager {
         this.unauthorizedUrl = unauthorizedUrl;
     }
 
-    @PostConstruct
     public void init() {
         Map<String, Filter> filters = getFilters();
         if (!CollectionUtils.isEmpty(filters)) {

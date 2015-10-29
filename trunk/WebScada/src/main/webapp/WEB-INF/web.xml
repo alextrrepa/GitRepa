@@ -6,6 +6,10 @@
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
+    <context-param>
+        <param-name>shiroEnvironmentClass</param-name>
+        <param-value>auth.CustomIniWebEnvironment</param-value>
+    </context-param>
     <listener>
         <listener-class>view.modbusserver.ModbusServer</listener-class>
     </listener>
