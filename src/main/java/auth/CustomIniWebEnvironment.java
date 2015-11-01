@@ -28,6 +28,7 @@ public class CustomIniWebEnvironment extends IniWebEnvironment {
         for (UrlFilterEntity urls : urlsFilters) {
             Set<RoleEntity> roles = urls.getRoles();
             for (RoleEntity r : roles) {
+                System.out.println(urls.getUrl() + " " + r.getRole());
                 filterChainManager.addToChain(urls.getUrl(), "roles", r.getRole());
             }
         }
