@@ -149,7 +149,8 @@ public class AuthItemHibernateDao<T, ID extends Serializable> extends CommonOper
         List<UrlFilterEntity> urlFilters = null;
         try {
             transaction = session.beginTransaction();
-            Criteria criteria = session.createCriteria(UrlFilterEntity.class);
+            Criteria criteria = session.createCriteria(UrlFilterEntity.class, "urlFilter");
+            criteria.createAlias("roles", "roleAlias");
             criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             urlFilters = criteria.list();
         } catch (HibernateException e) {
