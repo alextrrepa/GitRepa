@@ -15,7 +15,6 @@ public class ResourceEntity {
     private String permission;
     private Boolean available;
     private Set<RoleEntity> roles;
-    private Set<UrlFilterEntity> urlFilters;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -99,12 +98,4 @@ public class ResourceEntity {
         this.roles = roles;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "resources")
-    public Set<UrlFilterEntity> getUrlFilters() {
-        return urlFilters;
-    }
-
-    public void setUrlFilters(Set<UrlFilterEntity> urlFilters) {
-        this.urlFilters = urlFilters;
-    }
 }

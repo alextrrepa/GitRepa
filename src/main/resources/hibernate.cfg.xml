@@ -22,7 +22,7 @@
                 </property>
         <property name="hibernate.default_schema">public</property>
 
-        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.show_sql">false</property>
 
         <mapping class="entities.CurrentEntity"/>
         <mapping class="entities.DatatypeEntity"/>

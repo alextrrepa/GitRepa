@@ -1,3 +1,4 @@
+import auth.entities.ResourceEntity;
 import auth.entities.RoleEntity;
 import auth.entities.UrlFilterEntity;
 import dao.AuthDaoIF;
@@ -17,6 +18,10 @@ public class RoleTest {
             Set<RoleEntity> roles = u.getRoles();
             for (RoleEntity r : roles) {
                 System.out.println(r.getRole());
+                Set<ResourceEntity> resources = r.getResources();
+                for (ResourceEntity res : resources) {
+                    System.out.println(res.getPermission());
+                }
             }
         }
     }

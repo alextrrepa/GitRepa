@@ -10,7 +10,6 @@ public class UrlFilterEntity {
     private String name;
     private String url;
     private Set<RoleEntity> roles;
-    private Set<ResourceEntity> resources;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +40,7 @@ public class UrlFilterEntity {
         this.url = url;
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "url_roles_resource", joinColumns = {
             @JoinColumn(name = "url_filter_id")
     }, inverseJoinColumns = {@JoinColumn(name = "role_id")})
@@ -53,15 +52,4 @@ public class UrlFilterEntity {
         this.roles = roles;
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "url_roles_resource", joinColumns = {
-            @JoinColumn(name = "url_filter_id")
-    }, inverseJoinColumns = {@JoinColumn(name = "resource_id")})
-    public Set<ResourceEntity> getResources() {
-        return resources;
-    }
-
-    public void setResources(Set<ResourceEntity> resources) {
-        this.resources = resources;
-    }
 }
