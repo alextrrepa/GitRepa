@@ -30,7 +30,7 @@
 
     <filter-mapping>
         <filter-name>RegistrateFilter</filter-name>
-        <url-pattern>/Register.do</url-pattern>
+        <url-pattern>/register</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
@@ -74,18 +74,26 @@
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>auth.controllers.RegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewController</servlet-name>
+        <servlet-class>view.controllers.ViewController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
+        <servlet-name>ViewController</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/Register.do</url-pattern>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/Logout.do</url-pattern>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/Login.do</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ModbusTreeEditController</servlet-name>
@@ -101,12 +109,13 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DataController</servlet-name>
-        <url-pattern>/Data.do</url-pattern>
+        <url-pattern>/data</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TagNamesController</servlet-name>
         <url-pattern>/TagNames.do</url-pattern>
     </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

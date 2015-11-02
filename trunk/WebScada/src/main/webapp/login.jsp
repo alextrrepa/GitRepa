@@ -12,10 +12,11 @@
     <script src="${pageContext.request.contextPath}/static/js/auth/auth.js"></script>
 </head>
 <body>
-<form method="post" action="Login.do" class="login">
+<div class="error">${error}</div>
+<form method="post" action="${pageContext.request.contextPath}/login" class="login">
     <p>
         <label for="login">Логин:</label>
-        <input type="text" name="login" id="login">
+        <input type="text" name="username" id="login">
     </p>
 
     <p>
