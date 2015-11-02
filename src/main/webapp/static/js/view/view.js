@@ -1,6 +1,6 @@
 $(function () {
     initWebSocket();
-    d3.xml("../static/images/drawing.svg", "image/svg+xml", function (xml) {
+    d3.xml("static/images/drawing.svg", "image/svg+xml", function (xml) {
         var importNode = document.importNode(xml.documentElement, true);
         var getDiv = document.getElementById("svgElement");
         getDiv.appendChild(importNode);

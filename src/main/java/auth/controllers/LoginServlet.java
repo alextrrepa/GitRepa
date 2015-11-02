@@ -26,21 +26,43 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String error = null;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         boolean b = tryLogin(username, password);
         if (b) {
             request.getRequestDispatcher("index.jsp").forward(request, response);
             log.info("Authentication success !!!");
         } else {
-            request.setAttribute("message", "Ошибка аутентификации !!!");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.setAttribute("error", "Ошибка аутентификации! Неверный логин или пароль");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
             log.error("Wrong parameteres");
         }
+//        Subject subject = SecurityUtils.getSubject();
+//        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+
+        /*try {
+            subject.login(token);
+        } catch (UnknownAccountException e) {
+            error = "Ошибка ввода пользователя или пароля";
+        } catch (IncorrectCredentialsException e) {
+            error = "Ошибка ввода пользователя или пароля";
+        } catch (AuthenticationException e) {
+            error = "Другая ошибка：" + e.getMessage();
+        }
+
+        if(error != null) {
+            request.setAttribute("error", error);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/loginSuccess.jsp").forward(request, response);
+        }*/
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     private boolean tryLogin(String username, String password) {
@@ -49,7 +71,8 @@ public class LoginServlet extends HttpServlet {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             try {
                 currentUser.login(token);
-//                log.info("Is authenticated:::" + currentUser.isAuthenticated());
+                log.info("Is authenticated:::" + currentUser.isAuthenticated());
+
 //                currentUser.checkPermission("menu:view");
 //                log.info("Is permitted" + currentUser.isPermitted("menu:view"));
                 return true;

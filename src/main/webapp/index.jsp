@@ -40,16 +40,29 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
-                        class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                    <shiro:guest>Guest</shiro:guest>
+                    <shiro:user><shiro:principal/></shiro:user>
+                    <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i>Профиль</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
+                    <shiro:user>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i>Профиль</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/logout">
+                                <i class="fa fa-fw fa-power-off"></i> Выйти
+                            </a>
+                        </li>
+                    </shiro:user>
+                    <shiro:guest>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/login">
+                                <i class="fa fa-fw fa-sign-in"></i>Войти
+                            </a>
+                        </li>
+                    </shiro:guest>
                 </ul>
             </li>
         </ul>
@@ -60,11 +73,11 @@
                     <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
                 </li>
                 <li <%--class="active"--%>>
-                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие
+                    <a href="${pageContext.request.contextPath}/view"><i class="fa fa-fw fa-dashboard"></i>Текущие
                         параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i>
+                    <a href="${pageContext.request.contextPath}/data"><i class="fa fa-fw fa-table"></i>
                         Архивные данные</a>
                 </li>
                 <li>

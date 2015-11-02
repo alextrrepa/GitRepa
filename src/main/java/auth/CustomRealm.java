@@ -27,7 +27,7 @@ public class CustomRealm extends AuthorizingRealm {
         Set<String> permissions = rolesDao.getPermissionsByUsername(username);
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
         info.setStringPermissions(permissions);
-        return null;
+        return info;
     }
 
     @Override

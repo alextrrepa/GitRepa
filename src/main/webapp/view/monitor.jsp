@@ -60,11 +60,11 @@
                     <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
                 </li>
                 <li <%--class="active"--%>>
-                    <a href="${pageContext.request.contextPath}/view/monitor.jsp"><i class="fa fa-fw fa-dashboard"></i>Текущие
+                    <a href="${pageContext.request.contextPath}/view"><i class="fa fa-fw fa-dashboard"></i>Текущие
                         параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data/data.jsp"><i class="fa fa-fw fa-table"></i>
+                    <a href="${pageContext.request.contextPath}/data"><i class="fa fa-fw fa-table"></i>
                         Архивные данные</a>
                 </li>
                 <li>

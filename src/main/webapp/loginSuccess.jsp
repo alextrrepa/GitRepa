@@ -1,34 +1,11 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<%
-    String user = (String) session.getAttribute("user");
-    String userName = null;
-    String sessionID = null;
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("user")) {
-                userName = cookie.getValue();
-            }
-            if (cookie.getName().equals("JSESSIONID")) {
-                sessionID = cookie.getValue();
-            }
-        }
-    }
-%>
-<h3>Hi <%=userName %>, Login successful. Your Session ID=<%=sessionID %>
-</h3>
-<br>
-User=<%=user %>
-<br>
-<a href="checkout.jsp">Checkout Page</a>
-
-<form action="Logout.do" method="post">
-    <input type="submit" value="Logout">
-</form>
+Добро пожаловать <shiro:principal/> ！<a href="${pageContext.request.contextPath}/logout">Выйти</a>
 </body>
 </html>

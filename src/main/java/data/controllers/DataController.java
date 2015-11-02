@@ -63,5 +63,6 @@ public class DataController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.getRequestDispatcher("/data/data.jsp").forward(request, response);
     }
 }

@@ -296,3 +296,7 @@ label {
 .lt-ie9 .about {
     background: #313131;
 }
+
+.error {
+    color: red;
+}
