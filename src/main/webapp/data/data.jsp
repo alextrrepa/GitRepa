@@ -12,7 +12,8 @@
     <title>Архивные данные</title>
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/css/data/data.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
+    <%--<link href="${pageContext.request.contextPath}/static/css/data/data.css" rel="stylesheet">--%>
     <link href="${pageContext.request.contextPath}/static/css/data/jquery.datetimepicker.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
@@ -42,16 +43,31 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
-                        class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                    <shiro:guest>Гость</shiro:guest>
+                    <shiro:user>
+                        <shiro:principal/>
+                    </shiro:user>
+                    <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i>Профиль</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
+                    <shiro:user>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/profile.jsp"><i class="fa fa-fw fa-user"></i>Профиль</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/logout">
+                                <i class="fa fa-fw fa-power-off"></i> Выйти
+                            </a>
+                        </li>
+                    </shiro:user>
+                    <shiro:guest>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/login">
+                                <i class="fa fa-fw fa-sign-in"></i>Войти
+                            </a>
+                        </li>
+                    </shiro:guest>
                 </ul>
             </li>
         </ul>

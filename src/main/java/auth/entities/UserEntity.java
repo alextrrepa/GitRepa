@@ -11,6 +11,8 @@ public class UserEntity {
     private String password;
     private String salt;
     private Boolean locked;
+    private String name;
+    private String surname;
     private Set<RoleEntity> roles;
 
     @Id
@@ -70,5 +72,23 @@ public class UserEntity {
 
     public void setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
+    }
+
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Column(name = "surname")
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

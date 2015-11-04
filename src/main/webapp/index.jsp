@@ -13,7 +13,7 @@
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="${pageContext.request.contextPath}/static/css/index.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 
@@ -35,19 +35,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp">SB Admin</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/admin">Admin</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
-                    <shiro:guest>Guest</shiro:guest>
-                    <shiro:user><shiro:principal/></shiro:user>
+                    <shiro:guest>Гость</shiro:guest>
+                    <shiro:user>
+                        <shiro:principal/>
+                    </shiro:user>
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <shiro:user>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i>Профиль</a>
+                            <a href="${pageContext.request.contextPath}/profile.jsp"><i class="fa fa-fw fa-user"></i>Профиль</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -138,7 +140,12 @@
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
                         <%--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>--%>
-                        <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
+                            <shiro:guest>
+                                <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
+                            </shiro:guest>
+                            <shiro:user>
+                                <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
+                            </shiro:user>
                     </div>
                 </div>
             </div>
