@@ -1,5 +1,8 @@
 package auth.controllers;
 
+import auth.entities.UserEntity;
+import dao.AuthDaoIF;
+import dao.AuthItemHibernateDao;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -8,6 +11,7 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.util.Factory;
 
 import javax.servlet.ServletException;
@@ -50,7 +54,13 @@ public class LoginServlet extends HttpServlet {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             try {
                 currentUser.login(token);
-                log.info("Is authenticated:::" + currentUser.isAuthenticated());
+                AuthDaoIF<UserEntity, Long> userDao = new AuthItemHibernateDao<>(UserEntity.class);
+                UserEntity user = userDao.getUserByUsername((String) currentUser.getPrincipal());
+                Session session = currentUser.getSession();
+                session.setAttribute("user", user);
+//                log.info("Username:::" + user.getUsername());
+
+//                log.info("Is authenticated:::" + currentUser.isAuthenticated());
 //                currentUser.checkPermission("menu:view");
 //                log.info("Is permitted" + currentUser.isPermitted("menu:view"));
                 return true;

@@ -1,6 +1,7 @@
 package auth.entities;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,7 +12,7 @@ public class RoleEntity {
     private String description;
     private Set<UserEntity> users;
     private Set<ResourceEntity> resources;
-    private Set<UrlFilterEntity> urlFilters;
+    private List<UrlFilterEntity> urlFilters;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,11 +66,11 @@ public class RoleEntity {
     }
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
-    public Set<UrlFilterEntity> getUrlFilters() {
+    public List<UrlFilterEntity> getUrlFilters() {
         return urlFilters;
     }
 
-    public void setUrlFilters(Set<UrlFilterEntity> urlFilters) {
+    public void setUrlFilters(List<UrlFilterEntity> urlFilters) {
         this.urlFilters = urlFilters;
     }
 }

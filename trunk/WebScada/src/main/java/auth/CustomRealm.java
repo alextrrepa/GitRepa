@@ -34,7 +34,7 @@ public class CustomRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken userToken = (UsernamePasswordToken) authenticationToken;
         final String username = userToken.getUsername();
-        log.info("AuthenticationInfo:::" + username);
+//        log.info("AuthenticationInfo:::" + username);
         if (username == null) {
             log.error("Username is null!");
             return null;

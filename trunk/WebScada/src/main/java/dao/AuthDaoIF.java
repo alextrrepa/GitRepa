@@ -13,6 +13,5 @@ public interface AuthDaoIF<T, ID extends Serializable> {
     Set<String> getPermissionsByUsername(String username);
     Set<String> getRolesByUsername(String username);
     List<RoleEntity> getAllRoles();
-
     List<UrlFilterEntity> getUrlFilters();
 }

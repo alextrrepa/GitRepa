@@ -1,4 +1,5 @@
 dao\ViewItemHibernateDao.class
+view\controllers\ViewController.class
 admin\controllers\tree_edit_delegation\AddDeviceOperation.class
 entities\NodeEntity.class
 view\modbusserver\ModbusRtu.class
@@ -23,7 +24,6 @@ entities\RtuEntity.class
 admin\controllers\tree_edit_delegation\GetTagOperation.class
 admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
 auth\filters\RegisterFilter.class
-auth\CustomFilterChainManager.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
@@ -34,7 +34,6 @@ view\modbusserver\ModbusServer.class
 view\modbusserver\ModbusLocator.class
 data\controllers\report_delegation\ReportActions.class
 admin\controllers\dispatch_delegation\DoDispatch.class
-auth\MyPathMatchingFilter.class
 entities\DatatypeEntity.class
 admin\controllers\tree_edit_delegation\RenameOperation.class
 admin\controllers\tree_edit_delegation\AddTcpNodeOperation.class
@@ -50,6 +49,7 @@ data\dao\ItemDao.class
 view\modbusserver\exception\NullTagException.class
 auth\controllers\RegisterServlet.class
 view\controllers\TagNamesController.class
+admin\controllers\AdminController.class
 admin\controllers\tree_edit_delegation\DoOperation.class
 view\util\CheckConfigUtil.class
 admin\controllers\tree_edit_delegation\Operation.class
@@ -58,7 +58,6 @@ entities\HourEntity.class
 data\entities\TagEntity.class
 dao\CommonOperationsHibernateDao.class
 auth\entities\RoleEntity.class
-admin\controllers\DispatchController.class
 auth\CustomIniWebEnvironment.class
 admin\controllers\tree_edit_delegation\DeleteTagOperation.class
 view\endpointserver\ResultEncoder.class
@@ -70,7 +69,6 @@ admin\controllers\tree_edit_delegation\GetAllOperation.class
 view\modbusserver\ModbusType.class
 admin\controllers\tree_edit_delegation\AddRtuNodeOperation.class
 admin\controllers\tree_edit_delegation\Command.class
-auth\CustomPathMatchingFilter.class
 entities\DeviceEntity.class
 data\controllers\report_delegation\HoursData.class
 data\controllers\data_delegation\DataBean.class
