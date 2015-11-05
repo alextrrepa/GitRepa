@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="PostgreSQL - scada@localhost [2]" uuid="79c829de-57ea-4489-b344-fb2de0ef759e">
-    <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+    <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
@@ -51,6 +51,7 @@
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <primary-key name="daydata_pkey" columns="d_id"/>
+      <foreign-key name="daydata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="tag_id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="daydata_d_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -291,6 +292,7 @@
       <foreign-key name="tag_dtype_id_fkey" columns="dtype_id" ref-table="datatype" ref-schema="public" ref-catalog="" ref-columns="dtype_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="tag_dev_id_fkey" columns="dev_id" ref-table="device" ref-schema="public" ref-catalog="" ref-columns="dev_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="currentdata_tag_id_fkey" table="currentdata" schema="public" catalog="scada" columns="tag_id"/>
+      <exported-key name="daydata_tag_id_fkey" table="daydata" schema="public" catalog="scada" columns="tag_id"/>
       <exported-key name="hourdata_tag_id_fkey" table="hourdata" schema="public" catalog="scada" columns="tag_id"/>
     </table>
     <table name="tag_tag_id_seq" schema="public" catalog="scada" type="SEQUENCE">

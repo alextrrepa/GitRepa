@@ -29,6 +29,7 @@ view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
 dao\AdminDaoIF.class
 auth\CustomRealm.class
+data\controllers\data_delegation\Page.class
 view\modbusserver\exception\NullConfigParamsException.class
 view\modbusserver\ModbusServer.class
 view\modbusserver\ModbusLocator.class
@@ -36,11 +37,13 @@ data\controllers\report_delegation\ReportActions.class
 admin\controllers\dispatch_delegation\DoDispatch.class
 entities\DatatypeEntity.class
 admin\controllers\tree_edit_delegation\RenameOperation.class
+data\controllers\data_delegation\Command.class
 admin\controllers\tree_edit_delegation\AddTcpNodeOperation.class
 data\entities\HourEntity.class
 data\controllers\ReportController.class
 data\controllers\report_delegation\DoReport.class
 data\dao\GenericDao.class
+data\controllers\data_delegation\View.class
 auth\entities\UserEntity.class
 admin\controllers\tree_edit_delegation\GetDeviceOperation.class
 entities\TagEntity.class
@@ -55,6 +58,7 @@ view\util\CheckConfigUtil.class
 admin\controllers\tree_edit_delegation\Operation.class
 view\modbusserver\CommonQueue.class
 entities\HourEntity.class
+data\controllers\data_delegation\DoOperation.class
 data\entities\TagEntity.class
 dao\CommonOperationsHibernateDao.class
 auth\entities\RoleEntity.class
@@ -71,12 +75,12 @@ admin\controllers\tree_edit_delegation\AddRtuNodeOperation.class
 admin\controllers\tree_edit_delegation\Command.class
 entities\DeviceEntity.class
 data\controllers\report_delegation\HoursData.class
-data\controllers\data_delegation\DataBean.class
 admin\controllers\tree_edit_delegation\GetNodeOperation.class
 view\modbusserver\exception\ConfigException.class
 auth\controllers\LoginServlet.class
 entities\RegisterEntity.class
 view\endpointserver\ModbusEndpoint.class
+data\controllers\data_delegation\Operation.class
 admin\controllers\ModbusTreeEditController.class
 admin\controllers\dispatch_delegation\AdminDispatch.class
 admin\controllers\dispatch_delegation\ModbusDispatch.class
