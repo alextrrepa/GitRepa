@@ -82,7 +82,7 @@
                         параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data"><i class="fa fa-fw fa-table"></i>
+                    <a href="${pageContext.request.contextPath}/data?action=page"><i class="fa fa-fw fa-table"></i>
                         Архивные данные</a>
                 </li>
                 <li>
@@ -144,21 +144,32 @@
 
             <div class="row">
                 <div class="col-lg-3">
-                    <form role="form">
+                    <form role="form" action="${pageContext.request.contextPath}/data" method="get">
+                        <input type="hidden" name="action" value="viewing">
                         <label>Начало периода</label>
 
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-fw fa-table"></i></span>
-                            <input class="form-control" id="datetimepicker1" type="text" placeholder="Начало">
+                            <input class="form-control" id="datetimepicker1" type="text" placeholder="Начало"
+                                   name="startdatetime">
                         </div>
 
                         <label>Конец периода</label>
 
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-fw fa-table"></i></span>
-                            <input class="form-control" id="datetimepicker2" type="text" placeholder="Конец">
+                            <input class="form-control" id="datetimepicker2" type="text" placeholder="Конец"
+                                   name="enddatetime">
                         </div>
-                        <button type="submit" class="btn btn-default" value="OK">ОК</button>
+
+                        <div class="form-group">
+                            <label>Тип данных</label>
+                            <select name="datatype" class="form-control">
+                                <option value="hours">Часовые</option>
+                                <option value="day">Суточные</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">OK</button>
                     </form>
                 </div>
             </div>

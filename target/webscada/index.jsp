@@ -79,7 +79,7 @@
                         параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data"><i class="fa fa-fw fa-table"></i>
+                    <a href="${pageContext.request.contextPath}/data?action=page"><i class="fa fa-fw fa-table"></i>
                         Архивные данные</a>
                 </li>
                 <li>
@@ -140,12 +140,12 @@
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
                         <%--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>--%>
-                        <shiro:guest>
-                            <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
-                        </shiro:guest>
-                        <shiro:user>
-                            <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
-                        </shiro:user>
+                            <shiro:guest>
+                                <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
+                            </shiro:guest>
+                            <shiro:user>
+                                <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
+                            </shiro:user>
                     </div>
                 </div>
             </div>
