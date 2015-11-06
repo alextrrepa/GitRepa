@@ -96,7 +96,7 @@ public class ModbusTask implements Runnable {
         CommonOperationsHibernateDao<CurrentEntity, Long> curData = new ViewItemHibernateDao<>(CurrentEntity.class);
         CurrentEntity curEntity = new CurrentEntity();
         curEntity.setDatetime(new Date());
-        curEntity.setTag_id(id);
+        curEntity.setId(id);
         curEntity.setValue(value);
         curData.create(curEntity);
     }

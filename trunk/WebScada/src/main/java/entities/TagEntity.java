@@ -1,9 +1,12 @@
 package entities;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "tag")
@@ -17,7 +20,11 @@ public class TagEntity implements Serializable {
     @Expose
     private DatatypeEntity datatypeEntity;
     private DeviceEntity deviceEntity;
-
+    @Expose
+    private String columnName;
+    private String description;
+    private List<CurrentEntity> currentEntities;
+    private List<HourEntity> hourEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,5 +73,43 @@ public class TagEntity implements Serializable {
 
     public void setDeviceEntity(DeviceEntity deviceEntity) {
         this.deviceEntity = deviceEntity;
+    }
+
+    @Column(name = "columnname")
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
+
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.DETACH)
+    @Fetch(FetchMode.SELECT)
+    public List<CurrentEntity> getCurrentEntities() {
+        return currentEntities;
+    }
+
+    public void setCurrentEntities(List<CurrentEntity> currentEntities) {
+        this.currentEntities = currentEntities;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.DETACH)
+    @Fetch(FetchMode.SELECT)
+    public List<HourEntity> getHourEntities() {
+        return hourEntities;
+    }
+
+    public void setHourEntities(List<HourEntity> hourEntities) {
+        this.hourEntities = hourEntities;
     }
 }

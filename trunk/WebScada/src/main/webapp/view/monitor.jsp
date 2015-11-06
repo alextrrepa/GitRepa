@@ -13,7 +13,6 @@
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
-    <%--<link href="${pageContext.request.contextPath}/static/css/view/view.css" rel="stylesheet">--%>
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 

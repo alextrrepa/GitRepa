@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-public interface AuthDaoIF<T, ID extends Serializable> {
+public interface AuthDaoIF<T, ID extends Serializable> extends CommonOperationsDaoIF<T, ID> {
     UserEntity getUserByUsername(String login);
     Set<String> getPermissionsByUsername(String username);
     Set<String> getRolesByUsername(String username);
