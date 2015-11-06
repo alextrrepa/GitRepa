@@ -13,13 +13,13 @@ import java.util.List;
 public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> implements
         CommonOperationsDaoIF<T, ID> {
     private final static Logger log = Logger.getLogger(CommonOperationsHibernateDao.class);
-    private Class<T> persistenceClass;
+    private Class<?> persistenceClass;
 
-    public CommonOperationsHibernateDao(Class<T> persistenceClass) {
+    public CommonOperationsHibernateDao(Class<?> persistenceClass) {
         this.persistenceClass = persistenceClass;
     }
 
-    protected Class<T> getPersistenceClass() {
+    protected Class<?> getPersistenceClass() {
         return persistenceClass;
     }
 

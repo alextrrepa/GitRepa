@@ -13,7 +13,6 @@
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
-    <%--<link href="${pageContext.request.contextPath}/static/css/data/data.css" rel="stylesheet">--%>
     <link href="${pageContext.request.contextPath}/static/css/data/jquery.datetimepicker.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
@@ -142,6 +141,7 @@
                 </div>
             </div>
 
+            <%-- Form --%>
             <div class="row">
                 <div class="col-lg-3">
                     <form role="form" action="${pageContext.request.contextPath}/data" method="get">
@@ -155,7 +155,6 @@
                         </div>
 
                         <label>Конец периода</label>
-
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-fw fa-table"></i></span>
                             <input class="form-control" id="datetimepicker2" type="text" placeholder="Конец"
@@ -172,7 +171,19 @@
                         <button type="submit" class="btn btn-primary">OK</button>
                     </form>
                 </div>
+
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel Content
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
