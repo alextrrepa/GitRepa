@@ -80,7 +80,7 @@
                         параметры</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data"><i class="fa fa-fw fa-table"></i>
+                    <a href="${pageContext.request.contextPath}/data?action=page"><i class="fa fa-fw fa-table"></i>
                         Архивные данные</a>
                 </li>
                 <li>
