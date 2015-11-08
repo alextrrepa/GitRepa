@@ -86,33 +86,33 @@
                     <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
                         данных</a>
                 </li>
-                <%--     <li>
-                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                     </li>
-                     <li>
-                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                     </li>
-                     <li>
-                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                     </li>
-                     <li>
-                         <a href="javascript:" data-toggle="collapse" data-target="#demo"><i
-                                 class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                         <ul id="demo" class="collapse">
-                             <li>
-                                 <a href="#">Dropdown Item</a>
-                             </li>
-                             <li>
-                                 <a href="#">Dropdown Item</a>
-                             </li>
-                         </ul>
-                     </li>
-                     <li>
-                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                     </li>
-                     <li>
-                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                     </li>--%>
+                <%--<li>--%>
+                <%--<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="javascript:" data-toggle="collapse" data-target="#demo"><i--%>
+                <%--class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>--%>
+                <%--<ul id="demo" class="collapse">--%>
+                <%--<li>--%>
+                <%--<a href="#">Dropdown Item</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="#">Dropdown Item</a>--%>
+                <%--</li>--%>
+                <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                <%--<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>--%>
+                <%--</li>--%>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -126,39 +126,43 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Технологический портал
+                        Анализ данных
                         <%--<small>Statistics Overview</small>--%>
                     </h1>
                     <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-file"></i> <a
+                                href="${pageContext.request.contextPath}/index.jsp">Главная</a>
+                        </li>
                         <li class="active">
-                            <i class="fa fa-file"></i> Главная
+                            <i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных
                         </li>
                     </ol>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="alert alert-info alert-dismissable">
-                        <%--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>--%>
-                            <shiro:guest>
-                                <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
-                            </shiro:guest>
-                            <shiro:user>
-                                <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
-                            </shiro:user>
+            <%--      <div class="row">
+                    <div class="col-lg-12">
+                      <div class="alert alert-info alert-dismissable">
+                        &lt;%&ndash;<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>&ndash;%&gt;
+                        <shiro:guest>
+                          <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
+                        </shiro:guest>
+                        <shiro:user>
+                          <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
+                        </shiro:user>
+                      </div>
                     </div>
-                </div>
-            </div>
+                  </div>--%>
 
             <div class="jumbotron">
-                <h1>Уважаемый пользователь!</h1>
+                <%--<h1>Уважаемый пользователь!</h1>--%>
                 <p>
-                    Для того чтобы посещать необходимые вам ресурсы, необходимо сделать вход в систему
+                    Данная страница находиться в разработке !
                 </p>
 
-                <p><a href="login.jsp" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>
-                </p>
+                <%--<p><a href="login.jsp" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>--%>
+                <%--</p>--%>
             </div>
         </div>
     </div>

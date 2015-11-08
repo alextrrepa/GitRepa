@@ -17,11 +17,12 @@
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/jqwidgets/styles/jqx.base.css" type="text/css"/>
+
     <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/data/data.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/data/jquery.datetimepicker.js"></script>
-
 </head>
 <body>
 
@@ -37,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp">SB Admin</a>
+            <%--<a class="navbar-brand" href="index.jsp">SB Admin</a>--%>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -85,34 +86,8 @@
                         Архивные данные</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных</a>
-                </li>
-                <li>
-                    <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                </li>
-                <li>
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                </li>
-                <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                </li>
-                <li>
-                    <a href="javascript:" data-toggle="collapse" data-target="#demo"><i
-                            class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo" class="collapse">
-                        <li>
-                            <a href="#">Dropdown Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Dropdown Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
+                        данных</a>
                 </li>
             </ul>
         </div>
@@ -143,6 +118,13 @@
 
             <%-- Form --%>
             <div class="row">
+                <c:if test="${error != null}">
+                    <div class="alert alert-danger">
+                        <strong>Ошибка !</strong> ${error}
+                    </div>
+                </c:if>
+
+
                 <div class="col-lg-3">
                     <form role="form" action="${pageContext.request.contextPath}/data" method="get">
                         <input type="hidden" name="action" value="viewing">
@@ -151,14 +133,15 @@
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-fw fa-table"></i></span>
                             <input class="form-control" id="datetimepicker1" type="text" placeholder="Начало"
-                                   name="startdatetime">
+                                   name="startdatetime" value="${param.startdatetime}">
                         </div>
 
                         <label>Конец периода</label>
+
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-fw fa-table"></i></span>
                             <input class="form-control" id="datetimepicker2" type="text" placeholder="Конец"
-                                   name="enddatetime">
+                                   name="enddatetime" value="${param.enddatetime}">
                         </div>
 
                         <div class="form-group">
@@ -172,18 +155,30 @@
                     </form>
                 </div>
 
+                <%-- Grid --%>
                 <div class="col-lg-9">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Panel title</h3>
-                        </div>
-                        <div class="panel-body">
-                            Panel Content
-                        </div>
+                    <h2>${requestScope.datatype}</h2>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <c:forEach items="${data}" var="item">
+                                <th>
+                                        ${item.columnName}
+                                </th>
+
+                                <c:forEach items="${item.hourEntities}" var="items">
+                                    <tr>
+                                        <td>${items.value}</td>
+                                        <td>${items.value}</td>
+                                        <td>${items.value}</td>
+                                    </tr>
+                                </c:forEach>
+
+                            </c:forEach>
+                        </table>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

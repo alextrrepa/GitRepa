@@ -1,9 +1,6 @@
 package data.controllers;
 
 import data.controllers.data_delegation.*;
-import data.dao.GenericDao;
-import data.dao.ItemDao;
-import entities.CurrentEntity;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -16,8 +13,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-//import data.entities.CurrentEntity;
 
 public class DataController extends HttpServlet {
     private final static Logger log = Logger.getLogger(DataController.class);
@@ -57,10 +52,10 @@ public class DataController extends HttpServlet {
 //            }
         }
 
-        if (dtype.equalsIgnoreCase("dayData")) {
+/*        if (dtype.equalsIgnoreCase("dayData")) {
             GenericDao<CurrentEntity> dao = new ItemDao<>(CurrentEntity.class);
             dao.showData(sDate, enDate);
-        }
+        }*/
 //        request.setAttribute("data", tagEntities);
         RequestDispatcher dispatcher = request.getRequestDispatcher("report.jsp");
         dispatcher.forward(request, response);
