@@ -78,7 +78,15 @@
         <servlet-name>ViewController</servlet-name>
         <servlet-class>view.controllers.ViewController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AnalyseController</servlet-name>
+        <servlet-class>analyse.controllers.AnalyseController</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>AnalyseController</servlet-name>
+        <url-pattern>/analyse</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewController</servlet-name>
         <url-pattern>/view</url-pattern>

@@ -82,7 +82,8 @@
                         Архивные данные</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ данных</a>
+                    <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
+                        данных</a>
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
