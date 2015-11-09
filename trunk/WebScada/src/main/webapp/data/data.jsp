@@ -1,5 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,7 +19,7 @@
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <%--<link rel="stylesheet" href="${pageContext.request.contextPath}/jqwidgets/styles/jqx.base.css" type="text/css"/>--%>
 
     <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
@@ -161,20 +163,53 @@
 
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
-                            <c:forEach items="${data}" var="item">
-                                <th>
-                                        ${item.columnName}
-                                </th>
+                            <%--
+                                                        <tr>
+                                                            <c:forEach items="${data}" var="item">
+                                                                <th>
+                                                                    ${item.columnName}
+                                                                </th>
+                                                            </c:forEach>
+                                                        </tr>
 
-                                <c:forEach items="${item.hourEntities}" var="items">
-                                    <tr>
-                                        <td>${items.value}</td>
-                                        <td>${items.value}</td>
-                                        <td>${items.value}</td>
-                                    </tr>
-                                </c:forEach>
+                                                        <c:forEach items="${data}" var="dataItem">
+                                                            <tr>
+                                                                <c:forEach items="${dataItem.hourEntities}" var="d">
+                                                                    <td>
+                                                                        ${d.value}
+                                                                    </td>
+                                                                </c:forEach>
+                                                            </tr>
+                                                        </c:forEach>
+                            --%>
 
+                            <c:forEach var="i" begin="0" end="${data}">
+                                ${i.columnName}
                             </c:forEach>
+
+
+                            <%--
+                                                        <c:forEach begin="0" end="${data - 1}" varStatus="i">
+                                                            <c:set var="rowStart" value="${i.index * numColumns}" />
+                                                            <tr>
+                                                                <fmt:formatNumber var="numColumns" value="${fn:length(values) / numRows}"
+                                                                                  maxFractionDigits="0" />
+                                                                <c:forEach begin="0" end="${numColumns - 1}" varStatus="j">
+                                                                    <c:set var="index" value="${rowStart + j.index}"/>
+                                                                    <td>
+                                                                        <c:choose>
+                                                                            <c:when test="${index lt fn:length(values)}">
+                                                                                &lt;%&ndash; Replace following code with the one needed to display your item &ndash;%&gt;
+                                                                                <c:out value="${values[index]}" />
+                                                                            </c:when>
+                                                                            <c:otherwise>&nbsp;</c:otherwise>
+                                                                        </c:choose>
+                                                                    </td>
+                                                                </c:forEach>
+                                                            </tr>
+                                                        </c:forEach>
+                            --%>
+
                         </table>
                     </div>
                 </div>

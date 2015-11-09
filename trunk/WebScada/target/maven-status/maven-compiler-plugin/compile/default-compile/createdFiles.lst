@@ -42,13 +42,11 @@ data\controllers\data_delegation\Command.class
 admin\controllers\tree_edit_delegation\AddTcpNodeOperation.class
 data\controllers\ReportController.class
 data\controllers\report_delegation\DoReport.class
-data\dao\GenericDao.class
 data\controllers\data_delegation\View.class
 auth\entities\UserEntity.class
 admin\controllers\tree_edit_delegation\GetDeviceOperation.class
 entities\TagEntity.class
 entities\CurrentEntity.class
-data\dao\ItemDao.class
 view\modbusserver\exception\NullTagException.class
 auth\controllers\RegisterServlet.class
 view\controllers\TagNamesController.class
@@ -66,6 +64,7 @@ admin\controllers\tree_edit_delegation\DeleteTagOperation.class
 view\endpointserver\ResultEncoder.class
 admin\controllers\dispatch_delegation\Command.class
 dao\CommonOperationsDaoIF.class
+analyse\controllers\AnalyseController.class
 admin\controllers\dispatch_delegation\Dispatch.class
 auth\entities\UrlFilterEntity.class
 admin\controllers\tree_edit_delegation\GetAllOperation.class
