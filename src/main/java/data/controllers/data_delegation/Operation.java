@@ -32,8 +32,6 @@ public class Operation {
         try {
             startdate = formatter.parse(startdatetime);
             enddate = formatter.parse(enddatetime);
-//            log.info(startdate);
-//            log.info(enddate);
         } catch (ParseException e) {
             request.setAttribute("error", "Не указаны начало и конец периода");
         }
@@ -42,6 +40,7 @@ public class Operation {
             request.setAttribute("datatype", "Часовые данные");
             DataDaoIF<TagEntity, Long> dataDao = new DataItemHibernateDao<>(TagEntity.class);
             List<TagEntity> results = dataDao.getDataBetweenDates(startdate, enddate);
+
             request.setAttribute("data", results);
         } else if (datatype.equalsIgnoreCase("day")) {
             request.setAttribute("datatype", "Суточные данные");
@@ -52,8 +51,6 @@ public class Operation {
         List<TagEntity> tags = tagDao.getAll();
         request.setAttribute("headers", tags);
 */
-
-
         request.getRequestDispatcher("/data/data.jsp").forward(request, response);
     }
 }

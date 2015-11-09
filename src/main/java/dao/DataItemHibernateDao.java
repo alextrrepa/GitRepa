@@ -1,11 +1,11 @@
 package dao;
 
+import entities.TagEntity;
 import org.apache.log4j.Logger;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 import util.SessionUtil;
 
 import java.io.Serializable;
@@ -21,16 +21,17 @@ public class DataItemHibernateDao<T, ID extends Serializable> extends CommonOper
     }
 
     @Override
-    public List<T> getDataBetweenDates(Date startDate, Date endDate) {
+    public List<TagEntity> getDataBetweenDates(Date startDate, Date endDate) {
         Session session = SessionUtil.getSession();
         Transaction transaction = null;
-        List<T> results = null;
+        List<TagEntity> results = null;
         try {
             transaction = session.beginTransaction();
-            Criteria criteria = session.createCriteria(getPersistenceClass());
-            criteria.createAlias("hourEntities", "hours");
-            criteria.add(Restrictions.between("hours.dtime", startDate, endDate));
-            results = criteria.list();
+            Query query = session.createQuery("from TagEntity tag inner join fetch tag.hourEntities as hours where hours.dtime between :stDate and :endDate");
+            query.setParameter("stDate", startDate);
+            query.setParameter("endDate", endDate);
+
+            results = query.list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

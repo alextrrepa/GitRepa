@@ -21,7 +21,6 @@ C:\WorkSpace\WebScada\src\main\java\dao\AdminItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\AddRtuNodeOperation.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\ModbusTreeEditController.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetDeviceOperation.java
-C:\WorkSpace\WebScada\src\main\java\data\dao\GenericDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusLocator.java
 C:\WorkSpace\WebScada\src\main\java\entities\TcpEntity.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\data_delegation\View.java
@@ -32,6 +31,7 @@ C:\WorkSpace\WebScada\src\main\java\entities\CurrentEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\DataItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullConfigParamsException.java
 C:\WorkSpace\WebScada\src\main\java\auth\entities\RoleEntity.java
+C:\WorkSpace\WebScada\src\main\java\analyse\controllers\AnalyseController.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\data_delegation\Operation.java
 C:\WorkSpace\WebScada\src\main\java\dao\ViewItemHibernateDao.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusRtu.java
@@ -54,7 +54,6 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\Renam
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusServer.java
 C:\WorkSpace\WebScada\src\main\java\view\util\CheckConfigUtil.java
 C:\WorkSpace\WebScada\src\main\java\entities\TagEntity.java
-C:\WorkSpace\WebScada\src\main\java\data\dao\ItemDao.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\ReportController.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\AdminDispatch.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
