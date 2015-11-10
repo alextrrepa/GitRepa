@@ -23,6 +23,7 @@ auth\controllers\LogoutServlet.class
 entities\RtuEntity.class
 admin\controllers\tree_edit_delegation\GetTagOperation.class
 admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
+entities\TagData.class
 auth\filters\RegisterFilter.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class

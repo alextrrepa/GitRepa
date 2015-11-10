@@ -1,14 +1,17 @@
 package data.controllers.data_delegation;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import dao.DataDaoIF;
 import dao.DataItemHibernateDao;
-import entities.TagEntity;
+import entities.TagData;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,19 +41,24 @@ public class Operation {
 
         if (datatype.equalsIgnoreCase("hours")) {
             request.setAttribute("datatype", "Часовые данные");
-            DataDaoIF<TagEntity, Long> dataDao = new DataItemHibernateDao<>(TagEntity.class);
-            List<TagEntity> results = dataDao.getDataBetweenDates(startdate, enddate);
-
-            request.setAttribute("data", results);
+            DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
+            List<TagData> hours = dataDao.getDataBetweenDates(startdate, enddate);
+            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+            String result = gson.toJson(hours);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            PrintWriter out = response.getWriter();
+            out.write(result);
+            out.close();
+//            request.setAttribute("data", result);
         } else if (datatype.equalsIgnoreCase("day")) {
             request.setAttribute("datatype", "Суточные данные");
         }
-
 /*
         CommonOperationsHibernateDao<TagEntity, Long> tagDao = new DataItemHibernateDao<>(TagEntity.class);
         List<TagEntity> tags = tagDao.getAll();
         request.setAttribute("headers", tags);
 */
-        request.getRequestDispatcher("/data/data.jsp").forward(request, response);
+//        request.getRequestDispatcher("/data/data.jsp").forward(request, response);
     }
 }
