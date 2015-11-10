@@ -59,6 +59,7 @@ C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\AdminD
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullDeviceException.java
 C:\WorkSpace\WebScada\src\main\java\auth\entities\ResourceEntity.java
+C:\WorkSpace\WebScada\src\main\java\entities\TagData.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\AdminController.java
 C:\WorkSpace\WebScada\src\main\java\dao\AdminDaoIF.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\data_delegation\DoOperation.java

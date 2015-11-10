@@ -1,7 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -128,7 +126,7 @@
 
 
                 <div class="col-lg-3">
-                    <form role="form" action="${pageContext.request.contextPath}/data" method="get">
+                    <%--<form role="form" &lt;%&ndash;action="${pageContext.request.contextPath}/data" method="get"&ndash;%&gt;>--%>
                         <input type="hidden" name="action" value="viewing">
                         <label>Начало периода</label>
 
@@ -148,67 +146,20 @@
 
                         <div class="form-group">
                             <label>Тип данных</label>
-                            <select name="datatype" class="form-control">
+                            <select id="datatype" name="datatype" class="form-control">
                                 <option value="hours">Часовые</option>
                                 <option value="day">Суточные</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">OK</button>
-                    </form>
+                    <button class="btn btn-primary" id="okbutton">OK</button>
+                    <%--</form>--%>
                 </div>
 
                 <%-- Grid --%>
                 <div class="col-lg-9">
                     <h2>${requestScope.datatype}</h2>
-
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <%--
-                                                        <tr>
-                                                            <c:forEach items="${data}" var="item">
-                                                                <th>
-                                                                    ${item.columnName}
-                                                                </th>
-                                                            </c:forEach>
-                                                        </tr>
-
-                                                        <c:forEach items="${data}" var="dataItem">
-                                                            <tr>
-                                                                <c:forEach items="${dataItem.hourEntities}" var="d">
-                                                                    <td>
-                                                                        ${d.value}
-                                                                    </td>
-                                                                </c:forEach>
-                                                            </tr>
-                                                        </c:forEach>
-                            --%>
-
-                            <c:forEach var="i" begin="0" end="${data}">
-                                ${i.columnName}
-                            </c:forEach>
-
-
-                            <%--
-                                                        <c:forEach begin="0" end="${data - 1}" varStatus="i">
-                                                            <c:set var="rowStart" value="${i.index * numColumns}" />
-                                                            <tr>
-                                                                <fmt:formatNumber var="numColumns" value="${fn:length(values) / numRows}"
-                                                                                  maxFractionDigits="0" />
-                                                                <c:forEach begin="0" end="${numColumns - 1}" varStatus="j">
-                                                                    <c:set var="index" value="${rowStart + j.index}"/>
-                                                                    <td>
-                                                                        <c:choose>
-                                                                            <c:when test="${index lt fn:length(values)}">
-                                                                                &lt;%&ndash; Replace following code with the one needed to display your item &ndash;%&gt;
-                                                                                <c:out value="${values[index]}" />
-                                                                            </c:when>
-                                                                            <c:otherwise>&nbsp;</c:otherwise>
-                                                                        </c:choose>
-                                                                    </td>
-                                                                </c:forEach>
-                                                            </tr>
-                                                        </c:forEach>
-                            --%>
+                        <table id="datatable" class="table table-bordered table-striped">
 
                         </table>
                     </div>
