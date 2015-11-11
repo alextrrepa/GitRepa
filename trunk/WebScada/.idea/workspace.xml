@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="C:\WorkSpace\WebScada\target\classes\data\controllers\DataController.class" afterPath="C:\WorkSpace\WebScada\target\classes\data\controllers\DataController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/CommonOperationsDaoIF.java" afterPath="$PROJECT_DIR$/src/main/java/dao/CommonOperationsDaoIF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/CommonOperationsHibernateDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/CommonOperationsHibernateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/DataDaoIF.java" afterPath="$PROJECT_DIR$/src/main/java/dao/DataDaoIF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/HourEntity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/HourEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entities/HourEntity.class" afterPath="$PROJECT_DIR$/target/classes/entities/HourEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entities/TagEntity.class" afterPath="$PROJECT_DIR$/target/classes/entities/TagEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/RoleTest.java" afterPath="$PROJECT_DIR$/src/test/java/RoleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/TagData.java" afterPath="$PROJECT_DIR$/src/main/java/entities/TagData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/TagEntity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/TagEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScada.iws" />
@@ -99,21 +91,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RoleTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-              <folding />
+            <state vertical-scroll-proportion="0.6704675">
+              <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataItemHibernateDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataItemHibernateDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53477764">
-              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -213,8 +207,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/79c829de-57ea-4489-b344-fb2de0ef759e/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/entities/HourEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/TagData.java" />
-        <option value="$PROJECT_DIR$/src/test/java/RoleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/RoleTest.java" />
       </list>
     </option>
   </component>
@@ -1575,13 +1569,7 @@
       <workItem from="1447037023712" duration="25782000" />
       <workItem from="1447123675493" duration="14801000" />
       <workItem from="1447144159125" duration="7564000" />
-      <workItem from="1447210410543" duration="23025000" />
-    </task>
-    <task id="LOCAL-00033" summary="Доделал CRUD дерево для modbus опроса. Работает корректно и со всеми exception.">
-      <created>1438867028396</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1438867028397</updated>
+      <workItem from="1447210410543" duration="23292000" />
     </task>
     <task id="LOCAL-00034" summary="Refactor структуры проекта. Многомодульный проект.">
       <created>1439285486649</created>
@@ -1871,11 +1859,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447151724341</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082">
+      <created>1447237107988</created>
+      <option name="number" value="00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1447237108003</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2241728000" />
+    <option name="totallyTimeSpent" value="2241995000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -2458,19 +2452,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53477764">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.6704675">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

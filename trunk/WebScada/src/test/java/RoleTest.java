@@ -28,11 +28,12 @@ public class RoleTest {
 
         DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
         List<TagData> hoursData = dataDao.getDataBetweenDates(startdate, enddate);
-        System.out.println(hoursData.size());
+//        System.out.println(hoursData.size());
 
         HourEntity[][] data = new HourEntity[hoursData.size()][];
-        System.out.println(data.length);
+//        System.out.println(data.length);
 
+/*
         for (TagData tag : hoursData) {
             System.out.println(tag.getColumnName());
             List<HourEntity> list = tag.getHourEntities();
@@ -40,8 +41,9 @@ public class RoleTest {
                 System.out.println(h.getDtime() + " " + h.getValue());
             }
         }
+*/
 
-       /* for (int i = 0; i < hoursData.size(); i++) {
+        for (int i = 0; i < hoursData.size(); i++) {
             TagData tData = hoursData.get(i);
             List<HourEntity> hs = tData.getHourEntities();
             data[i] = hs.toArray(new HourEntity[hs.size()]);
@@ -51,7 +53,7 @@ public class RoleTest {
               for (int j = 0; j < data[i].length; j ++) {
                   System.out.println(data[i][j].getDtime() + " " + data[i][j].getValue());
               }
-        }*/
+        }
     }
 }
 
