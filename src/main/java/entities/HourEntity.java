@@ -46,8 +46,8 @@ public class HourEntity {
         this.value = value;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "tag_id")
+    @ManyToOne()
+    @JoinColumn(name = "tag_id", unique = true)
     public TagEntity getTagEntity() {
         return tagEntity;
     }
