@@ -1,7 +1,5 @@
 package data.controllers.data_delegation;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import dao.DataDaoIF;
 import dao.DataItemHibernateDao;
 import entities.TagData;
@@ -11,11 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class Operation {
     private final static Logger log = Logger.getLogger(Operation.class);
@@ -42,6 +38,7 @@ public class Operation {
         if (datatype.equalsIgnoreCase("hours")) {
             request.setAttribute("datatype", "Часовые данные");
             DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
+/*
             List<TagData> hours = dataDao.getDataBetweenDates(startdate, enddate);
             Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
             String result = gson.toJson(hours);
@@ -50,6 +47,7 @@ public class Operation {
             PrintWriter out = response.getWriter();
             out.write(result);
             out.close();
+*/
 //            request.setAttribute("data", result);
         } else if (datatype.equalsIgnoreCase("day")) {
             request.setAttribute("datatype", "Суточные данные");

@@ -1,6 +1,5 @@
 package entities;
 
-import com.google.gson.annotations.Expose;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -11,14 +10,12 @@ import java.util.List;
 @Table(name = "tag")
 public class TagData {
     private long id;
-    @Expose
     private String columnName;
-    @Expose
     private List<HourEntity> hourEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     public long getId() {
         return id;
     }
@@ -36,7 +33,7 @@ public class TagData {
         this.columnName = columnName;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.DETACH)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.ALL)
     @Fetch(FetchMode.SELECT)
     public List<HourEntity> getHourEntities() {
         return hourEntities;

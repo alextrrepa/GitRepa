@@ -5,6 +5,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Projections;
 import util.SessionUtil;
 
 import java.io.Serializable;
@@ -140,5 +141,30 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public Integer getCount() {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = null;
+        Integer count = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria criteria = session.createCriteria(getPersistenceClass());
+            criteria.setProjection(Projections.rowCount());
+            count = ((Number) criteria.uniqueResult()).intValue();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (Exception ex) {
+                    log.error("Rollback transaction error", ex);
+                }
+            }
+            log.error("Original error when executing query", e);
+        } finally {
+            session.close();
+        }
+        return count;
     }
 }

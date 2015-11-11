@@ -9,4 +9,6 @@ public interface CommonOperationsDaoIF<T, ID extends Serializable> {
     void create(T entity) throws Exception;
     void delete(ID id) throws Exception;
     void update(T entity) throws Exception;
+
+    Number getCount();
 }

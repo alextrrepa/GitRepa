@@ -28,7 +28,7 @@ public class TagEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     public long getId() {
         return id;
     }

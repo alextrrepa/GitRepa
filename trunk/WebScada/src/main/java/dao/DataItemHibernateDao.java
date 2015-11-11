@@ -26,10 +26,22 @@ public class DataItemHibernateDao<T, ID extends Serializable> extends CommonOper
         List<T> results = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from TagData tag inner join fetch tag.hourEntities as hours where hours.dtime between :stDate and :endDate");
+//            Criteria criteria = session.createCriteria(TagData.class)
+//                    .createCriteria("hourEntities", "hr")
+//                    .add(Restrictions.between("hr.dtime", startDate, endDate));
+//            Criteria subquery = criteria.createCriteria("hourEntities", "hs");
+//            subquery.add(Restrictions.between("hs.dtime", startDate, endDate));
+//            criteria.createAlias("hourEntities", "hs");
+//            criteria.add(Restrictions.ge("hs.dtime", startDate));
+//            criteria.add(Restrictions.le("hs.dtime", endDate));
+//            criteria
+//            .add(Restrictions.between("hs.dtime", startDate, endDate));
+//            criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+//            results = criteria.list();
+
+            Query query = session.createQuery("select distinct tag from TagData tag inner join fetch tag.hourEntities h where h.dtime between :stDate and :endDate");
             query.setParameter("stDate", startDate);
             query.setParameter("endDate", endDate);
-
             results = query.list();
             transaction.commit();
         } catch (HibernateException e) {
