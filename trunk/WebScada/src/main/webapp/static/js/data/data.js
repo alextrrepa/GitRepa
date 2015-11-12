@@ -9,7 +9,7 @@ $(function () {
         format: 'Y-m-d H:i'
     });
 
-    var startdate = $('#datetimepicker1').val();
+    /*    var startdate = $('#datetimepicker1').val();
     var enddate = $('#datetimepicker2').val();
     var datatype = $("#datatype").val();
     var datatypeText = $("#datatype option:selected").text();
@@ -32,5 +32,5 @@ $(function () {
                 });
             }
         });
-    });
+     });*/
 });
