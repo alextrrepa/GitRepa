@@ -1,13 +1,8 @@
-import dao.DataDaoIF;
-import dao.DataItemHibernateDao;
-import entities.HourEntity;
-import entities.TagData;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class RoleTest {
     @Test
@@ -22,38 +17,37 @@ public class RoleTest {
         } catch (ParseException e) {
             System.out.println("Parse Exception");
         }
-
-//        CommonOperationsHibernateDao<TagData, Long> countDao = new DataItemHibernateDao<>(TagData.class);
-//        Integer size = countDao.getCount();
-
-        DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
+/*        DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
         List<TagData> hoursData = dataDao.getDataBetweenDates(startdate, enddate);
-//        System.out.println(hoursData.size());
 
-        HourEntity[][] data = new HourEntity[hoursData.size()][];
-//        System.out.println(data.length);
+        int rowCount = hoursData.size();
 
-/*
-        for (TagData tag : hoursData) {
-            System.out.println(tag.getColumnName());
-            List<HourEntity> list = tag.getHourEntities();
-            for (HourEntity h : list) {
-                System.out.println(h.getDtime() + " " + h.getValue());
-            }
-        }
-*/
+        HourEntity[][] data = new HourEntity[rowCount][];
 
-        for (int i = 0; i < hoursData.size(); i++) {
+        int maxRowSize = hoursData.get(0).getHourEntities().size();
+
+        for (int i = 0; i < rowCount; i++) {
             TagData tData = hoursData.get(i);
             List<HourEntity> hs = tData.getHourEntities();
             data[i] = hs.toArray(new HourEntity[hs.size()]);
+            if (hoursData.get(i).getHourEntities().size() > maxRowSize) {
+                maxRowSize = hoursData.get(i).getHourEntities().size();
+            }
         }
 
+        HourEntity[][] revertData = new HourEntity[maxRowSize][rowCount];
         for (int i = 0; i < data.length; i++) {
-              for (int j = 0; j < data[i].length; j ++) {
-                  System.out.println(data[i][j].getDtime() + " " + data[i][j].getValue());
-              }
+            for (int j = 0; j < data[i].length; j ++) {
+                revertData[j][i] = data[i][j];
+            }
         }
+
+        System.out.println(revertData.length);
+        for (int i = 0; i < revertData.length; i++) {
+            for (int j = 0; j < revertData[i].length; j++) {
+                System.out.println(revertData[i][j].getDtime() + " " + revertData[i][j].getValue());
+            }
+            System.out.println("*//*************************//*");
+        }*/
     }
 }
-

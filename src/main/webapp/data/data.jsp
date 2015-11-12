@@ -126,7 +126,7 @@
 
 
                 <div class="col-lg-3">
-                    <%--<form role="form" &lt;%&ndash;action="${pageContext.request.contextPath}/data" method="get"&ndash;%&gt;>--%>
+                    <form role="form" action="${pageContext.request.contextPath}/data" method="get">
                         <input type="hidden" name="action" value="viewing">
                         <label>Начало периода</label>
 
@@ -151,15 +151,31 @@
                                 <option value="day">Суточные</option>
                             </select>
                         </div>
-                    <button class="btn btn-primary" id="okbutton">OK</button>
-                    <%--</form>--%>
+                        <button class="btn btn-primary">OK</button>
+                    </form>
                 </div>
 
                 <%-- Grid --%>
                 <div class="col-lg-9">
                     <h2>${requestScope.datatype}</h2>
+
                     <div class="table-responsive">
-                        <table id="datatable" class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <c:forEach var="c" items="${colnames}">
+                                    <th>
+                                            ${c.columnName}
+                                    </th>
+                                </c:forEach>
+                            </tr>
+
+                            <c:forEach var="dataItems" items="${data}">
+                                <tr>
+                                    <c:forEach var="hourItems" items="${dataItems}">
+                                        <td>${hourItems.value}</td>
+                                    </c:forEach>
+                                </tr>
+                            </c:forEach>
 
                         </table>
                     </div>
