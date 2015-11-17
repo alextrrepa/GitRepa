@@ -38,7 +38,8 @@ public class DataItemHibernateDao<T, ID extends Serializable> extends CommonOper
 //            .add(Restrictions.between("hs.dtime", startDate, endDate));
 //            criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 //            results = criteria.list();
-            Query query = session.createQuery("select distinct tag from TagData tag inner join fetch tag.hourEntities h where h.dtime between :stDate and :endDate");
+            Query query = session.createQuery("select distinct tag from TagData tag " +
+                    "inner join fetch tag.hourEntities h where h.dtime between :stDate and :endDate order by h.dtime");
             query.setParameter("stDate", startDate);
             query.setParameter("endDate", endDate);
             results = query.list();
