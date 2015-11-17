@@ -1,6 +1,7 @@
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\UpdateOperation.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\AddTagOperation.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\Command.java
+C:\WorkSpace\WebScada\src\main\java\entities\DayDataEntity.java
 C:\WorkSpace\WebScada\src\main\java\util\SessionUtil.java
 C:\WorkSpace\WebScada\src\main\java\entities\RegisterEntity.java
 C:\WorkSpace\WebScada\src\main\java\dao\CommonOperationsHibernateDao.java
@@ -8,8 +9,8 @@ C:\WorkSpace\WebScada\src\main\java\auth\entities\UrlFilterEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\NodeEntity.java
 C:\WorkSpace\WebScada\src\main\java\entities\HourEntity.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\GetAllOperation.java
-C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\ModbusDispatch.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\Dispatch.java
+C:\WorkSpace\WebScada\src\main\java\admin\controllers\dispatch_delegation\ModbusDispatch.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\report_delegation\Command.java
 C:\WorkSpace\WebScada\src\main\java\auth\controllers\LogoutServlet.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\ModbusClientConsumer.java

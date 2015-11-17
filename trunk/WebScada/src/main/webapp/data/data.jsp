@@ -162,6 +162,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <tr>
+                                <th>Дата/Время</th>
                                 <c:forEach var="c" items="${colnames}">
                                     <th>
                                             ${c.columnName}
@@ -169,8 +170,9 @@
                                 </c:forEach>
                             </tr>
 
-                            <c:forEach var="dataItems" items="${data}">
+                            <c:forEach var="dataItems" items="${data}" varStatus="i">
                                 <tr>
+                                    <td>${dataItems[i.index].dtime}</td>
                                     <c:forEach var="hourItems" items="${dataItems}">
                                         <td>${hourItems.value}</td>
                                     </c:forEach>

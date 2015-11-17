@@ -1,12 +1,9 @@
 package entities;
 
 import com.google.gson.annotations.Expose;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "tag")
@@ -23,8 +20,8 @@ public class TagEntity implements Serializable {
     @Expose
     private String columnName;
     private String description;
-    private List<CurrentEntity> currentEntities;
-    private List<HourEntity> hourEntities;
+//    private List<CurrentEntity> currentEntities;
+//    private List<HourEntity> hourEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -93,6 +90,7 @@ public class TagEntity implements Serializable {
         this.description = description;
     }
 
+/*
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.DETACH)
     @Fetch(FetchMode.SELECT)
     public List<CurrentEntity> getCurrentEntities() {
@@ -112,4 +110,5 @@ public class TagEntity implements Serializable {
     public void setHourEntities(List<HourEntity> hourEntities) {
         this.hourEntities = hourEntities;
     }
+*/
 }

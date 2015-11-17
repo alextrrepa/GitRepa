@@ -38,6 +38,7 @@
         <mapping class="auth.entities.ResourceEntity"/>
         <mapping class="auth.entities.UrlFilterEntity"/>
         <mapping class="entities.TagData"/>
+        <mapping class="entities.DayDataEntity"/>
         <!--    <mapping class="data.entities.TagEntity"/>
             <mapping class="data.entities.CurrentEntity"/>
             <mapping class="data.entities.HourEntity"/>-->
