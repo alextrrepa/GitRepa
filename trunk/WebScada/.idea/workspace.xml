@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3153ed35-9f06-4960-88c5-fa6a8c988716" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/DayDataEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entities/HourEntity.class" afterPath="$PROJECT_DIR$/target/classes/entities/HourEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/entities/HourEntity.class" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/entities/HourEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/modbusserver/ModbusServer.class" afterPath="$PROJECT_DIR$/target/classes/view/modbusserver/ModbusServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/view/modbusserver/ModbusServer.class" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/view/modbusserver/ModbusServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entities/TagEntity.class" afterPath="$PROJECT_DIR$/target/classes/entities/TagEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/entities/TagEntity.class" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/entities/TagEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/DataDaoIF.java" afterPath="$PROJECT_DIR$/src/main/java/dao/DataDaoIF.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada.war" afterPath="$PROJECT_DIR$/target/webscada.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/HourEntity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/HourEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusServer.java" afterPath="$PROJECT_DIR$/src/main/java/view/modbusserver/ModbusServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/RoleTest.java" afterPath="$PROJECT_DIR$/src/test/java/RoleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/TagData.java" afterPath="$PROJECT_DIR$/src/main/java/entities/TagData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/TagEntity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/TagEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/data/data.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/data/data.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/webscada/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScada.iws" />
@@ -93,8 +75,8 @@
       <file leaf-file-name="data.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/data/data.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.076923">
-              <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+            <state vertical-scroll-proportion="-17.038462">
+              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/entities/HourEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,33 +94,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47662485">
-              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataItemHibernateDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
+      <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.09988249">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/loginSuccess.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/auth/controllers/LogoutServlet.java" />
         <option value="dbtable:/db770c6/79c829de-57ea-4489-b344-fb2de0ef759e/scada.public.url_roles_resource" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ehcache.xml" />
@@ -216,8 +205,9 @@
         <option value="$PROJECT_DIR$/src/test/java/RoleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/DataDaoIF.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/data/data.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
       </list>
     </option>
   </component>
@@ -482,7 +472,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,7 +498,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,7 +564,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -600,71 +590,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data_delegation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebScada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -760,6 +690,225 @@
       <recent name="ru.scada.util" />
       <recent name="org.webscada.endpointserver" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\admin\controllers\DispatchController.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\dao\ItemDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\entities</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\entities\TagEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\entities\HourEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\entities\CurrentEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\data\controllers\data_delegation\DataBean.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\classes\view\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\lib\jasperreports-6.1.0.jar</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\lib\jcommon-1.0.15.jar</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\lib\itext-2.1.7.js2.jar</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\WEB-INF\lib\jfreechart-1.0.12.jar</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\admin</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\admin\admin.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\admin\waitMe.min.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\data</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\data\jquery.datetimepicker.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\data\data.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\reset.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\view</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\css\view\view.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\admin</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\admin\jstree.min.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\admin\admin.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\admin\waitMe.min.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\data</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\data\jquery.datetimepicker.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\data\pushy.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\data\data.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\view</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\view\d3.min.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\view\view.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\js\jquery-1.11.3.min.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\modbus_page.jsp</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\monitor.jsp</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\admin.jsp</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\32px.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\style.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\style.min.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\throbber.gif</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\icn_settings.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default-dark\40px.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default\style.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default\style.min.css</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default\throbber.gif</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default\40px.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\themes\default\32px.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\jstree.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\dist\jstree.min.js</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\data.jsp</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icon-down.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\header_shadow.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_server.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\calendar.ico</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\header_bg.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icon-right.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_tag.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\search.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\drawing.svg</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\btn_submit.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_user.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\ajax-loader.gif</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_alert_error.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\ok.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\sidebar.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_alert_info.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\module_footer_bg.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\secondary_bar.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_node.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\sidebar_shadow.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_device.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_alert_success.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\webscada\images\icn_settings.png</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\dao\ItemDAOHibernate.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\admin\controllers\DispatchController.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\dao\ItemDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\entities</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\entities\CurrentEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\entities\TagEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\entities\HourEntity.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\data\controllers\data_delegation\DataBean.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\view\dao</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\view\dao\GenericDao.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\view\dao\GenericHibernateDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\view\dao\ItemDAO.class</PATH>
+          <PATH vcs="svn" revision="150">C:\WorkSpace\WebScada\target\classes\view\dao\ItemDAOHibernate.class</PATH>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Maven.webscada [redeploy]">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1519,13 +1668,7 @@
       <workItem from="1447404698152" duration="790000" />
       <workItem from="1447405733245" duration="848000" />
       <workItem from="1447659846583" duration="5261000" />
-      <workItem from="1447728891397" duration="18954000" />
-    </task>
-    <task id="LOCAL-00036" summary="Refactor структуры проекта. Многомодульный проект.">
-      <created>1439388217224</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1439388217225</updated>
+      <workItem from="1447728891397" duration="23412000" />
     </task>
     <task id="LOCAL-00037" summary="Refactor структуры проекта. Многомодульный проект.">
       <created>1439397291915</created>
@@ -1815,11 +1958,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447323086531</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085">
+      <created>1447750681534</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1447750681548</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2302272000" />
+    <option name="totallyTimeSpent" value="2306730000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1832,7 +1981,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1692" height="1032" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49944752" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1844,7 +1993,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32486188" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18398532" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.319337" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64198893" sideWeight="0.4871407" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46298343" sideWeight="0.4871407" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2602118" sideWeight="0.57945424" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1973,27 +2122,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12653778">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/analyse/controllers/AnalyseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2857143">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/analyse/analyse.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69595784">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/AuthItemHibernateDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2037,20 +2165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/monitor.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25851938">
-          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1710377">
@@ -2058,32 +2172,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17445838">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24059293">
           <caret line="441" column="48" selection-start-line="441" selection-start-column="48" selection-end-line="441" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/controllers/DataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32155073">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3397948">
-          <caret line="106" column="46" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2379,28 +2471,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25199544">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/data/data.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.076923">
-          <caret line="167" column="33" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/monitor.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DataItemHibernateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58152795">
+          <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/controllers/DataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34891677">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -2408,7 +2525,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/HourEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2417,8 +2534,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/controllers/data_delegation/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47662485">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8027366">
+          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/controllers/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/data/data.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.038462">
+          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09988249">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
       </provider>

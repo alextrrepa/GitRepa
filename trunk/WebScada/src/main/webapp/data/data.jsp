@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -172,9 +173,14 @@
 
                             <c:forEach var="dataItems" items="${data}" varStatus="i">
                                 <tr>
-                                    <td>${dataItems[i.index].dtime}</td>
+                                    <td>
+                                        <fmt:formatDate value="${dataItems[i.index].dtime}" pattern="yyyy-MM-dd HH:mm"/>
+                                    </td>
                                     <c:forEach var="hourItems" items="${dataItems}">
-                                        <td>${hourItems.value}</td>
+                                        <td>
+                                            <fmt:formatNumber value="${hourItems.value}" maxFractionDigits="2"/>
+                                                <%--${hourItems.value}--%>
+                                        </td>
                                     </c:forEach>
                                 </tr>
                             </c:forEach>
