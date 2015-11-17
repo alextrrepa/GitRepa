@@ -2,6 +2,7 @@ package data.controllers.data_delegation;
 
 import dao.DataDaoIF;
 import dao.DataItemHibernateDao;
+import entities.DayDataEntity;
 import entities.HourEntity;
 import entities.TagData;
 import org.apache.log4j.Logger;
@@ -37,17 +38,17 @@ public class Operation {
             request.setAttribute("error", "Не указаны начало и конец периода");
         }
 
+        DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
+        List<TagData> data = dataDao.getHourDataBetweenDates(startdate, enddate);
+        request.setAttribute("colnames", data);
+
         if (datatype.equalsIgnoreCase("hours")) {
             request.setAttribute("datatype", "Часовые данные");
-            DataDaoIF<TagData, Long> dataDao = new DataItemHibernateDao<>(TagData.class);
-            List<TagData> hoursData = dataDao.getDataBetweenDates(startdate, enddate);
-
-            request.setAttribute("colnames", hoursData);
-            request.setAttribute("data", getHourData(hoursData));
+            request.setAttribute("data", getHourData(data));
         } else if (datatype.equalsIgnoreCase("day")) {
             request.setAttribute("datatype", "Суточные данные");
+            request.setAttribute("data", getDayData(data));
         }
-
         request.getRequestDispatcher("/data/data.jsp").forward(request, response);
     }
 
@@ -71,11 +72,27 @@ public class Operation {
                 revertData[j][i] = data[i][j];
             }
         }
+        return revertData;
+    }
 
-        System.out.println(revertData.length);
-        for (int i = 0; i < revertData.length; i++) {
-            for (int j = 0; j < revertData[i].length; j++) {
-                System.out.println(revertData[i][j].getDtime() + " " + revertData[i][j].getValue());
+    private DayDataEntity[][] getDayData(List<TagData> dayData) {
+        int rowCount = dayData.size();
+        DayDataEntity[][] data = new DayDataEntity[rowCount][];
+        int maxRowSize = dayData.get(0).getDayDataEntities().size();
+
+        for (int i = 0; i < rowCount; i++) {
+            TagData tData = dayData.get(i);
+            List<DayDataEntity> hs = tData.getDayDataEntities();
+            data[i] = hs.toArray(new DayDataEntity[hs.size()]);
+            if (dayData.get(i).getDayDataEntities().size() > maxRowSize) {
+                maxRowSize = dayData.get(i).getDayDataEntities().size();
+            }
+        }
+
+        DayDataEntity[][] revertData = new DayDataEntity[maxRowSize][rowCount];
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                revertData[j][i] = data[i][j];
             }
         }
         return revertData;

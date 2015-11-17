@@ -5,6 +5,7 @@ entities\NodeEntity.class
 view\modbusserver\ModbusRtu.class
 dao\ViewDaoIF.class
 view\endpointserver\DataSourceListener.class
+entities\DayDataEntity.class
 data\controllers\report_delegation\Command.class
 view\endpointserver\ModbusClientConsumer.class
 auth\entities\ResourceEntity.class

@@ -4,22 +4,21 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "hourdata")
-public class HourEntity {
+@Table(name = "daydata")
+public class DayDataEntity {
     private long id;
     private Date dtime;
     private double value;
     private TagData tagData;
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    public long getid() {
+    public long getId() {
         return id;
     }
 
-    public void setid(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

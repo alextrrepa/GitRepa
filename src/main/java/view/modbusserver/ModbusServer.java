@@ -1,25 +1,17 @@
 package view.modbusserver;
 
-import org.apache.log4j.Logger;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.LinkedTransferQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TransferQueue;
 
 public class ModbusServer implements ServletContextListener {
-    private final static Logger log = Logger.getLogger(ModbusServer.class);
+    /*private final static Logger log = Logger.getLogger(ModbusServer.class);
     private List<ModbusTask> taskList = new ArrayList<>();
     private TransferQueue<Map<String, Map<String, Float>>> queue = new LinkedTransferQueue<>();
-    private ThreadPoolExecutor executor;
+    private ThreadPoolExecutor executor;*/
 
-    public ModbusServer() {
-        CommonQueue.setQueue(queue);
-    }
+//    public ModbusServer() {
+//        CommonQueue.setQueue(queue);
+//    }
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {

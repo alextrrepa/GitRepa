@@ -12,6 +12,7 @@ public class TagData {
     private long id;
     private String columnName;
     private List<HourEntity> hourEntities;
+    private List<DayDataEntity> dayDataEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +34,7 @@ public class TagData {
         this.columnName = columnName;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagEntity", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagData", cascade = CascadeType.ALL)
     @Fetch(FetchMode.SELECT)
     public List<HourEntity> getHourEntities() {
         return hourEntities;
@@ -41,5 +42,15 @@ public class TagData {
 
     public void setHourEntities(List<HourEntity> hourEntities) {
         this.hourEntities = hourEntities;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tagData", cascade = CascadeType.ALL)
+    @Fetch(FetchMode.SELECT)
+    public List<DayDataEntity> getDayDataEntities() {
+        return dayDataEntities;
+    }
+
+    public void setDayDataEntities(List<DayDataEntity> dayDataEntities) {
+        this.dayDataEntities = dayDataEntities;
     }
 }
