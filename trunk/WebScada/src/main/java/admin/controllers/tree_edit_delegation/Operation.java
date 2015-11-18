@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Operation {
     private final static Logger log = Logger.getLogger(Operation.class);
-    CommonOperationsHibernateDao<NodeEntity, Long> nodeDao = new AdminItemHibernateDao<>(NodeEntity.class);
-    CommonOperationsHibernateDao<DeviceEntity, Long> deviceDao = new AdminItemHibernateDao<>(DeviceEntity.class);
-    CommonOperationsHibernateDao<TagEntity, Long> tagDao = new AdminItemHibernateDao<>(TagEntity.class);
+    private CommonOperationsHibernateDao<NodeEntity, Long> nodeDao = new AdminItemHibernateDao<>(NodeEntity.class);
+    private CommonOperationsHibernateDao<DeviceEntity, Long> deviceDao = new AdminItemHibernateDao<>(DeviceEntity.class);
+    private CommonOperationsHibernateDao<TagEntity, Long> tagDao = new AdminItemHibernateDao<>(TagEntity.class);
     private Gson gson;
 
     public Operation(Gson gson) {

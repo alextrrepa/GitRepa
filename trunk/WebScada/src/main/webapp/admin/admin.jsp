@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Главная</title>
+    <title>Администрирование</title>
 
     <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -68,51 +68,25 @@
                 </ul>
             </li>
         </ul>
+
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li <%--class="active"--%>>
-                    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
+                    <a href="${pageContext.request.contextPath}/admin/admin.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
                 </li>
                 <li <%--class="active"--%>>
-                    <a href="${pageContext.request.contextPath}/view"><i class="fa fa-fw fa-dashboard"></i>Текущие
-                        параметры</a>
+                    <a href="${pageContext.request.contextPath}/admin/modbus_page.jsp"><i class="fa fa-fw fa-cogs"></i>
+                        Настройки опроса</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/data?action=page"><i class="fa fa-fw fa-table"></i>
-                        Архивные данные</a>
+                    <a href="${pageContext.request.contextPath}/admin?action=accounts"><i class="fa fa-fw fa-users"></i>
+                        Учетные записи</a>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
                         данных</a>
                 </li>
-                <%--     <li>
-                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                     </li>
-                     <li>
-                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                     </li>
-                     <li>
-                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                     </li>
-                     <li>
-                         <a href="javascript:" data-toggle="collapse" data-target="#demo"><i
-                                 class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                         <ul id="demo" class="collapse">
-                             <li>
-                                 <a href="#">Dropdown Item</a>
-                             </li>
-                             <li>
-                                 <a href="#">Dropdown Item</a>
-                             </li>
-                         </ul>
-                     </li>
-                     <li>
-                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                     </li>
-                     <li>
-                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                     </li>--%>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -131,7 +105,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <i class="fa fa-file"></i> Главная
+                            <i class="fa fa-file"></i> Администрирование
                         </li>
                     </ol>
                 </div>

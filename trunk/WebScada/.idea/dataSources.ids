@@ -12,7 +12,7 @@
       <column name="dtime" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="value" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <primary-key name="currentdata_pkey" columns="id"/>
-      <foreign-key name="currentdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="t_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="currentdata_tag_id_fkey" columns="tag_id" ref-table="tag" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="currentdata_c_id_seq" schema="public" catalog="scada" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
