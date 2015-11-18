@@ -16,15 +16,9 @@
     <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
-    <%--<link href="${pageContext.request.contextPath}/static/css/admin/admin.css" rel="stylesheet">--%>
-    <%--<link href="${pageContext.request.contextPath}/static/dist/themes/default-dark/style.min.css" rel="stylesheet">--%>
-    <%--<link href="${pageContext.request.contextPath}/static/css/admin/waitMe.min.css" rel="stylesheet">--%>
 
     <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/dist/jstree.min.js"></script>--%>
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/admin/waitMe.min.js"></script>--%>
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/admin/admin.js"></script>--%>
 </head>
 <body>
 <div id="wrapper">
@@ -39,7 +33,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%--<a class="navbar-brand" href="${pageContext.request.contextPath}/admin">Admin</a>--%>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -105,7 +98,6 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         Учетные записи пользователей
-                        <%--<small>Statistics Overview</small>--%>
                     </h1>
                     <ol class="breadcrumb">
                         <li>
