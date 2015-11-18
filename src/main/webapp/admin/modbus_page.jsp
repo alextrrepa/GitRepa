@@ -1,60 +1,145 @@
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<%@page contentType="text/html;charset=utf-8" pageEncoding="utf-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Modbus Настройки</title>
-    <link href="../static/css/reset.css" rel="stylesheet">
-    <link href="../static/css/admin/admin.css" rel="stylesheet">
-    <link href="../static/dist/themes/default-dark/style.min.css" rel="stylesheet">
-    <link href="../static/css/admin/waitMe.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <script type="text/javascript" src="../static/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../static/dist/jstree.min.js"></script>
-    <script type="text/javascript" src="../static/js/admin/waitMe.min.js"></script>
-    <script type="text/javascript" src="../static/js/admin/admin.js"></script>
+    <title>Modbus опрос</title>
+
+    <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="${pageContext.request.contextPath}/static/css/global.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/bootstrap/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/static/css/admin/admin.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/dist/themes/default-dark/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/admin/waitMe.min.css" rel="stylesheet">
+
+    <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/dist/jstree.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/admin/waitMe.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/admin/admin.js"></script>
 </head>
+
 <body>
 
-<header>
-    <hgroup>
-        <h1 class="site_title"><a href="admin.jsp">Админка</a></h1>
-        <h2 class="section_title">Modbus</h2>
-    </hgroup>
-</header>
+<div id="wrapper">
 
-<section class="head_bar">
-    <div class="user">
-        <p><a href="">Admin</a></p>
-    </div>
-    <div class="breadcrumbs_container">
-    </div>
-</section>
-
-<nav class="sidebar">
-    <h3>Опрос</h3>
-    <ul>
-        <li class="icn_settings"><a href="modbus_page.jsp">Modbus настройки</a></li>
-    </ul>
-</nav>
-
-<section class="content">
-    <h4 class="alert_info">Настройка Modbus опроса.</h4>
-    <article class="module modbus_tree">
-        <header>
-            <h3 class="tabs_involved">Структура Modbus</h3>
-        </header>
-        <div id="tree"></div>
-    </article>
-    <article class="module modbus_params">
-        <header>
-            <h3>Параметры</h3>
-        </header>
-        <div class="modbus_params_content">
-            <div class="form_style"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%--<a class="navbar-brand" href="${pageContext.request.contextPath}/admin">Admin</a>--%>
         </div>
-    </article>
-</section>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                    <shiro:guest>Гость</shiro:guest>
+                    <shiro:user>
+                        <shiro:principal/>
+                    </shiro:user>
+                    <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <shiro:user>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/profile.jsp"><i class="fa fa-fw fa-user"></i>Профиль</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/logout">
+                                <i class="fa fa-fw fa-power-off"></i> Выйти
+                            </a>
+                        </li>
+                    </shiro:user>
+                    <shiro:guest>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/login">
+                                <i class="fa fa-fw fa-sign-in"></i>Войти
+                            </a>
+                        </li>
+                    </shiro:guest>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li <%--class="active"--%>>
+                    <a href="${pageContext.request.contextPath}/admin/admin.jsp"><i class="fa fa-fw fa-file"></i>Главная</a>
+                </li>
+                <li <%--class="active"--%>>
+                    <a href="${pageContext.request.contextPath}/admin/modbus_page.jsp"><i class="fa fa-fw fa-cogs"></i>
+                        Настройки опроса</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/admin?action=accounts"><i class="fa fa-fw fa-users"></i>
+                        Учетные записи</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
+                        данных</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Modbus опрос
+                        <%--<small>Statistics Overview</small>--%>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-file"></i> <a
+                                href="${pageContext.request.contextPath}/admin/admin.jsp">Главная</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-file"></i> Настройки опроса
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-fw fa-cogs"></i>Тэги параметров</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="tree"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="form_style"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

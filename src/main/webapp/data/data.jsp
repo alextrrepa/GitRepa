@@ -161,7 +161,7 @@
                     <h2>${requestScope.datatype}</h2>
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-hover table-bordered table-striped">
                             <tr>
                                 <th>Дата/Время</th>
                                 <c:forEach var="c" items="${colnames}">
@@ -179,7 +179,6 @@
                                     <c:forEach var="hourItems" items="${dataItems}">
                                         <td>
                                             <fmt:formatNumber value="${hourItems.value}" maxFractionDigits="2"/>
-                                                <%--${hourItems.value}--%>
                                         </td>
                                     </c:forEach>
                                 </tr>
