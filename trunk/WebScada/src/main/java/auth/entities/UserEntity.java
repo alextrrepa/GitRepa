@@ -13,6 +13,7 @@ public class UserEntity {
     private Boolean locked;
     private String name;
     private String surname;
+    private String description;
     private Set<RoleEntity> roles;
 
     @Id
@@ -90,5 +91,14 @@ public class UserEntity {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

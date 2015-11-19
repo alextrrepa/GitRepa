@@ -120,6 +120,7 @@
                             <th>Имя входа</th>
                             <th>Заблокирована</th>
                             <th>Описание</th>
+                            <th colspan=2>Действие</th>
                         </tr>
                         <c:forEach var="user" items="${users}">
                             <tr>
@@ -127,6 +128,9 @@
                                 <td>${user.surname}</td>
                                 <td>${user.username}</td>
                                 <td>${user.locked}</td>
+                                <td>${user.description}</td>
+                                <td><a href="admin?action=edit&userId=${user.id}">Редактировать</a></td>
+                                <td><a href="admin?action=delete&userId=${user.id}">Удалить</a></td>
                             </tr>
                         </c:forEach>
                     </table>
