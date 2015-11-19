@@ -28,6 +28,7 @@ public class Action {
     }
 
     public void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         Long id = Long.valueOf(request.getParameter("userId"));
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
