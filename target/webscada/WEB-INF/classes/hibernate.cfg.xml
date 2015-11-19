@@ -7,21 +7,30 @@
         <property name="hibernate.dialect">
             org.hibernate.dialect.PostgresPlusDialect
         </property>
-        <!--<property name="connection.datasource">jdbc/postgresql</property>-->
-                <property name="hibernate.connection.driver_class">
-                    org.postgresql.Driver
-                </property>
-                <property name="hibernate.connection.url">
-                    jdbc:postgresql://localhost:5432/scada
-                </property>
-                <property name="hibernate.connection.username">
-                    postgres
-                </property>
-                <property name="hibernate.connection.password">
-                    cezet123
-                </property>
-        <property name="hibernate.default_schema">public</property>
 
+        <!--<property name="connection.datasource">jdbc/postgresql</property>-->
+
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://localhost:5432/scada?useUnicode=true&amp;characterEncoding=utf8
+        </property>
+
+        <property name="hibernate.connection.username">
+            postgres
+        </property>
+
+        <property name="hibernate.connection.password">
+            cezet123
+        </property>
+
+        <!--<property name="hibernate.connection.CharSet">utf8</property>-->
+        <!--<property name="hibernate.connection.characterEncoding">utf8</property>-->
+        <!--<property name="hibernate.connection.useUnicode">true</property>-->
+
+        <property name="hibernate.default_schema">public</property>
         <property name="hibernate.show_sql">false</property>
 
         <mapping class="entities.CurrentEntity"/>
