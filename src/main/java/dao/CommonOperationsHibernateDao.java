@@ -5,6 +5,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import util.SessionUtil;
 
@@ -33,6 +34,9 @@ public abstract class CommonOperationsHibernateDao<T, ID extends Serializable> i
             transaction = session.beginTransaction();
 //            Query query = session.createQuery("from NodeEntity as node");
             Criteria criteria = session.createCriteria(getPersistenceClass());
+            criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+//            criteria.createAlias("id", "id");
+            criteria.addOrder(Order.asc("id"));
             result = criteria.list();
             transaction.commit();
         } catch (HibernateException e) {

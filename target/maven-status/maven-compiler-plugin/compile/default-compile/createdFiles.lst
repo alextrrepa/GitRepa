@@ -18,6 +18,7 @@ admin\controllers\tree_edit_delegation\DeleteNodeOperation.class
 admin\controllers\tree_edit_delegation\UpdateOperation.class
 view\modbusserver\ModbusBridge.class
 dao\AuthDaoIF.class
+admin\controllers\admin_delegation\AccountUpdate.class
 auth\CustomRealm.class
 view\modbusserver\exception\NullConfigParamsException.class
 view\modbusserver\ModbusLocator.class
@@ -36,11 +37,12 @@ admin\controllers\tree_edit_delegation\Operation.class
 dao\CommonOperationsHibernateDao.class
 auth\CustomIniWebEnvironment.class
 dao\CommonOperationsDaoIF.class
+admin\controllers\admin_delegation\AccountEdit.class
 admin\controllers\tree_edit_delegation\AddRtuNodeOperation.class
 admin\controllers\tree_edit_delegation\Command.class
 data\controllers\report_delegation\HoursData.class
-auth\controllers\LoginServlet.class
 view\modbusserver\exception\ConfigException.class
+auth\controllers\LoginServlet.class
 admin\controllers\tree_edit_delegation\TreeElement.class
 view\modbusserver\ModbusTask.class
 admin\controllers\admin_delegation\Accounts.class
@@ -69,8 +71,8 @@ auth\entities\UserEntity.class
 entities\CurrentEntity.class
 view\modbusserver\exception\NullTagException.class
 admin\controllers\tree_edit_delegation\DoOperation.class
-entities\HourEntity.class
 view\modbusserver\CommonQueue.class
+entities\HourEntity.class
 data\controllers\data_delegation\DoOperation.class
 auth\entities\RoleEntity.class
 admin\controllers\tree_edit_delegation\DeleteTagOperation.class

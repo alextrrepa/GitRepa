@@ -52,8 +52,10 @@ C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusBridge.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusTcp.java
 C:\WorkSpace\WebScada\src\main\java\admin\controllers\tree_edit_delegation\RenameOperation.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\ModbusServer.java
+C:\WorkSpace\WebScada\src\main\java\admin\controllers\admin_delegation\AccountUpdate.java
 C:\WorkSpace\WebScada\src\main\java\view\util\CheckConfigUtil.java
 C:\WorkSpace\WebScada\src\main\java\entities\TagEntity.java
+C:\WorkSpace\WebScada\src\main\java\admin\controllers\admin_delegation\AccountEdit.java
 C:\WorkSpace\WebScada\src\main\java\data\controllers\ReportController.java
 C:\WorkSpace\WebScada\src\main\java\view\endpointserver\DataSourceListener.java
 C:\WorkSpace\WebScada\src\main\java\view\modbusserver\exception\NullDeviceException.java

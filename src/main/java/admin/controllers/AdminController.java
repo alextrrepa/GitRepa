@@ -1,9 +1,6 @@
 package admin.controllers;
 
-import admin.controllers.admin_delegation.Accounts;
-import admin.controllers.admin_delegation.Action;
-import admin.controllers.admin_delegation.Command;
-import admin.controllers.admin_delegation.DoAction;
+import admin.controllers.admin_delegation.*;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -21,6 +18,8 @@ public class AdminController extends HttpServlet {
     public AdminController() {
         Action action = new Action();
         commandMap.put("accounts", new Accounts(action));
+        commandMap.put("edit", new AccountEdit(action));
+        commandMap.put("update", new AccountUpdate(action));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,9 +34,10 @@ public class AdminController extends HttpServlet {
         String action = request.getParameter("action");
         if (action == null) {
             request.getRequestDispatcher("admin/admin.jsp").forward(request, response);
+        } else {
+            Command command = commandMap.get(action);
+            DoAction doAction = new DoAction(command);
+            doAction.makeAction(request, response);
         }
-        Command command = commandMap.get(action);
-        DoAction doAction = new DoAction(command);
-        doAction.makeAction(request, response);
     }
 }
