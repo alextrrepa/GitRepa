@@ -83,36 +83,14 @@
                         Архивные данные</a>
                 </li>
                 <li>
+                    <a href="${pageContext.request.contextPath}/report?action=page"><i
+                            class="fa fa-fw fa-file-text"></i>
+                        Отчеты</a>
+                </li>
+                <li>
                     <a href="${pageContext.request.contextPath}/analyse"><i class="fa fa-fw fa-bar-chart-o"></i> Анализ
                         данных</a>
                 </li>
-                <%--<li>--%>
-                <%--<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="javascript:" data-toggle="collapse" data-target="#demo"><i--%>
-                <%--class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>--%>
-                <%--<ul id="demo" class="collapse">--%>
-                <%--<li>--%>
-                <%--<a href="#">Dropdown Item</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="#">Dropdown Item</a>--%>
-                <%--</li>--%>
-                <%--</ul>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>--%>
-                <%--</li>--%>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -141,29 +119,12 @@
                 </div>
             </div>
 
-            <%--      <div class="row">
-                    <div class="col-lg-12">
-                      <div class="alert alert-info alert-dismissable">
-                        &lt;%&ndash;<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>&ndash;%&gt;
-                        <shiro:guest>
-                          <i class="fa fa-info-circle"></i> <strong>Добро пожаловать!</strong>
-                        </shiro:guest>
-                        <shiro:user>
-                          <i class="fa fa-info-circle"></i> <strong>Вы вошли как, <shiro:principal/></strong>
-                        </shiro:user>
-                      </div>
-                    </div>
-                  </div>--%>
-
             <div class="jumbotron">
-                <%--<h1>Уважаемый пользователь!</h1>--%>
                 <p>
                     Данная страница находиться в разработке !
                 </p>
-
-                <%--<p><a href="login.jsp" class="btn btn-primary btn-lg" role="button">Узнать больше &raquo;</a>--%>
-                <%--</p>--%>
             </div>
+
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:postgresql://localhost:5432/scada?useUnicode=true&amp;characterEncoding=utf8
+            jdbc:postgresql://localhost:5432/scada
         </property>
 
         <property name="hibernate.connection.username">

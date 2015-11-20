@@ -1,9 +1,6 @@
 package data.controllers;
 
-import data.controllers.report_delegation.Command;
-import data.controllers.report_delegation.DoReport;
-import data.controllers.report_delegation.HoursData;
-import data.controllers.report_delegation.ReportActions;
+import data.controllers.report_delegation.*;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -20,7 +17,8 @@ public class ReportController extends HttpServlet {
 
     public ReportController() {
         ReportActions actions = new ReportActions();
-        commandMap.put("hoursData", new HoursData(actions));
+        commandMap.put("page", new Page(actions));
+        commandMap.put("hours", new HoursData(actions));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,11 +30,11 @@ public class ReportController extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String parameter = request.getParameter("actions");
-        Command command = commandMap.get(parameter);
-        DoReport doReport = new DoReport(command);
-        doReport.makeCommand(request, response);
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String action = request.getParameter("action");
+        Command command = commandMap.get(action);
+        MakeReport makeReport = new MakeReport(command);
+        makeReport.makeCommand(request, response);
 /*        response.setContentType("application/pdf");
         ServletOutputStream servletOutputStream = response.getOutputStream();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

@@ -46,9 +46,10 @@ auth\controllers\LoginServlet.class
 admin\controllers\tree_edit_delegation\TreeElement.class
 view\modbusserver\ModbusTask.class
 admin\controllers\admin_delegation\Accounts.class
+data\controllers\report_delegation\Page.class
 dao\ViewDaoIF.class
-entities\DayDataEntity.class
 view\endpointserver\DataSourceListener.class
+entities\DayDataEntity.class
 auth\entities\ResourceEntity.class
 admin\controllers\admin_delegation\Action.class
 dao\AuthItemHibernateDao.class
@@ -62,10 +63,10 @@ auth\filters\RegisterFilter.class
 dao\DataItemHibernateDao.class
 dao\AdminDaoIF.class
 admin\controllers\admin_delegation\DoAction.class
+data\controllers\report_delegation\MakeReport.class
 data\controllers\data_delegation\Page.class
 view\modbusserver\ModbusServer.class
 data\controllers\data_delegation\Command.class
-data\controllers\report_delegation\DoReport.class
 data\controllers\data_delegation\View.class
 auth\entities\UserEntity.class
 entities\CurrentEntity.class
@@ -84,7 +85,7 @@ view\modbusserver\ModbusType.class
 entities\DeviceEntity.class
 admin\controllers\tree_edit_delegation\GetNodeOperation.class
 entities\RegisterEntity.class
-dao\DataDaoIF.class
 view\endpointserver\ModbusEndpoint.class
+dao\DataDaoIF.class
 admin\controllers\ModbusTreeEditController.class
 data\controllers\data_delegation\Operation.class

@@ -159,9 +159,9 @@
 
                         <div class="form-group">
                             <label>Описание</label>
-              <textarea class="form-control" rows="3" name="description">
-                  ${user.description}
-              </textarea>
+                                 <textarea class="form-control" rows="3" name="description">
+                                     ${user.description}
+                                 </textarea>
                         </div>
 
                         <div class="form-group">

@@ -28,12 +28,12 @@ public class Action {
     }
 
     public void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         Long id = Long.valueOf(request.getParameter("userId"));
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String username = request.getParameter("username");
         Boolean locked = Boolean.parseBoolean(request.getParameter("locked"));
+        System.out.println(locked);
         String description = request.getParameter("description");
 
         UserEntity user = new UserEntity();
@@ -46,6 +46,7 @@ public class Action {
 
         CommonOperationsHibernateDao<UserEntity, Long> updateDao = new AuthItemHibernateDao<>(UserEntity.class);
         updateDao.update(user);
-        request.getRequestDispatcher("admin?action=accounts").forward(request, response);
+        response.sendRedirect("admin?action=accounts");
+//        request.getRequestDispatcher("admin?action=accounts").forward(request, response);
     }
 }

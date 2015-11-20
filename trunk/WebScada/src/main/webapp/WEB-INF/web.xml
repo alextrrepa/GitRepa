@@ -113,7 +113,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ReportController</servlet-name>
-        <url-pattern>/Report.do</url-pattern>
+        <url-pattern>/report</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DataController</servlet-name>
