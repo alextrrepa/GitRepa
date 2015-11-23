@@ -83,7 +83,8 @@
                         Архивные данные</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/report?action=page"><i class="fa fa-fw fa-file-text"></i>
+                    <a href="${pageContext.request.contextPath}/report?action=page"><i
+                            class="fa fa-fw fa-file-text"></i>
                         Отчеты</a>
                 </li>
                 <li>

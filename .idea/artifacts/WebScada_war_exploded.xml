@@ -72,6 +72,7 @@
           <element id="library" level="project" name="Maven: jakarta-regexp:jakarta-regexp:1.4" />
           <element id="library" level="project" name="Maven: org.olap4j:olap4j:0.9.7.309-JS-3" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:2.3.0" />
+          <element id="library" level="project" name="Maven: net.sf.jasperreports:jasperreports-fonts:6.0.0" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-core:1.2.4" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.4" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.2.4" />
