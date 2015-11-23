@@ -1,11 +1,8 @@
 package data.controllers.report_delegation;
 
-import dao.CommonOperationsHibernateDao;
-import dao.DataItemHibernateDao;
-import entities.TagData;
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.design.*;
-import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletContext;
@@ -13,9 +10,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.util.HashMap;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ReportActions {
     private final static Logger log = Logger.getLogger(ReportActions.class);
@@ -27,7 +24,31 @@ public class ReportActions {
     public void hourReport(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/pdf");
         response.setCharacterEncoding("UTF-8");
-        ServletOutputStream servletOutputStream = response.getOutputStream();
+        ServletOutputStream servletOutputStream = null;
+
+        JasperReport jasperReport;
+        JasperDesign jasperDesign;
+        JasperPrint jasperPrint;
+
+        ServletContext context = request.getServletContext();
+        String reportLocation = context.getRealPath("WEB-INF");
+
+        try (InputStream fileInputStream = new FileInputStream(reportLocation + "/HourReport.jrxml")) {
+            jasperDesign = JRXmlLoader.load(fileInputStream);
+            jasperReport = JasperCompileManager.compileReport(jasperDesign);
+            jasperPrint = JasperFillManager.fillReport(jasperReport, null, new JREmptyDataSource());
+
+            servletOutputStream = response.getOutputStream();
+            JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            if (servletOutputStream != null) {
+                servletOutputStream.flush();
+                servletOutputStream.close();
+            }
+        }
+       /* ServletOutputStream servletOutputStream = response.getOutputStream();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         InputStream fileInputStream;
         BufferedInputStream bufferedInputStream;
@@ -84,13 +105,13 @@ public class ReportActions {
                 offset = offset + width + 10;
 
 
-/*
+*//*
                 if (output.equals(“pdf”)) {
                     if (offset > pageWidth – 30) {
                         break;
                     }
                 }
-*/
+*//*
                 columnHeader.setStyle(columnHeaderStyle);
                 reportData.setStyle(columnHeaderStyle);
                 columnHeader.setText(t.getColumnName());
@@ -121,6 +142,6 @@ public class ReportActions {
             servletOutputStream.flush();
             servletOutputStream.close();
             baos.close();
-        }
+        }*/
     }
 }
