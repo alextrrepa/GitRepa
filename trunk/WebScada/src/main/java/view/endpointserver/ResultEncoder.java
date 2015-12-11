@@ -25,5 +25,4 @@ public class ResultEncoder implements Encoder.Text<Map<String, Map<String, Float
     public void destroy() {
 
     }
-
 }

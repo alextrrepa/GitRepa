@@ -63,7 +63,6 @@ public class CheckConfigUtil {
     }
 
     private static void checkDeviceExistence() throws NullDeviceException {
-//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAll();
         for (NodeEntity node : listConfig) {
             List<DeviceEntity> dev = node.getDeviceEntity();
@@ -75,8 +74,6 @@ public class CheckConfigUtil {
     }
 
     private static void checkTagExistence() throws NullTagException {
-//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
-//        CommonOperationsHibernateDao<NodeEntity, Long> config = new ViewItemHibernateDao<>(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAll();
         for (NodeEntity node : listConfig) {
             List<DeviceEntity> dev = node.getDeviceEntity();
