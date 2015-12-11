@@ -6,6 +6,7 @@ import view.modbusserver.CommonQueue;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TransferQueue;
 
 public class ModbusClientConsumer {
@@ -28,8 +29,7 @@ public class ModbusClientConsumer {
                     try {
                         Map<String, Map<String, Float>> result = queue.take();
                         notifyListeners(result);
-//                        log.info("Result in Client Consumer @@@" + result);
-//                        TimeUnit.SECONDS.sleep(1);
+                        TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
                         log.error("ModbusClientConsumer is Interrupted :", e.getCause());
                     } finally {

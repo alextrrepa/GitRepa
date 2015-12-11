@@ -38,25 +38,7 @@ public class ModbusLocator {
     public ModbusLocator(int range, byte[] data) {
         this.range = range;
         this.data = data;
-//        validate();
     }
-
-/*
-    private void validate() {
-        validateOffset(getRegisterCount());
-
-    }
-*/
-
-/*    private void validateOffset(int registerCount) {
-        try {
-            ModbusUtils.validateOffset(offset);
-            ModbusUtils.validateEndOffset(offset + registerCount - 1);
-        }
-        catch (ModbusTransportException e) {
-            throw new ModbusIdException(e);
-        }
-    }*/
 
     private static void appendBCD(StringBuilder sb, byte b) {
         sb.append(bcdNibbleToInt(b, true));

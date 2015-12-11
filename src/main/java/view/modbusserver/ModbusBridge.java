@@ -19,7 +19,6 @@ public class ModbusBridge {
 
     private void getTypeConfig(List<ModbusTask> taskList,
                                TransferQueue<Map<String, Map<String, Float>>> queue) {
-//        GenericDao config = new ItemDAOHibernate(NodeEntity.class);
         CommonOperationsHibernateDao<NodeEntity, Long> config = new ViewItemHibernateDao<>(NodeEntity.class);
         List<NodeEntity> listConfig = config.getAll();
         ModbusType modbusType;

@@ -43,9 +43,6 @@ public class ModbusTask implements Runnable {
             log.info("Port " + portName + " is open : " + master.isInitialized());
             while (true) {
                 Map<String, Map<String, Float>> values = startPolling();
-//                for (Map.Entry<String, Map<String, Float>> val : values.entrySet()) {
-//                    System.out.println(val.getKey() + " : " + val.getValue());
-//                }
                 if (queue.hasWaitingConsumer()) {
                     queue.transfer(values);
                 }
@@ -53,10 +50,8 @@ public class ModbusTask implements Runnable {
             }
         } catch (ModbusInitException e) {
             log.error("Can't init port " + portName);
-//            Thread.currentThread().interrupt();
         } catch (InterruptedException e) {
             log.error("Current thread interrupted" + Thread.currentThread().getName());
-//            Thread.currentThread().interrupt();
         } finally {
             log.info("Destroy Master");
             master.destroy();
@@ -92,7 +87,6 @@ public class ModbusTask implements Runnable {
     }
 
     private void insertCurrentData(long id, float value) {
-//        GenericDao<CurrentEntity, Long> curData = new ItemDAOHibernate<>(CurrentEntity.class);
         CommonOperationsHibernateDao<CurrentEntity, Long> curData = new ViewItemHibernateDao<>(CurrentEntity.class);
         CurrentEntity curEntity = new CurrentEntity();
         curEntity.setDatetime(new Date());
